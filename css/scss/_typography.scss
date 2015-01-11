@@ -31,22 +31,6 @@ h2 {
 	text-transform: uppercase;
 	font-weight: normal;
 	letter-spacing: 6px;
-
-	&:before {
-		font-size: 70%;
-	}
-
-	@include device-width(8) {
-		@include font-size(26); 
-	}
-
-	@include device-width(6) {
-		@include font-size(24); 
-	}
-
-	@include device-width(4) {
-		@include font-size(22); 
-	}
 }
 
 h3 {
@@ -56,22 +40,6 @@ h3 {
 	text-transform: uppercase;
 	font-weight: normal;
 	letter-spacing: 4px;
-
-	&:before {
-		font-size: 70%;
-	}
-
-	@include device-width(8) {
-		@include font-size(24); 
-	}
-
-	@include device-width(6) {
-		@include font-size(22); 
-	}
-
-	@include device-width(4) {
-		@include font-size(20); 
-	}
 }
 
 h4 {
@@ -80,9 +48,6 @@ h4 {
 	line-height: 1;
 	letter-spacing: 4px;
 	text-transform: uppercase;
-	&:before {
-		font-size: 70%;
-	}
 }
 
 h5 {
@@ -91,9 +56,6 @@ h5 {
 	line-height: 1;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-	&:before {
-		font-size: 70%;
-	}
 }
 
 h6 {
@@ -102,10 +64,6 @@ h6 {
 	line-height: 1;
 	letter-spacing: 2px;
 	text-transform: uppercase;
-
-	&:before {
-		font-size: 70%;
-	}
 }
 
 p {}
