@@ -66,8 +66,6 @@ select {
 	
 }
 
-
-
 textarea {
 	height: 200px;
 }
@@ -78,11 +76,11 @@ button[type=submit] {
 	@include transition(all 0.3s ease);
 	display: inline-block;
 	background: #8a967c;
-	padding: 1em 2em;
+	padding: 1.3em 3em;
 	color: #FFF;
 	text-align: center;
-	letter-spacing: 2px;
-	@include font-size(8);
+	letter-spacing: 3px;
+	@include font-size(10);
 	@include futura-bold;
 	border: 0;
 
@@ -125,16 +123,24 @@ fieldset {
 .gform_wrapper {
 	max-width: 100% !important;
  	margin: 0 !important;
- 	background: #f6f6f6;
+ 	background: #464646;
+ 	color: #FFF;
+
+ 	h3 {
+ 		color: #FFF;
+ 	}
+
 // 	color: #FFF;
 	form {
+		padding: 1em;
 		overflow: hidden;
 		.gform_heading {
-			margin-bottom: 1em;
-			text-align: center;
-			.gform_title {
-				font-weight: normal;
-				@include font-size(30);
+			margin-bottom: 0.3em;
+
+			.gform_description {
+				@include futura-bold;
+				letter-spacing: 1px;
+				@include font-size(10);
 			}
 		}
 
@@ -254,11 +260,11 @@ fieldset {
 						textarea {
 							@include box-sizing(none);
 							background: #FFF;
-							padding: 1.2em;
 							max-width: 100%;
-							@include font-size(11);
 							@include futura;
 							text-transform: none;
+							@include font-size(12);
+							padding: 1em;
 
 							// &.small {
 							// 	width: 25%;
@@ -427,100 +433,37 @@ fieldset {
 	}
 }
 
-.contact-form_wrapper {
-	border-left: 5px solid #f6f6f6;
+
+
+.newsletter_wrapper {
+	background-image: url(../images/backgrounds/newsletter.jpg);
+	background-repeat: no-repeat;
+	background-position: 104% center;
+	background-size: 220px ;
+	padding-right: 180px;
 
 	form {
-		@extend .clearfix;
 		position: relative;
-	
-
-		.gform_heading {
-			float: left;
-			width: 240px;
-			@include box-sizing(border-box);
-			padding: 6.4em 2em;
-			background: #FFF;
-			margin: 0;
-
-			@include device-width(10) {
-				padding: 7em 4em;
-			}
-
-			@include device-width(8) {
-				width: 200px;
-			}
-
-			@include device-width(6) {
-				float: none;
-				width: auto;
-				padding: 1em;
-			}
-
-			.gform_title {
-				@include font-size(25);
-				letter-spacing: 3px !important;
-				line-height: 2 !important;
-			}
-
-			.gform_description {
-			}
-
-			hr {
-				margin-left: auto;
-				margin-right: auto;
-			}
-		}
 
 		.gform_body {
-			padding: 1em 2em;
-			float: left;
-			width: calc(100% - 240px);
-			@include box-sizing(border-box);
 
-			@include device-width(11) {
-				padding: 2em 2em 3em 2em;
-			}
+			.gform_fields {
+				.gfield {
+					margin-bottom: 0;
 
-			@include device-width(8) {
-				width: calc(100% - 200px);
-			}
-
-			@include device-width(6) {
-				float: none;
-				width: auto;
-				padding: 1em;
+					input {
+						width: 100%;
+						padding-right: 140px;
+					}
+				}
 			}
 		}
 
 		.gform_footer {
 			position: absolute;
 			bottom: 0;
-			right: 0;
-			padding: 2em;
-			margin: 0;
-		
-			@include device-width(11) {
-				bottom: 1em;
-				right: 2em;
-			}
+			right: 1em;
 
-			@include device-width(6) {
-				position: relative;
-				right: 1em;
-			}
 		}
-	}
-
-
-	.top_label li.gfield.gf_left_half input.medium,
-	.top_label li.gfield.gf_left_half input.large,
-	.top_label li.gfield.gf_left_half select.medium,
-	.top_label li.gfield.gf_left_half select.large,
-	.top_label li.gfield.gf_right_half input.medium, 
-	.top_label li.gfield.gf_right_half input.large, 
-	.top_label li.gfield.gf_right_half select.medium, 
-	.top_label li.gfield.gf_right_half select.large {
-		width: 100%;
 	}
 }
