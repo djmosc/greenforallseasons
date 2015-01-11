@@ -62,9 +62,8 @@ function custom_setup_theme() {
 
 
 	register_nav_menus( array(
-		'header_primary' => __( 'Header - Primary', THEME_NAME ),
-		'footer_primary' => __( 'Footer - Primary', THEME_NAME ),
-		'footer_secondary' => __( 'Footer - Secondary', THEME_NAME ),
+		'primary' => __( 'Primary', THEME_NAME ),
+		'secondary' => __( 'Secondary', THEME_NAME ),
 	) );
 
 	add_editor_style('css/editor-style.css');
