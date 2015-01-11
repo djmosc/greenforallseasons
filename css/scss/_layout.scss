@@ -281,58 +281,84 @@ body {
 	background: $dark-gray;
 	color: #666;
 	z-index: 100;
-	
 
+	.top {
+		padding-top: 3em;
+	}
+	
 	.logo-container {
 		float: left;
-		padding: 0 10px;
+		margin-bottom: -0.5em;
 
-		@include device-width(10) {
-			width: 180px;
-			margin: 0 auto;
-			float: none;
-		}
-		
-		.icon-logo {
-			@include font-size(240);
+		.tagline {
+			@include garamond-italic;
+			@include font-size(14);
+			display: block;
 			color: #bebebe;
 		}
-	}
 
-	.info {
-		
-		@include device-width(6) {
-			float: none;
-			text-align: center;
-		}
+		.icon-logo {
+			@include font-size(155);
+			color: #bebebe;
 
-		.social-links {
-			float: right;
-
-			@include device-width(6) {
-				float: none;
-				display: inline-block;
+			&:hover {
+				color: $olive;
 			}
 		}
 	}
+
+	.social-links {
+		a {
+			padding: 0;
+			color: $white;
+		}
+	}
+
+	.social-links {
+		float: right;
+
+		@include device-width(6) {
+			float: none;
+			display: inline-block;
+		}
+	}
+
+	.copyright {
+		color: $white;
+		@include font-size(14);
+		@include garamond-italic;
+	}	
 
 	.details {
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
 
-		@include device-width(6) {
-			float: none;
-			text-align: center;
-		}
-
-		.copyright,
 		.by {
-			@include font-size(13);
+			@include font-size(10);
+			color: $gray;
+			@include futura;
+			text-transform: none;				
+			
 
-			@include device-width(5) {
+			span {
 				display: block;
+				text-align: right;
+	
+				a {
+					color: #a9a9a9;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
 			}
 		}
+	}
+
+	.details-bottom {
+		@extend .clearfix;
+		padding: 75px 0 25px;
 	}
 
 	.bottom {
