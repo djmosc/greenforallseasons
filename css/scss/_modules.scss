@@ -324,24 +324,6 @@ blockquote {
 	}
 }
 
-.lined-header {
-	text-align: center;
-	height: 3px;
-	background: #dddddd;
-	line-height: 0;
-	margin-top: 14px;
-	margin-bottom: 14px;
-
-	.title {
-		margin: -15px 0 0 0;
-		display: inline-block;
-		padding: 1em 2em;
-		background: #FFF;
-	
-		font-size: 10px;
-		color: #000;
-	}
-}
 
 .post-header {
 
@@ -404,30 +386,12 @@ blockquote {
 	}	
 }
 
-.addthis_counter {
-	color: inherit;
-}
-
-
 .logo {
 	height: 0;
 	background: url(../images/logos/overthemoon.png) no-repeat;
 	background-size: contain;
 	padding-top: 55%;
 	display: block;
-}
-
-.box {
-	position: relative;
-	border: 1px solid #dadada;		
-	background: #FFF;
-}
-.dotted-border {
-	background: url(../images/backgrounds/dots.png);
-	padding: 12px;
-	> .inner {
-		background: #FFF;
-	}
 }
 
 .related-posts {
@@ -455,226 +419,161 @@ blockquote {
 	}
 }
 
-.boutique {
-
-	@include device-width(7) {
-		display: none;
-	}
-
-	> .inner {
-		padding: 1em;
-	}
-
-	.boutique-header {
-		padding: 40px 1em;
-		@include box-sizing(border-box);
-		float: left;
-		width: 220px;
-
-		.title {
-			text-align: center;
-			margin: 0;
-			@include font-size(30);
-
-			.italic {
-			}
-		}
-
-		.description {
-			margin-top: 0;
-			text-align: center;
-			@include font-size(12);
-		}
-
-		.cta-container {
-			margin-bottom: 0;
-		}
-
-		.primary-btn {
-			display: block;
-		}
-	}
-
-	.products {
-		margin-left: 240px;
-
-		.product-btn {
-			height: 200px;
-		}
-	}
-}
-
-
-.press-releases {
-	padding-left: 0;
-	padding-right: 0;
-
-	> .inner {
-		padding: 3em 0 1em 0;
-	}
-
-	.header {
-		.title {
-
-			margin: 0;
-			text-align: center;
-		}
-	}
-
-	.pagination {
-		margin: 1.6em;
-	}
-
-	.posts {
-		overflow: hidden;
-		margin: 0 -10px;
-		list-style: 0;
+.navigation {
+	> ul {
+		margin: 0;
 		padding: 0;
-	}
+		list-style-type: none;
 
-	.press {
-		margin: 0 0 2em 0;
-		.header {
-			margin: 0.2em 0;
-			text-align: center;
-			
-			.title,
-			.meta {
-				font-size: 10px;
-	
+		> li {
+			float: left;
+			position: relative;
+			@include transition(all 0.3s ease);
+			margin-right: 5em;
+			cursor: pointer;
+
+			&:last-child {
+				margin-right: 0;
 			}
 
-			.meta {
-				color: #666;
+			a {
+				@include futura-bold;
+				@include font-size(10);
+				letter-spacing: 1px;
+				color: $white;
+
+				&:hover {
+					color: $olive;
+				}
 			}
 		}
-	}
-}
 
-.shopthepost-widget {
-	.rs-adblock {
-		padding: 1em;
-		text-align: center;
 	}
 }
 
 .primary-navigation {
-	float: right;
+	> ul {
+		> li {
+			@extend .green-label;
+			
+			&:before {
+				@include futura;
+				@include font-size(10);
+				letter-spacing: 1px;
+				opacity: 0;
+				color: $olive;
+				@include transition(all 0.3s ease);
+				margin-right: 1px;
+			}	
 
-	.menu {
-		padding: 2em 0;
-		margin: 0;
-		list-style: none;
+			a {
+				color: $black;
+				&:hover {
+					color: $black;					
+				}
+			}		
 
-		@include device-width(10) {
-			text-align: center;
-			padding: 1em 0;
-		}
+			ul {
+				display: none;
+				list-style-type: none;
+				margin: 0;
+				padding: 0;
 
-		@include device-width(7) {
-			padding: 0;
-		}
-	}
-
-	
-
- 	li {
-		float: left;
-		margin: 0 3.5em;
-		position: relative;
-
-		@include device-width(14) {
-			margin: 0 2.4em;
-		}
-
-		@include device-width(12) {
-			margin: 0 2.8em;
-		}
-
-		@include device-width(10) {
-			float: none;
-			display: inline-block;
-		}
-
-		@include device-width(8) {
-			margin: 0 2em;
-		}
-
-		@include device-width(7) {
-			float: none;
-			padding: 0;
-			margin: 0;
-			display: block;
-		}
-
-		&:hover,
-		&.current_page_parent,
-	 	&.current-menu-item,
-	 	&.current-category-ancestor,
-	 	&.current-page-ancestor,
-	 	&.current-post-ancestor,
-	 	&.current-menu-parent,
-	 	&.current-post-parent,
-	 	&.current {
-
-	 		a {
-		 		color: #000;
-		 		border-top-color: #000;
-
-		 		@include device-width(7) {
-		 			color: #FFF;
-					background: #000;
-					border-bottom-color: #000;
+				li {
+					a {
+						@include miller-italic;
+						text-transform: none;
+					}
 				}
 			}
-	 	}
 
-	}
+			&:hover {
+				&:before {
+					opacity: 1;
+				}
 
-	a {
-		display: inline-block;
-		text-transform: uppercase;
-		@include font-size(10);
-		padding: 3.5em 0;
-		opacity: 0.4;
-		color: #000;
-		letter-spacing: 2px;
-		border-top: 2px solid transparent;
+				ul {
+					display: block;
+					position: absolute;
 
-		@include device-width(10) {
-			padding: 2em 0;
-		}
+				}
+			}
 
-		@include device-width(7) {
-			padding: 1em 0;
-			display: block;
-			border-bottom: 1px solid #c2c2c2;
-		}
-
-		&:hover {
-			opacity: 1;	
-
+			&.menu-item-has-children {
+				&:after {
+					@include icon(caret-down);
+					@include font-size(10);
+				}
+			}			
 		}
 	}
 }
 
 .secondary-navigation {
+	> ul {
+		li {
+			margin-right: 3em;
 
-	.menu {
-		margin: 0;
-		padding: 0;
-		list-style: none;
+			a {
+				color: $mid-gray;
+				@include futura;
+
+				&:hover {
+					color: $white;
+				}
+			}
+		}
+	}
+}
+
+.footer-primary-navigation {
+	text-align: right;
+
+	ul {
+		@include inline-block;
+
+		li {
+			margin-right: 8.3em;
+		}
+	}
+}
+
+
+
+.post-header {
+	position: relative;
+
+	.post-title {
+		margin-top: 0.3em;
 	}
 
-	a {
-		@include font-size(8);
-		letter-spacing: 1px;
-		padding: 1.3em 0;
-		color: #7d7d7d;
-		display: inline-block;
+	.post-excerpt {
+		margin: 1em 0;
+	}
 
-		&:hover {
-			color: #000;
+	.post-meta {
+		position: absolute;
+		bottom: 1px;
+		right: 1px;
+		background: #ffffff;
+
+		@include device-width(7) {
+			position: relative;
+			top: 0;
+			left: 0;
+			margin: 1em 0 0 0;
+			display: inline-block;
+		}
+
+		.shares-btn,
+		.comments-btn,
+		.post-date {
+			float: left;
+			border-left: 1px solid #f6f6f6;
+		}
+
+		.post-date {
+			padding: 1em;
 		}
 	}
 }

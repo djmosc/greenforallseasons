@@ -10,6 +10,7 @@ body {
 	@include font-size(15);
 	line-height: 1.5;
 	min-width: 250px;
+	border-top: 10px solid $olive;
 	@include garamond;
 }
 
@@ -22,34 +23,6 @@ body {
 	z-index: 200;
 	background: #FFF;
 	@include transition(all 0.3s ease);
-
-	@media print {
-		display: none;
-	}
-
-	@include device-width(10) {
-		padding-bottom: 0;		
-	}
-
-	
-	&.navigation-open {
-		.logo-container {
-			padding-bottom: 15px;
-		}
-		.navigation {
-			display: block;
-		}
-
-		@include device-width(4) {
-			.social-links {
-				display: none;
-			}
-
-			.search-form {
-				display: block;
-			}
-		}
-	}
 
 	&.search-open {
 
@@ -71,34 +44,27 @@ body {
 
 	> .top {
 		position: relative;
-		z-index: 200;
-		border-top: 3px solid #cdcdcd;
-		background: #efefef;
-
-		.secondary-navigation {
-			float: right;
-			margin: 0 1em;
-		}
-	}
-
-	> .bottom {
-		
+		z-index: 100;
+		padding: 4.5em 0;
 	}
 		
 	.logo-container {
 		float: left;
-		width: 270px;
 		padding: 0 10px;
+		position: absolute;
 
-		@include device-width(10) {
-			width: 180px;
-			margin: 0 auto;
-			float: none;
+		.tagline {
+			@include garamond-italic;
+			@include font-size(14);
+			display: block;
 		}
 		
-		.logo {
-			z-index: 100;
+		.icon-logo {
+			@include font-size(240);
 
+			&:hover {
+				color: $dark-green;
+			}
 		}
 	}
 
@@ -312,116 +278,93 @@ body {
 }
 
 #footer {
-	background: #000;
+	background: $dark-gray;
 	color: #666;
 	z-index: 100;
-	
-	@media print {
-		display: none;
-	}
 
-	> .bottom {
-		background: #222;
-		border-bottom: 2px solid #444;
+	.top {
+		padding-top: 3em;
 	}
 	
-	a {
-		color: #FFF;
-	}
-
 	.logo-container {
 		float: left;
-		width: 270px;
-		padding: 0 10px;
+		margin-bottom: -0.5em;
 
-		@include device-width(10) {
-			width: 180px;
-			margin: 0 auto;
-			float: none;
+		.tagline {
+			@include garamond-italic;
+			@include font-size(14);
+			display: block;
+			color: #bebebe;
 		}
-		
-		.logo {
-			z-index: 100;
-			background-image: url(../images/logos/overthemoon_light.png);
+
+		.icon-logo {
+			@include font-size(155);
+			color: #bebebe;
+
+			&:hover {
+				color: $olive;
+			}
 		}
 	}
 
-	.primary-navigation {
-		float: right;
-		padding: 0 10px 0 0;
-
-		@include device-width(10) {
-			float: none;
-			padding: 0;
-		}
-
-		@include device-width(7) {
-			border-top: 1px solid #333;
-		}
-
+	.social-links {
 		a {
-			@include device-width(7) {
-				border-bottom: 0;
-			}
+			padding: 0;
+			color: $white;
 		}
 	}
 
-	.secondary-navigation {
-		padding: 0 10px;
+	.social-links {
+		float: right;
 
-		@include device-width(10) {
-			background: #222;
-			@include box-shadow(1px 1px 2px rgba(#000, 0.3));
-		}
-
-		.menu {
-			@include device-width(10) {
-				text-align: center;
-			}
-		}
-		li {
-			@include device-width(10) {
-				display: inline-block;
-				margin: 0 1em;
-			}
-		}
-	}
-
-	.info {
-		
 		@include device-width(6) {
 			float: none;
-			text-align: center;
-		}
-
-		.social-links {
-			float: right;
-
-			@include device-width(6) {
-				float: none;
-				display: inline-block;
-			}
+			display: inline-block;
 		}
 	}
+
+	.copyright {
+		color: $white;
+		@include font-size(14);
+		@include garamond-italic;
+	}	
 
 	.details {
 		padding-top: 0.5em;
 		padding-bottom: 0.5em;
 
-		@include device-width(6) {
-			float: none;
-			text-align: center;
-		}
-
-		.copyright,
 		.by {
-			@include font-size(13);
+			@include font-size(10);
+			color: $gray;
+			@include futura;
+			text-transform: none;				
+			
 
-			@include device-width(5) {
+			span {
 				display: block;
+				text-align: right;
+	
+				a {
+					color: #a9a9a9;
+
+					&:hover {
+						text-decoration: underline;
+					}
+				}
+
 			}
 		}
 	}
+
+	.details-bottom {
+		@extend .clearfix;
+		padding: 75px 0 25px;
+	}
+
+	.bottom {
+		padding: 24px 0;
+		background: $dark-green;
+	}	
 }
 
 #lightbox {

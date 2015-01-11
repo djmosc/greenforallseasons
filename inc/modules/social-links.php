@@ -16,7 +16,7 @@
 	</li>
 	<?php endif; ?>
 	
-	<?php if(false): ?>
+	<?php if($tumblr_url = 'http://www.pinterest.com/otmblog'): ?>
 	<li>
 		<a class="tumblr-btn" href="<?php echo $tumblr_url;?>" target="_blank"></a>
 	</li>
