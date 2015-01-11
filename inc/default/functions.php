@@ -110,6 +110,9 @@ if(!function_exists('get_post_thumbnail_src')) {
 
 if(!function_exists('get_image')) {
 	function get_image($id, $size){
+		
+		if( is_array($size) ) $size['bfi_thumb'] = true;
+
 		$image = wp_get_attachment_image_src($id, $size);
 
 		if( !empty($image[0]) ) return $image[0];
@@ -117,31 +120,23 @@ if(!function_exists('get_image')) {
 	}
 }
 
-if ( ! function_exists( 'include_template_part' )) {
-	function include_template_part($slug, $name = ''){
-		$templates = array();
-
-		if( is_array($name) ) {
-			$data = $name;
-			do_action( "get_template_part_{$slug}", $slug);
-
-			$templates[] = "{$slug}.php";
-
-			extract($data);
-			include(locate_template($templates));
-
-		} else {
-
-			do_action( "get_template_part_{$slug}", $slug, $name );
-			
-			$name = (string) $name;
-			if ( '' !== $name )
-				$templates[] = "{$slug}-{$name}.php";
-
-			locate_template($templates, true, false);
-			
-		}
+if ( ! function_exists( 'include_template_part' ) ) {
+	function include_template_part($slug, $data = array()){
 		
+		$templates = array();
+		$templates[] = "{$slug}.php";
+		
+		do_action( "get_template_part_{$slug}", $slug, $data );
+
+		if( is_array($data) ) extract($data);
+		
+		include(locate_template($templates));		
+	}
+}
+
+if ( ! function_exists( 'include_module' ) ) {
+	function include_module($slug, $data = '') {
+		include_template_part('inc/modules/'. $slug, $data);
 	}
 }
 
@@ -214,13 +209,5 @@ if ( ! function_exists( 'sort_tag_score' )) {
 		} else {
 			return $item1['score'][1] < $item2['score'][1] ? -1 : 1; // ASC
 		}
-	}
-}
-
-if ( ! function_exists( 'get_image_url' )) {
-	function get_image_url($attachment_id, $size = 'thumbnail') {
-		$image = wp_get_attachment_image_src( $attachment_id, $size );
-				
-		return $image[0];
 	}
 }
