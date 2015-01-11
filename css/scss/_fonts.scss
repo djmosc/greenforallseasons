@@ -1,3 +1,36 @@
+@font-face {
+    font-family: 'Miller Banner Roman';
+    src: url('fonts/millerbanner_roman.eot');
+    src: url('fonts/millerbanner_roman.eot?#iefix') format('embedded-opentype'),
+         url('fonts/millerbanner_roman.woff') format('woff'),
+         url('fonts/millerbanner_roman.ttf') format('truetype'),
+         url('fonts/millerbanner_roman.svg#millerbannerroman') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miller Banner Italic';
+    src: url('fonts/millerbanner_italic.eot');
+    src: url('fonts/millerbanner_italic.eot?#iefix') format('embedded-opentype'),
+         url('fonts/millerbanner_italic.woff') format('woff'),
+         url('fonts/millerbanner_italic.ttf') format('truetype'),
+         url('fonts/millerbanner_italic.svg#millerbanneritalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miller Banner Light';
+    src: url('fonts/millerbanner_light.eot');
+    src: url('fonts/millerbanner_light.eot?#iefix') format('embedded-opentype'),
+         url('fonts/millerbanner_light.woff') format('woff'),
+         url('fonts/millerbanner_light.ttf') format('truetype'),
+         url('fonts/millerbanner_light.svg#millerbannerlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @mixin arial {
 	font-family: Arial, Helvetica, sans-serif;
 }
@@ -6,28 +39,72 @@
 	@include arial;
 }
 
-@mixin monotype-old {
-	font-family:'Monotype Old Style W01';
-}
-
-.monotype-old {
-	@include monotype-old;
-}
-
-@mixin monotype-garamond {
+@mixin garamond {
 	font-family:'Monotype Garamond W01';
+	font-weight: 400;
+	font-style: normal;
 }
 
-.monotype-garamond {
-	@include monotype-garamond;
+.garamond {
+	@include garamond;
+}
+
+@mixin garamond-italic {
+	font-family:'Monotype Garamond W01';
+	font-weight: 400;
+	font-style: italic;
+}
+
+.garamond-italic {
+	@include garamond-italic;
 }
 
 @mixin futura {
-	font-family:'BT Futura W01';
+	font-family:'L Futura W01';
+	font-weight: 400;
+	font-style: normal;
 }
 
 .futura {
 	@include futura;
 }
 
+@mixin futura-bold {
+	font-family:'L Futura W01';
+	font-weight: 700;
+	font-style: normal;
+}
 
+.futura-bold {
+	@include futura-bold;
+}
+
+@mixin miller {
+	font-family: 'Miller Banner Roman'; 
+	font-weight: normal;
+	font-style: normal;
+}
+
+.miller {
+	@include miller;
+}
+
+@mixin miller-italic {
+	font-family: 'Miller Banner Italic'; 
+	font-weight: normal;
+	font-style: normal;
+}
+
+.miller-italic {
+	@include miller-italic;
+}
+
+@mixin miller-light {
+	font-family: 'Miller Banner Light'; 
+	font-weight: normal;
+	font-style: normal;
+}
+
+.miller-light {
+	@include miller-light;
+}
