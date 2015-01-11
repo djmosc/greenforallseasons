@@ -82,7 +82,7 @@
 		display: block;
 
 		&:hover {
-			.black-btn {
+			.primary-btn {
 				background: #FFF;
 				color: #000;
 				@include box-shadow(none);
@@ -98,7 +98,7 @@
 			text-align: center;
 		}
 
-		.black-btn {
+		.primary-btn {
 			@include transition(all 0.3s ease);
 		}
 

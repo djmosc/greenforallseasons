@@ -45,7 +45,7 @@ if(!empty($products)) :
 		    <div class="overlay">
 		        <header class="header">
 		        	<h5 class="title"><?php echo $product->product_name; ?></h5>
-		            <span class="white-btn read-more-btn arrow-right-btn"><?php _e("Buy now", THEME_NAME); ?></span>
+		            <span class="primary-btn read-more-btn arrow-right-btn"><?php _e("Buy now", THEME_NAME); ?></span>
 		        </header>
 		    </div>
 		</a>

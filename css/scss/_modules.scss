@@ -179,7 +179,7 @@ blockquote {
 
 
 	.page-numbers {
-		@extend .white-btn;
+		@extend .primary-btn;
 		padding: 1em 1.5em;
 		margin: 0 0.2em;
 
@@ -596,7 +596,7 @@ blockquote {
 			margin-bottom: 0;
 		}
 
-		.black-btn {
+		.primary-btn {
 			display: block;
 		}
 	}

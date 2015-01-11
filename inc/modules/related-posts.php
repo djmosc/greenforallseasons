@@ -40,7 +40,7 @@ if ( $custom_query->have_posts() ) : ?>
                         <header class="header">
                             <h5 class="title"><?php the_title();?></h5>
                             <div class="meta"><span class="date"><?php the_time(get_option('date_format')); ?></span></div>
-                            <span href="<?php the_permalink(); ?>" class="black-btn read-more-btn"><?php _e("Read", THEME_NAME); ?></span>
+                            <span href="<?php the_permalink(); ?>" class="primary-btn read-more-btn"><?php _e("Read", THEME_NAME); ?></span>
                         </header>
                     </div>
                 </a>

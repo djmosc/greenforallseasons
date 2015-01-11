@@ -18,7 +18,7 @@
         <header class="header">
             <h5 class="title"><?php the_title();?></h5>
             <!--div class="meta"><span class="price"><?php echo get_product_price(); ?></span></div-->
-            <span class="white-btn read-more-btn arrow-right-btn"><?php _e("Buy now", THEME_NAME); ?></span>
+            <span class="primary-btn read-more-btn arrow-right-btn"><?php _e("Buy now", THEME_NAME); ?></span>
         </header>
     </div>
 <?php if( isset($url) ): ?>

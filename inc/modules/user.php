@@ -14,7 +14,7 @@
 		</div>
 		<?php endif; ?>
 		<div class="read-more">
-			<a class="black-btn" href="<?php echo get_author_posts_url($id); ?>"><?php _e("View Articles"); ?></a>
+			<a class="primary-btn" href="<?php echo get_author_posts_url($id); ?>"><?php _e("View Articles"); ?></a>
 		</div>
 		<div class="social">
 			<span class="label"><?php _e("Follow"); ?> <?php echo $user_meta['first_name']; ?></span>

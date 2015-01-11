@@ -76,7 +76,7 @@ textarea {
 input[type=submit],
 input[type=reset],
 button[type=submit] {
-	@extend .black-btn;
+	@extend .primary-btn;
 
 	&:focus {
 		outline: none;
@@ -409,7 +409,7 @@ fieldset {
 		text-align: right;
 
 		input[type=submit] {
-			@extend .black-btn;
+			@extend .primary-btn;
 		}
 	}
 }

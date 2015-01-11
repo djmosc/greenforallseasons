@@ -40,7 +40,7 @@
                         <header class="header">
                             <h5 class="title"><?php the_title();?></h5>
                             <div class="meta"><span class="date"><?php the_time(get_option('date_format')); ?></span></div>
-                            <span class="black-btn arrow-right-btn read-more-btn"><?php _e("Read", THEME_NAME); ?></span>
+                            <span class="primary-btn arrow-right-btn read-more-btn"><?php _e("Read", THEME_NAME); ?></span>
                         </header>
                     </div>
                 </a>
