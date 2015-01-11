@@ -3,7 +3,7 @@
    ========================================================================== */
 
 button {
-	@extend .white-btn;
+	@extend .primary-btn;
 
 	&:disabled {
 		opacity: 0.5;	
@@ -16,64 +16,62 @@ button {
 }
 
 
-.white-btn {
+.primary-btn {
 	@include transition(all 0.3s ease);
 	display: inline-block;
-	font-size: 8px;
-	@include box-shadow(none);
-	text-transform: uppercase;
-	letter-spacing: 2px;
 	background: #FFF;
-	padding: 1em 5em;
-	color: #666;
+	padding: 0.8em 2em;
+	color: #000;
 	text-align: center;
-	border: 1px solid #666666;
-
-	&:hover {
-		background: #000;
-		color: #FFF;
-		@include box-shadow(none);
-	}
-}
-
-.black-btn {
-	@include transition(all 0.3s ease);
-	display: inline-block;
-	font-size: 8px;
-	@include box-shadow(none);
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	background: #000;
-	padding: 1em 5em;
-	color: #FFF;
-	text-align: center;
-	border: 1px solid #000;
-
-	&:hover {
-		background: #FFF;
-		color: #000;
-		@include box-shadow(none);
-	}
-}
-
-
-.red-btn {
-	display: inline-block;
-	font-size: 8px;
-	@include box-shadow(none);
-	text-transform: uppercase;
-	letter-spacing: 2px;
-	background: #701830;
-	padding: 12px 5em;
-	color: #FFF;
-	text-align: center;
-
+	border: 2px solid #000;
+	letter-spacing: 1px;
+	@include font-size(8);
+	@include futura-bold;
 
 	&:hover {
 		background: #000;
 		color: #FFF;
 	}
 }
+
+// .primary-btn {
+// 	@include transition(all 0.3s ease);
+// 	display: inline-block;
+// 	font-size: 8px;
+// 	@include box-shadow(none);
+// 	text-transform: uppercase;
+// 	letter-spacing: 2px;
+// 	background: #000;
+// 	padding: 1em 5em;
+// 	color: #FFF;
+// 	text-align: center;
+// 	border: 1px solid #000;
+
+// 	&:hover {
+// 		background: #FFF;
+// 		color: #000;
+// 		@include box-shadow(none);
+// 	}
+// }
+
+
+// .red-btn {
+// 	display: inline-block;
+// 	font-size: 8px;
+// 	@include box-shadow(none);
+// 	text-transform: uppercase;
+// 	letter-spacing: 2px;
+// 	background: #701830;
+// 	padding: 12px 5em;
+// 	color: #FFF;
+// 	text-align: center;
+
+
+// 	&:hover {
+// 		background: #000;
+// 		color: #FFF;
+// 	}
+// }
 
 .menu-btn {
 	text-transform: uppercase;
@@ -446,4 +444,8 @@ button {
 		@include transition(all 0.3s ease);
 		display: block;
 	}
+}
+
+.category-btn {
+	display: inline-block;
 }

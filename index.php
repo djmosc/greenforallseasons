@@ -1,8 +1,21 @@
 <?php global $wp_query; ?>
 <?php get_header(); ?>
+<p><a class="primary-btn">Hello</a></p>
+<p>
+	<a class="category-btn overlay-btn" >
+		<span class="category-name green-label">Bites</span>
+		<div class="image">
+			<img src="http://lorempixel.com/400/200" />
+		</div>
+		<div class="overlay">
+			<h4 class="sub-title">Sub title</h4>
+			<a class="primary-btn"><?php _e("Read all features", THEME_NAME); ?></a>
+		</div>
+	</a>
+</p>
 
-<h2>Nourish 
-banana & pomegranate pancakes</h2>
+
+<h2>hello</h2>
 <section id="index">
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 <?php if($paged === 1 && is_front_page()): ?>
@@ -21,7 +34,7 @@ banana & pomegranate pancakes</h2>
 					<?php echo get_excerpt(60); ?>
 				</div>
 				<div class="read-more">
-					<a class="read-more-btn black-btn" href="<?php the_permalink(); ?>"><?php _e("Read More", THEME_NAME); ?></a>
+					<a class="read-more-btn primary-btn" href="<?php the_permalink(); ?>"><?php _e("Read More", THEME_NAME); ?></a>
 				</div>
 				<?php get_template_part('inc/post-meta'); ?>
 			</div>
@@ -110,7 +123,7 @@ banana & pomegranate pancakes</h2>
 							<?php echo get_excerpt(60); ?>
 						</div>
 						<div class="read-more">
-							<a class="read-more-btn black-btn" href="<?php the_permalink(); ?>"><?php _e("Read More", THEME_NAME); ?></a>
+							<a class="read-more-btn primary-btn" href="<?php the_permalink(); ?>"><?php _e("Read More", THEME_NAME); ?></a>
 						</div>
 						<?php get_template_part('inc/post-meta'); ?>
 					</header>

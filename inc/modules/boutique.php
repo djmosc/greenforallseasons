@@ -33,7 +33,7 @@
 			<p class="cta-container">
 				<?php $products_page = get_field('products_page', 'options'); ?>
 				<?php //$products_page = get_post(6798); ?>
-				<a class="black-btn skew" href="<?php echo get_permalink($products_page->ID); ?>"><span><?php _e("Shop Now", THEME_NAME); ?></span></a>
+				<a class="primary-btn skew" href="<?php echo get_permalink($products_page->ID); ?>"><span><?php _e("Shop Now", THEME_NAME); ?></span></a>
 			</p>
 		</header>
 
@@ -54,7 +54,7 @@
 					    <div class="overlay">
 					        <header class="header">
 					            <h5 class="title"><?php echo $product->product_name; ?></h5>
-					            <span class="white-btn read-more-btn arrow-right-btn"><?php _e("Buy now", THEME_NAME); ?></span>
+					            <span class="primary-btn read-more-btn arrow-right-btn"><?php _e("Buy now", THEME_NAME); ?></span>
 					        </header>
 					    </div>
 					</a>

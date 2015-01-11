@@ -70,7 +70,7 @@ class Products extends WP_Widget {
 								<span class="meta">
 						            <span class="price"><?php echo $product->currency.$product->price; ?></span>
 					         	</span> 
-					            <!--span class="white-btn read-more-btn"><?php _e("Buy now", THEME_NAME); ?></span-->
+					            <!--span class="primary-btn read-more-btn"><?php _e("Buy now", THEME_NAME); ?></span-->
 					        </header>
 					    </div>
 					</a>

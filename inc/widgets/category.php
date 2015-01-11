@@ -36,7 +36,7 @@ class Category extends WP_Widget {
 			$image_attributes = wp_get_attachment_image_src( $image_id, array( 400, 180, 'bfi_thumb' => true) ); ?>
 		<a class="btn" href="<?php echo get_term_link($category); ?>">
 			<div class="cta-container">
-				<span class="white-btn"><span><?php echo $category->name; ?></span></span>
+				<span class="primary-btn"><span><?php echo $category->name; ?></span></span>
 			</div>
 			<div class="image">
 				<img src="<?php echo $image_attributes[0]; ?>">
