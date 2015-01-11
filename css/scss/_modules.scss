@@ -404,30 +404,12 @@ blockquote {
 	}	
 }
 
-.addthis_counter {
-	color: inherit;
-}
-
-
 .logo {
 	height: 0;
 	background: url(../images/logos/overthemoon.png) no-repeat;
 	background-size: contain;
 	padding-top: 55%;
 	display: block;
-}
-
-.box {
-	position: relative;
-	border: 1px solid #dadada;		
-	background: #FFF;
-}
-.dotted-border {
-	background: url(../images/backgrounds/dots.png);
-	padding: 12px;
-	> .inner {
-		background: #FFF;
-	}
 }
 
 .related-posts {
@@ -455,108 +437,10 @@ blockquote {
 	}
 }
 
-.boutique {
-
-	@include device-width(7) {
-		display: none;
-	}
-
-	> .inner {
-		padding: 1em;
-	}
-
-	.boutique-header {
-		padding: 40px 1em;
-		@include box-sizing(border-box);
-		float: left;
-		width: 220px;
-
-		.title {
-			text-align: center;
-			margin: 0;
-			@include font-size(30);
-
-			.italic {
-			}
-		}
-
-		.description {
-			margin-top: 0;
-			text-align: center;
-			@include font-size(12);
-		}
-
-		.cta-container {
-			margin-bottom: 0;
-		}
-
-		.primary-btn {
-			display: block;
-		}
-	}
-
-	.products {
-		margin-left: 240px;
-
-		.product-btn {
-			height: 200px;
-		}
-	}
-}
 
 
-.press-releases {
-	padding-left: 0;
-	padding-right: 0;
 
-	> .inner {
-		padding: 3em 0 1em 0;
-	}
 
-	.header {
-		.title {
-
-			margin: 0;
-			text-align: center;
-		}
-	}
-
-	.pagination {
-		margin: 1.6em;
-	}
-
-	.posts {
-		overflow: hidden;
-		margin: 0 -10px;
-		list-style: 0;
-		padding: 0;
-	}
-
-	.press {
-		margin: 0 0 2em 0;
-		.header {
-			margin: 0.2em 0;
-			text-align: center;
-			
-			.title,
-			.meta {
-				font-size: 10px;
-	
-			}
-
-			.meta {
-				color: #666;
-			}
-		}
-	}
-}
-
-.shopthepost-widget {
-	.rs-adblock {
-		padding: 1em;
-		text-align: center;
-	}
-}
 
 .navigation {
 	> ul {
