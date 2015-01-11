@@ -679,44 +679,6 @@ blockquote {
 	}
 }
 
-.post-header {
-	position: relative;
-
-	.post-title {
-		margin-top: 0.3em;
-	}
-
-	.post-excerpt {
-		margin: 1em 0;
-	}
-
-	.post-meta {
-		position: absolute;
-		bottom: 1px;
-		right: 1px;
-		background: #ffffff;
-
-		@include device-width(7) {
-			position: relative;
-			top: 0;
-			left: 0;
-			margin: 1em 0 0 0;
-			display: inline-block;
-		}
-
-		.shares-btn,
-		.comments-btn,
-		.post-date {
-			float: left;
-			border-left: 1px solid #f6f6f6;
-		}
-
-		.post-date {
-			padding: 1em;
-		}
-	}
-}
-
 .post-share {
 	background: #fbfbfb;
 	position: relative;
@@ -1039,16 +1001,83 @@ blockquote {
 	}
 }
 
+.green-label {
+	&:before {
+		content: 'Green';
+	}
+}
 
 .category-name {
 	display: inline-block;
 	background: #FFF;
-	padding: 0.3em;
+	padding: 0.3em 1em;
 	@include futura-bold;
 	@include font-size(8);
 	letter-spacing: 1px;
+	vertical-align: top;
 	
 	&:before {
 		color: #919191;
 	}
+}
+
+.author {
+
+	.image {
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+	}
+
+	.name {
+		@include futura-bold;
+		@include font-size(8);
+		letter-spacing: 1px;
+		display: block;
+	}
+}
+
+
+.post-item {
+	position: relative;
+
+	.category {
+		margin-top: -0.5em;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		@include translateX(-50%);
+	}
+
+	.image {
+		text-align: center;
+		
+		img {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	.header {
+		margin-top: -20px;
+		padding: 0 2em;
+		
+	}
+}
+
+.post-header {
+	text-align: center;
+
+	.title {
+		margin: 0.3em 0;
+	}
+
+	.excerpt {
+		text-align: center;
+		margin: 1em 0;
+	}
+}
+
+.post-excerpt {
+	@include font-size(12);
 }

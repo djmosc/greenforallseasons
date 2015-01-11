@@ -1,21 +1,72 @@
 <?php global $wp_query; ?>
 <?php get_header(); ?>
-<p><a class="primary-btn">Hello</a></p>
-<p>
+
+<div class="container">
+
+
+	<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h1>
+	<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h2>
+	<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h3>
+	<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h4>
+	<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h5>
+	<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h6>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
+
+	<p><a class="primary-btn">Hello</a></p>
+
 	<a class="category-btn overlay-btn" >
-		<span class="category-name green-label">Bites</span>
+		<span class="name category-name green-label">Bites</span>
 		<div class="image">
 			<img src="http://lorempixel.com/400/200" />
 		</div>
 		<div class="overlay">
-			<h4 class="sub-title">Sub title</h4>
-			<a class="primary-btn"><?php _e("Read all features", THEME_NAME); ?></a>
+			<h4 class="sub-name">Sub title</h4>
+			<span class="primary-btn"><?php _e("Read all features &raquo;", THEME_NAME); ?></span>
 		</div>
 	</a>
-</p>
 
+	<div class="author">
+		<div class="image circle">
+			<img src="http://lorempixel.com/100/100" />
+		</div>
+		<span class="name">This is a very long name</span>
+	</div>
 
-<h2>hello</h2>
+	<div class="post-item">
+		<div class="category">
+			<span class="name category-name green-label">Bites</span>
+		</div>
+		<div class="image">
+			<img src="http://lorempixel.com/600/600" />
+		</div>
+		<header class="header post-header">
+			<div class="author">
+				<div class="image circle">
+					<img src="http://lorempixel.com/100/100" />
+				</div>
+				<span class="name">This is a very long name</span>
+			</div>
+
+			<h3 class="title post-title"><a>This is the post title and it is very long</a></h3>
+			<div class="excerpt">
+				<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco...</p>
+			</div>
+			<div class="post-meta">
+				<span class="date">13th Februray, 2014</span>
+			</div>
+			<a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
+		</header>
+	</div>
+
+	<p><input type="text" placeholder="Enter your email" /></p>
+
+	<p><textarea placeholder="This is the placeholder"></textarea></p>
+
+	<p><input type="submit" value="Submit" /></p>
+
+	<p><buttton type="submit" value="Submit" /></p>
+</div>
 <section id="index">
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 <?php if($paged === 1 && is_front_page()): ?>

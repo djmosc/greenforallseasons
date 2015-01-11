@@ -6,10 +6,11 @@ html {
 body {
 	height: 100%;
 	background: #FFF;
-	color: #333333;
+	color: #646363;
 	@include font-size(15);
 	line-height: 1.5;
 	min-width: 250px;
+	@include garamond;
 }
 
 #tortilla {
