@@ -2,8 +2,8 @@
 /**
  * The template for displaying search forms in overthemoonblog
  *
- * @package overthemoonblog
- * @since overthemoonblog 1.0
+ * @package greenforallseasons
+ * @since greenforallseasons 1.0
  */
 ?>
 <form method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">

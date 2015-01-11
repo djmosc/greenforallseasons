@@ -2,8 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package overthemoonblog
- * @since overthemoonblog 1.0
+ * @package greenforallseasons
+ * @since greenforallseasons 1.0
  */
 
 get_header(); ?>

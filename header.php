@@ -4,8 +4,8 @@
  *
  * Displays all of the <head> section and everything up till <div id="main">
  *
- * @package overthemoonblog
- * @since overthemoonblog 1.0
+ * @package greenforallseasons
+ * @since greenforallseasons 1.0
  */
 ?>
 <!DOCTYPE html>
