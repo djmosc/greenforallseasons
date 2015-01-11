@@ -41,112 +41,6 @@ table {
    Custom
    ========================================================================== */
 
-.carousel {
-	position: relative;
-
-	&:hover {
-		.navigation {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
-
-	.items {
-		position: relative;
-		list-style: none;
-		padding: 0;
-		margin: 0;
-		li {
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-
-			&.current {
-				position: relative;
-				z-index: 100;
-			}
-
-			&.ready {
-				opacity: 1;
-			}
-
-			&.enter {
-				opacity: 1;
-				@include animation(fade-in 1s ease);
-			}
-
-			&.leave {
-				opacity: 0;
-				@include animation(fade-out 1s ease);
-			}
-		}
-	}
-
-	.navigation {
-		position: absolute;
-		top: 50%;
-		height: 0;
-		z-index: 200;
-		left: 0;
-		right: 0;
-		opacity: 0;
-		visibility: hidden;
-		@include transition(all 0.3s ease);
-		
-
-		@include device-width(8) {
-			font-size: 0.8em;
-		}
-
-		.prev-btn,
-		.next-btn {
-			width: 1.6em;
-			height: 1.6em;
-			position: absolute;
-			top: 0;
-			padding: 0;
-			display: inline-block;
-			background: #FFF;
-			color: #000;
-			margin-top: -1em;
-			text-align: center;
-			line-height: 1.4em;
-			&:hover,
-			&.hover {
-				background: #000;
-
-				&:before {
-					color: #FFF;
-				}
-			}	
-
-			&:before {
-				@include transition(all 0.3s ease);
-				font-size: 0.8em;
-				line-height: 1;
-				@extend [class^="icon-"];
-			}		
-		}
-
-
-		.prev-btn {
-			left: 0;
-			&:before {
-				@extend .icon-caret-left:before;
-			}
-		}
-
-		.next-btn {
-			right: 0;
-			&:before {
-				@extend .icon-caret-right:before;
-			}
-		}
-	}
-}
-
-
 .overlay {
 	position: absolute;
 	z-index: 100;
@@ -1145,68 +1039,16 @@ blockquote {
 	}
 }
 
-.user {
-	background: #f6f6f6;
-	@extend .clearfix;
 
-	.thumbnail {
-		float: left;
-		margin: 0 2em 0 0;
-
-		img {
-			display: block;
-		}
-	}
-
-	.content {
-		position: relative;
-		padding: 3em 2em 0 0;
-	}
-
-	hr {
-		margin-left: 0;
-	}
-
-	.title {
-		margin: 0 0 0.2em 0;
-	}
-
-	.job-role {
-		margin: 0;
-		@include font-size(12);
-	}
-
-	.description {
-		margin: 1em 0;
-		font-size: 0.9em;
-	}
-
-	.social {
-		position: absolute;
-		top: 1px;
-		right: 1px;
-
-		.label {
-			@include font-size(10);
-		}
-
-		.social-links {
-			vertical-align: middle;
-			display: inline-block;
-			margin-left: 0.5em;
-			background: #FFF;
-			li {
-				margin-left: 0;
-				border-left: 1px solid #f6f6f6;
-			} 
-
-			a {
-				text-align: center;
-				width: 18px;
-				padding: 8px 10px;
-				@include box-sizing(content-box);
-				color: #666;
-			}
-		}
+.category-name {
+	display: inline-block;
+	background: #FFF;
+	padding: 0.3em;
+	@include futura-bold;
+	@include font-size(8);
+	letter-spacing: 1px;
+	
+	&:before {
+		color: #919191;
 	}
 }
