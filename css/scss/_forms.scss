@@ -11,10 +11,11 @@ input[type=password],
 textarea,
 select {
 	@include box-sizing(border-box);
-	color: #a5a5a5;
+	color: #a0a0a0;
 	border: none;
 	letter-spacing: 1px;
-	@include font-size(8);
+	@include font-size(12);
+	
 	&:focus {
 		outline: none;
 	}
@@ -28,9 +29,11 @@ input[type=number],
 input[type=password],
 textarea {	
 	@include border-radius(0);
-	background: #f7f7f7;
-	padding: 1.4em;
+	@include futura;
+	background: #FFF;
+	padding: 1em;
 	max-width: 100%;
+	text-transform: none;
 
 	&:focus {
 		color: #000;
@@ -39,10 +42,6 @@ textarea {
 }
 
 textarea {
-	font-family: sans-serif;
-	@include font-size(11);
-	text-transform: none;
-	letter-spacing: 1px;
 }
 
 select {
@@ -75,8 +74,22 @@ textarea {
 
 input[type=submit],
 input[type=reset],
-button[type=submit] {
-	@extend .primary-btn;
+button[type=submit] {	
+	@include transition(all 0.3s ease);
+	display: inline-block;
+	background: #8a967c;
+	padding: 1em 2em;
+	color: #FFF;
+	text-align: center;
+	letter-spacing: 2px;
+	@include font-size(8);
+	@include futura-bold;
+	border: 0;
+
+	&:hover {
+		background: #000;
+		color: #FFF;
+	}
 
 	&:focus {
 		outline: none;

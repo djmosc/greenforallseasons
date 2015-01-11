@@ -658,7 +658,6 @@ blockquote {
 	}
 }
 
-
 .post-header {
 	position: relative;
 
@@ -1019,16 +1018,83 @@ blockquote {
 	}
 }
 
+.green-label {
+	&:before {
+		content: 'Green';
+	}
+}
 
 .category-name {
 	display: inline-block;
 	background: #FFF;
-	padding: 0.3em;
+	padding: 0.3em 1em;
 	@include futura-bold;
 	@include font-size(8);
 	letter-spacing: 1px;
+	vertical-align: top;
 	
 	&:before {
 		color: #919191;
 	}
+}
+
+.author {
+
+	.image {
+		width: 40px;
+		height: 40px;
+		display: inline-block;
+	}
+
+	.name {
+		@include futura-bold;
+		@include font-size(8);
+		letter-spacing: 1px;
+		display: block;
+	}
+}
+
+
+.post-item {
+	position: relative;
+
+	.category {
+		margin-top: -0.5em;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		@include translateX(-50%);
+	}
+
+	.image {
+		text-align: center;
+		
+		img {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	.header {
+		margin-top: -20px;
+		padding: 0 2em;
+		
+	}
+}
+
+.post-header {
+	text-align: center;
+
+	.title {
+		margin: 0.3em 0;
+	}
+
+	.excerpt {
+		text-align: center;
+		margin: 1em 0;
+	}
+}
+
+.post-excerpt {
+	@include font-size(12);
 }

@@ -9,8 +9,9 @@ a {
 	}
 }
 
-h1, h2, h3, h4, h5, h6, p {
+h1, h2, h3, h4, h5, h6 {
 	margin: 0;
+	color: #000;
 }
 
 h1 {
@@ -23,45 +24,34 @@ h2 {
 	@include miller-light;
 	@include font-size(50);
 	line-height: 1;
-	letter-spacing: -1px;
-	font-weight: normal;
 }
 
 h3 {
 	@include miller-light;
 	@include font-size(40);
 	line-height: 1;
-	letter-spacing: -1px;
-	font-weight: normal;
 }
 
 h4 {
 	@include miller-light;
 	@include font-size(34);
 	line-height: 1;
-	letter-spacing: -1px;
-	font-weight: normal;
 }
 
 h5 {
 	@include miller-light;
-	@include font-size(18);
+	@include font-size(25);
 	line-height: 1;
-	letter-spacing: -1px;
-	font-weight: normal;
 }
 
 h6 {
 	@include miller-light;
-	@include font-size(14);
+	@include font-size(18);
 	line-height: 1;
-	letter-spacing: -1px;
-	font-weight: normal;
 }
 
 p {
-	@include garamond;
-	@include font-size(15);
+	margin: 0;
 }
 
 .huge {

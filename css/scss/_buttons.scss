@@ -407,17 +407,12 @@ button {
 	}
 }
 
-.green-label {
-	&:before {
-		content: 'Green';
-	}
-}
-
 .category-btn {
 	display: inline-block;
 	position: relative;
+	color: #000;
 
-	.category-name {
+	.name {
 		display: block;
 		position: absolute;
 		top: 0;
@@ -431,8 +426,18 @@ button {
 		}
 	}
 
-	.category-image {
-		position: relative;
-		z-index: 100;
+	.image {
+
+	}
+
+	.overlay {
+		text-align: center;
+		top: 50%;
+		margin-top: -2.5em;
+	}
+
+	.sub-name {
+		@include garamond-italic;
+		margin: 0 0 0.5em 0;
 	}
 }
