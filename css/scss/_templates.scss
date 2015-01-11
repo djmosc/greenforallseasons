@@ -86,7 +86,7 @@
 
 	.latest {
 		display: inline-block;
-		@include futura-bold;
+	
 		font-size: 8px;
 		@include box-shadow(none);
 		text-transform: uppercase;
@@ -384,7 +384,7 @@
 			margin: 0;
 		}
 		.label {
-			@include futura-bold;
+		
 			font-size: 8px;
 		}
 
@@ -465,7 +465,7 @@
 			}
 
 			.date {
-				@include futura-bold;
+			
 				font-size: 8px;
 			}
 
@@ -565,7 +565,6 @@
 			}
 		}
 		.label {
-			@include garamond-italic;
 			@include font-size(12);
 			margin: 0.1em 0;
 			@include device-width(14) {
@@ -651,7 +650,7 @@
 
 			a {
 				display: block;
-				@include futura-bold;
+			
 				font-size: 8px;
 				padding: 4px;
 				text-align: center;
@@ -737,12 +736,10 @@
 
 			// .title {
 			// 	margin: 0;
-			// 	@include futura-bold;
 			// 	font-size: 10px;
 			// }
 			
 			// .meta {
-			// 	@include futura-bold;
 			// 	font-size: 10px;
 			// 	color: #666;
 			// 	margin: 0.5em 0 1em;

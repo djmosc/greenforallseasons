@@ -10,7 +10,6 @@ body {
 	@include font-size(15);
 	line-height: 1.5;
 	min-width: 250px;
-	@include garamond;
 }
 
 #tortilla {
@@ -281,7 +280,6 @@ body {
 			top: -1em;
 			margin: 0.25em 0 0 0;
 			@include font-size(60);
-			@include futura-light;
 
 			@include device-width(5) {
 				@include font-size(30);

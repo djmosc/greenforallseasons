@@ -382,7 +382,7 @@ blockquote {
 		.title {
 			@include font-size(15);
 			margin: 0.3em 0;
-			@include garamond-italic;
+		
 		}
 	}
 
@@ -443,7 +443,7 @@ blockquote {
 		display: inline-block;
 		padding: 1em 2em;
 		background: #FFF;
-		@include garamond-bold;
+	
 		font-size: 10px;
 		color: #000;
 	}
@@ -486,7 +486,6 @@ blockquote {
 			background: #FFF;
 			padding: 1em;
 			margin: 0;
-			@include garamond-italic;
 		}
 	}
 
@@ -556,7 +555,6 @@ blockquote {
 			}
 
 			.date {
-				@include futura-bold;
 				font-size: 8px;
 			}
 		}
@@ -581,19 +579,16 @@ blockquote {
 
 		.title {
 			text-align: center;
-			@include garamond;
 			margin: 0;
 			@include font-size(30);
 
 			.italic {
-				@include garamond-italic;
 			}
 		}
 
 		.description {
 			margin-top: 0;
 			text-align: center;
-			@include garamond-italic;
 			@include font-size(12);
 		}
 
@@ -651,7 +646,6 @@ blockquote {
 			
 			.title,
 			.meta {
-				@include futura-bold;
 				font-size: 10px;
 	
 			}
@@ -745,7 +739,6 @@ blockquote {
 
 	a {
 		display: inline-block;
-		@include garamond-bold;
 		text-transform: uppercase;
 		@include font-size(10);
 		padding: 3.5em 0;
@@ -780,7 +773,6 @@ blockquote {
 	}
 
 	a {
-		@include futura-bold;
 		@include font-size(8);
 		letter-spacing: 1px;
 		padding: 1.3em 0;
@@ -838,7 +830,6 @@ blockquote {
 	.share {
 		.title {
 			padding: 0.5em 0.6em;
-			@include garamond-italic;
 			display: inline-block;
 		}
 
@@ -877,12 +868,10 @@ blockquote {
 
 .post-date {
 	@include font-size(12);
-	@include garamond-italic;
 }
 
 .post-category {
 	display: inline-block;
-	@include garamond-bold;
 	text-transform: uppercase;
 	@include font-size(10);
 	letter-spacing: 2px;
@@ -1020,7 +1009,6 @@ blockquote {
 			}
 
 			.says {
-				@include garamond-italic;
 				color: #848484;
 			}
 		}
@@ -1141,7 +1129,6 @@ blockquote {
 
 		.title {
 			letter-spacing: 0;
-			@include garamond-italic;
 		}
 
 		.description {
@@ -1186,7 +1173,6 @@ blockquote {
 
 	.job-role {
 		margin: 0;
-		@include garamond-italic;
 		@include font-size(12);
 	}
 
@@ -1201,7 +1187,6 @@ blockquote {
 		right: 1px;
 
 		.label {
-			@include garamond-italic;
 			@include font-size(10);
 		}
 

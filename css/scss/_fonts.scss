@@ -6,69 +6,28 @@
 	@include arial;
 }
 
+@mixin monotype-old {
+	font-family:'Monotype Old Style W01';
+}
+
+.monotype-old {
+	@include monotype-old;
+}
+
+@mixin monotype-garamond {
+	font-family:'Monotype Garamond W01';
+}
+
+.monotype-garamond {
+	@include monotype-garamond;
+}
 
 @mixin futura {
-	font-family: 'L Futura W01';
-	font-weight: 400;
-	font-style: normal;
+	font-family:'BT Futura W01';
 }
 
 .futura {
 	@include futura;
 }
 
-@mixin futura-bold {
-	font-family: 'L Futura W01';
-	font-weight: 500;
-	font-style: normal;
-	text-transform: uppercase;
-}
 
-.futura-bold {
-	@include futura-bold;
-}
-
-@mixin futura-light {
-	font-family: 'L Futura W01';
-	font-weight: 300;
-	font-style: normal;
-	text-transform: uppercase;
-}
-
-.futura-light {
-	@include futura-light;
-}
-
-@mixin garamond {
-	font-family:'Simoncini Garamond W01';
-	font-weight: 400;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-}
-
-.garamond {
-	@include garamond;
-}
-
-@mixin garamond-italic {
-	font-family: 'Simoncini Garamond W01'; 
-	font-weight: 400;
-	font-style: italic;
-	text-transform: none;
-	-webkit-font-smoothing: antialiased;
-}
-
-.garamond-italic {
-	@include garamond-italic;
-}
-
-@mixin garamond-bold {
-	font-family: 'Simoncini Garamond W01'; 
-	font-weight: 700;
-	font-style: normal;
-	-webkit-font-smoothing: antialiased;
-}
-
-.garamond-bold {
-	@include garamond-bold;
-}

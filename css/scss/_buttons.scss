@@ -19,7 +19,6 @@ button {
 .white-btn {
 	@include transition(all 0.3s ease);
 	display: inline-block;
-	@include futura-bold;
 	font-size: 8px;
 	@include box-shadow(none);
 	text-transform: uppercase;
@@ -40,7 +39,6 @@ button {
 .black-btn {
 	@include transition(all 0.3s ease);
 	display: inline-block;
-	@include futura-bold;
 	font-size: 8px;
 	@include box-shadow(none);
 	text-transform: uppercase;
@@ -61,7 +59,6 @@ button {
 
 .red-btn {
 	display: inline-block;
-	@include garamond;
 	font-size: 8px;
 	@include box-shadow(none);
 	text-transform: uppercase;
@@ -289,11 +286,9 @@ button {
 		@include font-size(12);
 		color: #666;
 		margin: 0.5em 0 1em;
-		@include garamond-italic;
 	}
 
 	.category {
-		@include garamond;
 		text-transform: uppercase;
 		@include font-size(10);
 		letter-spacing: 2px;
@@ -312,7 +307,6 @@ button {
 	background: none;
 	border: 0;
 	text-align: center;
-	@include futura-bold;
 	font-size: 9px;
 	letter-spacing: 1px;
 	display: inline-block;
@@ -334,7 +328,6 @@ button {
 	background: none;
 	border: 0;
 	text-align: center;
-	@include futura-bold;
 	font-size: 9px;
 	letter-spacing: 1px;
 	display: inline-block;
@@ -371,7 +364,6 @@ button {
 
 .comments-btn {
 	display: inline-block;
-	@include garamond-italic;
 	@include font-size(13);
 	padding: 0.8em;
 	&:before {
@@ -385,7 +377,6 @@ button {
 
 .shares-btn {
 	display: inline-block;
-	@include garamond-italic;
 	@include font-size(13);
 	padding: 0.8em;
 	&:before {
@@ -435,7 +426,6 @@ button {
 		z-index: 100;
 		opacity: 0;
 		@include transition(all 0.3s ease);
-		@include garamond-italic;
 		line-height: 1;
 		@include font-size(25);
 	}

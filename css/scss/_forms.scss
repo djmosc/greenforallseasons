@@ -13,7 +13,6 @@ select {
 	@include box-sizing(border-box);
 	color: #a5a5a5;
 	border: none;
-	@include futura-bold;
 	letter-spacing: 1px;
 	@include font-size(8);
 	&:focus {
@@ -99,7 +98,6 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 
 label {
 	margin: 0 0 0.3em 0;
-	@include garamond;
 	@include font-size(8);
 }
 
@@ -158,8 +156,7 @@ fieldset {
 						}
 					}
 
-					.gfield_label {
-						@include futura-bold;
+					.gfield_label {						
 						@include font-size(8);
 						letter-spacing: 2px;
 					}
@@ -387,7 +384,6 @@ fieldset {
 	}
 
 	label {
-		@include futura-bold;
 		width: 80px;
 		display: block;
 		float: left;
@@ -455,7 +451,6 @@ fieldset {
 			}
 
 			.gform_description {
-				@include garamond-italic;
 			}
 
 			hr {

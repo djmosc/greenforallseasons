@@ -145,7 +145,7 @@ function custom_styles() {
 	global $wp_styles, $template_directory_uri;
 
 	wp_enqueue_style( 'style', $template_directory_uri . '/css/style.css' );	
-	wp_enqueue_style( 'fonts', '//fast.fonts.net/cssapi/1989ab9f-02aa-4d8b-8f9c-3bbff4bdb076.css' );	
+	wp_enqueue_style( 'fonts', '//fast.fonts.net/cssapi/50464cb2-8cdc-4173-9dd4-112199df03a0.css' );	
 
 }
 
