@@ -52,11 +52,11 @@ h5 {
 }
 
 h6 {
-	@include futura;
-	@include font-size(15);
+	@include miller-light;
+	@include font-size(14);
 	line-height: 1;
-	letter-spacing: 2px;
-	text-transform: uppercase;
+	letter-spacing: -1px;
+	font-weight: normal;
 }
 
 p {
