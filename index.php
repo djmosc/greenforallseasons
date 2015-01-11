@@ -1,6 +1,8 @@
 <?php global $wp_query; ?>
 <?php get_header(); ?>
 
+<h2>Nourish 
+banana & pomegranate pancakes</h2>
 <section id="index">
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
 <?php if($paged === 1 && is_front_page()): ?>

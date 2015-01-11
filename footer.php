@@ -17,9 +17,9 @@
 					<a class="logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
 				</h1>
 
-				<?php wp_nav_menu( array( 'depth' => 1, 'theme_location' => 'footer_primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
+				<?php wp_nav_menu( array( 'depth' => 1, 'theme_location' => 'secondary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
 				<div class="clearfix"></div>
-				<?php wp_nav_menu( array( 'depth' => 1, 'theme_location' => 'footer_secondary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'secondary-navigation navigation' )); ?>
+				<?php wp_nav_menu( array( 'depth' => 1, 'theme_location' => 'primary', 'depth' => 1, 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'secondary-navigation navigation' )); ?>
 
 			</div>
 		</div>		
