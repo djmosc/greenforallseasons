@@ -4,32 +4,11 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package overthemoonblog
- * @since overthemoonblog 1.0
+ * @package greenforallseasons
+ * @since greenforallseasons 1.0
  */
 ?>
 	</div><!-- #main .site-main -->
-	<?php
-	//$images = get_instagram_images(10, 1523373132);
-	$images = get_instagram_images(10, 1170070486);
-
-	if( !empty($images) ):
-	?>
-	<div id="instagram">
-		<header class="header">
-			<h2 class="title"><?php _e("Instagram", THEME_NAME); ?></h2>
-			<a class="white-btn" href="http://instagram.com/otmblog" target="_blank"><i class="icon-instagram"></i> @otmblog</a>
-		</header>
-		
-		<div class="images clearfix">
-			<?php foreach($images as $image): ?>
-			<a class="image overlay-btn" href="<?php echo $image['link']; ?>" target="_blank">
-				<img src="<?php echo $image['url']; ?>" />
-			</a>
-			<?php endforeach; ?>
-		</div>
-	</div>
-	<?php endif; ?>
 	
 	<footer id="footer" class="site-footer" role="contentinfo">
 		<div class="top">

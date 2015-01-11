@@ -1,6 +1,6 @@
 <?php
 
-define('THEME_NAME', 'overthemoonblog');
+define('THEME_NAME', 'greenforallsea');
 
 $template_directory = get_template_directory();
 
@@ -38,7 +38,6 @@ add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 add_filter( 'comment_form_defaults', 'custom_comment_form_defaults');
 
-add_filter('user_contactmethods','custom_user_contentmethods');
 
 
 
@@ -50,18 +49,12 @@ remove_shortcode('gallery');
 
 add_shortcode( 'gallery', 'custom_gallery' );
 
-add_shortcode( 'user', 'custom_user' );
-
-//add_shortcode( 'phone_number', 'custom_phone_number');
-
 
 function custom_setup_theme() {
 	
 	add_theme_support( 'automatic-feed-links' );
 	
 	add_theme_support( 'post-thumbnails' );
-
-	add_theme_support('woocommerce');
 
 	add_theme_support('editor_style');
 
@@ -70,7 +63,6 @@ function custom_setup_theme() {
 
 	register_nav_menus( array(
 		'header_primary' => __( 'Header - Primary', THEME_NAME ),
-		'header_secondary' => __( 'Header - Secondary', THEME_NAME ),
 		'footer_primary' => __( 'Footer - Primary', THEME_NAME ),
 		'footer_secondary' => __( 'Footer - Secondary', THEME_NAME ),
 	) );
@@ -83,11 +75,9 @@ function custom_init(){
 	global $template_directory;
 
 	require( $template_directory . '/inc/classes/bfi-thumb.php' );
-
-
-	acf_add_options_page();
-
 }
+
+if( function_exists('acf_add_options_page') ) acf_add_options_page();
 
 function custom_wp(){
 	
@@ -103,8 +93,6 @@ function custom_widgets_init() {
 	require( $template_directory . '/inc/widgets/category.php' );
 
 	require( $template_directory . '/inc/widgets/popular-posts.php' );
-
-	require( $template_directory . '/inc/widgets/instagram.php' );
 	
 	register_sidebar( array(
 		'name' => __( 'Default', THEME_NAME ),
@@ -159,8 +147,6 @@ function custom_styles() {
 	wp_enqueue_style( 'style', $template_directory_uri . '/css/style.css' );	
 	wp_enqueue_style( 'fonts', '//fast.fonts.net/cssapi/1989ab9f-02aa-4d8b-8f9c-3bbff4bdb076.css' );	
 
-	wp_dequeue_style('instag-slider');
-
 }
 
 function custom_the_content_feed($content, $type){
@@ -212,30 +198,6 @@ function get_post_images() {
 	return $images;
 }
 
-function get_instagram_images($count, $user_id) {
-	$images = get_transient( 'instagram_images' );
-	
-	//if( $images !== false ) return $images;
-
-	$response = wp_remote_get('https://api.instagram.com/v1/users/'.$user_id.'/media/recent?count='.$count.'&access_token=975210125.a2e2346.7be3fa000252400aacc231aca788fa7a');
-	
-	if ( ! is_wp_error($response)) {
-		$json = json_decode(wp_remote_retrieve_body($response));
-		$data = (isset($json->data)) ? $json->data : null;
-		$images = [];
-
-		foreach($data as $image) {
-			$images[] = array(
-				'url' => $image->images->low_resolution->url,
-				'link' => $image->link
-			);
-		}
-
-		set_transient( 'instagram_images', $images, 60*60*24);
-	}
-
-	return $images;
-}
 
 function get_rs_products($folder, $limit = 100) {
 	$api = RS()->api;
@@ -311,40 +273,4 @@ function custom_gallery( $atts ) {
 		ob_end_clean();
     }
 	return $output;
-}
-
-
-function custom_user( $atts ) {
-
-	$output = '';
-
-    extract(shortcode_atts(array(
-        'id'      => array()
-    ), $atts));
-
-    $user = get_user_by('id', $id);
-    $user_meta = get_user_meta($id);
-   
-    foreach($user_meta as $key => $value) {
-    	if(is_array($value)) {
-    		$user_meta[$key] = $value[0];
-    	}
-    }
-    
-   	if( !empty($user) ){
-   		ob_start();
-	    include_template_part('inc/user', array('user' => $user, 'user_meta' => $user_meta));
-	    $output = ob_get_contents();
-		ob_end_clean();
-    }
-	return $output;
-}
-
-function custom_user_contentmethods( $contactmethods ) {
-	$contactmethods['instagram'] = "Instagram";
-	$contactmethods['job_role'] = "Job role";
-	unset($contactmethods['aim']);
-	unset($contactmethods['jabber']);
-	unset($contactmethods['yim']);
-	return $contactmethods;
 }
