@@ -525,7 +525,18 @@ blockquote {
 				}
 			}
 
-			&:hover {
+			&.current-menu-item, &.current-menu-ancestor {
+				&:before {
+					opacity: 1;
+
+					@include device-width(9) {
+						opacity: 0;
+					}
+
+				}				
+			}
+
+			&:hover, {
 				&:before {
 					opacity: 1;
 
