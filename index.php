@@ -68,6 +68,26 @@
 	<p><buttton type="submit" value="Submit" /></p>
 
 	<?php gravity_form(2, false); ?>
+
+	<div class="widget_editors-letter">
+		<img class="image" src="http://lorempixel.com/180/180" />
+		<div class="script">
+			<img src="<?php bloginfo('template_directory'); ?>/images/misc/editors-letter.png" alt="">	
+		</div>
+		<div class="author">
+			<img src="http://lorempixel.com/37/37" />
+			victoria-anne bull
+		</div>
+		<div class="date">
+			february 01,2015
+		</div>
+		<p>
+			“How work influences personal style and vice versa is an interesting question, and in this issue we have approached the subject from a number of different angles...”		
+			<a class="read-more" href="">Read Further &raquo;</a>	
+		</p>
+		
+	</div>
+
 </div>
 <section id="index">
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>

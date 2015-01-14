@@ -191,3 +191,49 @@
 	border: 1px solid #dadada;
 	padding: 1em 0; 
 }
+
+
+.widget_editors-letter {
+	width: 100%;
+	text-align: center;
+	padding: 2.5em 13% 3.5em;
+
+	.image {
+		@include border-radius(50%);
+	}
+
+	.script {
+		margin-top: -1.5em;
+	}
+
+	.author {
+		@include futura-bold;
+		@include font-size(10);
+		margin-top: -1em;
+
+		img {
+			@include border-radius(50%);
+			vertical-align: middle;
+			margin-right: 0.3em;
+		}
+	}
+
+	.date {
+		@include futura;
+		color: #5b5b5b;
+		@include font-size(11);
+		margin: 1.5em 0;
+	}
+
+	p {
+		@include font-size(15);
+		@include garamond-italic;
+		color: #3b3b3b;
+
+		.read-more {
+			@include futura-bold;
+			@include font-size(10);
+			margin-left: .5em;
+		}
+	}
+}
