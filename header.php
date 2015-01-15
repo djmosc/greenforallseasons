@@ -33,22 +33,16 @@
 		<div class="overlay"></div>
 	</div>
 	<header id="header" role="banner">
-		<div class="top">
-			<div class="inner container">
-				<h1 class="logo-container">
-					<span class="tagline"><?php echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?></span>
-					<a class="icon icon-logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
-				</h1>
-				<?php wp_nav_menu( array( 'depth' => 0, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
-			</div>
+		<div class="inner container">
+			<h1 class="logo-container">
+				<span class="tagline"><?php echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?></span>
+				<a class="icon icon-logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
+			</h1>
+			<?php wp_nav_menu( array( 'depth' => 0, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
 		</div>
-		<div class="bottom">
-			<div class="inner container">
-				<div class="info">
-					<?php get_search_form(); ?>
-					<?php include_module('social-links'); ?>
-				</div>
-			</div>
+		<div class="info">
+			<?php get_search_form(); ?>
+			<?php include_module('social-links'); ?>
 		</div>
 	</header><!-- #header -->
 	<div id="main" class="site-main" role="main">

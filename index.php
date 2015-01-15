@@ -68,6 +68,11 @@
 	<p><buttton type="submit" value="Submit" /></p>
 
 	<?php gravity_form(2, false); ?>
+
+
+	<div class="widget_newsletter">
+		
+	</div>
 </div>
 <section id="index">
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
