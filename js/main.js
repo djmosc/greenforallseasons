@@ -32,45 +32,13 @@
 		header: {
 			element: $('#header'),
 			init: function(){
-				var header = main.header,element,
-					menuBtn = $('.menu-btn-container a', header);
+				var header = main.header.element,
+					menuBtn = $('.menu-btn', header);
 
 				menuBtn.on('click', function(e){
 					e.preventDefault();
 					header.toggleClass('navigation-open');
 				});
-
-				main.header.searchform.init();
-
-			},
-
-			searchform: {
-				element: $('.search-form'),
-				init: function(){
-
-					var element = main.header.searchform.element,
-						header = main.header.element
-						body = main.body.element;
-
-					if(!element.length) return false;
-
-					var input = $('.input', element);
-
-					element.on('submit', function(e){
-						if(input.val()) {
-							
-						} else {
-							e.preventDefault();
-							header.toggleClass('search-open');
-						}
-					});
-
-					element.on('blur', function(){
-						if(!input.val()) {
-							header.removeClass('search-open');
-						}
-					});
-				}
 			}
 		},
 

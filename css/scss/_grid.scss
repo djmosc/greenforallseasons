@@ -28,14 +28,13 @@
 
 .container {
 	@include box-sizing(border-box);
-	width: 80%;
 	max-width: pxtoem(1200);
 	margin-left: auto;
 	margin-right: auto;
 	position: relative;
 
 	@include device-width(12) {
-		width: auto;
+		width: 95%;
 	}
 }
 

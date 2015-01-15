@@ -335,20 +335,42 @@ fieldset {
 .search-form {
 	position: relative;
 
+	::-webkit-input-placeholder {
+	   text-transform: uppercase;
+	   text-align: right;
+	}
+
+	:-moz-placeholder { /* Firefox 18- */
+	   text-transform: uppercase;
+	   text-align: right;  
+	}
+
+	::-moz-placeholder {  /* Firefox 19+ */
+	   text-transform: uppercase;
+	   text-align: right;  
+	}
+
+	:-ms-input-placeholder {  
+	   text-transform: uppercase;
+	   text-align: right;  
+	}	
+
 	.input {
 		@include font-size(8);
 		border: none;
 		vertical-align: middle;
 		background: #FFF;
-		padding: 1.6em 35px 1.6em 1.6em;
+		padding: 1.7em 1em 1.6em 1.6em;
+		text-align: right;  
+		color: #c0c0c0;
 	}
 
 	.submit-btn {
 		background: #FFF;
-		color: #aaaaaa;
+		color: #c0c0c0;
 		border: #FFF;
 		vertical-align: middle;
-		padding: 1em 2em;
+		padding: 1em;
 		
 		&:before {
 			@include font-size(12);
@@ -356,6 +378,9 @@ fieldset {
 
 		&:hover {
 			color: #000;
+			&:before {
+				color: #FFF;
+			}
 		}
 	}
 }
