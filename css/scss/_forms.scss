@@ -81,7 +81,7 @@ button[type=submit] {
 	text-align: center;
 	letter-spacing: 3px;
 	@include font-size(10);
-	@include futura-bold;
+	@include futura-heavy;
 	border: 0;
 
 	&:hover {
@@ -138,7 +138,7 @@ fieldset {
 			margin-bottom: 0.3em;
 
 			.gform_description {
-				@include futura-bold;
+				@include futura-heavy;
 				letter-spacing: 1px;
 				@include font-size(10);
 			}

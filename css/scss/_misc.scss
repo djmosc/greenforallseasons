@@ -109,3 +109,56 @@ hr {
 	@include border-radius(999px);
 	overflow: hidden;
 }
+
+.break-on-tablet {
+	@include device-width(8) {
+		width: 100% !important;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.break-on-mobile {
+	@include device-width(4) {
+		width: 100% !important;
+		margin-left: 0;
+		margin-right: 0;
+	}
+}
+
+.left, .alignleft {
+	float: left;
+}
+
+.right, .alignright {
+	float: right;
+}
+
+.clear-left {
+	clear: left;
+}
+
+.clear-right {
+	clear: right;
+}
+
+.aligncenter,
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+.full-height {
+	height: 100%;
+}
+
+.clear,
+.clearfix {
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
+	}
+}

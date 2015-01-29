@@ -2,30 +2,6 @@
    Grid
    ========================================================================== */
 
-.row {
-	> .inner {
-		margin: 0 -10px;
-		overflow: hidden;
-		@include device-width(8) {
-			margin: 0;
-		}
-	}
-}
-
-.clearfix {
-//	overflow: hidden;
-}
-
-.clear,
-.clearfix,
-.container {
-	&:after {
-		content: '';
-		display: table;
-		clear: both;
-	}
-}
-
 .container {
 	@include box-sizing(border-box);
 	max-width: pxtoem(1200);
@@ -35,6 +11,12 @@
 
 	@include device-width(12) {
 		width: 95%;
+	}
+
+	&:after {
+		content: '';
+		display: table;
+		clear: both;
 	}
 }
 
@@ -77,48 +59,4 @@ $i: 1;
 		margin-left: -($width);
 	}
 	$i: $i + 1;
-}
-
-.break-on-tablet {
-	@include device-width(8) {
-		width: 100% !important;
-		margin-left: 0;
-		margin-right: 0;
-	}
-}
-
-.break-on-mobile {
-	@include device-width(4) {
-		width: 100% !important;
-		margin-left: 0;
-		margin-right: 0;
-	}
-}
-
-.left, .alignleft {
-	float: left;
-}
-
-.right, .alignright {
-	float: right;
-}
-
-.clear-left {
-	clear: left;
-}
-
-.clear-right {
-	clear: right;
-}
-
-.aligncenter,
-.center {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	float: none;
-}
-
-.full-height {
-	height: 100%;
 }

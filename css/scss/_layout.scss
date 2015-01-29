@@ -28,6 +28,13 @@ body {
 	background: #FFF;
 	@include transition(all 0.3s ease);
 
+	&.navigation-open {
+		.primary-navigation {
+			height: auto;
+			max-height: 500px;
+		}
+	}
+
 	> .top {
 		position: relative;
 		z-index: 100;

@@ -26,7 +26,7 @@ button {
 	border: 2px solid #000;
 	letter-spacing: 2px;
 	@include font-size(8);
-	@include futura-bold;
+	@include futura-heavy;
 
 	&:hover {
 		background: #000;
@@ -190,7 +190,7 @@ button {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		background: rgba(#FFF, 0.3);
+		background: rgba(#FFF, 0.5);
 		visibility: hidden;
 	}
 
@@ -410,6 +410,15 @@ button {
 	position: relative;
 	color: #000;
 
+	&:hover {
+		.image {
+			img {
+				-webkit-filter: none;
+				filter: none;
+			}
+		}
+	}
+
 	.name {
 		display: block;
 		position: absolute;
@@ -425,7 +434,13 @@ button {
 	}
 
 	.image {
-
+		img {
+			-webkit-filter: grayscale(100%);
+			filter: grayscale(100%);
+			filter: gray;
+			filter: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' height='0'><filter id='greyscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0' /></filter></svg>#greyscale");
+			@include transition(all 0.3s ease);
+		}
 	}
 
 	.overlay {

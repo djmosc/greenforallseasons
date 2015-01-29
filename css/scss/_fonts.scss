@@ -70,15 +70,15 @@
 	@include futura;
 }
 
-@mixin futura-bold {
+@mixin futura-heavy {
 	font-family:'L Futura W01';
-	font-weight: 700;
+	font-weight: 600;
 	font-style: normal;
 	text-transform: uppercase;
 }
 
-.futura-bold {
-	@include futura-bold;
+.futura-heavy {
+	@include futura-heavy;
 }
 
 @mixin miller {
