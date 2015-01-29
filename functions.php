@@ -1,6 +1,6 @@
 <?php
 
-define('THEME_NAME', 'greenforallsea');
+define('THEME_NAME', 'greenforallseasons');
 
 $template_directory = get_template_directory();
 

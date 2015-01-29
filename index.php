@@ -3,6 +3,43 @@
 
 <section id="index">
 
+<div class="container">
+	
+	<div class="aaaowl-carousel">
+		<article <?php post_class('clearfix post-slide item'); ?>>
+			<div class="container inner">
+				<div class="post-header">
+					<span class="header"><?php _e('Top Stories', 'greenforallseasons' );  ?></span>
+					<div class="post-item">
+						<div class="category">
+							<span class="name category-name green-label">Bites</span>
+						</div>
+						<h2 class="post-title"><a href="<?php the_permalink(); ?>">Nourish banana &amp; pomegranate pancakes</a></h2>
+						<div class="post-excerpt">
+						 	In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus. 
+							<?php //echo get_excerpt(60); ?>
+						</div>
+						<div class="author">
+							<div class="image circle">
+								<img src="http://lorempixel.com/100/100" />
+							</div>
+							<span class="name">victoria - anne bull</span>
+						</div>						
+						<div class="read-more">
+							<a class="read-more-btn secondary-btn" href="<?php the_permalink(); ?>"><?php _e("Read More", THEME_NAME); ?></a>
+						</div>
+						<?php get_template_part('inc/post-meta'); ?>
+					</div>
+				</div>
+				<figure class="thumbnail">
+					<a href="<?php the_permalink(); ?>" class="overlay-btn">
+						<img src="http://lorempixel.com/840/470" />
+					</a>
+				</figure>
+			</div>
+		</article>
+	</div>
+
 	<div class="container">
 
 		<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h1>
@@ -68,6 +105,7 @@
 
 		<p><buttton type="submit" value="Submit" /></p>
 
+
 		<?php gravity_form(2, false); ?>
 		<div class="widget_editors-letter">
 			<img class="image" src="http://lorempixel.com/180/180" />
@@ -89,6 +127,7 @@
 		</div>
 		<div class="widget_newsletter">
 			
+
 		</div>
 
 		<div class="post-carousel owl-carousel">
@@ -114,5 +153,5 @@
 		</div>
 	</div>
 
-</section><!-- #index -->
+</section --><!-- #page -->
 <?php get_footer(); ?>

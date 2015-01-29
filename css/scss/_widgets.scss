@@ -204,14 +204,18 @@
 	}
 
 	.author {
-		@include futura-heavy;
-		@include font-size(10);
 		margin-top: -1em;
 
-		img {
+		.image {
 			@include border-radius(50%);
 			vertical-align: middle;
 			margin-right: 0.3em;
+		}
+
+		.name {
+			@include futura-heavy;
+			@include font-size(10);
+			@include inline-block;
 		}
 	}
 
