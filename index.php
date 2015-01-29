@@ -75,7 +75,9 @@
 				<span class="name category-name green-label">Bites</span>
 			</div>
 			<div class="image">
-				<img src="http://lorempixel.com/600/600" />
+				<a href="<?php the_permalink(); ?>">
+					<img src="http://lorempixel.com/600/600" />
+				</a>
 			</div>
 			<header class="header post-header">
 				<div class="author">
@@ -108,7 +110,7 @@
 
 		<?php gravity_form(2, false); ?>
 
-		<div class="widget_editors-letter">
+		<div id="" class="widget widget_editors-letter">
 			<img class="image" src="http://lorempixel.com/180/180" />
 			<div class="script">
 				<img src="<?php bloginfo('template_directory'); ?>/images/misc/editors-letter.png" alt="">	
@@ -134,7 +136,9 @@
 			<ul class="posts">
 				<li <?php post_class('clearfix post-item medium'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/65/65" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/65/65" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>This is the post title and</a></h3>
@@ -145,7 +149,9 @@
 				</li>
 				<li <?php post_class('clearfix post-item medium'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/65/65" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/65/65" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>This is the post title and it is very long</a></h3>
@@ -157,7 +163,9 @@
 				</li>	
 				<li <?php post_class('clearfix post-item medium'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/65/65" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/65/65" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>This is the post title and </a></h3>
@@ -176,7 +184,9 @@
 			<ul class="posts">
 				<li <?php post_class('clearfix post-item small'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/95/95" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/95/95" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>Style.com</a></h3>
@@ -187,7 +197,9 @@
 				</li>
 				<li <?php post_class('clearfix post-item small'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/95/95" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/95/95" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>ELLE UK</a></h3>
@@ -198,7 +210,9 @@
 				</li>
 				<li <?php post_class('clearfix post-item small'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/95/95" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/95/95" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>ELLE UK</a></h3>
@@ -209,7 +223,9 @@
 				</li>	
 				<li <?php post_class('clearfix post-item small'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/95/95" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/95/95" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>Style.com</a></h3>
@@ -220,7 +236,9 @@
 				</li>
 				<li <?php post_class('clearfix post-item small'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/95/95" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/95/95" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>ELLE UK</a></h3>
@@ -231,7 +249,9 @@
 				</li>
 				<li <?php post_class('clearfix post-item small'); ?>>
 					<div class="image">
-						<img src="http://lorempixel.com/95/95" />
+						<a href="<?php the_permalink(); ?>">
+							<img src="http://lorempixel.com/95/95" />
+						</a>
 					</div>
 					<header class="header post-header">
 						<h3 class="title post-title"><a>ELLE UK</a></h3>
@@ -241,7 +261,15 @@
 					</header>
 				</li>							
 			</ul>		
-		</div>				
+		</div>
+
+		<div id="connect-with-us" class="widget widget_connect-with-us">
+			<span><?php _e('Connect with us'); ?></span>
+			<a href="https://twitter.com/vickiannebull"><?php _e('@G4AS'); ?></a>
+			<?php include_module('social-links'); ?>
+		</div>
+
+
 
 		<div class="widget_newsletter">
 			
