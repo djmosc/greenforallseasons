@@ -1062,6 +1062,70 @@ blockquote {
 		padding: 0 2em;
 		
 	}
+
+	&.medium {
+		.image {
+			float: left;
+			margin-right: 1em;
+
+			img {
+				display: block;
+			}
+		}
+
+		.post-header {
+			text-align: left;
+			overflow: hidden;
+			margin-top: 0;
+			padding: 0;
+		}
+
+		.post-title {
+			@include miller;
+			@include font-size(18);
+			color: $black;	
+			margin-top: 0;			
+		}
+
+		.excerpt {
+			display: block;
+			line-height: 1.2;
+			text-align: left;
+			margin: .5em 0;
+		}
+	}
+
+	&.small {
+		width: 31%;
+		float: left;
+		margin: 1%;
+
+		.image {
+			text-align: center;
+			margin-bottom: 0.6em;
+		}
+
+		.post-header {
+			overflow: hidden;
+			margin-top: 0;
+			padding: 0;
+		}
+
+		.post-title {
+			@include miller;
+			@include font-size(18);
+			color: $black;	
+			margin-top: 0;			
+		}
+
+		.excerpt {
+			display: block;
+			margin: .5em 0 1em 0;
+			line-height: 1.2;
+			@include font-size(10);
+			color: #7f7f7f;
+		}
+	}		
 }
 
 .post-header {
@@ -1083,7 +1147,6 @@ blockquote {
 
 
 .post-slide {
-
 	.header {
 		@include miller-light;
 		@include font-size(18);

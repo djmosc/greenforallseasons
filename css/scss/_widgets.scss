@@ -7,6 +7,7 @@
 	border-top: 2px solid $black;
 	border-bottom: 2px solid $black;
 	padding: 0.1em 0;
+	@include font-size(37)
 }
 
 .widget {
@@ -15,6 +16,7 @@
 
 	.widget-title {
 		width: 60%;
+		margin-bottom: 0.6em;
 	}
 
 	.widget-sub-title {
@@ -143,37 +145,16 @@
 		list-style: none;
 
 		.post {
-
-			&:nth-child(2n) {
-				background: #f6f6f6;
-			}
-
-			// .btn {
-			// 	display: block;
-
-			// 	&:hover {
-			// 		background: #000;
-			// 		color: #FFF;
-			// 	}
-			// }
-
-			.featured-image {
-				float: left;
-				margin-right: 1em;
-
-				img {
-					display: block;
-				}
-			}
-
-			.post-header {
-				padding: 1em;
-			}
-
-			.post-title {
-
-			}
+			margin-bottom: 10px;
 		}
+	}
+}
+
+.widget_must-read {
+	.posts {
+		margin: 0;
+		padding: 0;
+		list-style: none;
 	}
 }
 

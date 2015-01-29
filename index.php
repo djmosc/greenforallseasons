@@ -107,15 +107,18 @@
 
 
 		<?php gravity_form(2, false); ?>
+
 		<div class="widget_editors-letter">
 			<img class="image" src="http://lorempixel.com/180/180" />
 			<div class="script">
 				<img src="<?php bloginfo('template_directory'); ?>/images/misc/editors-letter.png" alt="">	
 			</div>
 			<div class="author">
-				<img src="http://lorempixel.com/37/37" />
-				victoria-anne bull
-			</div>
+				<div class="image circle">
+					<img src="http://lorempixel.com/100/100" />
+				</div>
+				<span class="name">victoria - anne bull</span>
+			</div>	
 			<div class="date">
 				february 01,2015
 			</div>
@@ -125,6 +128,121 @@
 			</p>
 			
 		</div>
+
+		<div id="popular-posts" class="widget widget_popular_posts">
+			<h5 class="widget-title">Most Popular</h5>
+			<ul class="posts">
+				<li <?php post_class('clearfix post-item medium'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/65/65" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>This is the post title and</a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam...</p>
+						</div>
+					</header>
+				</li>
+				<li <?php post_class('clearfix post-item medium'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/65/65" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>This is the post title and it is very long</a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
+							quis nostrud exercitation ullamco...</p>
+						</div>
+					</header>
+				</li>	
+				<li <?php post_class('clearfix post-item medium'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/65/65" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>This is the post title and </a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
+							...</p>
+						</div>
+					</header>
+				</li>																
+			</ul>
+		</div>	
+
+
+		<div id="must-read" class="widget widget_must-read">
+			<h5 class="widget-title">Must Read</h5>
+			<ul class="posts">
+				<li <?php post_class('clearfix post-item small'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/95/95" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>Style.com</a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+						</div>
+					</header>
+				</li>
+				<li <?php post_class('clearfix post-item small'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/95/95" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>ELLE UK</a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+						</div>
+					</header>
+				</li>
+				<li <?php post_class('clearfix post-item small'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/95/95" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>ELLE UK</a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+						</div>
+					</header>
+				</li>	
+				<li <?php post_class('clearfix post-item small'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/95/95" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>Style.com</a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+						</div>
+					</header>
+				</li>
+				<li <?php post_class('clearfix post-item small'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/95/95" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>ELLE UK</a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+						</div>
+					</header>
+				</li>
+				<li <?php post_class('clearfix post-item small'); ?>>
+					<div class="image">
+						<img src="http://lorempixel.com/95/95" />
+					</div>
+					<header class="header post-header">
+						<h3 class="title post-title"><a>ELLE UK</a></h3>
+						<div class="excerpt">
+							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
+						</div>
+					</header>
+				</li>							
+			</ul>		
+		</div>				
+
 		<div class="widget_newsletter">
 			
 
