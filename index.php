@@ -110,7 +110,7 @@
 
 		<?php gravity_form(2, false); ?>
 
-		<div id="" class="widget widget_editors-letter">
+		<div id="editors-letter" class="widget widget_editors-letter">
 			<img class="image" src="http://lorempixel.com/180/180" />
 			<div class="script">
 				<img src="<?php bloginfo('template_directory'); ?>/images/misc/editors-letter.png" alt="">	
@@ -265,9 +265,23 @@
 
 		<div id="connect-with-us" class="widget widget_connect-with-us">
 			<span><?php _e('Connect with us'); ?></span>
-			<a href="https://twitter.com/vickiannebull"><?php _e('@G4AS'); ?></a>
+			<a href="https://twitter.com/G4ASeasons"><?php _e('@G4AS'); ?></a>
 			<?php include_module('social-links'); ?>
 		</div>
+
+		<div id="shop-now" class="widget widget_shop-now">
+			<h5 class="widget-title">Green's Most Wanted</h5>
+			<div class="widget-description">
+				Nullam sed bibendum nulla, id ultrices magna.
+				<a href="#" class="primary-btn">Shop Now</a>
+			</div>
+			<ul>
+				<li><a href=""><img src="http://lorempixel.com/160/240" /></a></li>
+				<li><a href=""><img src="http://lorempixel.com/160/240" /></a></li>
+				<li><a href=""><img src="http://lorempixel.com/160/240" /></a></li>
+				<li><a href=""><img src="http://lorempixel.com/160/240" /></a></li>
+			</ul>
+		</div>		
 
 
 
