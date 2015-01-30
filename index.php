@@ -287,12 +287,14 @@
 		</div>	
 
 		<div class="post-carousel owl-carousel">
+			
+			<?php for( $i = 0; $i < 5; $i++) : ?>
 			<div class="item image-slide">
 				<figure class="image">
 					<img src="http://lorempixel.com/800/510" />
-					<figcaption class="caption" >Personal style and vice versa</figcaption>
 				</figure>
 				<header class="header">
+					<figcaption class="caption" >Personal style and vice versa</figcaption>
 					<h5 class="title">1. Lorem ipsum dolor sit amet,</h5>
 					<div class="description">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -301,13 +303,19 @@
 					</div>
 
 					<div class="info">
-						<?php include_module('share'); ?>
-						<span class="page">1 of 6</span>
+						<?php include_module('share', array(
+							'title' => get_the_title(),
+							'url' => '',
+							'image_url' => '',
+							'excerpt' => ''
+						)); ?>
+						<div class="pages"><span class="page">1 of 6</span></div>
 					</div>
 				</header>
 			</div>
+			<?php endfor; ?>			
 		</div>
 	</div>
 
-</section --><!-- #page -->
+</section><!-- #index -->
 <?php get_footer(); ?>

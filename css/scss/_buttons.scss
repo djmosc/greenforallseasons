@@ -82,11 +82,14 @@ button {
 .instagram-btn,
 .pinterest-btn,
 .google-plus-btn,
-.youtube-btn {
+.youtube-btn,
+.email-btn {
 	color: #666666;
+	
 	&:hover {
 		text-decoration: none;
 	}
+
 	&:before {
 		@include transition(all 0.3s ease);
 		font-size: 110%;
@@ -94,6 +97,7 @@ button {
 		display: inline-block;
 	}
 }
+
 .facebook-btn {
 	&:before {
 		@include icon(facebook);
@@ -171,6 +175,17 @@ button {
 	&:hover {
 		&:before {
 			color: #da2713;
+		}
+	}
+}
+
+.email-btn {
+	&:before {
+		@include icon(envelope);
+	}
+	&:hover {
+		&:before {
+			color: #999;
 		}
 	}
 }
