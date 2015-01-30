@@ -40,15 +40,13 @@
 						<hr />
 					</header>
 					
-					<?php get_template_part('inc/content'); ?>
-
-					<?php get_template_part('inc/post-share'); ?>
+					<?php get_template_part('inc/modules/post-share'); ?>
 		
-					<?php get_template_part('inc/post-navigation'); ?>
+					<?php get_template_part('inc/modules/post-navigation'); ?>
 
-					<?php get_template_part('inc/post-comments'); ?>
+					<?php get_template_part('inc/modules/post-comments'); ?>
 			
-					<?php //get_template_part('inc/related-posts'); ?>
+					<?php get_template_part('inc/modules/post-more-in-category'); ?>
 
 				</article>
 			</div>

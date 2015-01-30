@@ -154,6 +154,7 @@
 				main.single.content.init();
 				main.single.products.init();
 				main.single.carousel.init();
+				main.single.comments.init();
 
 			},
 			featuredimage: {
@@ -303,7 +304,26 @@
 					if(!element.length) return false;
 
 				}
+			},
+
+			comments: {
+				element: $('.post-comments'),
+				init: function(){
+					var element = main.single.comments.element;
+
+					if(!element.length) return false;
+
+					var trigger = $('.leave-comment-btn', main.single.element);
+
+					trigger.on('click', function(event) {
+						event.preventDefault();
+						console.log('click');
+						main.single.comments.element.slideToggle(400);
+					});
+
+				}				
 			}
+
 		},
 
 		page: {

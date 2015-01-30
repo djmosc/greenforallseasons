@@ -131,7 +131,7 @@
 			
 		</div>
 
-		<div id="popular-posts" class="widget widget_popular_posts">
+		<div id="popular-posts" class="widget widget_posts">
 			<h5 class="widget-title">Most Popular</h5>
 			<ul class="posts">
 				<li <?php post_class('clearfix post-item medium'); ?>>
@@ -179,8 +179,11 @@
 		</div>	
 
 
-		<div id="must-read" class="widget widget_must-read">
+		<div id="must-read" class="widget widget_posts">
 			<h5 class="widget-title">Must Read</h5>
+			<div class="widget-description">
+				The six things you need to see today
+			</div>			
 			<ul class="posts">
 				<li <?php post_class('clearfix post-item small'); ?>>
 					<div class="image">
@@ -281,14 +284,7 @@
 				<li><a href=""><img src="http://lorempixel.com/160/240" /></a></li>
 				<li><a href=""><img src="http://lorempixel.com/160/240" /></a></li>
 			</ul>
-		</div>		
-
-
-
-		<div class="widget_newsletter">
-			
-
-		</div>
+		</div>	
 
 		<div class="post-carousel owl-carousel">
 			<div class="item image-slide">

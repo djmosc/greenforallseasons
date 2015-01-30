@@ -15,8 +15,6 @@
 		<div  class="span eight content <?php if($image) echo 'has-thumbnail'; ?>">
 			<p class="direction"><?php _e("Previous", THEME_NAME); ?></p>
 			<h5 class="post-title no-margin"><?php echo get_the_title($prev_post->ID) ?></h5>
-			<p class="post-date"><?php echo get_the_time(get_option( 'date_format'), $prev_post ); ?></p>
-
 		</div>
 	</a>
 	<?php endif; ?>
@@ -35,9 +33,7 @@
 		<?php endif; ?>
 		<div class="span eight content text-right right <?php if($image) echo 'has-thumbnail'; ?>">
 			<p class="direction"><?php _e("Next", THEME_NAME); ?></p>
-			<h5 class="post-title no-margin"><?php echo get_the_title($next_post->ID) ?></h5>
-			<p class="post-date"><?php echo get_the_time(get_option( 'date_format'), $next_post ); ?></p>
-			
+			<h5 class="post-title no-margin"><?php echo get_the_title($next_post->ID) ?></h5>			
 		</div>
 	</a>
 	<?php endif; ?>

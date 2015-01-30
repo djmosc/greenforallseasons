@@ -150,25 +150,26 @@
 	}
 }
 
-.widget_popular_posts {
+.widget_posts {
 	.posts {
 		margin: 0;
 		padding: 0;
 		list-style: none;
 		@extend .clearfix;
 
-		.post {
+		.post.medium {
 			margin-bottom: 10px;
 		}
-	}
-}
 
-.widget_must-read {
-	.posts {
-		margin: 0;
-		padding: 0;
-		list-style: none;
-		@extend .clearfix;
+		.post.small {
+			width: 31%;
+			float: left;
+			margin: 1%;
+
+			&:nth-child(3n+1) {
+				clear: both;
+			}
+		}		
 	}
 }
 
