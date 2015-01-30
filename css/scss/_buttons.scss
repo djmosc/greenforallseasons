@@ -34,6 +34,25 @@ button {
 	}
 }
 
+.secondary-btn {
+	@include transition(all 0.3s ease);
+	display: inline-block;
+	padding: 0.8em 2em;
+	color: $olive;
+	letter-spacing: 2px;
+	@include font-size(8);
+	@include futura-heavy;
+
+	&:after {
+		content: '\00bb';
+		margin-left: .5em;
+	}
+
+	&:hover {
+		color: #000;
+	}	
+}
+
 .menu-btn {
 	text-transform: uppercase;
 	@include font-size(13);
