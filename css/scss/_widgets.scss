@@ -10,15 +10,6 @@
 	@include font-size(37)
 }
 
-.widget-description {
-	position: absolute;
-	right: 25px;
-	top: 25px;
-	width: 35%;
-	@include miller-italic;
-	@include font-size(10);
-}
-
 .widget {
 	// margin-top: 1em;
 	// margin-bottom: 3em;
@@ -37,6 +28,15 @@
 		display: block;
 		margin-bottom: 0.8em;
 	}
+
+	.widget-description {
+		position: absolute;
+		right: 25px;
+		top: 25px;
+		width: 35%;
+		@include miller-italic;
+		@include font-size(10);
+	}	
 }
 
 .widget_text {
@@ -133,9 +133,6 @@
 .widget_products {
 	
 	.products {
-		list-style: none;
-		padding: 0;
-		margin: 0;
 
 		.product {
 			width: 50%;
@@ -152,9 +149,6 @@
 
 .widget_posts {
 	.posts {
-		margin: 0;
-		padding: 0;
-		list-style: none;
 		@extend .clearfix;
 
 		.post.medium {
@@ -187,7 +181,6 @@
 
 
 .widget_editors-letter {
-	width: 100%;
 	text-align: center;
 	padding: 2.5em 13% 3.5em;
 
@@ -290,9 +283,6 @@
 	}
 
 	ul {
-		margin: 0;
-		padding: 0;
-		list-style: none;
 		@extend .clearfix;	
 
 		li {
