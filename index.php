@@ -71,6 +71,9 @@
 		</div>
 
 		<div class="post-item">
+			<div class="top-category">
+				<span class="category-name green-label">Shape</span>
+			</div>		
 			<div class="category">
 				<span class="name category-name green-label">Bites</span>
 			</div>
