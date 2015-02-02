@@ -1032,6 +1032,23 @@ blockquote {
 
 }
 
+.featured-carousel {
+	.owl-nav {
+		display: none;
+	}
+
+	.owl-dots {
+		width: 32%;
+		right: 0;
+		bottom: 0;
+		left: auto;
+
+		.owl-dot {
+			padding: 1em 0.2em;
+		}
+	}
+}
+
 .green-label {
 	&:before {
 		content: 'Green';
@@ -1278,6 +1295,7 @@ blockquote {
 	}
 }
 .post-slide {
+
 	.header {
 		@include miller-light;
 		@include font-size(18);
@@ -1357,7 +1375,7 @@ blockquote {
 
 		.author {
 			@include inline-block;
-			text-align: right;
+			text-align: center;
 
 			@include device-width(4) {
 				display: none;

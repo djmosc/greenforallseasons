@@ -5,7 +5,7 @@
 
 <div class="container">
 	
-	<div class="owl-carousel">
+	<div class="owl-carousel featured-carousel">
 		<article <?php post_class('clearfix post-slide item'); ?>>
 			<div class="container inner">
 				<div class="post-header">
