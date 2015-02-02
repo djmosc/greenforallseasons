@@ -10,7 +10,7 @@
 			main.sidebar.init();
 			main.single.init();
 			main.page.init();
-			main.lightbox.init();
+			//main.lightbox.init();
 
 		},
 
@@ -62,7 +62,7 @@
 				});
 
 				main.sidebar.products.init();
-				main.sidebar.instagram.init();
+				//main.sidebar.instagram.init();
 
 
 			},
@@ -209,12 +209,10 @@
 					var element = main.single.comments.element;
 
 					if(!element.length) return false;
-
+					
 					var trigger = $('.leave-comment-btn', main.single.element);
-
 					trigger.on('click', function(event) {
 						event.preventDefault();
-						console.log('click');
 						main.single.comments.element.slideToggle(400);
 					});
 
