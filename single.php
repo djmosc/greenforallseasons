@@ -74,7 +74,7 @@
 						</div>
 						<div class="image">
 							<a href="<?php the_permalink(); ?>">
-								<img src="http://lorempixel.com/600/600" />
+								<img src="http://lorempixel.com/310/310" />
 							</a>
 						</div>
 						<header class="header post-header">
@@ -104,7 +104,7 @@
 						</div>
 						<div class="image">
 							<a href="<?php the_permalink(); ?>">
-								<img src="http://lorempixel.com/600/600" />
+								<img src="http://lorempixel.com/310/310" />
 							</a>
 						</div>
 						<header class="header post-header">
@@ -134,7 +134,7 @@
 						</div>
 						<div class="image">
 							<a href="<?php the_permalink(); ?>">
-								<img src="http://lorempixel.com/600/600" />
+								<img src="http://lorempixel.com/310/310" />
 							</a>
 						</div>
 						<header class="header post-header">

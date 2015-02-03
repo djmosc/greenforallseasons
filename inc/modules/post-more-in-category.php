@@ -13,7 +13,7 @@
 
     $custom_query = new WP_Query($args);
 if ( $custom_query->have_posts() ) : ?>
-<div class="more-from-category">
+<div class="more-from">
     <div class="inner">
         <header class="header lined-header">
             <h3 class="title skew"><span><?php _e("More in", THEME_NAME); ?> <?php echo $first_cat_name; ?></span></h3>
@@ -30,7 +30,7 @@ if ( $custom_query->have_posts() ) : ?>
                     </div>
                     <div class="image">
                         <a href="<?php the_permalink(); ?>">
-                            <img src="http://lorempixel.com/600/600" />
+                            <img src="http://lorempixel.com/190/190" />
                         </a>
                     </div>
                     <header class="header post-header">

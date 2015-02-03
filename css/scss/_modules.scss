@@ -334,7 +334,7 @@ blockquote {
 	}	
 }
 
-.more-from-category {
+.more-from {
 	border-top: 15px solid $black;
 	position: relative;
 
@@ -350,11 +350,13 @@ blockquote {
 		position: absolute;
 	}
 
-	.title {
-		@include miller-italic;
-		@include font-size(18);
-		text-align: center;
-		margin-top: 1.5em;
+	.header {
+			.title {
+			@include miller-italic;
+			@include font-size(18);
+			text-align: center;
+			margin-top: 1.5em;
+		}	
 	}
 
 	.posts {
@@ -363,6 +365,8 @@ blockquote {
 		list-style: none;
 
 		li {
+			margin-bottom: 2.5em;
+
 			@include device-width(6) {
 				width: 50%;
 			}
@@ -374,6 +378,7 @@ blockquote {
 
 			.post-header {
 				padding: 0 .5em;
+				margin-top: 1em;
 
 				.title {
 					margin: 0;
