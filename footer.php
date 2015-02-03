@@ -10,6 +10,107 @@
 ?>
 	</div><!-- #main .site-main -->
 	
+	<div class="related-posts">
+		<div class="container">
+			<div class="widget-header">
+				<h5 class="widget-title">You Might Also Like</h5>
+				<a href="">see all archive »</a>
+			</div>
+			<ul class="posts">
+				<li>
+					<div class="post-item">
+						<div class="top-category">
+							<span class="category-name green-label">Bite</span>
+						</div>					
+						<div class="category">
+							<span class="name category-name green-label">Bites</span>
+						</div>
+						<div class="image">
+							<a href="<?php the_permalink(); ?>">
+								<img src="http://lorempixel.com/310/310" />
+							</a>
+						</div>
+						<header class="header post-header">
+							<div class="author">
+								<div class="image circle">
+									<img src="http://lorempixel.com/100/100" />
+								</div>
+								<span class="name">This is a very long name</span>
+							</div>
+
+							<h3 class="title post-title"><a>This is the post title and it is very long</a></h3>
+							<div class="excerpt">
+								<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco...</p>
+							</div>
+							<a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
+						</header>
+					</div>					
+				</li>
+				<li>
+					<div class="post-item">
+						<div class="top-category">
+							<span class="category-name green-label">Bite</span>
+						</div>					
+						<div class="category">
+							<span class="name category-name green-label">Recipe</span>
+						</div>
+						<div class="image">
+							<a href="<?php the_permalink(); ?>">
+								<img src="http://lorempixel.com/310/310" />
+							</a>
+						</div>
+						<header class="header post-header">
+							<div class="author">
+								<div class="image circle">
+									<img src="http://lorempixel.com/100/100" />
+								</div>
+								<span class="name">This is a very long name</span>
+							</div>
+
+							<h3 class="title post-title"><a>This is the post title and it is very long</a></h3>
+							<div class="excerpt">
+								<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco...</p>
+							</div>
+							<a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
+						</header>
+					</div>					
+				</li>
+				<li>
+					<div class="post-item">
+						<div class="top-category">
+							<span class="category-name green-label">Bite</span>
+						</div>					
+						<div class="category">
+							<span class="name category-name green-label">Bites</span>
+						</div>
+						<div class="image">
+							<a href="<?php the_permalink(); ?>">
+								<img src="http://lorempixel.com/310/310" />
+							</a>
+						</div>
+						<header class="header post-header">
+							<div class="author">
+								<div class="image circle">
+									<img src="http://lorempixel.com/100/100" />
+								</div>
+								<span class="name">This is a very long name</span>
+							</div>
+
+							<h3 class="title post-title"><a>This is the post title and it is very long</a></h3>
+							<div class="excerpt">
+								<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
+								quis nostrud exercitation ullamco...</p>
+							</div>
+							<a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
+						</header>
+					</div>					
+				</li>				
+			</ul>			
+		</div>
+	</div>	
+	
 	<footer id="footer" class="site-footer" role="contentinfo">
 		<div class="top">
 			<div class="container inner">

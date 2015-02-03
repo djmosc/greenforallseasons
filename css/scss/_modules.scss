@@ -337,8 +337,18 @@ blockquote {
 .more-from {
 	border-top: 15px solid $black;
 	position: relative;
+	margin-top: 4px;
 
 	&:before {
+		content:' ';
+		display: block;
+		height: 4px;
+		background: $olive;
+		margin-top: -19px;
+	}
+
+
+	&:after {
 		content: ' ';
 		width: 0; 
 		height: 0; 
@@ -355,7 +365,7 @@ blockquote {
 			@include miller-italic;
 			@include font-size(18);
 			text-align: center;
-			margin-top: 1.5em;
+			margin-top: 2em;
 		}	
 	}
 
@@ -853,7 +863,6 @@ blockquote {
 	padding-left: 0;
 	padding-right: 0;
 	margin: 0;
-	border-bottom: 4px solid $olive;
 
 	.btn {
 		width: 48.5%;
@@ -877,6 +886,7 @@ blockquote {
 
 	.featured-image {
 		padding: 0;
+		margin-top: 4%;
 
 		@include device-width(6) {
 			display: none;
@@ -1514,4 +1524,15 @@ blockquote {
 			}
 		}
 	} 
+}
+
+.written-by {
+	@include miller-italic;
+	color: #5b5b5b;
+	margin: 20px 0;
+	clear: both;
+
+	a {
+		color: #b80004;
+	}
 }
