@@ -2,9 +2,11 @@
 <?php   
     global $post;
     $categories = get_the_category( $post->ID );
+
+
     $first_cat = $categories[0]->cat_ID;
     $first_cat_name = $categories[0]->name;
-    $output = '<div id="more-from-cat"><h3>' . $title . '</h3>';
+    var_dump($first_cat);
     $args = array(
         'category__in' => array( $first_cat ),
         'post__not_in' => array( $post->ID ),
