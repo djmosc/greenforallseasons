@@ -1081,6 +1081,7 @@ blockquote {
 
 .post-item {
 	position: relative;
+	@extend .clearfix;
 
 	.top-category {
 		text-align: center;

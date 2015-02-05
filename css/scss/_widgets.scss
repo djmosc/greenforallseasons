@@ -148,22 +148,30 @@
 }
 
 .widget_posts {
-	.posts {
+
+	&.size-small {
 		@extend .clearfix;
 
-		.post.medium {
-			margin-bottom: 10px;
-		}
+		.posts {
+			.post {
+				width: 31%;
+				float: left;
+				margin: 1%;
 
-		.post.small {
-			width: 31%;
-			float: left;
-			margin: 1%;
-
-			&:nth-child(3n+1) {
-				clear: both;
+				&:nth-child(3n+1) {
+					clear: left;
+				}
 			}
-		}		
+		}
+	}
+
+	&.size-medium {
+		.posts {
+
+			.post {
+				margin-bottom: 10px;
+			}
+		}
 	}
 }
 
@@ -174,13 +182,8 @@
 	}
 }
 
-.shopthepost-widget {
-	border: 1px solid #dadada;
-	padding: 1em 0; 
-}
 
-
-.widget_editors-letter {
+.widget_editor {
 	text-align: center;
 	padding: 2.5em 13% 3.5em;
 
@@ -228,7 +231,7 @@
 	}
 }
 
-.widget_connect-with-us {
+.widget_social {
 	text-align: center;
 
 	span {
@@ -276,7 +279,7 @@
 	}
 }
 
-.widget_shop-now {
+.widget_products {
 
 	.primary-btn {
 		margin-top: 10px;

@@ -275,3 +275,15 @@ function custom_gallery( $atts ) {
     }
 	return $output;
 }
+
+function get_post_category($id = '') {
+	global $post;
+
+	$id = ( $id ) ? $id : $post->ID;
+	
+	$terms = get_the_terms($id, 'category');
+	$term = array_pop($terms);
+	$term_id = ( !empty($term->term_id) ) ? $term->term_id : 0;
+
+	return get_top_level_term($term_id, 'course_category');
+}

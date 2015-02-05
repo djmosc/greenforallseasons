@@ -90,39 +90,39 @@
 			
 		</div>
 
-		<div id="popular-posts" class="widget widget_posts">
+		<div class="widget widget_posts size-small">
 			<h5 class="widget-title">Most Popular</h5>
 			<ul class="posts">
-				<li <?php post_class('clearfix'); ?>>
+				<li <?php post_class(); ?>>
 					<?php include_module('post-item', array(
 						'title' => 'Nourish banana &amp; pomegranate pancakes',
 						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
 						'url' => '#',
 						'image_url' => 'http://lorempixel.com/65/65',
 						'class' => 'medium',
-						'read_more' => true
+						'read_more' => false
 					)); ?>
 				</li>
 
-				<li <?php post_class('clearfix '); ?>>
+				<li <?php post_class(); ?>>
 					<?php include_module('post-item', array(
 						'title' => 'Nourish banana &amp; pomegranate pancakes',
 						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
 						'url' => '#',
 						'image_url' => 'http://lorempixel.com/65/65',
 						'class' => 'medium',
-						'read_more' => true
+						'read_more' => false
 					)); ?>
 				</li>
 
-				<li <?php post_class('clearfix'); ?>>
+				<li <?php post_class(); ?>>
 					<?php include_module('post-item', array(
 						'title' => 'Nourish banana &amp; pomegranate pancakes',
 						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
 						'url' => '#',
 						'image_url' => 'http://lorempixel.com/65/65',
 						'class' => 'medium',
-						'read_more' => true
+						'read_more' => false
 					)); ?>
 				</li>
 																				
@@ -130,100 +130,34 @@
 		</div>	
 
 
-		<div id="must-read" class="widget widget_posts">
+		<div class="widget widget_posts size-small">
 			<h5 class="widget-title">Must Read</h5>
 			<div class="widget-description">
 				The six things you need to see today
 			</div>			
 			<ul class="posts">
-				<li <?php post_class('clearfix post-item small'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/95/95" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>Style.com</a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
-						</div>
-					</header>
+				<?php for( $i = 0; $i < 5; $i++) : ?>
+				<li <?php post_class(); ?>>
+					<?php include_module('post-item', array(
+						'title' => 'Nourish banana &amp; pomegranate pancakes',
+						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
+						'url' => '#',
+						'image_url' => 'http://lorempixel.com/100/100',
+						'class' => 'small',
+						'read_more' => false
+					)); ?>
 				</li>
-				<li <?php post_class('clearfix post-item small'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/95/95" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>ELLE UK</a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
-						</div>
-					</header>
-				</li>
-				<li <?php post_class('clearfix post-item small'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/95/95" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>ELLE UK</a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
-						</div>
-					</header>
-				</li>	
-				<li <?php post_class('clearfix post-item small'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/95/95" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>Style.com</a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
-						</div>
-					</header>
-				</li>
-				<li <?php post_class('clearfix post-item small'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/95/95" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>ELLE UK</a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
-						</div>
-					</header>
-				</li>
-				<li <?php post_class('clearfix post-item small'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/95/95" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>ELLE UK</a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua.</p>
-						</div>
-					</header>
-				</li>							
+				<?php endfor; ?>										
 			</ul>		
 		</div>
 
-		<div id="connect-with-us" class="widget widget_connect-with-us">
+		<div class="widget widget_social">
 			<span><?php _e('Connect with us'); ?></span>
 			<a href="https://twitter.com/G4ASeasons"><?php _e('@G4AS'); ?></a>
 			<?php include_module('social-links'); ?>
 		</div>
 
-		<div id="shop-now" class="widget widget_shop-now">
+		<div class="widget widget_products">
 			<h5 class="widget-title">Green's Most Wanted</h5>
 			<div class="widget-description">
 				Nullam sed bibendum nulla, id ultrices magna.

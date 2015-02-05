@@ -9,8 +9,10 @@
 	?>
 	
 	<h3 class="title post-title"><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h3>
-	<div class="excerpt post-excerpt"><?php echo $excerpt; ?></div>
 	
+	<?php if( !empty($excerpt) ): ?>
+	<div class="excerpt post-excerpt"><?php echo $excerpt; ?></div>
+	<?php endif; ?>
 	<?php 
 	if( !empty($date) ) : 
 	include_module('post-meta', array('date' => $date));
