@@ -11,7 +11,7 @@
 	<h3 class="title post-title"><a href="<?php echo $url; ?>"><?php echo $title; ?></a></h3>
 	
 	<?php if( !empty($excerpt) ): ?>
-	<div class="excerpt post-excerpt"><?php echo $excerpt; ?></div>
+	<?php include_module('post-excerpt', array('excerpt' => $excerpt)); ?>
 	<?php endif; ?>
 	<?php 
 	if( !empty($date) ) : 

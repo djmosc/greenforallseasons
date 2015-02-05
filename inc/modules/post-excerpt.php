@@ -1,0 +1,1 @@
+<div class="excerpt post-excerpt"><?php echo $excerpt; ?></div>

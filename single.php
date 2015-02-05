@@ -11,7 +11,20 @@
 				<?php $class .= ' post-item ' . $featured_image_position . '-layout'; ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class($class); ?>>
 
-					<?php get_template_part('inc/modules/post-header'); ?>
+					<?php include_module('post-item', array(
+						'title' => 'Nourish banana &amp; pomegranate pancakes',
+						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
+						'image_url' => 'http://lorempixel.com/600/600',
+						'author' => array(
+							'name' => 'victoria - anne bull',
+							'image_url' => 'http://lorempixel.com/100/100'
+						),
+						'category' => array(
+							'name' => "Bites"
+						)
+					)); ?>
+
+					<?php //get_template_part('inc/modules/post-header'); ?>
 						
 						<div class="post-content">
 							<header class="header">
