@@ -482,8 +482,8 @@ table {
 
 @font-face {
   font-family: 'icons';
-  src: url("fonts/icons.eot?jrcmag");
-  src: url("fonts/icons.eot?#iefixjrcmag") format("embedded-opentype"), url("fonts/icons.woff?jrcmag") format("woff"), url("fonts/icons.ttf?jrcmag") format("truetype"), url("fonts/icons.svg?jrcmag#icons") format("svg");
+  src: url("fonts/icons.eot?ow53l0");
+  src: url("fonts/icons.eot?#iefixow53l0") format("embedded-opentype"), url("fonts/icons.woff?ow53l0") format("woff"), url("fonts/icons.ttf?ow53l0") format("truetype"), url("fonts/icons.svg?ow53l0#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], .menu-btn:before, .facebook-btn:before, .twitter-btn:before, .tumblr-btn:before, .instagram-btn:before, .pinterest-btn:before, .youtube-btn:before, .email-btn:before, .search-btn:before, .up-btn:before, .down-btn:before, .print-btn:after, .comments-btn:before, .shares-btn:before, .close-btn:before, .gallery-btn:before, .print-btn:before, .owl-nav .owl-next:after, .owl-nav .owl-prev:before, .primary-navigation > .menu > li.menu-item-has-children:after, .comment-list li .comment-reply-link:before, #author-archive ul.socials li a.twitter:before, #author-archive ul.socials li a.facebook:before, #author-archive ul.socials li a.web:before, [class*=" icon-"] {
@@ -498,17 +498,35 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-logo:before {
+  content: "\e604"; }
+
 .icon-web:before, #author-archive ul.socials li a.web:before {
+  content: "\e607"; }
+
+.icon-arrow-left:before, .owl-nav .owl-prev:before {
   content: "\e602"; }
 
-.icon-logo:before {
-  content: "\e601"; }
+.icon-arrow-right:before, .owl-nav .owl-next:after {
+  content: "\e603"; }
+
+.icon-comment:before, .comments-btn:before {
+  content: "\e605"; }
+
+.icon-gallery:before, .gallery-btn:before {
+  content: "\e606"; }
 
 .icon-pinterest:before, .pinterest-btn:before {
   content: "\e600"; }
 
 .icon-close:before, .close-btn:before {
   content: "\76"; }
+
+.icon-printer:before, .print-btn:before {
+  content: "\e608"; }
+
+.icon-envelope:before, .email-btn:before {
+  content: "\e601"; }
 
 .icon-search:before, .search-btn:before {
   content: "\34"; }
@@ -2328,9 +2346,16 @@ button:active, button:focus {
   vertical-align: middle; }
 
 blockquote {
-  padding: 0 0 0 2.5em;
+  padding: 0 15%;
   position: relative;
-  margin: 1em 0; }
+  margin: 1em 0;
+  font-family: 'Miller Banner Italic';
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  color: #000; }
+  blockquote p {
+    font-size: 22px !important; }
 
 .pagination {
   font-family: 'L Futura W01';
@@ -3626,7 +3651,11 @@ body {
   position: relative;
   z-index: 100;
   padding: 0;
-  background: #FFF; }
+  background: #FFF;
+  margin-top: 3em; }
+  @media only screen and (max-width: 900px) {
+    #main {
+      margin-top: 0; } }
 
 #content {
   padding: 0 10px; }
@@ -3907,6 +3936,8 @@ body {
     margin: 1.5em 0;
     font-size: 1.6rem;
     line-height: 1.7; }
+  #single #content article.post-item .content .wp-caption-text {
+    padding-right: 10px; }
   #single #content article.post-item .content .alignleft {
     margin-left: -15%;
     margin-right: 1em; }

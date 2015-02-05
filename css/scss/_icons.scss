@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icons';
-	src:url('fonts/icons.eot?jrcmag');
-	src:url('fonts/icons.eot?#iefixjrcmag') format('embedded-opentype'),
-		url('fonts/icons.woff?jrcmag') format('woff'),
-		url('fonts/icons.ttf?jrcmag') format('truetype'),
-		url('fonts/icons.svg?jrcmag#icons') format('svg');
+	src:url('fonts/icons.eot?ow53l0');
+	src:url('fonts/icons.eot?#iefixow53l0') format('embedded-opentype'),
+		url('fonts/icons.woff?ow53l0') format('woff'),
+		url('fonts/icons.ttf?ow53l0') format('truetype'),
+		url('fonts/icons.svg?ow53l0#icons') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -23,12 +23,28 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.icon-logo:before {
+	content: "\e604";
+}
+
 .icon-web:before {
+	content: "\e607";
+}
+
+.icon-arrow-left:before {
 	content: "\e602";
 }
 
-.icon-logo:before {
-	content: "\e601";
+.icon-arrow-right:before {
+	content: "\e603";
+}
+
+.icon-comment:before {
+	content: "\e605";
+}
+
+.icon-gallery:before {
+	content: "\e606";
 }
 
 .icon-pinterest:before {
@@ -37,6 +53,14 @@
 
 .icon-close:before {
 	content: "\76";
+}
+
+.icon-printer:before {
+	content: "\e608";
+}
+
+.icon-envelope:before {
+	content: "\e601";
 }
 
 .icon-search:before {
