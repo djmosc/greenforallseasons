@@ -2,9 +2,12 @@
 <?php wp_enqueue_script('expander'); ?>
 <div id="single">
 	<?php while ( have_posts() ) : the_post(); ?>
-		<?php $featured_image_position = get_field('featured_image_position'); ?>
-		<?php $author_img_url = get_avatar_url ( get_the_author_meta('ID'), $size = '50' ); ?>
-		<?php $category = get_post_category(); ?>
+		<?php 
+			$featured_image_position = get_field('featured_image_position');
+			$author_img_url = get_avatar_url ( get_the_author_meta('ID'), $size = '40' );
+			$author_id = get_the_author_meta('ID');
+			$category = get_post_category(); 
+		?>
 
 		<?php $image_size = ($featured_image_position == 'top') ? array('width' => 800, 'height' => 530) : array('width' => 400, 'height' => 530); ?>
 
@@ -24,6 +27,7 @@
 						'author' => array(
 							'name' => 'Words by ' .get_the_author(),
 							'image_url' => $author_img_url,
+							'url' => get_author_posts_url($author_id),
 						),
 						'excerpt' => get_the_excerpt(),
 						'category' => array(
@@ -35,7 +39,7 @@
 					<div class="post-content">
 						<?php the_content(); ?>
 						<div class="written-by">
-							<?php _e('Written by '); ?><?php the_author_link(); ?>
+							<?php _e('Written by '); ?><?php the_author_posts_link(); ?>
 						</div>
 					</div>						
 				</article>
@@ -51,7 +55,10 @@
 
 				<?php include_module('post-comments'); ?>
 		
-				<?php include_module('post-more-in-category'); ?>				
+				<?php include_module('post-more-in-category', array(
+
+
+				)); ?>				
 			</div>
 			<?php get_sidebar(); ?>
 		</div>
