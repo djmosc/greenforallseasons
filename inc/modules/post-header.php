@@ -18,6 +18,8 @@
 	include_module('post-meta', array('date' => $date));
 	endif; ?>
 	<?php if( !empty($read_more) ) : ?>
-	<a class="primary-btn" href="<?php echo $url; ?>"><?php _e("Read More", THEME_NAME); ?></a>
+	<div class="read-more">
+		<a class="primary-btn read-more-btn" href="<?php echo $url; ?>"><?php _e("Read More", THEME_NAME); ?></a>
+	</div>
 	<?php endif; ?>
 </header>

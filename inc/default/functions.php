@@ -8,6 +8,13 @@ if ( ! function_exists( 'get_top_level_category' )) {
 	}
 }
 
+if ( ! function_exists( 'get_top_level_term' ) ) {
+	function get_top_level_term($id, $taxonomy = 'category'){
+		$term = get_top_level($id, $taxonomy);
+		$term_id = ($term) ? $term : $id;
+		return get_term_by( 'id', $term_id, $taxonomy);
+	}
+}
 
 if ( ! function_exists( 'get_top_level' )) {
 	function get_top_level($id, $object){
