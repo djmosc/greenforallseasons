@@ -152,6 +152,11 @@ body {
 	padding: 0;
 	background: #FFF;
 	@extend .container;
+	margin-top: 3em;
+
+	@include device-width(9) {
+		margin-top: 0;
+	}
 }
 
 #content {
