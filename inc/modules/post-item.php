@@ -19,7 +19,13 @@
 	);
 
 	$data['author'] = ( !empty($author) ) ? $author : null; 
-	$data['read_more'] = ( !empty($read_more) ) ? $read_more : null; 
-
+	
 	include_module('post-header', $data); ?>
+
+	<?php if( !empty($read_more) ) : ?>
+	<div class="read-more">
+		<a class="primary-btn read-more-btn" href="<?php echo $url; ?>"><?php _e("Read More", THEME_NAME); ?></a>
+	</div>
+	<?php endif; ?>
+
 </div>

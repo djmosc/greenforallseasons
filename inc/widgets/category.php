@@ -31,19 +31,15 @@ class Category extends WP_Widget {
 
 		if($category) :
 			echo $args['before_widget'];
-
 			$image_id = get_field('image', 'category_'.$category->term_id);
-			$image_attributes = wp_get_attachment_image_src( $image_id, array( 400, 180, 'bfi_thumb' => true) ); ?>
-		<a class="btn" href="<?php echo get_term_link($category); ?>">
-			<div class="cta-container">
-				<span class="primary-btn"><span><?php echo $category->name; ?></span></span>
-			</div>
-			<div class="image">
-				<img src="<?php echo $image_attributes[0]; ?>">
-			</div>
-		</a>
-		<?php
-		echo $args['after_widget'];	
+			$image_url = get_image( $image_id, array( 'width' => 400, 'height' => 180) );
+			include_module('category-btn', array(
+				'url' => get_term_link($category),
+				'image_url' => $image_url,
+				'name' => $category->name,
+				'sub_title' => 'Sub title'
+			));
+			echo $args['after_widget'];	
 		wp_reset_postdata();
 		wp_reset_query();
 		endif;

@@ -25,14 +25,7 @@
 					
 		</div>
 
-		<?php include_module('category-btn', array(
-			'url' => '#',
-			'image_url' => 'http://lorempixel.com/400/200',
-			'name' => "Bites",
-			'sub_title' => 'Sub title'
-		)); ?>
 		
-
 		<?php include_module('post-item', array(
 			'title' => 'Nourish banana &amp; pomegranate pancakes',
 			'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
@@ -58,7 +51,7 @@
 
 		<?php gravity_form(2, false); ?>
 
-		<div id="editors-letter" class="widget widget_editors-letter">
+		<div id="editors-letter" class="widget widget_editors">
 			<img class="image" src="http://lorempixel.com/180/180" />
 			<div class="script">
 				<img src="<?php bloginfo('template_directory'); ?>/images/misc/editors-letter.png" alt="">	
@@ -275,8 +268,72 @@
 			</ul>
 		</div>
 
-
 	</div>
+
+	<div class="related-posts">
+		<div class="container">
+			<div class="widget-header">
+				<h5 class="widget-title">You Might Also Like</h5>
+				<a href="">see all archive »</a>
+			</div>
+			<ul class="posts">
+				<li>
+					<?php include_module('post-item', array(
+						'title' => '4 Flattering dresses',
+						'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
+						'url' => '#',
+						'image_url' => 'http://lorempixel.com/190/190',
+						'date' => 'the date',
+						'author' => array(
+							'name' => 'victoria - anne bull',
+							'image_url' => 'http://lorempixel.com/100/100'
+						),
+						'category' => array(
+							'name' => "Style"
+						),
+						'read_more' => true
+					)); ?>			
+				</li>
+
+				<li>
+					<?php include_module('post-item', array(
+						'title' => '4 Flattering dresses',
+						'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
+						'url' => '#',
+						'image_url' => 'http://lorempixel.com/190/190',
+						'date' => 'the date',
+						'author' => array(
+							'name' => 'victoria - anne bull',
+							'image_url' => 'http://lorempixel.com/100/100'
+						),
+						'category' => array(
+							'name' => "Style"
+						),
+						'read_more' => true
+					)); ?>			
+				</li>
+
+				<li>
+					<?php include_module('post-item', array(
+						'title' => '4 Flattering dresses',
+						'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
+						'url' => '#',
+						'image_url' => 'http://lorempixel.com/190/190',
+						'date' => 'the date',
+						'author' => array(
+							'name' => 'victoria - anne bull',
+							'image_url' => 'http://lorempixel.com/100/100'
+						),
+						'category' => array(
+							'name' => "Style"
+						),
+						'read_more' => true
+					)); ?>			
+				</li>
+						
+			</ul>			
+		</div>
+	</div>	
 
 </section><!-- #index -->
 <?php get_footer(); ?>
