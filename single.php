@@ -76,6 +76,11 @@
 					</div><!-- inner -->
 				</article>
 
+				<?php include_module('post-header', array(
+					'title' => get_the_title(),
+					''
+				)); ?>
+
 				<?php include_module('post-share'); ?>
 	
 				<?php include_module('post-navigation'); ?>

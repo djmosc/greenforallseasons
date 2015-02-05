@@ -3,78 +3,28 @@
 
 <section id="index">
 
-<div class="container">
-	
-	<div class="owl-carousel featured-carousel">
-		<article <?php post_class('clearfix post-slide item'); ?>>
-			<div class="container inner">
-				<div class="post-header">
-					<span class="header"><?php _e('Top Stories', 'greenforallseasons' );  ?></span>
-					<div class="post-item">
-						<div class="category">
-							<span class="name category-name green-label">Bites</span>
-						</div>
-						<h2 class="post-title"><a href="<?php the_permalink(); ?>">Nourish banana &amp; pomegranate pancakes</a></h2>
-						<div class="post-excerpt">
-						 	In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus. 
-							<?php //echo get_excerpt(60); ?>
-						</div>
-						<div class="author">
-							<div class="image circle">
-								<img src="http://lorempixel.com/100/100" />
-							</div>
-							<span class="name">victoria - anne bull</span>
-						</div>						
-						<div class="read-more">
-							<a class="read-more-btn secondary-btn" href="<?php the_permalink(); ?>"><?php _e("Read More", THEME_NAME); ?></a>
-						</div>
-						<?php get_template_part('inc/post-meta'); ?>
-					</div>
-				</div>
-				<figure class="thumbnail">
-					<a href="<?php the_permalink(); ?>">
-						<img src="http://lorempixel.com/840/470" />
-					</a>
-				</figure>
-			</div>
-		</article>
-		<article <?php post_class('clearfix post-slide item'); ?>>
-			<div class="container inner">
-				<div class="post-header">
-					<span class="header"><?php _e('Top Stories', 'greenforallseasons' );  ?></span>
-					<div class="post-item">
-						<div class="category">
-							<span class="name category-name green-label">Bites</span>
-						</div>
-						<h2 class="post-title"><a href="<?php the_permalink(); ?>">Nourish banana &amp; pomegranate pancakes</a></h2>
-						<div class="post-excerpt">
-						 	In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus. 
-							<?php //echo get_excerpt(60); ?>
-						</div>
-						<div class="author">
-							<div class="image circle">
-								<img src="http://lorempixel.com/100/100" />
-							</div>
-							<span class="name">victoria - anne bull</span>
-						</div>						
-						<div class="read-more">
-							<a class="read-more-btn secondary-btn" href="<?php the_permalink(); ?>"><?php _e("Read More", THEME_NAME); ?></a>
-						</div>
-						<?php get_template_part('inc/post-meta'); ?>
-					</div>
-				</div>
-				<figure class="thumbnail">
-					<a href="<?php the_permalink(); ?>">
-						<img src="http://lorempixel.com/840/470" />
-					</a>
-				</figure>
-			</div>
-		</article>		
-	</div>
-
-	<br><br><br><br>
-
 	<div class="container">
+		
+		<div class="owl-carousel featured-carousel">
+			<article <?php post_class('clearfix item'); ?>>
+				<?php include_module('post-slide', array(
+					'title' => 'Nourish banana &amp; pomegranate pancakes',
+					'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
+					'url' => '#',
+					'image_url' => 'http://lorempixel.com/840/470',
+					'author' => array(
+						'name' => 'victoria - anne bull',
+						'image_url' => 'http://lorempixel.com/100/100'
+					),
+					'category' => array(
+						'name' => "Bites"
+					),
+					'date' => 'the date'
+				)); ?>
+			</article>
+					
+		</div>
+
 
 		<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h1>
 		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h2>
@@ -86,55 +36,28 @@
 
 		<p><a class="primary-btn">Hello</a></p>
 
-		<a class="category-btn overlay-btn" >
-			<span class="name category-name green-label">Bites</span>
-			<div class="image">
-				<img src="http://lorempixel.com/400/200" />
-			</div>
-			<div class="overlay">
-				<h4 class="sub-name">Sub title</h4>
-				<span class="primary-btn"><?php _e("Read all features &raquo;", THEME_NAME); ?></span>
-			</div>
-		</a>
+		<?php include_module('category-btn', array(
+			'url' => '#',
+			'image_url' => 'http://lorempixel.com/400/200',
+			'name' => "Bites",
+			'sub_title' => 'Sub title'
+		)); ?>
+		
 
-		<div class="author">
-			<div class="image circle">
-				<img src="http://lorempixel.com/100/100" />
-			</div>
-			<span class="name">This is a very long name</span>
-		</div>
-
-		<div class="post-item">
-			<div class="top-category">
-				<span class="category-name green-label">Shape</span>
-			</div>		
-			<div class="category">
-				<span class="name category-name green-label">Bites</span>
-			</div>
-			<div class="image">
-				<a href="<?php the_permalink(); ?>">
-					<img src="http://lorempixel.com/600/600" />
-				</a>
-			</div>
-			<header class="header post-header">
-				<div class="author">
-					<div class="image circle">
-						<img src="http://lorempixel.com/100/100" />
-					</div>
-					<span class="name">This is a very long name</span>
-				</div>
-
-				<h3 class="title post-title"><a>This is the post title and it is very long</a></h3>
-				<div class="excerpt">
-					<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
-					quis nostrud exercitation ullamco...</p>
-				</div>
-				<div class="post-meta">
-					<span class="date">13th Februray, 2014</span>
-				</div>
-				<a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
-			</header>
-		</div>
+		<?php include_module('post-item', array(
+			'title' => 'Nourish banana &amp; pomegranate pancakes',
+			'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
+			'url' => '#',
+			'image_url' => 'http://lorempixel.com/600/600',
+			'author' => array(
+				'name' => 'victoria - anne bull',
+				'image_url' => 'http://lorempixel.com/100/100'
+			),
+			'category' => array(
+				'name' => "Bites"
+			),
+			'read_more' => true
+		)); ?>
 
 		<p><input type="text" placeholder="Enter your email" /></p>
 
@@ -143,7 +66,6 @@
 		<p><input type="submit" value="Submit" /></p>
 
 		<p><buttton type="submit" value="Submit" /></p>
-
 
 		<?php gravity_form(2, false); ?>
 
@@ -171,47 +93,39 @@
 		<div id="popular-posts" class="widget widget_posts">
 			<h5 class="widget-title">Most Popular</h5>
 			<ul class="posts">
-				<li <?php post_class('clearfix post-item medium'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/65/65" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>This is the post title and</a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam...</p>
-						</div>
-					</header>
+				<li <?php post_class('clearfix'); ?>>
+					<?php include_module('post-item', array(
+						'title' => 'Nourish banana &amp; pomegranate pancakes',
+						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
+						'url' => '#',
+						'image_url' => 'http://lorempixel.com/65/65',
+						'class' => 'medium',
+						'read_more' => true
+					)); ?>
 				</li>
-				<li <?php post_class('clearfix post-item medium'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/65/65" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>This is the post title and it is very long</a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
-							quis nostrud exercitation ullamco...</p>
-						</div>
-					</header>
-				</li>	
-				<li <?php post_class('clearfix post-item medium'); ?>>
-					<div class="image">
-						<a href="<?php the_permalink(); ?>">
-							<img src="http://lorempixel.com/65/65" />
-						</a>
-					</div>
-					<header class="header post-header">
-						<h3 class="title post-title"><a>This is the post title and </a></h3>
-						<div class="excerpt">
-							<p>Lorem ipsum dolor sit amet, dolore magna aliqua. Ut enim ad minim veniam,
-							...</p>
-						</div>
-					</header>
-				</li>																
+
+				<li <?php post_class('clearfix '); ?>>
+					<?php include_module('post-item', array(
+						'title' => 'Nourish banana &amp; pomegranate pancakes',
+						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
+						'url' => '#',
+						'image_url' => 'http://lorempixel.com/65/65',
+						'class' => 'medium',
+						'read_more' => true
+					)); ?>
+				</li>
+
+				<li <?php post_class('clearfix'); ?>>
+					<?php include_module('post-item', array(
+						'title' => 'Nourish banana &amp; pomegranate pancakes',
+						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
+						'url' => '#',
+						'image_url' => 'http://lorempixel.com/65/65',
+						'class' => 'medium',
+						'read_more' => true
+					)); ?>
+				</li>
+																				
 			</ul>
 		</div>	
 
