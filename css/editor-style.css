@@ -482,8 +482,8 @@ table {
 
 @font-face {
   font-family: 'icons';
-  src: url("fonts/icons.eot?jrcmag");
-  src: url("fonts/icons.eot?#iefixjrcmag") format("embedded-opentype"), url("fonts/icons.woff?jrcmag") format("woff"), url("fonts/icons.ttf?jrcmag") format("truetype"), url("fonts/icons.svg?jrcmag#icons") format("svg");
+  src: url("fonts/icons.eot?ow53l0");
+  src: url("fonts/icons.eot?#iefixow53l0") format("embedded-opentype"), url("fonts/icons.woff?ow53l0") format("woff"), url("fonts/icons.ttf?ow53l0") format("truetype"), url("fonts/icons.svg?ow53l0#icons") format("svg");
   font-weight: normal;
   font-style: normal; }
 [class^="icon-"], .menu-btn:before, .facebook-btn:before, .twitter-btn:before, .tumblr-btn:before, .instagram-btn:before, .pinterest-btn:before, .youtube-btn:before, .email-btn:before, .search-btn:before, .up-btn:before, .down-btn:before, .print-btn:after, .comments-btn:before, .shares-btn:before, .close-btn:before, .gallery-btn:before, .print-btn:before, [class*=" icon-"] {
@@ -498,17 +498,35 @@ table {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.icon-logo:before {
+  content: "\e604"; }
+
 .icon-web:before {
+  content: "\e607"; }
+
+.icon-arrow-left:before {
   content: "\e602"; }
 
-.icon-logo:before {
-  content: "\e601"; }
+.icon-arrow-right:before {
+  content: "\e603"; }
+
+.icon-comment:before, .comments-btn:before {
+  content: "\e605"; }
+
+.icon-gallery:before, .gallery-btn:before {
+  content: "\e606"; }
 
 .icon-pinterest:before, .pinterest-btn:before {
   content: "\e600"; }
 
 .icon-close:before, .close-btn:before {
   content: "\76"; }
+
+.icon-printer:before, .print-btn:before {
+  content: "\e608"; }
+
+.icon-envelope:before, .email-btn:before {
+  content: "\e601"; }
 
 .icon-search:before, .search-btn:before {
   content: "\34"; }
