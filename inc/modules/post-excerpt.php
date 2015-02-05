@@ -1,1 +1,1 @@
-<div class="excerpt post-excerpt"><?php echo $excerpt; ?></div>
+<div class="excerpt post-excerpt"><p><?php echo $excerpt; ?></p></div>

@@ -1,6 +1,29 @@
 #single {
 	article.post-item {
 
+		.excerpt {
+			@include miller-italic;
+			@include font-size(16);
+			line-height: 1.6;
+			color: #5b5b5b;
+			text-align: center;
+			margin: 1.5em 0;
+
+			&:before, &:after {
+				content: '';
+				display: block;
+				width: 20%;
+				margin: 0 auto;
+				border-top: 1px solid #e3e3e3;
+			}
+
+			p {
+				margin: 1.5em 0;
+				font-size: 1.6rem;
+				line-height: 1.7;				
+			}
+		}
+
 		&.left-layout {
 
 			.category {
@@ -12,12 +35,12 @@
 				}					
 			}
 	
-			.header-wrap {
+			.header-container {
 				@extend .clearfix;
 				position: relative;
 				margin-bottom: 4em;
 
-				> .image {
+				.post-image {
 					float: left;
 					width: 50%;
 				}
@@ -28,13 +51,15 @@
 					right: 0;
 					text-align: center;
 					height: 100%;
+					margin-top: 0;
 				}
 
 				.post-title {
 					position: relative;
-					top: 40%;
+					top: 50%;
 					transform: translateY(-50%);
 					padding: 0 1em;
+					margin: .7em 0;
 
 					@include device-width(7) {
 						@include font-size(30);
@@ -60,8 +85,8 @@
 					}					
 				}
 
-				.header-wrap {
-					> .image {
+				.header-container {
+					.post-image {
 						float: none;
 						width: auto; 
 					}
@@ -69,6 +94,7 @@
 					.header {
 						position: static;
 						width: 100%;
+						margin-top: -20px;
 					}
 
 					.post-title {

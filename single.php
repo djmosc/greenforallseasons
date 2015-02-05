@@ -3,6 +3,13 @@
 <div id="single">
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php $featured_image_position = get_field('featured_image_position'); ?>
+		<?php $author_img_url = get_avatar_url ( get_the_author_meta('ID'), $size = '50' ); ?>
+		<?php $category = get_post_category(); ?>
+
+		<?php $image_size = ($featured_image_position == 'top') ? array('width' => 800, 'height' => 530) : array('width' => 400, 'height' => 530); ?>
+
+			<?php $image = get_post_thumbnail_src($image_size); ?>
+
 		<div class="sidebar-container">
 
 			<div id="content">
@@ -11,34 +18,26 @@
 				<?php $class .= ' post-item ' . $featured_image_position . '-layout'; ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class($class); ?>>
 
-					<?php include_module('post-item', array(
-						'title' => 'Nourish banana &amp; pomegranate pancakes',
-						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
-						'image_url' => 'http://lorempixel.com/600/600',
+					<?php include_module('single-post-header', array(
+						'title' => get_the_title(),
+						'image_url' => $image,
 						'author' => array(
-							'name' => 'victoria - anne bull',
-							'image_url' => 'http://lorempixel.com/100/100'
+							'name' => 'Words by ' .get_the_author(),
+							'image_url' => $author_img_url,
 						),
+						'excerpt' => get_the_excerpt(),
 						'category' => array(
-							'name' => "Bites"
-						)
+								'name' => $category->name,
+							) 
 					)); ?>
 
-					<?php //get_template_part('inc/modules/post-header'); ?>
-						
-						<div class="post-content">
-							<header class="header">
-								<?php if (get_the_excerpt()): ?>
-									<div class="excerpt">
-										<?php the_excerpt(); ?>
-									</div>
-								<?php endif; ?>
-							</header>						
-							<?php the_content(); ?>
-							<div class="written-by">
-								<?php _e('Written by '); ?><?php the_author_link(); ?>
-							</div>
-						</div>						
+
+					<div class="post-content">
+						<?php the_content(); ?>
+						<div class="written-by">
+							<?php _e('Written by '); ?><?php the_author_link(); ?>
+						</div>
+					</div>						
 				</article>
 
 				<?php include_module('post-share'); ?>

@@ -285,5 +285,11 @@ function get_post_category($id = '') {
 	$term = array_pop($terms);
 	$term_id = ( !empty($term->term_id) ) ? $term->term_id : 0;
 
-	return get_top_level_term($term_id, 'course_category');
+	return get_top_level_term($term_id, 'category');
+}
+
+function get_avatar_url($author_id, $size){
+    $get_avatar = get_avatar( $author_id, $size );
+    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
+    return ( $matches[1] );
 }
