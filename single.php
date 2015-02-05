@@ -76,18 +76,18 @@
 					</div><!-- inner -->
 				</article>
 
-				<?php get_template_part('inc/modules/post-share'); ?>
+				<?php include_module('post-share'); ?>
 	
-				<?php get_template_part('inc/modules/post-navigation'); ?>
+				<?php include_module('post-navigation'); ?>
 
-				<?php get_template_part('inc/modules/post-comments'); ?>
+				<?php include_module('post-comments'); ?>
 		
-				<?php get_template_part('inc/modules/post-more-in-category'); ?>				
+				<?php include_module('post-more-in-category'); ?>				
 			</div>
 			<?php get_sidebar(); ?>
 		</div>
 	<?php endwhile; // end of the loop. ?>
-	<?php //get_template_part('inc/modules/related-posts'); ?>
+	<?php //include_module('related-posts'); ?>
 </div><!-- #single -->
 
 <?php get_footer(); ?>

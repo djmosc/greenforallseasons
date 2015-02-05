@@ -280,7 +280,6 @@ blockquote {
 .post-content {
 
 	h1, h2, h3, h4, h5, h6 {
-
 		margin: 1em 0;
 	}
 
@@ -1535,5 +1534,78 @@ blockquote {
 
 	a {
 		color: #b80004;
+	}
+}
+
+
+.post-ingredients {
+	border: 5px solid $olive;
+
+	.header {
+		border-bottom: 1px solid #ececec;
+		padding: 1em;
+
+		.title {
+			@include futura-heavy;
+			text-align: center;
+			@include font-size(10);
+			letter-spacing: 2px;
+		}
+	}
+
+	.content {
+		padding: 1em;	
+		@extend .clearfix;
+
+		.ingredient-list {
+			width: 50%;
+			padding: 0 10px;
+			float: left;
+
+			&:nth-child(2n - 1) {
+				text-align: right;
+			}
+		}
+	}
+	.footer {
+		border-top: 1px solid #ececec;
+		padding: 1em;
+		@extend .clearfix;
+
+		.share {
+			float: left;
+		}
+
+		.print-btn {
+			float: right;
+		}
+	}
+}
+
+.post-tips {
+	border: 1px solid #ececec;
+	padding: 1.5em;
+	position: relative;
+
+	.title {
+		position: absolute;
+		background: #FFF;
+		padding: 0 1em;
+		@include font-size(28);
+		@include garamond-italic;
+		bottom: 0;
+		left: 50%;
+		@include translateX(-50%);
+		margin-bottom: -0.5em;
+	}
+
+	.tips {
+		list-style: disc;
+		list-style-position: inside;
+	}
+
+	.tip {
+		@include font-size(16);
+		@include garamond-italic;
 	}
 }

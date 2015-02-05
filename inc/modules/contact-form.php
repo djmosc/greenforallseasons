@@ -1,1 +1,0 @@
-<?php gravity_form(1); ?>

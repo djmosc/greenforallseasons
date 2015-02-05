@@ -496,6 +496,54 @@
 		    </div>
 
 		</div>
+
+		<div class="post-ingredients">
+			<header class="header">
+				<h5 class="title"><?php _e("What you'll need", THEME_NAME); ?></h5>
+			</header>
+			<div class="content">
+				<ul class="ingredient-list">
+					<ki>Lorem ipsum dolor sit amet</li>
+					<li>consectetur adipisicing elit</li>
+					<li>sed do eiusmod</li>
+					<li>tempor incididunt ut labore et dolore </li>
+					<li>quis nostrud exercitation ullamco laboris</li>
+					<li>consequat. Duis aute irure dolor in </li>
+					<li>cillum dolore eu fugiat nulla pariatur proident</li>
+					<li>sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+				</ul>
+				<ul class="ingredient-list">
+					<ki>Lorem ipsum dolor sit amet</li>
+					<li>consectetur adipisicing elit</li>
+					<li>sed do eiusmod</li>
+					<li>tempor incididunt ut labore et dolore </li>
+					<li>quis nostrud exercitation ullamco laboris</li>
+					<li>consequat. Duis aute irure dolor in </li>
+					<li>cillum dolore eu fugiat nulla pariatur proident</li>
+					<li>sunt in culpa qui officia deserunt mollit anim id est laborum.</li>
+				</ul>
+			</div>
+			<footer class="footer">
+				<?php include_module('share', array(
+					'title' => get_the_title(),
+					'url' => '',
+					'image_url' => '',
+					'excerpt' => ''
+				)); ?>
+				<a class="print-btn"><?php _e("Print Recipe", THEME_NAME); ?></a>
+			</footer>
+		</div>
+
+		<div class="post-tips">
+			<h4 class="title"><?php _e("A few tips", THEME_NAME); ?></h4>
+			<ul class="tips">
+				<li class="tip">Vivamus lobortis leo eget viverra ornare.</li>
+				<li class="tip">Vivamus lobortis leo eget viverra ornare.</li>
+				<li class="tip">Vivamus lobortis leo eget viverra ornare.</li>
+			</ul>
+		</div>
+
+
 	</div>
 
 </section><!-- #index -->
