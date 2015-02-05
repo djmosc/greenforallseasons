@@ -1,21 +1,27 @@
 <div class="post-slide">
+	<span class="label"><?php _e('Top Stories', 'greenforallseasons' );  ?></span>
+	
 	<div class="post-item">
-		<span class="label"><?php _e('Top Stories', 'greenforallseasons' );  ?></span>
-		
+		<?php if( !empty( $category) ): ?>
+		<?php include_module('post-category', array(
+			'name' => $category['name']
+		)); ?>
+		<?php endif; ?>
 		<?php include_module('post-header', array(
 			'title' => $title,
 			'url' => $url,
 			'excerpt' => $excerpt,
-			'author' => array(
-				'image_url' => $author['image_url'],
-				'name' => $author['name'],
-			),
-			'category' => array(
-				'name' => $category['name']
-			),
-			'date' => $date,
-			'read_more' => true
 		)); ?>
+
+		<?php 
+		if( !empty( $author) ):
+			include_module('author', array(
+				'name' => $author['name'],
+				'image_url' => $author['image_url']
+			)); 
+		endif;
+		?>
+		<a class="secondary-btn read-more-btn" href="<?php echo $url; ?>"><?php _e("Read More", THEME_NAME); ?></a>
 	</div>
 	<figure class="thumbnail">
 		<a href="<?php echo $url; ?>">

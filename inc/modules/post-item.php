@@ -1,11 +1,11 @@
-<div class="post-item <?php echo $class; ?>">
+<div class="post-item <?php echo ( !empty($class)) ? $class : ''; ?>">
 	<!-- <div class="top-category">
 		<span class="category-name green-label">Shape</span>
 	</div>	 -->
 	<?php if( !empty( $category) ): ?>
 	<?php include_module('post-category', array(
 		'name' => $category['name']
-	)) ?>
+	)); ?>
 	<?php endif; ?>
 	<div class="post-image image">
 		<a href="<?php echo $url; ?>">

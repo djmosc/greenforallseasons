@@ -6,7 +6,7 @@
 	<div class="container">
 		
 		<div class="owl-carousel featured-carousel">
-			<article <?php post_class('clearfix item'); ?>>
+			<article <?php post_class('item'); ?>>
 				<?php include_module('post-slide', array(
 					'title' => 'Nourish banana &amp; pomegranate pancakes',
 					'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
@@ -24,17 +24,6 @@
 			</article>
 					
 		</div>
-
-
-		<h1>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h1>
-		<h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h2>
-		<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h3>
-		<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h4>
-		<h5>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h5>
-		<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</h6>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
-
-		<p><a class="primary-btn">Hello</a></p>
 
 		<?php include_module('category-btn', array(
 			'url' => '#',
@@ -99,8 +88,7 @@
 						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
 						'url' => '#',
 						'image_url' => 'http://lorempixel.com/65/65',
-						'class' => 'medium',
-						'read_more' => false
+						'class' => 'medium'
 					)); ?>
 				</li>
 
@@ -110,8 +98,7 @@
 						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
 						'url' => '#',
 						'image_url' => 'http://lorempixel.com/65/65',
-						'class' => 'medium',
-						'read_more' => false
+						'class' => 'medium'
 					)); ?>
 				</li>
 
@@ -121,8 +108,7 @@
 						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
 						'url' => '#',
 						'image_url' => 'http://lorempixel.com/65/65',
-						'class' => 'medium',
-						'read_more' => false
+						'class' => 'medium'
 					)); ?>
 				</li>
 																				
@@ -143,8 +129,7 @@
 						'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
 						'url' => '#',
 						'image_url' => 'http://lorempixel.com/100/100',
-						'class' => 'small',
-						'read_more' => false
+						'class' => 'small'
 					)); ?>
 				</li>
 				<?php endfor; ?>										
@@ -227,119 +212,18 @@
 		        </header>
 		        <ul class="posts clearfix">
 		            <li class="span one-third">
-		                <div class="post-item">
-		                    <div class="category">
-		                        <span class="name category-name green-label">Style</span>
-		                    </div>
-		                    <div class="image">
-		                        <a href="<?php the_permalink(); ?>">
-		                            <img src="http://lorempixel.com/190/190" />
-		                        </a>
-		                    </div>
-		                    <header class="header post-header">
-		                        <h3 class="title post-title"><a>4 Flattering dresses</a></h3>
-		                        <div class="excerpt">
-		                            <p>Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...</p>
-		                        </div>
-		                        <a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
-		                    </header>
-		                </div>
+		                <?php include_module('post-item', array(
+							'title' => '4 Flattering dresses',
+							'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
+							'url' => '#',
+							'image_url' => 'http://lorempixel.com/190/190',
+							'category' => array(
+								'name' => "Style"
+							)
+						)); ?>
+
 		            </li>
-		            <li class="span one-third">
-		                <div class="post-item">
-		                    <div class="category">
-		                        <span class="name category-name green-label">Style</span>
-		                    </div>
-		                    <div class="image">
-		                        <a href="<?php the_permalink(); ?>">
-		                            <img src="http://lorempixel.com/190/190" />
-		                        </a>
-		                    </div>
-		                    <header class="header post-header">
-		                        <h3 class="title post-title"><a>4 Flattering dresses</a></h3>
-		                        <div class="excerpt">
-		                            <p>Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...</p>
-		                        </div>
-		                        <a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
-		                    </header>
-		                </div>
-		            </li>
-		            <li class="span one-third">
-		                <div class="post-item">
-		                    <div class="category">
-		                        <span class="name category-name green-label">Style</span>
-		                    </div>
-		                    <div class="image">
-		                        <a href="<?php the_permalink(); ?>">
-		                            <img src="http://lorempixel.com/190/190" />
-		                        </a>
-		                    </div>
-		                    <header class="header post-header">
-		                        <h3 class="title post-title"><a>4 Flattering dresses</a></h3>
-		                        <div class="excerpt">
-		                            <p>Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...</p>
-		                        </div>
-		                        <a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
-		                    </header>
-		                </div>
-		            </li>	
-		            <li class="span one-third">
-		                <div class="post-item">
-		                    <div class="category">
-		                        <span class="name category-name green-label">Style</span>
-		                    </div>
-		                    <div class="image">
-		                        <a href="<?php the_permalink(); ?>">
-		                            <img src="http://lorempixel.com/190/190" />
-		                        </a>
-		                    </div>
-		                    <header class="header post-header">
-		                        <h3 class="title post-title"><a>4 Flattering dresses</a></h3>
-		                        <div class="excerpt">
-		                            <p>Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...</p>
-		                        </div>
-		                        <a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
-		                    </header>
-		                </div>
-		            </li>
-		            <li class="span one-third">
-		                <div class="post-item">
-		                    <div class="category">
-		                        <span class="name category-name green-label">Style</span>
-		                    </div>
-		                    <div class="image">
-		                        <a href="<?php the_permalink(); ?>">
-		                            <img src="http://lorempixel.com/190/190" />
-		                        </a>
-		                    </div>
-		                    <header class="header post-header">
-		                        <h3 class="title post-title"><a>4 Flattering dresses</a></h3>
-		                        <div class="excerpt">
-		                            <p>Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...</p>
-		                        </div>
-		                        <a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
-		                    </header>
-		                </div>
-		            </li>
-		            <li class="span one-third">
-		                <div class="post-item">
-		                    <div class="category">
-		                        <span class="name category-name green-label">Style</span>
-		                    </div>
-		                    <div class="image">
-		                        <a href="<?php the_permalink(); ?>">
-		                            <img src="http://lorempixel.com/190/190" />
-		                        </a>
-		                    </div>
-		                    <header class="header post-header">
-		                        <h3 class="title post-title"><a>4 Flattering dresses</a></h3>
-		                        <div class="excerpt">
-		                            <p>Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...</p>
-		                        </div>
-		                        <a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
-		                    </header>
-		                </div>
-		            </li>		            		            			            
+		            		            		            			            
 		        </ul>
 		    </div>
 
