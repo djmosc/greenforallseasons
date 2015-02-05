@@ -669,18 +669,18 @@ blockquote {
 }
 
 
-.post-share {
+.post-social {
 	position: relative;
 	border-top: 1px solid #e3e3e3;
 	border-bottom: 1px solid #e3e3e3;
 	text-align: right;
+	padding: 0.5em 0;
 
 	@include device-width(12) {
-		display: block;
 		text-align: center;
 	}	
 
-	.share {
+	.comments {
 		@include inline-block;
 
 		.title {
@@ -689,6 +689,8 @@ blockquote {
 			@include font-size(14);
 			text-transform: uppercase;
 			vertical-align: middle;
+			margin-right: 0.5em;
+			letter-spacing: 0;
 
 			@include device-width(12) {
 				display: block;
@@ -699,109 +701,107 @@ blockquote {
 				@include miller-italic;
 			}
 		}
+	}
 
-		.share-links {
-			margin: 1px 0;
-			display: inline-block;
+	
+
+	.share-links {
+		display: inline-block;
+		vertical-align: middle;
+
+		li {
+			margin: 0 0.3em;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	a {
+		color: #FFF;
+		padding: 0.5em 2em;
+		@include futura-heavy;
+		@include font-size(9);
+		letter-spacing: 2px;
+		line-height: 1.4;
+
+		@include device-width(6) {
+			padding: 0.5em 1em;
+
+			&:after {
+				display: none;
+			}
+		}
+
+		&:before {
+			margin-right: 1.3em;
+			font-size: 1.5em;
+			line-height: 0;
 			vertical-align: middle;
 
-			li {
-				margin: 0;
+			@include device-width(6) {
+				margin-right: 0;
+			}
+		}
+
+		&.comment-btn {
+			background: $white;
+			border: 2px solid $black;
+			color: $black;
+
+			&:hover {
+				background: $black;
+				color: $white;
+			}
+		}
+
+		&.facebook-btn {
+			background: #325a97;
+			border: 2px solid #325a97;
+
+			&:after {
+				content: 'Share';
 			}
 
-			a {
-				color: #FFF;
-				padding: 5px 22px;
-				@include futura-heavy;
-				@include font-size(9);
-				letter-spacing: 2px;
-				height: 26px;
-				margin: 7px 5px;
+			&:hover {
+				background: $white;
+				border: 2px solid #325a97;
+				color: #325a97;
+			}					
+		}
 
-				@include device-width(6) {
-					padding: 5px 10px;
+		&.twitter-btn {
+			background: #00adee;
+			border: 2px solid #00adee;
 
-					&:after {
-						display: none;
-					}
-				}
-
-				&:before {
-					margin-right: 1.3em;
-					@include font-size(15);
-					margin-top: -2px;
-
-					@include device-width(6) {
-						margin-right: 0;
-					}
-				}
-
-				&.leave-comment-btn {
-					background: $white;
-					border: 2px solid $black;
-					color: $black;
-
-					&:hover {
-						background: $black;
-						border: 2px solid $white;
-						color: $white;
-					}
-				}
-
-				&.facebook-btn {
-					background: #325a97;
-					border: 2px solid #325a97;
-
-					&:hover {
-						background: $white;
-						border: 2px solid #325a97;
-						color: #325a97;
-					}					
-				}
-
-				&.twitter-btn {
-					background: #00adee;
-					border: 2px solid #00adee;
-
-					&:hover {
-						background: $white;
-						border: 2px solid #00adee;
-						color: #00adee;
-					}						
-				}
-
-				&.pinterest-btn {
-					background: #cc2027;
-					border: 2px solid #cc2027;
-
-					&:hover {
-						background: $white;
-						border: 2px solid #cc2027;
-						color: #cc2027;
-					}						
-				}
+			&:after {
+				content: 'Tweet';
 			}
+
+			&:hover {
+				background: $white;
+				border: 2px solid #00adee;
+				color: #00adee;
+			}						
+		}
+
+		&.pinterest-btn {
+			background: #cc2027;
+			border: 2px solid #cc2027;
+
+			&:after {
+				content: 'Pin';
+			}
+
+			&:hover {
+				background: $white;
+				border: 2px solid #cc2027;
+				color: #cc2027;
+			}						
 		}
 	}
 
-	.post-meta {
-		position: absolute;
-		top: 1px;
-		bottom: 1px;
-		right: 1px;
-		background: #ffffff;
-
-		.shares-btn,
-		.comments-btn,
-		.post-date {
-			float: left;
-			border-left: 1px solid #f6f6f6;
-		}
-
-		.post-date {
-			padding: 1em;
-		}
-	}
 }
 .post-date {
 	@include font-size(12);
