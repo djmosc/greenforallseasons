@@ -99,11 +99,7 @@ button {
 }
 
 .facebook-btn {
-	&.large {
-		&:after {
-			content: 'Share';
-		}
-	}
+	
 	&:before {
 		@include icon(facebook);
 	}
@@ -115,11 +111,7 @@ button {
 }
 
 .twitter-btn {
-	&.large {
-		&:after {
-			content: 'Tweet';
-		}
-	}	
+		
 	&:before {
 		@include icon(twitter);
 
@@ -156,11 +148,7 @@ button {
 
 
 .pinterest-btn {
-	&.large {
-		&:after {
-			content: 'Pin';
-		}
-	}	
+	
 	&:before {
 		@include icon(pinterest);
 	}

@@ -93,7 +93,7 @@ function custom_widgets_init() {
 
 	require( $template_directory . '/inc/widgets/category.php' );
 
-	require( $template_directory . '/inc/widgets/popular-posts.php' );
+	require( $template_directory . '/inc/widgets/posts.php' );
 	
 	register_sidebar( array(
 		'name' => __( 'Default', THEME_NAME ),

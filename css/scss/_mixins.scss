@@ -59,55 +59,6 @@
 	}
 }
 
-@mixin keyframes($name) {
-	@-moz-keyframes #{$name} {
-		@content;
-	}
-	@-webkit-keyframes #{$name} {
-		@content;
-	}
-	@-o-keyframes #{$name} {
-		@content;
-	}
-	@-ms-keyframes #{$name} {
-		@content;
-	}
-	@-khtml-keyframes #{$name} {
-		@content;
-	}
-	@keyframes #{$name} {
-		@content;
-	}
-}
-
-@mixin animation($animation-1: false, $animation-2: false) {
-	$animation: compact($animation-1, $animation-2);
-	@include animation-support(animation, $animation);
-}
-
-@mixin animation-support($property, $value) {
-	//@include experimental($property, $value, -moz, -webkit, -o, -ms, not -khtml, official);
-}
-
-@include keyframes('fade-in') {
-	from {
-		@include opacity(0);
-	}
-	to {
-		@include opacity(1);
-	}
-}
-
-
-@include keyframes('fade-out') {
-	from {
-		@include opacity(1);
-	}
-	to {
-		@include opacity(0);
-	}
-}
-
 // Flexbox Containers
 //
 // The 'flex' value causes an element to generate a block-level flex
