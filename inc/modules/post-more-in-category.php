@@ -9,6 +9,9 @@
         'posts_per_page' => 4
     );
 
+    $category = get_post_category();
+
+
     $custom_query = new WP_Query($args);
 if ( $custom_query->have_posts() ) : ?>
 <div class="more-from">
@@ -22,23 +25,21 @@ if ( $custom_query->have_posts() ) : ?>
             while ( $custom_query->have_posts() ) : $custom_query->the_post(); 
             ?>
             <li class="span one-fourth">
-                <div class="post-item">
-                    <div class="category">
-                        <span class="name category-name green-label">Bites</span>
-                    </div>
-                    <div class="image">
-                        <a href="<?php the_permalink(); ?>">
-                            <img src="http://lorempixel.com/190/190" />
-                        </a>
-                    </div>
-                    <header class="header post-header">
-                        <h3 class="title post-title"><a>4 Flattering dresses</a></h3>
-                        <div class="excerpt">
-                            <p>Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...</p>
-                        </div>
-                        <a class="primary-btn"><?php _e("Read More", THEME_NAME); ?></a>
-                    </header>
-                </div>
+                <?php 
+                    $image_size = array('width' => 190, 'height' => 190);
+                    $image = get_post_thumbnail_src($image_size);
+                 ?>
+
+                <?php include_module('post-item', array(
+                    'title' => get_the_title(),
+                    'image_url' => $image,
+                    'excerpt' => get_excerpt(100),
+                    'category' => array(
+                            'name' => $category->name,
+                        ),
+                    'url' => get_permalink(),
+                    'read_more' => true,
+                )); ?>
             </li>
             <?php
             $i++;

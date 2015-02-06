@@ -38,6 +38,8 @@ add_filter( 'pre_option_link_manager_enabled', '__return_true' );
 
 add_filter( 'comment_form_defaults', 'custom_comment_form_defaults');
 
+add_filter( 'body_class', 'custom_body_classes', 10, 2 );
+
 
 
 
@@ -333,3 +335,13 @@ function get_avatar_url($author_id, $size){
     preg_match("/src='(.*?)'/i", $get_avatar, $matches);
     return ( $matches[1] );
 }
+
+
+function custom_body_classes( $wp_classes, $extra_classes )
+{
+    $blacklist = array( 'author' );
+
+    $wp_classes = array_diff( $wp_classes, $blacklist );
+	return array_merge( $wp_classes, (array) $extra_classes );
+}
+

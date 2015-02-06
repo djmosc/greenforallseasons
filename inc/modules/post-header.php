@@ -1,10 +1,7 @@
 <header class="header post-header">
 	<?php 
 	if( !empty( $author) ):
-		include_module('author', array(
-			'name' => $author['name'],
-			'image_url' => $author['image_url']
-		)); 
+		include_module('author', $author); 
 	endif;
 	?>
 	
