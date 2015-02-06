@@ -14,15 +14,9 @@ class Custom_Post_Type
 			$this->post_type_args 		= $args;
 			$this->post_type_labels 	= $labels;
 
-			// Add action to register the post type, if the post type doesnt exist
-			// if( ! post_type_exists( $this->post_type_name ) ){
-			// 	add_action( 'init', array( &$this, 'register_post_type' ) );
-			// } else {
-				$this->register_post_type();	
-			//}
+			//$this->register_post_type();
 
-			// Listen for the save post hook
-			// $this->save();
+			return $this;
 		}
 		
 		/* Method which registers the post type */
@@ -78,79 +72,76 @@ class Custom_Post_Type
 			// Register the post type
 			register_post_type( $this->post_type_name, $args );
 			
-			//global $wp_rewrite;
-			//$wp_rewrite->flush_rules();
+			return $this;
 		}
 		
 		/* Method to attach the taxonomy to the post type */
-		public function add_taxonomy( $name, $args = array(), $labels = array() )
+		public function register_taxonomy( $name, $args = array(), $labels = array() )
 		{
-			if( ! empty( $name ) )
-			{			
+			if( ! empty( $name ) ) {			
 				// We need to know the post type name, so the new taxonomy can be attached to it.
 				$post_type_name = $this->post_type_name;
 
 				// Taxonomy properties
-				$taxonomy_name		= strtolower( str_replace( ' ', '_', $name ) );
+				$taxonomy_name		= ( !empty($args['name']) ) ? $args['name'] : strtolower( str_replace( ' ', '_', $name ) );
 				$taxonomy_labels	= $labels;
 				$taxonomy_args		= $args;
 
-				if( ! taxonomy_exists( $taxonomy_name ) )
-					{
-						//Capitilize the words and make it plural
-						$name 		= ucwords( str_replace( '_', ' ', $name ) );
-						$plural = (isset($labels['plural'])) ? $labels['plural'] : $name . "s";
+			if( ! taxonomy_exists( $taxonomy_name ) ) {
+				//Capitilize the words and make it plural
+				$name 		= ucwords( str_replace( '_', ' ', $name ) );
+				$plural = (isset($labels['plural'])) ? $labels['plural'] : $name . "s";
 
-						// Default labels, overwrite them with the given labels.
-						$labels = array_merge(
+				// Default labels, overwrite them with the given labels.
+				$labels = array_merge(
 
-							// Default
-							array(
-								'name' 					=> _x( $plural, 'taxonomy general name' ),
-								'singular_name' 		=> _x( $name, 'taxonomy singular name' ),
-							    'search_items' 			=> __( 'Search ' . $plural ),
-							    'all_items' 			=> __( 'All ' . $plural ),
-							    'parent_item' 			=> __( 'Parent ' . $name ),
-							    'parent_item_colon' 	=> __( 'Parent ' . $name . ':' ),
-							    'edit_item' 			=> __( 'Edit ' . $name ), 
-							    'update_item' 			=> __( 'Update ' . $name ),
-							    'add_new_item' 			=> __( 'Add New ' . $name ),
-							    'new_item_name' 		=> __( 'New ' . $name . ' Name' ),
-							    'menu_name' 			=> __( $plural ),
-							),
+					// Default
+					array(
+						'name' 					=> _x( $plural, 'taxonomy general name' ),
+						'singular_name' 		=> _x( $name, 'taxonomy singular name' ),
+					    'search_items' 			=> __( 'Search ' . $plural ),
+					    'all_items' 			=> __( 'All ' . $plural ),
+					    'parent_item' 			=> __( 'Parent ' . $name ),
+					    'parent_item_colon' 	=> __( 'Parent ' . $name . ':' ),
+					    'edit_item' 			=> __( 'Edit ' . $name ), 
+					    'update_item' 			=> __( 'Update ' . $name ),
+					    'add_new_item' 			=> __( 'Add New ' . $name ),
+					    'new_item_name' 		=> __( 'New ' . $name . ' Name' ),
+					    'menu_name' 			=> __( $plural ),
+					),
 
-							// Given labels
-							$taxonomy_labels
+					// Given labels
+					$taxonomy_labels
 
-						);
+				);
 
-						// Default arguments, overwitten with the given arguments
-						$args = array_merge(
+				// Default arguments, overwitten with the given arguments
+				$args = array_merge(
 
-							// Default
-							array(
-								'label'					=> $plural,
-								'labels'				=> $labels,
-								'public' 				=> true,
-								'show_ui' 				=> true,
-								'show_in_nav_menus' 	=> true,
-								'_builtin' 				=> false,
-							),
+					// Default
+					array(
+						'label'					=> $plural,
+						'labels'				=> $labels,
+						'public' 				=> true,
+						'show_ui' 				=> true,
+						'show_in_nav_menus' 	=> true,
+						'hierarchical' 			=> true,
+						'_builtin' 				=> false,
+					),
 
-							// Given
-							$taxonomy_args
+					// Given
+					$taxonomy_args
 
-						);
-						
-						// Add the taxonomy to the post type
-						register_taxonomy( $taxonomy_name, $post_type_name, $args );
-					}
-					else
-					{
-									
-						register_taxonomy_for_object_type( $taxonomy_name, $post_type_name );
-						
-					}
+				);
+				
+				// Add the taxonomy to the post type
+				register_taxonomy( $taxonomy_name, $post_type_name, $args );
+				
+			} else {
+							
+				register_taxonomy_for_object_type( $taxonomy_name, $post_type_name );
+				
 			}
-		}	
-	}
+		}
+	}	
+}

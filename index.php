@@ -72,7 +72,7 @@
 			
 		</div>
 
-		<div class="widget widget_posts size-small">
+		<div class="widget widget_posts size-medium">
 			<h5 class="widget-title">Most Popular</h5>
 			<ul class="posts">
 				<li <?php post_class(); ?>>

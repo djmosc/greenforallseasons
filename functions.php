@@ -76,6 +76,39 @@ function custom_init(){
 	global $template_directory;
 
 	require( $template_directory . '/inc/classes/bfi-thumb.php' );
+
+	require( $template_directory . '/inc/classes/custom-post-type.php' );
+
+	if(function_exists('get_field')) {
+
+			
+		$products_uri = get_page_uri(get_field('products_page', 'options'));
+
+		$products = new Custom_Post_Type( 'Product', 
+			array(
+				'rewrite' => array('with_front' => false, 'slug' => $products_uri),
+				'capability_type' => 'post',
+				'publicly_queryable' => true,
+				'has_archive' => true, 
+				'hierarchical' => true,
+				'menu_position' => null,
+				'menu_icon' => 'dashicons-products',
+				'supports' => array('title',  'page-attributes', 'thumbnail'),
+				'plural' => "Products",		
+			)
+		);
+
+		$products->register_taxonomy("Product Category",
+			array(
+				'name' => 'product_cat'
+			),
+			array(
+				'plural' => "Product Categories"
+			)
+		);
+
+		$products->register_post_type();
+	}
 }
 
 if( function_exists('acf_add_options_page') ) acf_add_options_page();
@@ -107,7 +140,14 @@ function custom_widgets_init() {
 	register_sidebar( array(
 		'name' => __( 'Homepage', THEME_NAME ),
 		'id' => 'homepage',
-		'before_widget' => '<aside id="%1$s" class="widget span one-third %2$s">',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>'
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Categories', THEME_NAME ),
+		'id' => 'categories',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>'
 	) );
 

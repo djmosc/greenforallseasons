@@ -149,25 +149,22 @@
 
 .widget_posts {
 
-	&.size-small {
-		@extend .clearfix;
-
-		.posts {
+	.posts {
+		&.size-small {
+			@extend .clearfix;
+			margin: 0 -0.3em;
 			.post {
-				width: 31%;
+				width: 33.3333%;
 				float: left;
-				margin: 1%;
+				padding: 0.3em;
 
 				&:nth-child(3n+1) {
 					clear: left;
 				}
 			}
 		}
-	}
 
-	&.size-medium {
-		.posts {
-
+		&.size-medium {
 			.post {
 				margin-bottom: 10px;
 			}
@@ -299,5 +296,17 @@
 			}
 		}		
 	}
+}
 
+
+.gform_widget {
+	.newsletter_wrapper {
+		padding-right: 0;
+		padding-bottom: 100px;
+
+		&:after {
+			height: 100px;
+			width: 100%;
+		}
+	}
 }

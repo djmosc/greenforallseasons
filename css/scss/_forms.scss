@@ -138,8 +138,10 @@ fieldset {
 			margin-bottom: 0.3em;
 
 			.gform_description {
+				display: block;
+				line-height: 1.4;
 				@include futura-heavy;
-				letter-spacing: 1px;
+				letter-spacing: 2px;
 				@include font-size(10);
 			}
 		}
@@ -461,11 +463,21 @@ fieldset {
 
 
 .newsletter_wrapper {
-	background-image: url(../images/backgrounds/newsletter.jpg);
-	background-repeat: no-repeat;
-	background-position: 104% center;
-	background-size: 220px ;
 	padding-right: 180px;
+	position: relative;
+
+	&:after {
+		display: block;
+		content: '';
+		background-image: url(../images/backgrounds/newsletter.jpg);
+		background-repeat: no-repeat;
+		height: 100%;
+		width: 180px;
+		background-size: cover;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
 
 	form {
 		position: relative;

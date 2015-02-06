@@ -979,7 +979,7 @@ hr {
 .comment-form .comment-form-email:after,
 .comment-form .comment-form-url:after,
 .comment-form .comment-form-comment:after,
-.widget_posts.size-small:after,
+.widget_posts .posts.size-small:after,
 .widget_products ul:after,
 .share-links:after,
 .social-links:after,
@@ -1140,11 +1140,13 @@ fieldset {
     .gform_wrapper form .gform_heading {
       margin-bottom: 0.3em; }
       .gform_wrapper form .gform_heading .gform_description {
+        display: block;
+        line-height: 1.4;
         font-family: 'L Futura W01';
         font-weight: 600;
         font-style: normal;
         text-transform: uppercase;
-        letter-spacing: 1px;
+        letter-spacing: 2px;
         font-size: 10px;
         font-size: 1rem; }
     .gform_wrapper form .gform_body .gform_fields {
@@ -1353,11 +1355,19 @@ fieldset {
   text-align: right; }
 
 .newsletter_wrapper {
-  background-image: url(../images/backgrounds/newsletter.jpg);
-  background-repeat: no-repeat;
-  background-position: 104% center;
-  background-size: 220px;
-  padding-right: 180px; }
+  padding-right: 180px;
+  position: relative; }
+  .newsletter_wrapper:after {
+    display: block;
+    content: '';
+    background-image: url(../images/backgrounds/newsletter.jpg);
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 180px;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0; }
   .newsletter_wrapper form {
     position: relative; }
     .newsletter_wrapper form .gform_body .gform_fields .gfield {
@@ -2090,13 +2100,15 @@ button:active, button:focus {
   .widget_products .products .product img {
     max-height: 180px; }
 
-.widget_posts.size-small .posts .post {
-  width: 31%;
-  float: left;
-  margin: 1%; }
-  .widget_posts.size-small .posts .post:nth-child(3n+1) {
-    clear: left; }
-.widget_posts.size-medium .posts .post {
+.widget_posts .posts.size-small {
+  margin: 0 -0.3em; }
+  .widget_posts .posts.size-small .post {
+    width: 33.3333%;
+    float: left;
+    padding: 0.3em; }
+    .widget_posts .posts.size-small .post:nth-child(3n+1) {
+      clear: left; }
+.widget_posts .posts.size-medium .post {
   margin-bottom: 10px; }
 
 .widget_instagram img {
@@ -2204,6 +2216,13 @@ button:active, button:focus {
   .widget_products ul li img {
     display: block;
     margin: 0 auto; }
+
+.gform_widget .newsletter_wrapper {
+  padding-right: 0;
+  padding-bottom: 100px; }
+  .gform_widget .newsletter_wrapper:after {
+    height: 100px;
+    width: 100%; }
 
 /* =============================================================================
    Lists
