@@ -210,7 +210,7 @@
 
 					if(!element.length) return false;
 					
-					var trigger = $('.leave-comment-btn', main.single.element);
+					var trigger = $('.comment-btn');
 					trigger.on('click', function(event) {
 						event.preventDefault();
 						main.single.comments.element.slideToggle(400);

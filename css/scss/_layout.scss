@@ -151,7 +151,7 @@ body {
 	z-index: 100;
 	padding: 0;
 	background: #FFF;
-	@extend .container;
+	//@extend .container;
 	margin-top: 3em;
 
 	@include device-width(9) {
@@ -189,6 +189,7 @@ body {
 
 .sidebar-container {
 	@extend .clearfix;
+	@extend .container;
 	position: relative;
 
 	@include device-width(9) {

@@ -383,7 +383,7 @@ blockquote {
 		li {
 			margin-bottom: 2.5em;
 
-			&:nth-child(3n+1) {
+			#author-archive &:nth-child(3n+1) {
 				clear: left;
 			}
 

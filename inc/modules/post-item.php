@@ -12,6 +12,9 @@
 			<img src="<?php echo $image_url; ?>" />
 		</a>
 	</div>
+
+	<?php $date = ( !empty($date) ) ? $date : null; ?>
+
 	<?php $data =  array(
 		'title' => $title,
 		'url' => $url,

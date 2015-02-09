@@ -2,7 +2,7 @@
 get_header();
 $category = get_post_category();
 ?>
-<section id="category" class="content-area">
+<section id="category" class="content-area container inner">
 	<?php if ( have_posts() ) : ?>
 
 		<header class="category-header">

@@ -72,9 +72,9 @@
 			
 		</div>
 
-		<div class="widget widget_posts size-medium">
+		<div class="widget widget_posts">
 			<h5 class="widget-title">Most Popular</h5>
-			<ul class="posts">
+			<ul class="posts size-medium">
 				<li <?php post_class(); ?>>
 					<?php include_module('post-item', array(
 						'title' => 'Nourish banana &amp; pomegranate pancakes',
@@ -109,12 +109,12 @@
 		</div>	
 
 
-		<div class="widget widget_posts size-small">
+		<div class="widget widget_posts">
 			<h5 class="widget-title">Must Read</h5>
 			<div class="widget-description">
 				The six things you need to see today
 			</div>			
-			<ul class="posts">
+			<ul class="posts size-small">
 				<?php for( $i = 0; $i < 5; $i++) : ?>
 				<li <?php post_class(); ?>>
 					<?php include_module('post-item', array(
