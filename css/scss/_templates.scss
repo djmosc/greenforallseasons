@@ -152,8 +152,16 @@
 			@include box-sizing(border-box);
 			padding: 1%;
 
+			.post-title {
+				@include font-size(30);
+			}
+
 			&:first-child {
 				width: 50%;
+
+				.post-title {
+					@include font-size(40);
+				}
 			}
 
 			&:nth-child(4n+4) {

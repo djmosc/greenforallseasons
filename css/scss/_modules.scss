@@ -367,7 +367,7 @@ blockquote {
 	}
 
 	.header {
-			.title {
+		.title {
 			@include miller-italic;
 			@include font-size(18);
 			text-align: center;
@@ -414,6 +414,10 @@ blockquote {
 			.title {
 				margin: 0;
 				@include font-size(33);
+
+				@include device-width(12) {
+					@include font-size(23);					
+				}
 			}
 
 			.excerpt {
