@@ -65,5 +65,6 @@
 	<?php endwhile; // end of the loop. ?>
 	<?php //include_module('related-posts'); ?>
 </div><!-- #single -->
+<?php include_module('related-posts'); ?>
 
 <?php get_footer(); ?>
