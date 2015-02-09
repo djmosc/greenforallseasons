@@ -199,6 +199,24 @@
 	}
 }
 
+.sidebar-container {
+	#category {
+		ul.posts {
+			li {
+				width: 50%;
+
+				&:first-child {
+					width: 100%;
+				}
+
+				&:nth-child(2n+2) {
+					clear: left;
+				}				
+			}
+		}
+	}
+}
+
 #author-archive {
 	.featured-image {
 		@include border-radius(50%);

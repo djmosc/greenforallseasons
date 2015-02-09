@@ -819,6 +819,7 @@ blockquote {
 }
 .post-date {
 	@include font-size(12);
+	text-transform: uppercase;
 }
 
 .post-title {
@@ -1122,7 +1123,7 @@ blockquote {
 	}
 
 	.post-meta {
-		padding: 1em 0;
+		padding: 0 0 1em 0;
 	}
 
 	.read-more {
