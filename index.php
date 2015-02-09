@@ -179,49 +179,6 @@
 			<?php endfor; ?>			
 		</div>
 
-		<div id="author-archive">
-			<img class="featured-image" src="http://lorempixel.com/460/460/people/" />
-			<h3 class="name">Carl Brown</h3>
-			<span class="title">Head Bartender at Dishoom</span>
-			<p>Suspendisse vestibulum dignissim quam. Integer vel augue. Phasellus nulla purus, interdum ac, venenatis non, varius rutrum, leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis a eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Fusce magna mi, porttitor quis, convallis eget, sodales ac, urna. Phasellus luctus venenatis magna. Vivamus eget lacus. Nunc tincidunt convallis tortor. Duis eros mi, dictum vel, fringilla sit amet, fermentum id, sem. Phasellus nunc enim, faucibus ut, laoreet in, consequat id, metus. Vivamus dignissim. Cras lobortis tempor velit. Phasellus nec diam ac nisl lacinia tristique. Nullam nec metus id mi dictum dignissim. Nullam quis wisi non sem lobortis condimentum. Phasellus pulvinar, nulla non aliquam eleifend, tortor wisi scelerisque felis, in sollicitudin arcu ante lacinia leo.</p>
-
-			<ul class="socials">
-				<li>
-					<a class="twitter" href="">@carlbrown</a>
-				</li>
-				<li>
-					<a class="facebook" href="">http://facebook.com/carlbrown</a>
-				</li>
-				<li>
-					<a class="web" href="">http://dishoom.com</a>
-				</li>
-			</ul>	
-		</div>
-
-		<div class="more-from">
-		    <div class="inner">
-		        <header class="header lined-header">
-		            <h3 class="title skew"><span><?php _e("More by", THEME_NAME); ?> Author</span></h3>
-		        </header>
-		        <ul class="posts clearfix">
-		            <li class="span one-third">
-		                <?php include_module('post-item', array(
-							'title' => '4 Flattering dresses',
-							'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
-							'url' => '#',
-							'image_url' => 'http://lorempixel.com/190/190',
-							'category' => array(
-								'name' => "Style"
-							)
-						)); ?>
-
-		            </li>
-		            		            		            			            
-		        </ul>
-		    </div>
-
-		</div>
-
 		<div class="post-ingredients">
 			<header class="header">
 				<h5 class="title"><?php _e("What you'll need", THEME_NAME); ?></h5>
@@ -269,71 +226,71 @@
 		</div>
 
 	</div>
-
-	<div class="related-posts">
-		<div class="container">
-			<div class="widget-header">
-				<h5 class="widget-title">You Might Also Like</h5>
-				<a href="">see all archive »</a>
-			</div>
-			<ul class="posts">
-				<li>
-					<?php include_module('post-item', array(
-						'title' => '4 Flattering dresses',
-						'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
-						'url' => '#',
-						'image_url' => 'http://lorempixel.com/190/190',
-						'date' => 'the date',
-						'author' => array(
-							'name' => 'victoria - anne bull',
-							'image_url' => 'http://lorempixel.com/100/100'
-						),
-						'category' => array(
-							'name' => "Style"
-						),
-						'read_more' => true
-					)); ?>			
-				</li>
-
-				<li>
-					<?php include_module('post-item', array(
-						'title' => '4 Flattering dresses',
-						'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
-						'url' => '#',
-						'image_url' => 'http://lorempixel.com/190/190',
-						'date' => 'the date',
-						'author' => array(
-							'name' => 'victoria - anne bull',
-							'image_url' => 'http://lorempixel.com/100/100'
-						),
-						'category' => array(
-							'name' => "Style"
-						),
-						'read_more' => true
-					)); ?>			
-				</li>
-
-				<li>
-					<?php include_module('post-item', array(
-						'title' => '4 Flattering dresses',
-						'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
-						'url' => '#',
-						'image_url' => 'http://lorempixel.com/190/190',
-						'date' => 'the date',
-						'author' => array(
-							'name' => 'victoria - anne bull',
-							'image_url' => 'http://lorempixel.com/100/100'
-						),
-						'category' => array(
-							'name' => "Style"
-						),
-						'read_more' => true
-					)); ?>			
-				</li>
-						
-			</ul>			
-		</div>
-	</div>	
-
 </section><!-- #index -->
+
+<div class="related-posts"><!-- related posts -->
+	<div class="container">
+		<div class="widget-header">
+			<h5 class="widget-title">You Might Also Like</h5>
+			<a href="">see all archive »</a>
+		</div>
+		<ul class="posts">
+			<li>
+				<?php include_module('post-item', array(
+					'title' => '4 Flattering dresses',
+					'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
+					'url' => '#',
+					'image_url' => 'http://lorempixel.com/190/190',
+					'date' => 'the date',
+					'author' => array(
+						'name' => 'victoria - anne bull',
+						'image_url' => 'http://lorempixel.com/100/100'
+					),
+					'category' => array(
+						'name' => "Style"
+					),
+					'read_more' => true
+				)); ?>			
+			</li>
+
+			<li>
+				<?php include_module('post-item', array(
+					'title' => '4 Flattering dresses',
+					'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
+					'url' => '#',
+					'image_url' => 'http://lorempixel.com/190/190',
+					'date' => 'the date',
+					'author' => array(
+						'name' => 'victoria - anne bull',
+						'image_url' => 'http://lorempixel.com/100/100'
+					),
+					'category' => array(
+						'name' => "Style"
+					),
+					'read_more' => true
+				)); ?>			
+			</li>
+
+			<li>
+				<?php include_module('post-item', array(
+					'title' => '4 Flattering dresses',
+					'excerpt' => "Vivamus lobortis leo eget viverra ornare. Pellentesque tempus nibh sit amet tincidunt lobortis...",
+					'url' => '#',
+					'image_url' => 'http://lorempixel.com/190/190',
+					'date' => 'the date',
+					'author' => array(
+						'name' => 'victoria - anne bull',
+						'image_url' => 'http://lorempixel.com/100/100'
+					),
+					'category' => array(
+						'name' => "Style"
+					),
+					'read_more' => true
+				)); ?>			
+			</li>
+					
+		</ul>			
+	</div>
+</div>	
+
 <?php get_footer(); ?>

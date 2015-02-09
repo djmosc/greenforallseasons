@@ -16,6 +16,7 @@
 		'title' => $title,
 		'url' => $url,
 		'excerpt' => $excerpt,
+		'date' => $date,
 	);
 
 	$data['author'] = ( !empty($author) ) ? $author : null; 
