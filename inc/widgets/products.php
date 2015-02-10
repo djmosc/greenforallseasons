@@ -53,7 +53,6 @@ class Products extends WP_Widget {
 					
 					<?php include_module('product-item', array(
 						'title' => get_the_title(),
-						'excerpt' => get_excerpt(50),
 						'url' => get_permalink(),
 						'image_url' => get_post_thumbnail_src($image_size),
 						'class' => implode(' ', $class)

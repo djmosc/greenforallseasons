@@ -1,4 +1,4 @@
-<div class="single-post-header">	
+<div class="single-post-header <?php echo ( !empty( $class) ) ? $class : ''; ?>">	
 	<?php if( !empty( $category) ): ?>
 	<?php include_module('post-category', array(
 		'name' => $category['name'],

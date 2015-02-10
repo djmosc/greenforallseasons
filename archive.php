@@ -1,6 +1,4 @@
-<?php
-get_header();
-?>
+<?php get_header(); ?>
 <section id="category" class="content-area container inner">
 	<?php if ( have_posts() ) : ?>
 
@@ -12,7 +10,7 @@ get_header();
 			</div>
 			<div class="filters">
 				<div class="inner">
-					<form mathod="GET">
+					<form method="GET">
 						<div class="field">
 							<input type="text" class="query" name="s" placeholder="Search" value="<?php echo esc_attr( get_search_query() ); ?>" />
 							<button type="submit" class="submit-btn search-btn" ></button>

@@ -12,82 +12,12 @@
 			padding: 0 10%;
 		}
 	}
+}
 
-	article.post-item {
+#single {
+	.single-post-header {
 
-		.excerpt {
-			@include garamond-italic;
-			@include font-size(16);
-			text-align: center;
-			margin: 1.5em 0;
-			padding: 0 8%;
-
-			&:before, &:after {
-				content: '';
-				display: block;
-				width: 20%;
-				margin: 0 auto;
-				border-top: 1px solid #e3e3e3;
-			}
-
-			p {
-				margin: 1.5em 0;
-				font-size: 2rem;
-				line-height: 1.5;			
-				color: #5b5b5b;
-			}
-		}
-
-		&.left-layout {
-
-			.category {
-				margin: 0;
-
-				.category-name {
-					width: 50%;
-					float: right;						
-				}					
-			}
-	
-			.header-container {
-				@extend .clearfix;
-				position: relative;
-				margin-bottom: 4em;
-
-				.post-image {
-					float: left;
-					width: 50%;
-				}
-
-				.header {
-					width: 50%;
-					position: absolute;
-					right: 0;
-					text-align: center;
-					height: 100%;
-					margin-top: 0;
-				}
-
-				.post-title {
-					position: relative;
-					top: 50%;
-					transform: translateY(-50%);
-					padding: 0 1em;
-					margin: .7em 0;
-
-					@include device-width(7) {
-						@include font-size(30);
-					}
-				}
-
-				.author {
-					position: absolute;
-					width: 100%;
-					bottom: 0;
-					left: 0;
-				}
-			}
-
+		&.layout-left {
 			@include device-width(6) {
 
 				.category {
@@ -123,7 +53,6 @@
 			}
 		}
 	}
-
 }
 
 #category {

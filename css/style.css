@@ -360,12 +360,12 @@ table {
   font-family: Arial, Helvetica, sans-serif; }
 
 .garamond {
-  font-family: 'Monotype Garamond W01';
+  font-family: 'Adobe Garamond W01';
   font-weight: 400;
   font-style: normal; }
 
 .garamond-italic {
-  font-family: 'Monotype Garamond W01';
+  font-family: 'Adobe Garamond W01';
   font-weight: 400;
   font-style: italic; }
 
@@ -989,9 +989,9 @@ hr {
 .post-ingredients .footer:after,
 .products:after,
 .categories .widgets:after,
+.single-post-header.left-layout .header-container:after,
 .sidebar-container:after,
-#footer .details-bottom:after,
-#content article.post-item.left-layout .header-container:after {
+#footer .details-bottom:after {
   content: '';
   display: table;
   clear: both; }
@@ -1713,7 +1713,7 @@ button:active, button:focus {
     top: 50%;
     margin-top: -2.5em; }
   .category-btn .sub-name {
-    font-family: 'Monotype Garamond W01';
+    font-family: 'Adobe Garamond W01';
     font-weight: 400;
     font-style: italic;
     margin: 0 0 0.5em 0; }
@@ -2128,7 +2128,7 @@ button:active, button:focus {
   .widget_editors p {
     font-size: 15px;
     font-size: 1.5rem;
-    font-family: 'Monotype Garamond W01';
+    font-family: 'Adobe Garamond W01';
     font-weight: 400;
     font-style: italic;
     color: #3b3b3b; }
@@ -2144,7 +2144,7 @@ button:active, button:focus {
 .widget_social {
   text-align: center; }
   .widget_social span {
-    font-family: 'Monotype Garamond W01';
+    font-family: 'Adobe Garamond W01';
     font-weight: 400;
     font-style: italic;
     color: #3b3b3b; }
@@ -2503,7 +2503,7 @@ blockquote {
             font-size: 23px;
             font-size: 2.3rem; } }
       .more-from .posts .post-item .excerpt {
-        font-family: 'Monotype Garamond W01';
+        font-family: 'Adobe Garamond W01';
         font-weight: 400;
         font-style: normal;
         font-size: 14px;
@@ -3399,7 +3399,7 @@ blockquote {
     padding: 0 1em;
     font-size: 28px;
     font-size: 2.8rem;
-    font-family: 'Monotype Garamond W01';
+    font-family: 'Adobe Garamond W01';
     font-weight: 400;
     font-style: italic;
     bottom: 0;
@@ -3415,7 +3415,7 @@ blockquote {
   .post-tips .tip {
     font-size: 16px;
     font-size: 1.6rem;
-    font-family: 'Monotype Garamond W01';
+    font-family: 'Adobe Garamond W01';
     font-weight: 400;
     font-style: italic; }
 
@@ -3425,7 +3425,7 @@ blockquote {
   .products-header .title {
     margin: 0.5em 0; }
   .products-header .excerpt {
-    font-family: 'Monotype Garamond W01';
+    font-family: 'Adobe Garamond W01';
     font-weight: 400;
     font-style: italic;
     margin: 0 auto;
@@ -3476,7 +3476,7 @@ blockquote {
     font-size: 0.8rem;
     letter-spacing: 2px; }
   .product-header .title {
-    font-family: 'Monotype Garamond W01';
+    font-family: 'Adobe Garamond W01';
     font-weight: 400;
     font-style: italic;
     font-size: 14px;
@@ -3503,6 +3503,59 @@ blockquote {
   .sidebar .widget:first-of-type {
     padding-top: 0; }
 
+.single-post-header .excerpt {
+  font-family: 'Adobe Garamond W01';
+  font-weight: 400;
+  font-style: italic;
+  font-size: 16px;
+  font-size: 1.6rem;
+  text-align: center;
+  margin: 1.5em 0;
+  padding: 0 8%; }
+  .single-post-header .excerpt:before, .single-post-header .excerpt:after {
+    content: '';
+    display: block;
+    width: 20%;
+    margin: 0 auto;
+    border-top: 1px solid #e3e3e3; }
+  .single-post-header .excerpt p {
+    margin: 1.5em 0;
+    font-size: 2rem;
+    line-height: 1.5;
+    color: #5b5b5b; }
+.single-post-header.left-layout .category {
+  position: absolute;
+  width: 50%;
+  right: 0;
+  text-align: center; }
+.single-post-header.left-layout .header-container {
+  position: relative;
+  margin-bottom: 4em; }
+  .single-post-header.left-layout .header-container .post-image {
+    float: left;
+    width: 50%; }
+  .single-post-header.left-layout .header-container .header {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    height: 100%;
+    margin-top: 0; }
+  .single-post-header.left-layout .header-container .post-title {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0 1em; }
+    @media only screen and (max-width: 700px) {
+      .single-post-header.left-layout .header-container .post-title {
+        font-size: 30px;
+        font-size: 3rem; } }
+  .single-post-header.left-layout .header-container .author {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0; }
+
 html {
   height: 100%;
   font-size: 62.5%; }
@@ -3516,7 +3569,7 @@ body {
   line-height: 1.5;
   min-width: 250px;
   border-top: 10px solid #8a967c;
-  font-family: 'Monotype Garamond W01';
+  font-family: 'Adobe Garamond W01';
   font-weight: 400;
   font-style: normal; }
 
@@ -3566,7 +3619,7 @@ body {
         float: none;
         margin: .5em 0; } }
     #header .logo-container .tagline {
-      font-family: 'Monotype Garamond W01';
+      font-family: 'Adobe Garamond W01';
       font-weight: 400;
       font-style: italic;
       font-size: 14px;
@@ -3602,7 +3655,7 @@ body {
     position: relative;
     padding: 0 10px; }
     #header .info .follow-us {
-      font-family: 'Monotype Garamond W01';
+      font-family: 'Adobe Garamond W01';
       font-weight: 400;
       font-style: italic;
       color: #7ca251;
@@ -3720,7 +3773,7 @@ body {
       #footer .logo-container {
         width: 50%; } }
     #footer .logo-container .tagline {
-      font-family: 'Monotype Garamond W01';
+      font-family: 'Adobe Garamond W01';
       font-weight: 400;
       font-style: italic;
       font-size: 14px;
@@ -3763,7 +3816,7 @@ body {
     color: #FFF;
     font-size: 14px;
     font-size: 1.4rem;
-    font-family: 'Monotype Garamond W01';
+    font-family: 'Adobe Garamond W01';
     font-weight: 400;
     font-style: italic; }
     @media only screen and (max-width: 400px) {
@@ -3883,76 +3936,24 @@ body {
   @media only screen and (max-width: 400px) {
     .page #content {
       padding: 0 10%; } }
-#content article.post-item .excerpt {
-  font-family: 'Monotype Garamond W01';
-  font-weight: 400;
-  font-style: italic;
-  font-size: 16px;
-  font-size: 1.6rem;
-  text-align: center;
-  margin: 1.5em 0;
-  padding: 0 8%; }
-  #content article.post-item .excerpt:before, #content article.post-item .excerpt:after {
-    content: '';
-    display: block;
-    width: 20%;
-    margin: 0 auto;
-    border-top: 1px solid #e3e3e3; }
-  #content article.post-item .excerpt p {
-    margin: 1.5em 0;
-    font-size: 2rem;
-    line-height: 1.5;
-    color: #5b5b5b; }
-#content article.post-item.left-layout .category {
-  margin: 0; }
-  #content article.post-item.left-layout .category .category-name {
-    width: 50%;
-    float: right; }
-#content article.post-item.left-layout .header-container {
-  position: relative;
-  margin-bottom: 4em; }
-  #content article.post-item.left-layout .header-container .post-image {
-    float: left;
-    width: 50%; }
-  #content article.post-item.left-layout .header-container .header {
-    width: 50%;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    height: 100%;
-    margin-top: 0; }
-  #content article.post-item.left-layout .header-container .post-title {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 0 1em;
-    margin: .7em 0; }
-    @media only screen and (max-width: 700px) {
-      #content article.post-item.left-layout .header-container .post-title {
-        font-size: 30px;
-        font-size: 3rem; } }
-  #content article.post-item.left-layout .header-container .author {
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    left: 0; }
+
 @media only screen and (max-width: 600px) {
-  #content article.post-item.left-layout .category {
+  #single .single-post-header.layout-left .category {
     margin: -0.9em; }
-    #content article.post-item.left-layout .category .category-name {
+    #single .single-post-header.layout-left .category .category-name {
       width: auto;
       float: none; }
-  #content article.post-item.left-layout .header-container .post-image {
+  #single .single-post-header.layout-left .header-container .post-image {
     float: none;
     width: auto; }
-  #content article.post-item.left-layout .header-container .header {
+  #single .single-post-header.layout-left .header-container .header {
     position: static;
     width: 100%;
     margin-top: -20px; }
-  #content article.post-item.left-layout .header-container .post-title {
+  #single .single-post-header.layout-left .header-container .post-title {
     top: 0%;
     transform: translateY(0); }
-  #content article.post-item.left-layout .header-container .author {
+  #single .single-post-header.layout-left .header-container .author {
     position: static; } }
 
 #category .category-header {

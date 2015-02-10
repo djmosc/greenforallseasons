@@ -9,18 +9,18 @@
 			$category = get_post_category(); 
 		?>
 
-		<?php $image_size = ($featured_image_position == 'top') ? array('width' => 800, 'height' => 530) : array('width' => 400, 'height' => 530); ?>
-
-			<?php $image = get_post_thumbnail_src($image_size); ?>
-
 		<div class="sidebar-container">
 
 			<div id="content">
-				<?php $class = (has_post_thumbnail()) ? 'has-featured-image' : 'no-featured-image'; ?>
 
-				<?php $class .= ' post-item ' . $featured_image_position . '-layout'; ?>
-				<article id="post-<?php the_ID(); ?>" <?php post_class($class); ?>>
-
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php 
+					$image_size = ($featured_image_position == 'top') ? array('width' => 800, 'height' => 530) : array('width' => 400, 'height' => 530);
+					$image = get_post_thumbnail_src($image_size);
+					$class = array( $featured_image_position . '-layout' ); 
+					$class[] = (has_post_thumbnail()) ? 'has-featured-image' : 'no-featured-image'; 
+					?>
+				
 					<?php include_module('single-post-header', array(
 						'title' => get_the_title(),
 						'image_url' => $image,
@@ -31,8 +31,9 @@
 						),
 						'excerpt' => get_the_excerpt(),
 						'category' => array(
-								'name' => $category->name,
-							) 
+							'name' => $category->name,
+						),
+						'class' => implode( ' ', $class)
 					)); ?>
 
 
