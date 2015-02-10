@@ -1,13 +1,15 @@
 <?php
 get_header();
-$category = get_post_category();
 ?>
 <section id="category" class="content-area container inner">
 	<?php if ( have_posts() ) : ?>
 
 		<header class="category-header">
 			<h1 class="category-title"><?php _e('Archive'); ?></h1>
-			<div class="category-name"><?php _e('Viewing '); ?><span><?php echo $category->name; ?></span></div>
+			<div class="category-name">
+				<span class="label"><?php _e('Viewing'); ?></span> 
+				<span class="value"><?php echo ( is_category() ) ? single_cat_title() : __("All", THEME_NAME); ?></span>
+			</div>
 			<div class="filters">
 				<div class="inner">
 					<form mathod="GET">
@@ -46,7 +48,8 @@ $category = get_post_category();
 					$url = get_permalink();	
 					$author_img_url = get_avatar_url ( get_the_author_meta('ID'), $size = '40' );
 					$author_id = get_the_author_meta('ID');
-					$date = get_the_time('F d, Y')		
+					$date = get_the_time('F d, Y');
+					$category = get_post_category();	
 				?>
 
 

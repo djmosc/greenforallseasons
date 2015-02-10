@@ -32,12 +32,14 @@ class Category extends WP_Widget {
 		if($category) :
 			echo $args['before_widget'];
 			$image_id = get_field('image', 'category_'.$category->term_id);
+			$sub_title = get_field('sub_title', 'category_'.$category->term_id);
 			$image_url = get_image( $image_id, array( 'width' => 400, 'height' => 180) );
+			
 			include_module('category-btn', array(
 				'url' => get_term_link($category),
 				'image_url' => $image_url,
 				'name' => $category->name,
-				'sub_title' => 'Sub title'
+				'sub_title' => $sub_title
 			));
 			echo $args['after_widget'];	
 		wp_reset_postdata();

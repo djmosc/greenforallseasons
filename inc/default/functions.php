@@ -108,7 +108,7 @@ if(!function_exists('get_excerpt')) {
 }
 
 if(!function_exists('get_post_thumbnail_src')) {
-	function get_post_thumbnail_src($size){
+	function get_post_thumbnail_src($size = 'thumbnail'){
 		global $post;
 		$thumbnail_id = get_post_thumbnail_id();
 		return get_image($thumbnail_id, $size);
@@ -116,7 +116,7 @@ if(!function_exists('get_post_thumbnail_src')) {
 }
 
 if(!function_exists('get_image')) {
-	function get_image($id, $size){
+	function get_image($id, $size = 'thumbnail'){
 		
 		if( is_array($size) ) $size['bfi_thumb'] = true;
 

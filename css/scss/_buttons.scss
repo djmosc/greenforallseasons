@@ -257,45 +257,6 @@ button {
 	}
 }
 
-.product-btn {
-	text-align: center;
-	color: #000;
-	
-	.header {
-		@include box-sizing(border-box);
-		background: #FFF;
-		margin: 30% 1em;
-		padding: 1em;
-		border: 1px solid #dadada;
-	}
-
-	.title {
-		color: #333333;
-		line-height: 1.4;
-		@include font-size(16);
-	}
-	
-	.meta {
-		@include font-size(12);
-		color: #666;
-		margin: 0.5em 0 1em;
-	}
-
-	.category {
-		text-transform: uppercase;
-		@include font-size(10);
-		letter-spacing: 2px;
-
-		span {
-			color: #000;
-		}
-	}
-
-	img {
-		max-height: 100%;
-	}
-}
-
 .up-btn {
 	background: none;
 	border: 0;

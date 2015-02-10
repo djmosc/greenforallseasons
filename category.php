@@ -1,6 +1,6 @@
 <?php
 get_header();
-$category = get_post_category();
+
 ?>
 <div class="sidebar-container">
 	<div id="content">		
@@ -24,7 +24,8 @@ $category = get_post_category();
 						$url = get_permalink();	
 						$author_img_url = get_avatar_url ( get_the_author_meta('ID'), $size = '40' );
 						$author_id = get_the_author_meta('ID');
-						$date = get_the_time('F d, Y');	
+						$date = get_the_time('F d, Y');
+						$category = get_post_category();
 					?>
 
 		            <li>

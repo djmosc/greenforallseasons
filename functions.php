@@ -326,10 +326,14 @@ function get_post_category($id = '') {
 	$id = ( $id ) ? $id : $post->ID;
 	
 	$terms = get_the_terms($id, 'category');
-	$term = array_pop($terms);
-	$term_id = ( !empty($term->term_id) ) ? $term->term_id : 0;
+	if( !empty($terms) ) {
+		$term = array_pop($terms);
+		$term_id = ( !empty($term->term_id) ) ? $term->term_id : 0;
 
-	return get_top_level_term($term_id, 'category');
+		return get_top_level_term($term_id, 'category');
+	}
+
+	return null;
 }
 
 function get_avatar_url($author_id, $size){

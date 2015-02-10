@@ -306,5 +306,26 @@
 		}		
 
 	}
+}
 
+#archive-product {
+	> .inner {
+		padding: 0 0 0 180px;
+	}
+
+	.products {
+		li {
+			width: 25%;
+			float: left;
+			padding: 0 10px;
+
+			&:nth-child(4n + 1){
+				clear: left;
+			}
+		}
+	}
+
+	.categories {
+		margin: 3em 0 3em -180px;
+	}
 }
