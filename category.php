@@ -62,4 +62,5 @@ $category = get_post_category();
 	</div>
 	<?php get_sidebar(); ?>			
 </div>
+<?php include_module('related-posts'); ?>
 <?php get_footer(); ?>

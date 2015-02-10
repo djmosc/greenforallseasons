@@ -15,8 +15,12 @@
 	// margin-top: 1em;
 	// margin-bottom: 3em;
 	border-bottom: 1px solid #e3e3e3;
-	padding: 25px;
+	padding: 1.7em;
 	position:  relative;
+
+	&:first-of-type {
+		padding-top: 0;
+	}
 
 	.widget-title {
 		width: 55%;
@@ -154,6 +158,7 @@
 		&.size-small {
 			@extend .clearfix;
 			margin: 0 -0.3em;
+
 			.post {
 				width: 33.3333%;
 				float: left;
@@ -167,7 +172,11 @@
 
 		&.size-medium {
 			.post {
-				margin-bottom: 10px;
+				margin-bottom: .7em;
+
+				&:last-child {
+					margin-bottom: 0;					
+				}				
 			}
 		}
 	}

@@ -125,6 +125,8 @@ fieldset {
  	margin: 0 !important;
  	background: #464646;
  	color: #FFF;
+ 	@extend .clearfix;
+ 	clear: both;
 
  	h3 {
  		color: #FFF;
