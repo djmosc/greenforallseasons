@@ -10,7 +10,7 @@
 	position: relative;
 
 	@include device-width(12) {
-		width: 95%;
+		width: auto;
 	}
 
 	&:after {

@@ -2,9 +2,9 @@
 get_header();
 
 ?>
-<div class="sidebar-container">
-	<div id="content">		
-		<section id="category" class="content-area">
+<section id="category">
+	<div class="sidebar-container">
+		<div class="sidebar-content">		
 		<?php if ( have_posts() ) : ?>
 
 			<ul class="posts">
@@ -59,9 +59,11 @@ get_header();
 
 			<?php include_module('pagination'); ?>
 
-		</section>
+		</div>
+		<?php get_sidebar(); ?>	
 	</div>
-	<?php get_sidebar(); ?>			
-</div>
-<?php include_module('related-posts'); ?>
+
+	<?php include_module('related-posts'); ?>
+
+</section>
 <?php get_footer(); ?>

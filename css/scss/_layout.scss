@@ -199,7 +199,7 @@ body {
 		overflow: hidden;
 	}
 
-	#content {
+	.sidebar-content {
 		float: left;
 		width: calc(100% - 360px);
 		position: relative;
@@ -219,7 +219,7 @@ body {
 		}
 	}
 
-	#sidebar {
+	.sidebar {
 		float: right;
 		width: 360px;
 		z-index: 200;

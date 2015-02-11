@@ -55,7 +55,7 @@
 	}
 }
 
-#category {
+#archive {
 	.category-header {
 		text-align: center;
 
@@ -150,23 +150,24 @@
 	}
 }
 
-.sidebar-container {
+
 	#category {
-		ul.posts {
-			li {
-				width: 50%;
+		.sidebar-content {
+			ul.posts {
+				li {
+					width: 50%;
 
-				&:first-child {
-					width: 100%;
+					&:first-child {
+						width: 100%;
+					}
+
+					&:nth-child(2n+2) {
+						clear: left;
+					}				
 				}
-
-				&:nth-child(2n+2) {
-					clear: left;
-				}				
 			}
 		}
 	}
-}
 
 #author-archive {
 
