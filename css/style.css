@@ -3761,10 +3761,6 @@ body {
       margin-top: 0;
       z-index: 300; } }
 
-#sidebar {
-  border-left: 1px solid #e3e3e3;
-  border-right: 1px solid #e3e3e3; }
-
 /* =============================================================================
    Footer Layout
    ========================================================================== */
@@ -3948,17 +3944,20 @@ body {
 #front-page .sidebar-content {
   padding-top: 60px;
   border-left: 1px solid #e3e3e3; }
-#front-page .homepage-widgets-top .widget {
-  width: 50%;
-  float: left;
-  padding: 1.5em;
-  border-top: 1px solid #e3e3e3; }
-  #front-page .homepage-widgets-top .widget:nth-child(2n - 1) {
-    border-right: 1px solid #e3e3e3;
-    width: 40%; }
-  #front-page .homepage-widgets-top .widget:nth-child(2n) {
-    width: 60%; }
+#front-page .homepage-widgets-top {
+  border-right: 1px solid #e3e3e3; }
+  #front-page .homepage-widgets-top .widget {
+    width: 50%;
+    float: left;
+    padding: 1.5em;
+    border-top: 1px solid #e3e3e3; }
+    #front-page .homepage-widgets-top .widget:nth-child(2n - 1) {
+      border-right: 1px solid #e3e3e3;
+      width: 40%; }
+    #front-page .homepage-widgets-top .widget:nth-child(2n) {
+      width: 60%; }
 #front-page .subscribe {
+  border-right: 1px solid #e3e3e3;
   border-top: 1px solid #e3e3e3;
   padding: 2em 1.5em; }
 #front-page .homepage-widgets-bottom {

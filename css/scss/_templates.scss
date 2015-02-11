@@ -17,6 +17,7 @@
 
 	.homepage-widgets-top {
 		@extend .clearfix;
+		border-right: 1px solid #e3e3e3;
 		.widget {
 			width: 50%;
 			float: left;
@@ -35,6 +36,7 @@
 	}
 
 	.subscribe {
+		border-right: 1px solid #e3e3e3;
 		border-top: 1px solid #e3e3e3;
 		padding: 2em 1.5em;
 	}

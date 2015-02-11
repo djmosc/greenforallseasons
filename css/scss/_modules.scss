@@ -1735,7 +1735,7 @@ blockquote {
 	@extend .container;
 	padding: 0 10px;
 	position: relative;
-
+	
 	@include device-width(9) {
 		overflow: hidden;
 	}
