@@ -3568,8 +3568,11 @@ blockquote {
             padding: 1em;
             visibility: visible;
             opacity: 1; }
+<<<<<<< HEAD
             .sidebar-open .sidebar-container .sidebar .widget:first-of-type {
               padding-top: 0; }
+=======
+>>>>>>> 860aa4cb65fffa31c60f648b30e12032cedab1b9
         .sidebar-container .sidebar .widget {
           visibility: hidden;
           opacity: 0;
