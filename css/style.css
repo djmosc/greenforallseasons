@@ -632,7 +632,7 @@ a.green:hover {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  max-width: 79.992em;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
   position: relative; }
@@ -989,8 +989,8 @@ hr {
 .post-ingredients .footer:after,
 .products:after,
 .categories .widgets:after,
-.single-post-header.left-layout .header-container:after,
 .sidebar-container:after,
+.single-post-header.left-layout .header-container:after,
 #footer .details-bottom:after {
   content: '';
   display: table;
@@ -1441,11 +1441,12 @@ button:active, button:focus {
   text-align: center;
   line-height: 0;
   width: 40px;
-  height: 40px; }
+  height: 40px;
+  border: 0; }
   .menu-btn:before {
     display: inline-block;
-    width: 12px;
-    height: 12px;
+    width: 1em;
+    height: 1em;
     line-height: 1;
     font-size: 1em;
     vertical-align: middle; }
@@ -3496,12 +3497,84 @@ blockquote {
   width: 33.3333%;
   padding: 0 10px; }
 
-.sidebar .widget {
-  border-bottom: 1px solid #e3e3e3;
-  padding: 1.7em;
+.sidebar {
+  background: #FFF;
   position: relative; }
-  .sidebar .widget:first-of-type {
-    padding-top: 0; }
+  .sidebar .menu-btn {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0; }
+    @media only screen and (max-width: 900px) {
+      .sidebar .menu-btn {
+        display: inline-block; } }
+  .sidebar .widget {
+    border-bottom: 1px solid #e3e3e3;
+    padding: 1.7em;
+    position: relative; }
+    .sidebar .widget:first-of-type {
+      padding-top: 0; }
+
+.sidebar-container {
+  position: relative; }
+  @media only screen and (max-width: 900px) {
+    .sidebar-container {
+      overflow: hidden; } }
+  .sidebar-container .sidebar-content {
+    float: left;
+    width: 840px;
+    width: calc(100% - 360px);
+    position: relative;
+    z-index: 100;
+    left: 0;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    @media only screen and (max-width: 900px) {
+      .sidebar-container .sidebar-content {
+        width: auto;
+        float: none;
+        padding-right: 40px; } }
+  .sidebar-container .sidebar {
+    float: right;
+    width: 360px;
+    z-index: 200;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative; }
+    @media only screen and (max-width: 900px) {
+      .sidebar-container .sidebar {
+        position: absolute;
+        top: 0;
+        width: 300px;
+        right: 0;
+        bottom: 0;
+        padding-top: 40px;
+        overflow: auto;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        z-index: 500;
+        margin-right: -260px; }
+        .sidebar-open .sidebar-container .sidebar {
+          position: fixed;
+          margin-right: 0; }
+          .sidebar-open .sidebar-container .sidebar .mobile-sidebar-btn:before {
+            content: '\00d7';
+            font-family: sans-serif; }
+          .sidebar-open .sidebar-container .sidebar .widget {
+            padding: 1em;
+            visibility: visible;
+            opacity: 1; }
+        .sidebar-container .sidebar .widget {
+          visibility: hidden;
+          opacity: 0;
+          -moz-transition: all 0.3s ease;
+          -o-transition: all 0.3s ease;
+          -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease; } }
 
 .single-post-header .excerpt {
   font-family: 'Adobe Garamond W01';
@@ -3587,16 +3660,13 @@ body {
   #header.navigation-open .primary-navigation {
     height: auto;
     max-height: 500px; }
-  #header > .top {
+  #header > .inner {
     position: relative;
     z-index: 100;
     padding: 4.5em 0 4em; }
     @media only screen and (max-width: 900px) {
-      #header > .top {
+      #header > .inner {
         padding: .5em 0 4em; } }
-  @media only screen and (max-width: 900px) {
-    #header > .bottom {
-      display: none; } }
   #header .logo-container {
     float: left;
     padding: 0 10px;
@@ -3683,7 +3753,8 @@ body {
   margin-top: 3em; }
   @media only screen and (max-width: 900px) {
     #main {
-      margin-top: 0; } }
+      margin-top: 0;
+      z-index: 300; } }
 
 #content {
   padding: 0 10px; }
@@ -3692,66 +3763,8 @@ body {
       padding: 0; } }
 
 #sidebar {
-  margin: 0;
   border-left: 1px solid #e3e3e3;
-  border-right: 1px solid #e3e3e3;
-  position: relative; }
-  #sidebar .menu-btn {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: -40px; }
-    @media only screen and (max-width: 900px) {
-      #sidebar .menu-btn {
-        display: none; } }
-
-.sidebar-container {
-  position: relative; }
-  @media only screen and (max-width: 900px) {
-    .sidebar-container {
-      overflow: hidden; } }
-  .sidebar-container .sidebar-content {
-    float: left;
-    width: calc(100% - 360px);
-    position: relative;
-    z-index: 100;
-    left: 0;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    padding: 0 2.5em; }
-    @media only screen and (max-width: 900px) {
-      .sidebar-container .sidebar-content {
-        width: auto;
-        float: none; }
-        .sidebar-open .sidebar-container .sidebar-content {
-          margin-left: -340px;
-          margin-right: 340px; } }
-  .sidebar-container .sidebar {
-    float: right;
-    width: 360px;
-    z-index: 200;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-    position: relative; }
-    @media only screen and (max-width: 900px) {
-      .sidebar-container .sidebar {
-        margin-right: -360px; }
-        .sidebar-open .sidebar-container .sidebar {
-          margin-right: 0; }
-          .sidebar-open .sidebar-container .sidebar .widget {
-            visibility: visible;
-            opacity: 1; }
-        .sidebar-container .sidebar .widget {
-          visibility: hidden;
-          opacity: 0;
-          -moz-transition: all 0.3s ease;
-          -o-transition: all 0.3s ease;
-          -webkit-transition: all 0.3s ease;
-          transition: all 0.3s ease; } }
+  border-right: 1px solid #e3e3e3; }
 
 /* =============================================================================
    Footer Layout
