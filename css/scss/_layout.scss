@@ -35,7 +35,7 @@ body {
 		}
 	}
 
-	> .top {
+	> .inner {
 		position: relative;
 		z-index: 100;
 		padding: 4.5em 0 4em;
@@ -45,12 +45,6 @@ body {
 		}
 	}
 
-	> .bottom {
-		@include device-width(9) {
-			display: none;
-		}
-	}
-		
 	.logo-container {
 		float: left;
 		padding: 0 10px;
@@ -156,6 +150,7 @@ body {
 
 	@include device-width(9) {
 		margin-top: 0;
+		z-index: 300;
 	}
 }
 
@@ -168,82 +163,8 @@ body {
 }
 
 #sidebar {
-	margin: 0;
 	border-left: 1px solid #e3e3e3;
 	border-right: 1px solid #e3e3e3;
-
-	position: relative;
-
-	.menu-btn {
-		display: none;
-		position: absolute;
-		top: 0;
-		left: -40px;
-
-		@include device-width(9) {
-			display: none;
-
-			.sidebar-open & {
-				//left: -40px;
-			}
-		}
-	}
-}
-
-.sidebar-container {
-	@extend .clearfix;
-	@extend .container;
-	position: relative;
-
-	@include device-width(9) {
-		overflow: hidden;
-	}
-
-	.sidebar-content {
-		float: left;
-		width: calc(100% - 360px);
-		position: relative;
-		z-index: 100;
-		left: 0;
-		@include transition(all 0.3s ease);
-		padding: 0 2.5em;
-
-		@include device-width(9) {
-			width: auto;
-			float: none;
-
-			.sidebar-open & {
-				margin-left: -340px;
-				margin-right: 340px;
-			}
-		}
-	}
-
-	.sidebar {
-		float: right;
-		width: 360px;
-		z-index: 200;
-		@include transition(all 0.3s ease);
-		position: relative;
-		@include device-width(9) {
-			margin-right: -360px;
-
-			.sidebar-open & {
-				margin-right: 0;
-
-				.widget {
-					visibility: visible;
-					opacity: 1;
-				}
-			}
-
-			.widget {
-				visibility: hidden;
-				opacity: 0;
-				@include transition(all 0.3s ease);
-			}
-		}
-	}
 }
 
 /* =============================================================================

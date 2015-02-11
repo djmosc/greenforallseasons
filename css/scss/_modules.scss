@@ -1701,6 +1701,24 @@ blockquote {
 }
 
 .sidebar {
+	background: #FFF;
+	position: relative;
+
+	.menu-btn {
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+
+		@include device-width(9) {
+			display: inline-block;
+
+			.sidebar-open & {
+				//left: -40px;
+			}
+		}
+	}
+
 	.widget {
 		border-bottom: 1px solid #e3e3e3;
 		padding: 1.7em;
@@ -1708,6 +1726,87 @@ blockquote {
 
 		&:first-of-type {
 			padding-top: 0;
+		}
+	}
+}
+
+
+.sidebar-container {
+	@extend .clearfix;
+	@extend .container;
+	position: relative;
+
+	@include device-width(9) {
+		overflow: hidden;
+	}
+
+	.sidebar-content {
+		float: left;
+		width: 840px;
+		width: calc(100% - 360px);
+		position: relative;
+		z-index: 100;
+		left: 0;
+		@include transition(all 0.3s ease);
+		
+		@include device-width(9) {
+			width: auto;
+			float: none;
+			padding-right: 40px;
+
+			// .sidebar-open & {
+			// 	margin-left: -340px;
+			// 	margin-right: 340px;
+			// }
+		}
+	}
+
+	.sidebar {
+		float: right;
+		width: 360px;
+		z-index: 200;
+		@include transition(all 0.3s ease);
+		position: relative;
+
+		@include device-width(9) {
+			position: absolute;
+			top: 0;
+			width: 300px;
+			right: 0;
+			bottom: 0;
+			padding-top: 40px;
+			overflow: auto;
+			overflow-y: scroll;
+			-webkit-overflow-scrolling: touch;
+			z-index: 500;
+			margin-right: -260px;
+
+			.sidebar-open & {
+				position: fixed;
+				margin-right: 0;
+
+				.mobile-sidebar-btn {
+					&:before {
+						content: '\00d7';
+						font-family: sans-serif;
+					}
+				}
+				.widget {
+					padding: 1em;
+					visibility: visible;
+					opacity: 1;
+
+					&:first-of-type {
+						padding-top: 0;
+					}
+				}
+			}
+
+			.widget {
+				visibility: hidden;
+				opacity: 0;
+				@include transition(all 0.3s ease);
+			}
 		}
 	}
 }
