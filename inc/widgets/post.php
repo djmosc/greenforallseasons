@@ -82,45 +82,29 @@ class Post extends WP_Widget {
 
 		if ( $custom_query->have_posts() ) :
 			echo $args['before_widget'];
+			$i = 0;
 			while ( $custom_query->have_posts() ) : $custom_query->the_post();
-				$thumbnail_size = 'thumbnail';
-				switch($args['size']) :
-					case 'large':
-						$thumbnail_size = 'thumbnail_large';
-						break;
-					case 'medium':
-						$thumbnail_size = 'thumbnail_medium';
-						break;
-				endswitch;
-			
-
-				$image_id = get_post_thumbnail_id(get_the_ID());
-				$image = wp_get_attachment_image_src( $image_id, $thumbnail_size );
-				if($image):
-			?>
-				<a href="<?php the_permalink(); ?>" class="overlay-btn">
-					<div class="thumbnail featured-image">
-						<img src="<?php echo $image[0]?>" class="scale" />
-					</div>
-					<div class="meta">
-						<?php switch($args['size']):
-							case 'large':
-							case 'medium':
-						?>
-						<?php get_template_part( 'inc/category'); ?>
-						<h4 class="title"><?php the_title();?></h4>
-						<?php break;
-							case 'small':
-							default: 
-						?>
-						<h6 class="title uppercase"><?php the_title();?></h6>
-						<?php break; ?>
-						<?php endswitch; ?>
-
-					</div>
-				</a>
-			<?php
-				endif;
+						
+				$image_size = ($i === 0) ? array('width' => 656, 'height' => 525) : array('width' => 320, 'height' => 222);
+				$author_id = get_the_author_meta('ID');
+				$category = get_post_category();
+				include_module('post-item', array(
+					'title' => get_the_title(),
+					'excerpt' => get_excerpt(150),
+					'url' => get_permalink(),
+					'image_url' => get_post_thumbnail_src($image_size),
+					'author' => array(
+						'name' => get_the_author(),
+						'image_url' => get_avatar_url ( get_the_author_meta('ID'), $size = '40' ),
+						'url' => get_author_posts_url($author_id),
+					),							
+				    'category' => array(
+				    	'name' => $category->name,
+				    ),
+					'read_more' => true,
+					'date' => get_the_time('F d, Y'),
+				));
+				$i++;
 			endwhile;
 			echo $args['after_widget'];	
 			wp_reset_postdata();

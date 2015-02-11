@@ -145,20 +145,12 @@ body {
 	z-index: 100;
 	padding: 0;
 	background: #FFF;
-	//@extend .container;
 	margin-top: 3em;
+	margin-bottom: 2em;
 
 	@include device-width(9) {
 		margin-top: 0;
 		z-index: 300;
-	}
-}
-
-#content {
-	padding: 0 10px;
-
-	@include device-width(6) {
-		padding: 0;
 	}
 }
 

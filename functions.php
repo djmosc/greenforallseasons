@@ -142,8 +142,15 @@ function custom_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Homepage', THEME_NAME ),
-		'id' => 'homepage',
+		'name' => __( 'Homepage - Top', THEME_NAME ),
+		'id' => 'homepage_top',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>'
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Homepage - Bottom', THEME_NAME ),
+		'id' => 'homepage_bottom',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>'
 	) );

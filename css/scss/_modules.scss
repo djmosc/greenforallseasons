@@ -1037,7 +1037,7 @@ blockquote {
 		left: auto;
 
 		.owl-dot {
-			padding: 1em 0.2em;
+			padding: 0.5em 0.3em;
 		}
 	}
 }
@@ -1732,8 +1732,8 @@ blockquote {
 
 
 .sidebar-container {
-	@extend .clearfix;
 	@extend .container;
+	padding: 0 10px;
 	position: relative;
 
 	@include device-width(9) {
