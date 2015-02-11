@@ -13,7 +13,11 @@
 		</a>
 	</div>
 
-	<?php $date = ( !empty($date) ) ? $date : null; ?>
+	<?php 
+		$date = ( !empty($date) ) ? $date : null;
+		$title = ( !empty($title) ) ? $title : null;
+		$excerpt = ( !empty($excerpt) ) ? $excerpt : null; 
+	?>
 
 	<?php $data =  array(
 		'title' => $title,

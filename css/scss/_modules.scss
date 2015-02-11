@@ -541,10 +541,12 @@ blockquote {
 					margin: 0;
 
 					a {
-						@include miller-italic;
+						@include garamond-italic;
 						text-transform: none;
 						background: #FFF;
 						padding: 1em .5em;
+						color: #8c8c8c;
+						@include font-size(14);
 
 						@include device-width(9) {
 							background: #1F1F1F;
@@ -578,9 +580,10 @@ blockquote {
 				.sub-menu {
 					display: block;
 					position: absolute;
-					width: 130px;
+					width: 200px;
 					right: 0;
-					padding: .5em;
+					padding: .5em ;
+					z-index: 5;
 
 					@include device-width(9) {
 						width: 100%;
@@ -590,10 +593,10 @@ blockquote {
 
 					a {
 						display: block;
-						padding: .5em;
+						padding: .3em .5em;
 
 						&:hover {
-							color: $olive;
+							color: $black;
 						}
 					}
 			
@@ -1432,6 +1435,7 @@ blockquote {
 .related-posts {
 	background: #ebebeb;
 	@extend .clearfix;
+	margin-bottom: -2em;
 
 	.container {
 		border-left: 1px solid $white;
@@ -1689,6 +1693,8 @@ blockquote {
 }
 
 .categories {
+	clear: both;
+
 	.widgets {
 		@extend .clearfix;
 
@@ -1696,6 +1702,13 @@ blockquote {
 			float: left;
 			width: 33.3333%;
 			padding: 0 10px;
+
+			@include device-width(6) {
+				width: 100%;
+				padding: 0 10px;
+				margin: .5em 0;
+				text-align: center;
+			}
 		}
 	}
 }
@@ -1813,6 +1826,17 @@ blockquote {
 
 .single-post-header {
 
+	.category {
+		text-align: center;
+		position: relative;
+		margin-bottom: -.8em;				
+	}		
+
+
+	.post-header {
+		margin-top: -2em;
+	}
+
 	.excerpt {
 		@include garamond-italic;
 		@include font-size(16);
@@ -1833,7 +1857,7 @@ blockquote {
 			font-size: 2rem;
 			line-height: 1.5;			
 			color: #5b5b5b;
-		}
+		}	
 	}
 
 	&.left-layout {

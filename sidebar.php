@@ -14,6 +14,9 @@
 
 <div id="sidebar" class="sidebar" >
 	<button class="mobile-sidebar-btn menu-btn"></button>
-	<?php dynamic_sidebar('default'); ?>
-
+	<?php if (is_front_page()): ?>
+		<?php dynamic_sidebar('homepage_sidebar'); ?>
+	<?php else: ?>
+		<?php dynamic_sidebar('default'); ?>
+	<?php endif; ?>
 </div>

@@ -131,6 +131,10 @@ function custom_widgets_init() {
 	require( $template_directory . '/inc/widgets/posts.php' );
 
 	require( $template_directory . '/inc/widgets/socials.php' );
+
+	require( $template_directory . '/inc/widgets/shop.php' );	
+
+	require( $template_directory . '/inc/widgets/editor.php' );	
 	
 	register_sidebar( array(
 		'name' => __( 'Default', THEME_NAME ),
@@ -139,6 +143,15 @@ function custom_widgets_init() {
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',	
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Homepage - Sidebar', THEME_NAME ),
+		'id' => 'homepage_sidebar',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',			
 	) );
 
 	register_sidebar( array(
@@ -161,6 +174,13 @@ function custom_widgets_init() {
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget' => '</aside>'
 	) );
+
+	register_sidebar( array(
+		'name' => __( 'About Page', THEME_NAME ),
+		'id' => 'about-page',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>'
+	) );	
 
 	
 }

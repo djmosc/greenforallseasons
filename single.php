@@ -11,7 +11,7 @@
 
 		<div class="sidebar-container">
 
-			<div id="content">
+			<div id="content" class="sidebar-content">
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php 

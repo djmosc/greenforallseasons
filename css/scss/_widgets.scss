@@ -184,7 +184,7 @@
 }
 
 
-.widget_editors {
+.widget_editor {
 	text-align: center;
 	padding: 2.5em 13% 3.5em;
 
@@ -311,6 +311,27 @@
 		&:after {
 			height: 100px;
 			width: 100%;
+		}
+	}
+}
+
+.widget_shop {
+
+	.primary-btn {
+		margin-top: 1em;
+	}
+	
+	ul.posts {
+		@extend .clearfix;
+
+		li {
+			float: left;
+			width: 50%;
+			padding: 5%;
+
+			&:nth-child(2n+1) {
+				clear: left;
+			}
 		}
 	}
 }

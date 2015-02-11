@@ -1,4 +1,9 @@
-<?php get_header(); ?>
+<?php
+/*
+Template Name: About us
+*/
+get_header(); ?>
+
 
 <div id="page">
 	<div class="inner container">
@@ -19,7 +24,14 @@
 				<div class="content">
 					<?php the_content(); ?>
 				</div>
-			
+				<div class="categories">
+					<div class="widgets">
+						<?php dynamic_sidebar('about-page'); ?>
+					</div>
+				</div>
+				<div class="content">
+					<?php gravity_form(1, true, true, true, '', true, 12); ?>
+				</div>
 			</article>
 		</div>
 	<?php endwhile; // end of the loop. ?>
