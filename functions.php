@@ -40,6 +40,8 @@ add_filter( 'comment_form_defaults', 'custom_comment_form_defaults');
 
 add_filter( 'body_class', 'custom_body_classes', 10, 2 );
 
+add_filter( 'pre_get_posts', 'custom_pre_get_posts');
+
 
 
 
@@ -378,3 +380,10 @@ function custom_body_classes( $wp_classes, $extra_classes )
 	return array_merge( $wp_classes, (array) $extra_classes );
 }
 
+function custom_pre_get_posts( $query ) {
+	if(is_category()){
+		$query->set('posts_per_page', 5);
+	}
+
+	return $query;
+}

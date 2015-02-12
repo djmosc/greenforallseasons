@@ -32,7 +32,7 @@
 				</div>
 				<?php include_module('subscribe'); ?>
 				<div class="homepage-widgets-bottom">
-					<?php dynamic_sidebar('homepage_sidebar'); ?>
+					<?php dynamic_sidebar('homepage_bottom'); ?>
 				</div>
 			</div>
 			<?php get_sidebar(); ?>	

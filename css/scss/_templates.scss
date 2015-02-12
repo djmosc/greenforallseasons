@@ -242,10 +242,10 @@
 
 #category {
 	.sidebar-content {
-		padding: 0 7%;
+		padding: 0 7% 3em;
 
 		@include device-width(12) {
-			padding: 0 10px;
+			padding: 0 10px 3em;
 		}
 		ul.posts {
 			li {
@@ -350,7 +350,7 @@
 	}
 }
 
-#archives, #category {
+#archives, .sidebar-content {
 	ul.posts {
 		li {
 			margin-bottom: 3em;
