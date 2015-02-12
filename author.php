@@ -1,12 +1,12 @@
 <?php get_header(); ?>
 <div class="sidebar-container">
-	<div id="content">	
+	<div class="sidebar-content">	
 		<section id="author-archive">
 				
 			<div class="contributor clearfix">
-
 				<?php 
-					$author_id = get_the_author_meta( 'ID' );
+					$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+					$author_id = $curauth->ID;
 					$author_image = get_field('image', 'user_'. $author_id);
 				?>
 		

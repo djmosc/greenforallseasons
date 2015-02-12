@@ -46,6 +46,8 @@ class Editor extends WP_Widget {
 			$author_id = $args['user_id'];
 			$author_image = get_field('image', 'user_'. $author_id);
 			$author_img_url = get_avatar_url ( $author_id, $size = '40' );
+			$excerpt = get_the_author_meta( 'description', $author_id );
+			$excerpt = (strlen($excerpt) > 150) ? substr($excerpt,0,150).'...' : $excerpt;
 		?>
 
 			<img class="image" src="<?php echo bfi_thumb($author_image['url'], array('width' => 180, 'height' => 180)); ?>">
@@ -62,8 +64,8 @@ class Editor extends WP_Widget {
 				february 01,2015
 			</div>
 			<p>
-				“How work influences personal style and vice versa is an interesting question, and in this issue we have approached the subject from a number of different angles...”		
-				<a class="read-more" href="">Read Further &raquo;</a>	
+				<?php echo $excerpt; ?>	
+				<a class="read-more" href="<?php echo get_author_posts_url($author_id); ?>">Read Further &raquo;</a>	
 			</p>
 		<? echo $args['after_widget'];	
 		
