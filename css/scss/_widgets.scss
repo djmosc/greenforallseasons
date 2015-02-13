@@ -223,6 +223,8 @@
 		@include font-size(15);
 		@include garamond-italic;
 		color: #3b3b3b;
+		text-align: left;
+		padding: 0 10%;		
 
 		.read-more {
 			@include futura-heavy;

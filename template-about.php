@@ -35,6 +35,7 @@ get_header(); ?>
 			</article>
 		</div>
 	<?php endwhile; // end of the loop. ?>
+	</div>
 
 </div><!-- #single -->
 <?php get_footer(); ?>
