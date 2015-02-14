@@ -8,7 +8,7 @@
 	)); ?>
 	<?php endif; ?>
 	<div class="post-image image">
-		<a href="<?php echo $url; ?>">
+		<a href="<?php echo $url; ?>" class="image-btn overlay-btn btn">
 			<img src="<?php echo $image_url; ?>" />
 		</a>
 	</div>

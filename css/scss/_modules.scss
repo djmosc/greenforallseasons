@@ -70,19 +70,21 @@ blockquote {
 }
 
 .pagination {
-	@include futura;
-	@include font-size(10);
 	text-align: center;
+	text-transform: uppercase;
+	@include font-size(10);
+	@include futura-heavy;
+	letter-spacing: 2px;
 
 	.page-numbers {
-		@extend .primary-btn;
-		padding: 1em 1.5em;
-		margin: 0 0.2em;
+		//@extend .primary-btn;
+		padding: 0.5em;
+		margin: 0 0em;
 
 		&.current {
 			cursor: default;
-			color: #FFF;
-			background: #000;
+			color: #ccc;
+
 			&:hover {
 				color: #FFF;
 				background: #000;
@@ -829,11 +831,7 @@ blockquote {
 	text-transform: uppercase;
 }
 
-.post-title {
-	&.long {
-		@include font-size(22);
-	}
-}
+.post-title {}
 
 .post-excerpt {
 	@include font-size(14);
@@ -1034,13 +1032,13 @@ blockquote {
 	}
 
 	.owl-dots {
-		width: 32%;
+		width: 33%;
 		right: 0;
 		bottom: 0;
 		left: auto;
 
 		.owl-dot {
-			padding: 0.5em 0.3em;
+			padding: 0.8em 0.3em;
 		}
 	}
 }
@@ -1107,14 +1105,22 @@ blockquote {
 		right: 0;
 		text-align: center;
 		z-index: 1;
+		z-index: 300;
 	}
 
 	.image {
 		text-align: center;
+		position: relative;
+		z-index: 100;
+
+		.btn {
+			display: block;
+		}
 		
 		img {
 			display: inline-block;
 			vertical-align: top;
+			width: 100%;
 		}
 	}
 
@@ -1122,7 +1128,8 @@ blockquote {
 		margin-top: -20px;
 		padding: 0 2em;
 		text-align: center;
-		
+		position: relative;
+		z-index: 200;
 	}
 
 	.excerpt {
@@ -1316,10 +1323,6 @@ blockquote {
 		top: 0;
 		right: 0;
 		width: 33%;
-
-		@include device-width(11) {
-			display: none;
-		}
 	}
 
 	.post-item {
@@ -1329,34 +1332,14 @@ blockquote {
 		width: 33%;
 		top: 2em;
 		bottom: 2em;
-		padding: 3%;
+		padding: 1em 3%;
 		border: 2px solid black;
 		margin-top: .5em;
 		@include display(flex);
 		@include align-items(center);
+		@include align-content(center);
+		@include justify-content(center);
 		@include flex-direction(column);
-
-		@include device-width(12) {
-			background: #FFF;
-			padding: 3% 5%;
-			width: 40%;
-		}	
-
-		@include device-width(11) {
-			width: 50%;
-		}	
-
-		@include device-width(10) {
-			width: 70%;
-			transform: translateY(-50%);	
-		}				
-
-		@include device-width(9) {
-			width: 80%;
-			right: 10%;
-		}
-
-		
 	}
 
 	.post-header {
@@ -1364,23 +1347,9 @@ blockquote {
 			margin-top: -0.75em;
 		}	
 
-		.post-title {
-			@include device-width(6) {
-				@include font-size(40);
-			}
-
-			@include device-width(5) {
-				@include font-size(30);
-			}	
-
-			@include device-width(4) {
-				@include font-size(20);
-			}					
-		}
-
 		.post-excerpt {
 			color: gray;
-			padding: 0 7%;
+			padding: 0;
 			line-height: 1.4;
 
 			@include device-width(7) {
@@ -1389,17 +1358,40 @@ blockquote {
 		}
 	}
 
+	.post-title {
+		//position: relative;
+
+		// &:after {
+		// 	content: "";
+		// 	text-align: right;
+		// 	position: absolute;
+		// 	bottom: 0;
+		// 	right: 0;
+		// 	width: 70%;
+		// 	height: 2em;
+		// 	background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 50%);
+		// }
+
+		// text-overflow: ellipsis;
+		// -webkit-line-clamp: 2;
+		// -webkit-box-orient: vertical;
+		// display: -webkit-box;
+		// overflow: hidden;
+		// display: block;
+	}
+
+	.post-excerpt {
+		margin: 0.5em 0;
+	}
+
 	.post-meta {
 		text-align: center;
+		padding: 1em 0 0 0;
 	}
 
 	.author {
 		@include inline-block;
 		text-align: center;
-
-		@include device-width(4) {
-			display: none;
-		}
 
 		.image {
 			@include border-radius(50%);
@@ -1422,30 +1414,24 @@ blockquote {
 	.thumbnail {
 		width: 70%;
 
-		@include device-width(10) {
-			width: 100%;
-		}
-
 		img {
 			display: block;
+			width: 100%;
 		}
 	}
 }
 
 .related-posts {
-	background: #ebebeb;
 	@extend .clearfix;
-	margin-bottom: -2em;
 
-	.container {
-		border-left: 1px solid $white;
-		border-right: 1px solid $white;
+	> .inner {
+		padding: 0 10px;
 	}
 
 	.widget-header {
 		float: left;
 		width: 175px;
-		padding: 2.5% 1.5%;
+		padding: 2em 10px;
 
 		a {
 			@include futura-heavy;
@@ -1453,76 +1439,21 @@ blockquote {
 			@include font-size(10);
 			display: block;
 			margin-top: 1em;
-		}
-
-		@include device-width(9) {
-			width: 100%;
-			float: none;
-			text-align: center;
+			letter-spacing: 2px;
 		}
 	}
 
 	.posts {
 		float: left;
+		width: 1005px;
 		width: calc(100% - 175px);
-
-		@include device-width(9) {
-			width: 100%;
-			float: none;
-		}		
+		@include display(flex);
 
 		li {
 			float: left;
 			width: 33.33%;
 			border-right: 1px solid $white;
-			padding: 2.5% 1.5% 3.5%;	
-
-			@include device-width(6) {
-				width: 50%;
-				border-right: none;
-
-				&:last-child {
-					width: 100%;
-					border-top: 1px solid $white;
-					border-bottom: 1px solid $white;
-				}
-			}				
-
-			&:last-child {
-				border-right: none;
-			}
-
-			.post-item {
-
-				.header {
-					@include device-width(8) {
-						padding: 0 1em;
-					}		
-
-					@include device-width(6) {
-						padding: 0 .5em;
-					}		
-				}
-
-				.post-title {
-					@include device-width(10) {
-						@include font-size(30);
-					}
-
-					@include device-width(6) {
-						@include font-size(20);
-						margin-bottom: 1em;
-					}
-				}
-
-				.excerpt {
-					@include font-size(14);
-
-					@include device-width(6) {
-						display: none;
-					}				
-				}				
-			}
+			padding: 2em 10px;	
 		}
 	} 
 }
@@ -1694,21 +1625,15 @@ blockquote {
 
 .categories {
 	clear: both;
+	overflow: auto;
 
 	.widgets {
 		@extend .clearfix;
-
+		min-width: 1000px;
 		.widget {
 			float: left;
 			width: 33.3333%;
-			padding: 0 10px;
-
-			@include device-width(6) {
-				width: 100%;
-				padding: 0 10px;
-				margin: .5em 0;
-				text-align: center;
-			}
+			padding: 5px 10px;
 		}
 	}
 }
@@ -1716,7 +1641,7 @@ blockquote {
 .sidebar {
 	background: #FFF;
 	position: relative;
-
+	
 	.menu-btn {
 		display: none;
 		position: absolute;
@@ -1745,9 +1670,9 @@ blockquote {
 
 
 .sidebar-container {
-	@extend .container;
-	padding: 0 10px;
+	@extend .clearfix;
 	position: relative;
+	border-right: 1px solid #e3e3e3;
 	
 	@include device-width(9) {
 		overflow: hidden;
@@ -1761,11 +1686,12 @@ blockquote {
 		z-index: 100;
 		left: 0;
 		@include transition(all 0.3s ease);
+		border-right: 1px solid #e3e3e3;
 		
 		@include device-width(9) {
 			width: auto;
 			float: none;
-			padding-right: 40px;
+			margin-right: 40px;
 
 			// .sidebar-open & {
 			// 	margin-left: -340px;

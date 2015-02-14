@@ -83,6 +83,8 @@ function custom_init(){
 
 	require( $template_directory . '/inc/classes/custom-post-type.php' );
 
+	require( $template_directory . '/inc/classes/category-dropdown-url-walker.php' );
+
 	if(function_exists('get_field')) {
 
 			
@@ -145,6 +147,16 @@ function custom_widgets_init() {
 		'after_widget' => '</aside>',
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',	
+	) );
+
+	register_sidebar( array(
+		'name' => __( 'Homepage - Carousel', THEME_NAME ),
+		'id' => 'homepage_carousel',
+		'description' => __('The Post widget is only supported for this widget area'),
+		'before_widget' => '<div id="%1$s" class="widget item %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',			
 	) );
 
 	register_sidebar( array(

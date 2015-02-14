@@ -1,4 +1,4 @@
-<div class="post-slide">
+<div class="post-slide" style="">
 	<span class="label"><?php _e('Top Stories', 'greenforallseasons' );  ?></span>
 	
 	<div class="post-item">
@@ -16,17 +16,14 @@
 		<div class="post-meta">
 			<?php 
 			if( !empty( $author) ):
-				include_module('author', array(
-					'name' => $author['name'],
-					'image_url' => $author['image_url']
-				)); 
+				include_module('author', $author); 
 			endif;
 			?>
 			<a class="secondary-btn read-more-btn" href="<?php echo $url; ?>"><?php _e("Read More", THEME_NAME); ?></a>
 		</div>
 	</div>
 	<figure class="thumbnail">
-		<a href="<?php echo $url; ?>">
+		<a href="<?php echo $url; ?>" class="overlay-btn btn">
 			<img src="<?php echo $image_url; ?>" />
 		</a>
 	</figure>

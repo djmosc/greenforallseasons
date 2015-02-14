@@ -169,7 +169,6 @@ body {
 	z-index: 100;
 	padding: 0;
 	background: #FFF;
-	margin-bottom: 2em;
 	margin-top: 1em;
 
 	@include device-width(9) {
@@ -178,9 +177,7 @@ body {
 }
 
 #sidebar {
-	border-left: 1px solid #e3e3e3;
-	border-right: 1px solid #e3e3e3;
-
+	
 	@include device-width(9) {
 		border-left: none;
 	}
@@ -348,6 +345,16 @@ body {
 		padding: 24px 0;
 		background: $dark-green;
 	}	
+}
+
+#related-posts {
+	background: #ebebeb;
+	overflow: auto;
+
+	> .inner {
+		min-width: 1000px;
+	}
+
 }
 
 #lightbox {

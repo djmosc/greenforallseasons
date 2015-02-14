@@ -24,17 +24,13 @@ if(isset($tag_ids)){
     );
 }
 
-
-
-
-
 $custom_query = new WP_Query($args);
 if ( $custom_query->have_posts() ) : ?>
-<div class="related-posts"><!-- related posts -->
-    <div class="container">
+<div id="related-posts" class="related-posts">
+    <div class="container inner">
         <div class="widget-header">
-            <h5 class="widget-title">You Might Also Like</h5>
-            <a href="">see all archive »</a>
+            <h4 class="widget-title"><?php _e("You Might Also Like", THEME_NAME); ?></h4>
+            <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e("See all archive &raquo;", THEME_NAME) ?></a>
         </div>
         <ul class="posts clearfix">
             <?php

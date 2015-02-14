@@ -3,24 +3,7 @@
 	<div class="inner container">
 
 		<div class="owl-carousel featured-carousel">
-			<?php for($i = 0; $i < 5; $i++) : ?>
-			<article <?php post_class('item'); ?>>
-				<?php include_module('post-slide', array(
-					'title' => 'Nourish banana &amp; pomegranate pancakes',
-					'excerpt' => "In eget dolor augue. In vehicula, ex in efficitur scelerisque, nibh justo imperdiet magna, eu efficitur mauris orci ullamcorper lectus.",
-					'url' => '#',
-					'image_url' => 'http://lorempixel.com/840/470',
-					'author' => array(
-						'name' => 'victoria - anne bull',
-						'image_url' => 'http://lorempixel.com/100/100'
-					),
-					'category' => array(
-						'name' => "Bites"
-					),
-					'date' => 'the date'
-				)); ?>
-			</article>
-			<?php endfor; ?>
+			<?php dynamic_sidebar('homepage_carousel'); ?>
 		</div>
 		
 		<?php include_module('categories'); ?>

@@ -5,11 +5,12 @@
 		d: $(document),
 		init: function(){
 			
-			main.global.init();
-			main.header.init();
-			main.sidebar.init();
-			main.single.init();
-			main.page.init();
+			this.global.init();
+			this.header.init();
+			this.sidebar.init();
+			this.single.init();
+			this.index.init();
+			this.page.init();
 			//main.lightbox.init();
 
 		},
@@ -93,40 +94,6 @@
 				$.removeCookie('subscribe_viewed');
 
 			},
-		},
-
-		index: {
-			element: $('#index'),
-			init: function(){
-				var element = main.index.element;
-
-				if(!element.length) return false;
-
-					
-
-			}
-		},
-
-		archive: {
-			init: function(){
-				var element = main.archive.element = $('#archive');
-
-				if(!element.length) return false;
-
-				var form = main.archive.form = $('.filters form', element),
-					category = $('.category', form),
-					date = $('.date', form);
-	
-				date.on('change', function(){
-					form.attr('action', $(this).val());
-					form.submit();
-				});
-
-				category.on('change', function(){
-					form.submit();
-				});
-
-			}
 		},
 
 		single: {
@@ -228,6 +195,35 @@
 
 				if(!element.length) return false;
 
+			}
+		},
+
+		index: {
+			element: $('#index'),
+			init: function(){
+				var element = this.element;
+
+				if(!element.length) return false;
+
+				this.filters.init();
+
+			},
+
+			filters: {
+				element: $('.filters'),
+				init: function(){
+					var element = this.element,
+						category = $('.category', element),
+						date = $('.date', element);
+	
+					category.on('change', function(){
+						window.location.href = $(this).val();
+					});
+
+					date.on('change', function(){
+						window.location.href = $(this).val();
+					});
+				}
 			}
 		},
 

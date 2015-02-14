@@ -7,7 +7,7 @@
 	border-top: 2px solid $black;
 	border-bottom: 2px solid $black;
 	padding: 0.1em 0;
-	@include font-size(37);
+	//@include font-size(37);
 	margin-top: 0;
 }
 
@@ -66,32 +66,16 @@
 }
 
 .widget_post {
-	> a {
-		position: relative;
-		display: block;
+	.post-item {
+		.image {
+			.btn {
+				display: block;
 
-		&:hover {
-			.meta {
-				visibility: visible;
-				opacity: 1;
+				img {
+					width: 100%;
+				}
 			}
 		}
-	}
-
-	.meta {
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: 100%;
-		@include box-sizing(border-box);
-		padding: 0 1em;
-		color: #FFF;
-		z-index: 200;
-		@include transition(all 0.3s ease);
-		visibility: hidden;
-		opacity: 0;
-		@include translateY(-50%);
-		text-align: center;
 	}
 }
 
@@ -306,6 +290,11 @@
 
 
 .gform_widget {
+
+	.widget-title {
+		display: none;
+	}
+	
 	.newsletter_wrapper {
 		padding-right: 0;
 		padding-bottom: 100px;

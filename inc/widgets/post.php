@@ -8,6 +8,7 @@ class Post extends WP_Widget {
 	}
 
 	function form($instance) {
+
 		$offset = (isset($instance['offset'])) ? esc_attr($instance['offset']) : '1';
 		$category_id = (isset($instance['category_id'])) ? esc_attr($instance['category_id']) : '';
 		$post_id = (isset($instance['post_id'])) ? esc_attr($instance['post_id']) : '';
@@ -53,21 +54,13 @@ class Post extends WP_Widget {
 
 	function widget($args, $instance) {
 		global $post;
+
+		$location = $args['id'];
 		$args['offset'] = ($instance['offset']) ? intval($instance['offset']) - 1 : 0;
 		$args['category_id'] = (isset($instance['category_id']) && $instance['category_id'] != 0) ? $instance['category_id'] : '';		
 		$args['size'] = (isset($instance['size'])) ? $instance['size'] : 'small';
 		$args['post_id'] = (isset($instance['post_id'])) ? $instance['post_id'] : null;
 
-		// if(is_category()){
-		// 	$category = get_top_level_category(get_query_var('cat'));
-		// 	if($instance['category_id'] == 0){
-		// 		$args['category_id'] = $category->term_id;
-		// 	} else if($instance['category_id'] == -1){
-		// 		$args['category_id'] = get_query_var('cat');
-		// 	}
-		// }
-		
-		
 		$options = array('posts_per_page' => 1, 'post_type' => array('post'), 'orderby' => 'date', 'order' => 'DESC', 'post_status' => 'publish');
 		if($args['post_id']){
 			$options['p'] = $args['post_id'];
@@ -85,10 +78,12 @@ class Post extends WP_Widget {
 			$i = 0;
 			while ( $custom_query->have_posts() ) : $custom_query->the_post();
 						
-				$image_size = ($i === 0) ? array('width' => 656, 'height' => 525) : array('width' => 320, 'height' => 222);
+				$image_size = ($location == 'homepage_carousel') ? array('width' => 840, 'height' => 480) : array('width' => 320, 'height' => 222);
 				$author_id = get_the_author_meta('ID');
 				$category = get_post_category();
-				include_module('post-item', array(
+				$module = ($location == 'homepage_carousel') ? 'post-slide' : 'post-item';
+
+				$data = array(
 					'title' => get_the_title(),
 					'excerpt' => get_excerpt(150),
 					'url' => get_permalink(),
@@ -103,7 +98,10 @@ class Post extends WP_Widget {
 				    ),
 					'read_more' => true,
 					'date' => get_the_time('F d, Y'),
-				));
+				);
+
+				include_module($module, $data);
+
 				$i++;
 			endwhile;
 			echo $args['after_widget'];	

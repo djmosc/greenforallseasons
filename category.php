@@ -1,8 +1,5 @@
-<?php
-get_header();
-
-?>
-<section id="category">
+<?php get_header(); ?>
+<section id="category" class="container">
 	<div class="sidebar-container">
 		<div class="sidebar-content">		
 		<?php if ( have_posts() ) : ?>
@@ -62,8 +59,6 @@ get_header();
 		</div>
 		<?php get_sidebar(); ?>	
 	</div>
-
-	<?php include_module('related-posts'); ?>
-
 </section>
+<?php include_module('related-posts'); ?>
 <?php get_footer(); ?>

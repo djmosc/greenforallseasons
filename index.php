@@ -1,31 +1,20 @@
 <?php get_header(); ?>
-<section id="archives" class="content-area container inner">
+<section id="index" class="content-area container inner">
 	<?php if ( have_posts() ) : ?>
 
-		<header class="category-header">
-			<h1 class="category-title"><?php _e('Archive'); ?></h1>
-			<div class="category-name">
+		<header class="index-header">
+			<h2 class="index-title"><?php _e('Archive'); ?></h2>
+			<div class="index-name">
 				<span class="label"><?php _e('Viewing'); ?></span> 
 				<span class="value"><?php echo ( is_category() ) ? single_cat_title() : __("All", THEME_NAME); ?></span>
 			</div>
 			<div class="filters">
-				<div class="inner">
-					<form method="GET">
-						<div class="field">
-							<input type="text" class="query" name="s" placeholder="Search" value="<?php echo esc_attr( get_search_query() ); ?>" />
-							<button type="submit" class="submit-btn search-btn" ></button>
-						</div>						
-						<div class="field">
-							<?php wp_dropdown_categories(array('class' => 'category', 'show_option_all' => __("All Categories", THEME_NAME))); ?>
-						</div>
-						<div class="field">
-							<select class="date">
-								<option value=""><?php _e("Sort by date", THEME_NAME); ?></option>
-								<?php wp_get_archives(array('format' => 'option')); ?>
-							</select>
-						</div>
-					</form>
-				</div>
+				<?php get_search_form(); ?>
+				<select class="date">
+					<option value=""><?php _e("Sort by date", THEME_NAME); ?></option>
+					<?php wp_get_archives(array('format' => 'option')); ?>
+				</select>
+				<?php wp_dropdown_categories(array('class' => 'category', 'show_option_all' => __("All Categories", THEME_NAME), 'walker' => new Category_Dropdown_Url_Walker)); ?>
 			</div>				
 		</header>
 

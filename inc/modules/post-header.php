@@ -5,7 +5,7 @@
 	endif;
 	?>
 	
-	<h3 class="title post-title">
+	<h3 class="title post-title <?php echo ( strlen($title) > 30 ) ? 'long' : ''; ?>">
 		<?php if (!empty($url)): ?>
 			<a href="<?php echo $url; ?>"><?php echo $title; ?></a>
 		<?php else: ?>

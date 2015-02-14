@@ -1,38 +1,144 @@
 #front-page {
+	margin-bottom: 3em;
+
 	.featured-carousel {
 		padding: 0 10px 0 10px;
 
 		.item {
 			padding-left: 3em;
 
-			@include device-width(9) {
+			@include device-width(12) {
 				padding-left: 0;
 			}
 
+			.label {
+				@include device-width(12) {
+				 	width: 43%;
+				}
+
+				@include device-width(10) { 
+					display: none;
+				}
+			}
+
 			.post-item {
-				.header {
-					margin-top: 0;
+
+				@include device-width(12) {
+				 	width: 43%;
 				}
 
 				@include device-width(10) {
-					width: 80%;
-					transform: translateY(0);	
-				}					
+					background: #FFF;
+					position: absolute;
+					margin-top: 0;
+					right: 2em;
+
+				}
+
+				@include device-width(8) {
+					width: 50%;
+				}
+
+				@include device-width(6) {
+					width: auto;
+					left: 2em;
+				}
+
+				@include device-width(4) {
+					padding: 1em;
+				}
+
+				.post-header {
+					@include device-width(4) {
+						padding: 0;
+					}
+				}
+
+				.post-category {
+					@include device-width(10) {
+						position: relative;
+						margin: 0.8em 0;
+					}
+				}
+
+				.post-excerpt {
+					@include device-width(8) {
+						display: none;
+					}
+				}				
+
+				.author {
+					@include device-width(4) {
+						display: none;
+					}
+				}			
+			}
+
+			.thumbnail {
+
+				@include device-width(12) {
+					width: 60%
+				}
+
+				@include device-width(10) {
+					width: 100%;
+				}
+
+				a {
+					display: block;
+				}
+
+				img {
+
+					@include device-width(6) {
+						max-width: none;
+						height: 400px;
+						width: auto;
+					}
+
+					@include device-width(6) {
+						height: 300px;
+					}
+
+				}
+			}
+		}
+
+		.owl-dots {
+			@include device-width(12) {
+			 	width: 43%;
+			}
+
+			@include device-width(10) {
+				right: 2em;
+			}
+
+			@include device-width(6) {
+				left: 2em;
+				width: auto;
 			}
 		}
 	}
 
 	.categories {
 		margin: 3em 0;
+
+		@include device-width(9) {
+			margin: 1.5em;
+		}
 	}
+
+	.sidebar-container {
+		border: 1px solid #e3e3e3;
+	}
+
 	.sidebar-content {
 		padding-top: 60px;
-		border-left: 1px solid #e3e3e3;
 	}
 
 	.homepage-widgets-top {
 		@extend .clearfix;
-		border-right: 1px solid #e3e3e3;
+		//border-right: 1px solid #e3e3e3;
 		.widget {
 			width: 50%;
 			float: left;
@@ -42,25 +148,75 @@
 			&:nth-child(2n - 1) {
 				border-right: 1px solid #e3e3e3;
 				width: 40%;
+
+				@include device-width(12) {
+					width: 50%;
+				}
+
+				@include device-width(5) {
+					width: auto;
+					border-right: 0;
+				}
 			}
 
 			&:nth-child(2n) {
 				width: 60%;
+
+				@include device-width(12) {
+					width: 50%;
+				}
+
+				@include device-width(5) {
+					width: auto;
+				}
+			}
+
+			&.widget_post {
+				.post-header {
+					@include device-width(7) {
+						padding: 0;
+					}
+				}
 			}
 		}
 	}
 
 	.subscribe {
-		border-right: 1px solid #e3e3e3;
+		//border-right: 1px solid #e3e3e3;
 		border-top: 1px solid #e3e3e3;
 		padding: 2em 1.5em;
+
+		@include device-width(9) {
+			padding: 1.5em;
+		}
+
+		.newsletter_wrapper {
+			@include device-width(6) {
+				padding-right: 0;
+			}
+
+			&:after {
+				@include device-width(6) {
+					display: none;
+				}
+			}
+		}
 	}
 
 	.homepage-widgets-bottom {
 		@extend .clearfix;
-		margin-right: -360px;
+		margin-right: -363px;
 		border-top: 1px solid #e3e3e3;
-		border-bottom: 1px solid #e3e3e3;
+		@include display(flex);
+		background: #FFF;
+
+		@include device-width(12) {
+			margin-right: 0;
+		}
+
+		@include device-width(7) {
+			display: block;
+		}
 
 		.widget {
 			width: 33.333%;
@@ -69,17 +225,62 @@
 			border-right: 1px solid #e3e3e3;
 
 			&:nth-child(3n - 2) {
-				width: 40%;
+				width: 458px;
+				width: calc(100% - 720px);
+
+				@include device-width(12) {
+					width: 33.333%;
+				}
+
+				@include device-width(7) {
+					width: 100%;
+					border-right: 0;
+					border-bottom: 1px solid #e3e3e3;
+				}
 			}
 
 			&:nth-child(3n - 1),
 			&:nth-child(3n), {
-				width: 30%;
+				width: 360px;
+
+				@include device-width(12) {
+					width: 33.333%;
+				}
+
+				@include device-width(7) {
+					width: 50%;
+				}
+
+				@include device-width(5) {
+					width: 100%;
+					border-right: 0;
+					border-bottom: 1px solid #e3e3e3;
+				}
+			}
+			&:nth-child(3n) {
+				@include device-width(7) {
+					border-right: 0;
+				}
+			}
+
+			&:last-child {
+				@include device-width(5) {
+					border-bottom: 0;
+				}
+			}
+			&.widget_post {
+				.post-header {
+					@include device-width(12) {
+						padding: 0;
+					}
+				}
 			}
 		}
 	}
 }
 
+
+//which template is this for?
 .page {
 
 	.single-post-header  {
@@ -134,7 +335,7 @@
 
 					.post-title {
 						top: 0%;
-							transform: translateY(0);
+						transform: translateY(0);
 					}
 
 					.author {
@@ -146,39 +347,37 @@
 	}
 }
 
-#archive {
-	.category-header {
+#index {
+	.index-header {
 		text-align: center;
+		@extend .clearfix;
 
-		.category-title {
+		.index-title {
 			margin: 0;
 		}
 
-		.category-name {
+		.index-name {
 			@include futura;
 			@include font-size(10);
 			text-transform: uppercase;
+			letter-spacing: 2px;
 
 			span {
 				@include futura-heavy;
-				@extend .green-label;
+				//@extend .green-label;
 			}
 		}
 
 		.filters {
 			text-align: right;
 
-			form {
-				@include inline-block;
-
-				.field {
-					float :left;
-				}
+			.search-form {
+				display: inline-block;
 			}
 		}
 	}
 
-	ul.posts {
+	.posts {
 		li {
 			float: left;
 			width: 25%;
@@ -241,16 +440,31 @@
 }
 
 #category {
+	padding: 0 10px;
+
 	.sidebar-content {
-		padding: 0 7% 3em;
+
+		padding: 0 1em 3em 100px;
 
 		@include device-width(12) {
-			padding: 0 10px 3em;
+			padding-left: 0;
 		}
-		ul.posts {
+
+		@include device-width(9) {
+			padding-top: 0.5em;
+		}
+
+		@include device-width(4) {
+			padding-right: 10px;
+		}
+		
+		.posts {
+			@extend .clearfix;
+
 			li {
 				width: 50%;
 				float: left;
+				padding: 0 10px;
 
 				&:first-child {
 					width: 100%;
@@ -258,7 +472,23 @@
 
 				&:nth-child(2n+2) {
 					clear: left;
-				}				
+				}
+
+				@include device-width(6) {
+					width: auto;
+				}	
+
+				@include device-width(4) {
+					padding: 0;
+				}	
+			}
+
+			.post-item {
+				.post-header {
+					@include device-width(7) {
+						padding: 0;
+					}
+				}
 			}
 		}
 	}
