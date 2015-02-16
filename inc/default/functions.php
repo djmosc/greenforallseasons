@@ -102,7 +102,7 @@ if(!function_exists('get_excerpt')) {
 		$excerpt = ( !empty($post->post_excerpt) ) ? $post->post_excerpt : get_the_content();
 		$excerpt = strip_tags($excerpt);
 		$excerpt = substr($excerpt, 0, $count);
-		$excerpt = apply_filters('the_excerpt', $excerpt);
+		$excerpt = strip_shortcodes($excerpt);
 
 		if( !empty($excerpt) ) $excerpt .= '...';
 		return $excerpt;
