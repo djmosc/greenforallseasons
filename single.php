@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <?php wp_enqueue_script('expander'); ?>
-<div id="single">
+<div id="single" class="container">
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php 
 			$featured_image_position = get_field('featured_image_position');
@@ -11,7 +11,7 @@
 
 		<div class="sidebar-container">
 
-			<div id="content" class="sidebar-content">
+			<div class="sidebar-content">
 
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php 

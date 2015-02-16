@@ -130,10 +130,38 @@
 
 	.sidebar-container {
 		border: 1px solid #e3e3e3;
+		border-top: 3px solid #8a967c;
+		margin: 0 10px;
 	}
 
 	.sidebar-content {
-		padding-top: 60px;
+		//padding-top: 60px;
+	}
+
+	.sidebar {
+		padding-top: 2em;
+	}
+
+	.sidebar-content-title {
+		border-top: 3px solid #000;
+		padding: 3px;
+		text-transform: uppercase;
+		text-align: center;
+		padding: 1em 0;
+		@include garamond-italic;
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 3px;
+			left: 50%;
+			margin-left: -5px;
+			width: 0; 
+			height: 0; 
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid #000;
+		}
 	}
 
 	.homepage-widgets-top {
@@ -280,28 +308,70 @@
 }
 
 
-//which template is this for?
-.page {
+#page-about {
 
 	.single-post-header  {
+
+		.post-image {
+			padding: 0 40px;
+
+			@include device-width(10) {
+				padding: 0;
+			}
+		}
 		.header  {
 			margin-top: 0;
-
+			
 			.title {
 				@include font-size(50);
+
+				@include device-width(12) {
+					@include font-size(46);	
+				}
+
+				@include device-width(10) {
+					@include font-size(42);	
+				}
+
+				@include device-width(8) {
+					@include font-size(38);	
+				}
+
+				@include device-width(6) {
+					@include font-size(35);	
+				}
 			}
 		}
 	}
-	.content, .single-post-header .header, .single-post-header .excerpt {
-		padding: 0 26%;
-		margin: 2.4em 0;
 
-		@include device-width(6) {
-			padding: 0 15%;
-		}
+	.single-post-header .header,
+	.single-post-header .excerpt,
+	.page-content,
+	.contact_wrapper {
+		max-width: 600px;
+		padding: 0 10px;
+		margin: 2.4em auto;
+	}
 
-		@include device-width(4) {
-			padding: 0 10%;
+	.page-content {
+		text-align: justify;
+	}
+
+	.subscribe {
+		max-width: 800px;
+		padding: 0 10px;
+		margin: 5em auto;
+
+		.newsletter_wrapper {
+			@include device-width(6) {
+				padding-right: 0;
+			}
+
+			&:after {
+				@include device-width(6) {
+					display: none;
+				}
+			}
 		}
 	}
 }
@@ -348,14 +418,13 @@
 }
 
 #index {
+	padding-bottom: 4em;
+
 	.index-header {
 		text-align: center;
 		@extend .clearfix;
-
-		.index-title {
-			margin: 0;
-		}
-
+		padding: 0 10px;
+		
 		.index-name {
 			@include futura;
 			@include font-size(10);
@@ -370,19 +439,28 @@
 
 		.filters {
 			text-align: right;
+			margin: 0.5em 0;
 
 			.search-form {
 				display: inline-block;
+				border: 1px solid #E3E3E3;
+				margin: 0 1em 0 0;
+
+				.input {
+					border: 0;
+				}
 			}
 		}
 	}
 
 	.posts {
+		margin: 0 0 2em 0;
+
 		li {
 			float: left;
 			width: 25%;
 			@include box-sizing(border-box);
-			padding: 1%;
+			padding: 10px;
 
 			.post-title {
 				@include font-size(30);
@@ -442,6 +520,10 @@
 #category {
 	padding: 0 10px;
 
+	.category-header {
+		margin-bottom: 2em;
+	}
+
 	.sidebar-content {
 
 		padding: 0 1em 3em 100px;
@@ -494,127 +576,146 @@
 	}
 }
 
-#archives {
-	.category-header {
-		text-align: center;
+// #archives {
+// 	.category-header {
+// 		text-align: center;
 
-		.category-title {
-			margin: 0;
-		}
+// 		.category-title {
+// 			margin: 0;
+// 		}
 
-		.category-name {
-			@include futura;
-			@include font-size(10);
-			text-transform: uppercase;
+// 		.category-name {
+// 			@include futura;
+// 			@include font-size(10);
+// 			text-transform: uppercase;
 
-			span {
-				@include futura-heavy;
-			}
-		}
+// 			span {
+// 				@include futura-heavy;
+// 			}
+// 		}
 
-		.filters {
-			text-align: right;
+// 		.filters {
+// 			text-align: right;
 
-			form {
-				@include inline-block;
+// 			form {
+// 				@include inline-block;
 
-				.field {
-					float :left;
-				}
-			}
-		}
+// 				.field {
+// 					float :left;
+// 				}
+// 			}
+// 		}
+// 	}
+
+// 	ul.posts {
+// 		li {
+// 			float: left;
+// 			width: 25%;
+// 			margin-bottom: 4em;
+// 			@include box-sizing(border-box);
+// 			padding: 1%;
+
+// 			&:first-child {
+// 				width: 50%;
+// 			}
+
+// 			&:nth-child(4n+4) {
+// 				clear: left;
+// 			}
+
+// 			@include device-width(9) {
+// 				width: 33%;
+
+// 				&:first-child {
+// 					width: 66%;
+// 				}
+
+// 				&:nth-child(4n+4) {
+// 					clear: none;
+// 				}	
+
+// 				&:nth-child(3n+3) {
+// 					clear: left;
+// 				}							
+// 			}
+
+// 			@include device-width(6) {
+// 				width: 50%;
+
+// 				&:first-child {
+// 					width: 100%;
+// 				}
+
+// 				&:nth-child(3n+3) {
+// 					clear: none;
+// 				}							
+
+// 				&:nth-child(2n+2) {
+// 					clear: left;
+// 				}							
+// 			}	
+
+// 			@include device-width(4) {
+// 				width: 100%;
+// 			}					
+// 		}
+// 	}
+// }
+
+// #archives, .sidebar-content {
+// 	ul.posts {
+// 		li {
+// 			margin-bottom: 3em;
+
+// 			&:first-child {
+// 				.post-excerpt {
+// 					float:left;
+// 					width: 65%;
+
+// 					@include device-width(6) {
+// 						float: none;
+// 						width: 100%;
+// 					}
+// 				}
+
+// 				.read-more {
+// 					padding-top: 1em;
+
+// 					@include device-width(6) {
+// 						padding-top: 1em;						
+// 					}
+// 				}
+
+// 				.post-meta {
+// 					display: none;
+// 				}
+// 			}
+// 		}
+// 	}
+// }
+
+
+#author {
+
+	.sidear-container {
+		margin: 0 10px;
 	}
 
-	ul.posts {
-		li {
-			float: left;
-			width: 25%;
-			margin-bottom: 4em;
-			@include box-sizing(border-box);
-			padding: 1%;
+	.sidebar-content {
+		padding: 0 4em 0 200px;
 
-			&:first-child {
-				width: 50%;
-			}
+		@include device-width(12) {
+			padding-left: 100px;
+		}
 
-			&:nth-child(4n+4) {
-				clear: left;
-			}
-
-			@include device-width(9) {
-				width: 33%;
-
-				&:first-child {
-					width: 66%;
-				}
-
-				&:nth-child(4n+4) {
-					clear: none;
-				}	
-
-				&:nth-child(3n+3) {
-					clear: left;
-				}							
-			}
-
-			@include device-width(6) {
-				width: 50%;
-
-				&:first-child {
-					width: 100%;
-				}
-
-				&:nth-child(3n+3) {
-					clear: none;
-				}							
-
-				&:nth-child(2n+2) {
-					clear: left;
-				}							
-			}	
-
-			@include device-width(4) {
-				width: 100%;
-			}					
+		@include device-width(10) {
+			padding: 0 2em;
+		}
+		
+		@include device-width(9) {
+			padding: 0 10px;
 		}
 	}
-}
-
-#archives, .sidebar-content {
-	ul.posts {
-		li {
-			margin-bottom: 3em;
-
-			&:first-child {
-				.post-excerpt {
-					float:left;
-					width: 65%;
-
-					@include device-width(6) {
-						float: none;
-						width: 100%;
-					}
-				}
-
-				.read-more {
-					padding-top: 1em;
-
-					@include device-width(6) {
-						padding-top: 1em;						
-					}
-				}
-
-				.post-meta {
-					display: none;
-				}
-			}
-		}
-	}
-}
-
-
-#author-archive {
-	padding: 0 5%;
 
 	.contributor {
 
@@ -630,16 +731,16 @@
 			margin: 0.6em 0;
 		}
 		
-		.title {
-			display: block;
+		.position {
 			text-align: center;
 			@include futura;
 			text-transform: uppercase;
 			@include font-size(10);
 			margin-bottom: 2em;
+			letter-spacing: 1px;
 		}
 			
-		ul.socials {
+		.socials {
 			margin: 2em 0;
 
 			li {

@@ -18,10 +18,42 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	@include font-size(60);
+
+	@include device-width(12) {
+		@include font-size(56);	
+	}
+
+	@include device-width(10) {
+		@include font-size(52);	
+	}
+
+	@include device-width(8) {
+		@include font-size(48);	
+	}
+
+	@include device-width(6) {
+		@include font-size(45);	
+	}
 }
 
 h2 {
 	@include font-size(50);
+
+	@include device-width(12) {
+		@include font-size(46);	
+	}
+
+	@include device-width(10) {
+		@include font-size(42);	
+	}
+
+	@include device-width(8) {
+		@include font-size(38);	
+	}
+
+	@include device-width(6) {
+		@include font-size(35);	
+	}
 }
 
 h3 {
@@ -43,21 +75,58 @@ h3 {
 		@include font-size(25);	
 	}
 
-	// @include device-width(4) {
-	// 	@include font-size(28);	
-	// }
 }
 
 h4 {
 	@include font-size(34);
+
+	@include device-width(12) {
+		@include font-size(32);	
+	}
+
+	@include device-width(10) {
+		@include font-size(28);	
+	}
+
+	@include device-width(8) {
+		@include font-size(24);	
+	}
+
+	@include device-width(6) {
+		@include font-size(20);	
+	}
 }
 
 h5 {
 	@include font-size(25);
+
+	@include device-width(12) {
+		@include font-size(22);	
+	}
+
+	@include device-width(10) {
+		@include font-size(18);	
+	}
+
+	@include device-width(8) {
+		@include font-size(14);	
+	}
 }
 
 h6 {
 	@include font-size(18);
+
+	@include device-width(12) {
+		@include font-size(16);	
+	}
+
+	@include device-width(10) {
+		@include font-size(14);	
+	}
+
+	@include device-width(8) {
+		@include font-size(12);	
+	}
 }
 
 p {

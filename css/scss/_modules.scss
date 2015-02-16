@@ -345,30 +345,31 @@ blockquote {
 .more-from {
 	border-top: 15px solid $black;
 	position: relative;
-	margin-top: 4px;
 
-	&:before {
-		content:' ';
-		display: block;
-		height: 4px;
-		background: $olive;
-		margin-top: -19px;
-	}
+	.more-from-header {
+
+		&:before {
+			content:' ';
+			display: block;
+			height: 4px;
+			background: $olive;
+			margin-top: -19px;
+		}
 
 
-	&:after {
-		content: ' ';
-		width: 0; 
-		height: 0; 
-		border-left: 10px solid transparent;
-		border-right: 10px solid transparent;
-		border-top: 10px solid $black;		
-		left: 49%;
-		top: 0;
-		position: absolute;
-	}
+		&:after {
+			content: ' ';
+			width: 0; 
+			height: 0; 
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid $black;		
+			left: 50%;
+			margin-left: -10px;
+			top: 0;
+			position: absolute;
+		}
 
-	.header {
 		.title {
 			@include miller-italic;
 			@include font-size(18);
@@ -385,9 +386,9 @@ blockquote {
 		li {
 			margin-bottom: 2.5em;
 
-			#author-archive &:nth-child(3n+1) {
-				clear: left;
-			}
+			// #author-archive &:nth-child(3n+1) {
+			// 	clear: left;
+			// }
 
 			@include device-width(6) {
 				width: 50%;
@@ -433,30 +434,26 @@ blockquote {
 }
 
 .navigation {
-	> ul {
-		margin: 0;
-		padding: 0;
-		list-style-type: none;
+	.menu {
+		@extend .clearfix;
+	}
 
-		> li {
-			float: left;
-			position: relative;
-			@include transition(all 0.3s ease);
-			margin-right: 5em;
-			cursor: pointer;
+	li {
+		float: left;
+		position: relative;
+		@include transition(all 0.3s ease);
+		margin-right: 5em;
+		cursor: pointer;
 
-			a {
-				@include futura-heavy;
-				@include font-size(10);
-				letter-spacing: 1px;
-				color: $white;
+		a {
+			@include futura-heavy;
+			@include font-size(10);
+			letter-spacing: 1px;
 
-				&:hover {
-					color: $olive;
-				}
+			&:hover {
+				color: $olive;
 			}
 		}
-
 	}
 }
 
@@ -1252,6 +1249,7 @@ blockquote {
 	.header {
 		position: relative;
 		padding: 0 275px 2em 1em;
+		min-height: 144px;
 		border-top: 1px solid #e3e3e3;
 		border-right: 1px solid #e3e3e3;
 
@@ -1836,6 +1834,46 @@ blockquote {
 				bottom: 0;
 				left: 0;
 			}
+		}
+	}
+}
+
+.category-header {
+	text-align: center;
+
+	.title {
+		@include futura-heavy;
+		color: #8a967c;
+		letter-spacing: 2px;
+
+		&:before {
+			@include futura;
+			color: #3b3b3b;
+		}
+	}
+
+	.navigation {
+		margin: 1em 0 0 0;
+	}
+}
+
+
+.category-navigation {
+	.menu {
+		display: inline-block;
+	}
+	
+	li {
+		margin: 0 2em;
+
+		&.current-cat {
+			a {
+				color: #8A967C;
+				@include futura-heavy;
+			}
+		}
+		a {
+			@include futura;
 		}
 	}
 }

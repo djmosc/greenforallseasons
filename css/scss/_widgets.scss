@@ -113,23 +113,6 @@
 	}
 }
 
-.widget_products {
-	
-	.products {
-
-		.product {
-			width: 50%;
-			padding: 10px;
-			float: left;
-			height: 200px;
-
-			img {
-				max-height: 180px;
-			}
-		}
-	}
-}
-
 .widget_posts {
 
 	.posts {
@@ -266,29 +249,6 @@
 	}
 }
 
-.widget_products {
-
-	.primary-btn {
-		margin-top: 10px;
-	}
-
-	ul {
-		@extend .clearfix;	
-
-		li {
-			float: left;
-			width: 46%;
-			margin: 2%;
-
-			img {
-				display: block;
-				margin: 0 auto;
-			}
-		}		
-	}
-}
-
-
 .gform_widget {
 
 	.widget-title {
@@ -306,23 +266,44 @@
 	}
 }
 
-.widget_shop {
+.widget_products {
 
-	.primary-btn {
-		margin-top: 1em;
-	}
-	
-	ul.posts {
+	.products {
 		@extend .clearfix;
+		margin: 0 -10px;
+		padding: 0;
 
 		li {
 			float: left;
 			width: 50%;
-			padding: 5%;
+			padding: 0 10px;
 
 			&:nth-child(2n+1) {
 				clear: left;
 			}
+		}
+	}
+
+	.product-btn {
+		position: relative;
+
+		&:hover {
+			.header {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+
+		.header {
+			position: absolute;
+			top: 50%;
+			background: #FFF;
+			left: 0;
+			right: 0;
+			@include translateY(-50%);
+			opacity: 0;
+			visibility: hidden;
+			@include transition(all 0.3s ease);
 		}
 	}
 }

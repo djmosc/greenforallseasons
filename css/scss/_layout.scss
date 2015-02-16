@@ -73,6 +73,7 @@ body {
 			@include garamond-italic;
 			@include font-size(14);
 			display: block;
+			margin: 0.5em 0;
 
 			@include device-width(9) {
 				@include font-size(10);
@@ -80,7 +81,7 @@ body {
 		}
 		
 		.icon-logo {
-			@include font-size(240);
+			@include font-size(270);
 
 			&:hover {
 				color: $dark-green;
@@ -117,6 +118,11 @@ body {
 		padding: 0 10px;
 		margin-top: 3em;
 
+		.search-form {
+			float: left;
+			margin-right: 0.5em;
+		}
+
 		.follow-us {
 			@include garamond-italic;
 			color: #7ca251;
@@ -150,12 +156,6 @@ body {
 				@include inline-block;
 			}
 		}		
-	}
-
-	.search-form {
-		float: left;
-		padding: 0;
-		margin-top: -7px; ;
 	}
 }
 

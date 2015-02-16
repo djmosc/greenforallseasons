@@ -16,7 +16,7 @@ class Products extends WP_Widget {
 			<label>Title: <input class="widefat" name="<?php echo $this->get_field_name('title') ?>" type="text" value="<?php echo $title; ?>" /></label>
 		</p>
 		<p>
-			<label>Description: <input class="widefat" name="<?php echo $this->get_field_name('description') ?>" type="text" value="<?php echo $description; ?>" /></label>
+			<label>Description:</label> <textarea class="widefat" name="<?php echo $this->get_field_name('description'); ?>" ><?php echo $description; ?></textarea>
 		</p>
 		
 	<?php 
@@ -53,9 +53,10 @@ class Products extends WP_Widget {
 					
 					<?php include_module('product-item', array(
 						'title' => get_the_title(),
-						'url' => get_permalink(),
-						'image_url' => get_post_thumbnail_src($image_size),
-						'class' => implode(' ', $class)
+						'designer' => get_field('designer'),
+						'price' => get_field('price'),
+						'url' => get_field('external_url'),
+						'image_url' => get_post_thumbnail_src(array('width' => 210, 'height' => 300))
 					)); ?>
 				</li>
 				<?php endforeach;	?>

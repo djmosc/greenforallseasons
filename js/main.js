@@ -8,6 +8,7 @@
 			this.global.init();
 			this.header.init();
 			this.sidebar.init();
+			this.frontpage.init();
 			this.single.init();
 			this.index.init();
 			this.page.init();
@@ -22,12 +23,7 @@
 
 		global: {
 			init: function(){
-				$('.owl-carousel').owlCarousel({
-					loop:true,
-				    dots:true,
-				    nav:true,
-				    items: 1
-				});
+				
 			}
 		},
 
@@ -96,6 +92,18 @@
 			},
 		},
 
+		frontpage: {
+			element: $('#front-page'),
+			init: function(){
+				$('.featured-carousel').owlCarousel({
+					loop:true,
+				    dots:true,
+				    nav:true,
+				    items: 1
+				});
+			}
+		},
+
 		single: {
 			element: $('#single'),
 			init: function(){
@@ -153,7 +161,8 @@
 						autoWidth: false,
 						nav: true,
 						dots: false,
-						navText: false,
+						autoHeight:true
+						//navText: false,
 					});
 					
 				}

@@ -25,23 +25,15 @@
 
 				<li>
 	                <?php 
-	    //             include_module('product-item', array(
-					// 	'title' => get_the_title(),
-					// 	'designer' => get_field('designer'),
-					// 	'price' => get_field('price'),
-					// 	'url' => get_permalink(),
-					// 	'image_url' => get_post_thumbnail_src(array('width' => 210, 'height' => 300))
-					// )); 
-
-					include_module('product-item', array(
+	                include_module('product-item', array(
 						'title' => get_the_title(),
-						'designer' => 'Designer',
-						'price' => '£50',
-						'url' => '#',
-						'image_url' => 'http://lorempixel.com/210/300'
+						'designer' => get_field('designer'),
+						'price' => get_field('price'),
+						'url' => get_field('external_url'),
+						'image_url' => get_post_thumbnail_src(array('width' => 210, 'height' => 300))
 					)); 
-					?>
 
+					?>
 	            </li>								
 			<?php 
 			$i++; 

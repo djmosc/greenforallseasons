@@ -14,9 +14,14 @@ select {
 	color: #a0a0a0;
 	border: none;
 	letter-spacing: 1px;
-	@include font-size(12);
+	@include font-size(8);
+	@include futura;
+	border: 1px solid #e3e3e3;
+	padding: 1em;
+	@include border-radius(0);
 	
 	&:focus {
+		border: 1px solid #d7d7d7;
 		outline: none;
 	}
 }
@@ -28,34 +33,27 @@ input[type=tel],
 input[type=number],
 input[type=password],
 textarea {	
-	@include border-radius(0);
-	@include futura;
 	background: #FFF;
-	padding: 1em;
 	max-width: 100%;
 	text-transform: none;
 
 	&:focus {
 		color: #000;
 	}
-
 }
 
 textarea {
 }
 
 select {
-	@include border-radius(0);
 	-webkit-appearance: none;
 	display: inline-block;
-	border: 0;
-	padding: 1.4em;
-	background: #f7f7f7;
+	background: #FFF;
 	color: #797979;
 	position: relative;
 	@media screen and (-webkit-min-device-pixel-ratio:0) {
 		padding-right: 40px;
-		background: #f7f7f7 url(../images/misc/dropdown.png) no-repeat center right;
+		background: #FFF url(../images/misc/dropdown.png) no-repeat center right;
 	}
 
 	option {
@@ -108,265 +106,167 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 label {
-	margin: 0 0 0.3em 0;
 	@include font-size(8);
+	@include futura-heavy;
+	text-transform: uppercase;
+	letter-spacing: 2px;
 }
 
 fieldset {
 	border: none;
 	padding: 0;
 }
+
+::-webkit-input-placeholder {
+   text-transform: uppercase;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   text-transform: uppercase;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   text-transform: uppercase;
+}
+
+:-ms-input-placeholder {  
+   text-transform: uppercase;
+}
 /* =============================================================================
    Gravity
    ========================================================================== */
 
-.gform_wrapper {
-	max-width: 100% !important;
- 	margin: 0 !important;
- 	background: #464646;
+.validation_error {
+	color: #ccc;
+	@include garamond-italic;
+}
+
+.gform_validation_container {
+	display: none;
+}
+
+.gform_confirmation_message {
+	text-align: center;
+}
+
+.gform_heading {
+	text-align: center;
+	padding: 0 2em;
+
+	.gform_title {
+		margin: 0.5em 0;
+	}
+
+	.gform_description {
+		line-height: 1;
+		margin: 1em 0;
+		display: block;
+	}
+
+}
+
+.gfield {
+	&.hide-label {
+		.gfield_label {
+			display: none !important;
+		}
+	}
+
+	&.gf_left_half,
+	&.gf_right_half {
+		input,
+		textarea,
+		select {
+			width: 100% !important;
+		}
+	}
+
+	input,
+	textarea,
+	select {
+		@include font-size(10);
+		padding: 1.3em;
+	}
+
+	textarea {
+		width: 100%;
+	}
+}
+
+.gform_footer {
+	input {
+		width: 100%;
+	}
+}
+
+
+.newsletter_wrapper {
+	padding-right: 180px;
+	position: relative;
+	background: #464646;
  	color: #FFF;
- 	@extend .clearfix;
- 	clear: both;
 
- 	h3 {
- 		color: #FFF;
- 	}
+	&:after {
+		display: block;
+		content: '';
+		background-image: url(../images/backgrounds/newsletter.jpg);
+		background-repeat: no-repeat;
+		height: 100%;
+		width: 180px;
+		background-size: cover;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+	}
 
-// 	color: #FFF;
 	form {
+		position: relative;
 		padding: 1em;
 		overflow: hidden;
-		.gform_heading {
-			margin-bottom: 0.3em;
+	}
 
-			.gform_description {
-				display: block;
-				line-height: 1.4;
-				@include futura-heavy;
-				letter-spacing: 2px;
-				@include font-size(10);
-			}
+	.gform_heading {
+		margin: 0 0 0.3em 0;
+		text-align: left;
+		padding: 0;
+	}
+
+	.gform_description {
+		display: block;
+		line-height: 1.4;
+		@include futura-heavy;
+		letter-spacing: 2px;
+		@include font-size(10);
+		margin: 0;
+	}
+
+	.gfield {
+		margin-bottom: 0;
+
+		input {
+			width: 100%;
+			padding-right: 140px;
+			border: 0;
 		}
 
-	// 	.validation_error {
-	// 		color: #a40000;
-	// 	}
+		.gfield_description {
+			display: none;
+		}
+	}
 
-	 	.gform_body {
-
-	// 		margin: 20px 0;
-	// 		font-family: Arial, Helvetica, sans-serif;
-
-	// 		font-size: 11px;
-
-			.gform_fields {
-				margin: 0;
-				padding: 0;
-				overflow: hidden;
-				list-style: none;
-				@extend .clearfix;
-
-	 			.gfield {
-	 				margin: 0 0 1em 0;
-
-					&.gsection {
-						border-bottom: 1px solid #e1e1e1;
-					}
-
-					&.hide-label {
-						.gfield_label {
-							display: none;
-						}
-					}
-
-					.gfield_label {						
-						@include font-size(8);
-						letter-spacing: 2px;
-					}
-
-	// 				.gfield_description {
-	// 					font-size: 10px;
-	// 				 	font-style: italic;
-	// 				 	text-align: right;
-
-	// 					&.validation_message {
-	// 						color: #a40000;
-	// 					}
-	// 				}
-
-					.ginput_left,
-					.ginput_right {
-						// width: 50%;
-						display: inline-block;
-						//margin: 0 1em 0 0;
-						label {
-							margin: 0.3em 0 0 0;
-							font-size: 7px;
-							display: block;
-							letter-spacing: 2px;
-						}
-					}
-
-					&.gfield_error {
-						margin: 0 !important;
-						padding: 0 !important;
-						background: none;
-						border: none;
-
-						&.gfield_contains_required {
-							margin: 0 !important;
-							padding: 0 !important;
-						}
-
-						&.gf_left_half {
-							width: 46%;
-						}
-
-						.ginput_container {
-							margin: 0 !important;
-							max-width: 100%;
-						}
-					}
-
-					&.large-container {
-						.ginput_container {
-							@include border-radius(3px);
-							background: #f2f2eb;
-							background: rgba(#FFF, 0.5);
-							border: 1px solid #c3c2bb;
-							padding: 6em 8em;
-
-							@include device-width(9) {
-								padding-left: 4em;
-								padding-right: 4em;	
-							}
-						}
-					}
-
-					&.gf_left_half,
-					&.gf_right_half {
-						width: 44% !important;
-
-						@include device-width(6) {
-							width: 100% !important;
-							float: none !important;
-							clear: none !important;
-						}
-					}
-
-	 				.ginput_container {
-	 					input[type=text],
-						input[type=email],
-						input[type=url],
-						input[type=tel],
-						input[type=number],
-						input[type=password],
-						textarea {
-							@include box-sizing(none);
-							background: #FFF;
-							max-width: 100%;
-							@include futura;
-							text-transform: none;
-							@include font-size(12);
-							padding: 1em;
-
-							// &.small {
-							// 	width: 25%;
-							// }
-
-							// &.medium {
-							// 	width: 50%;
-							// }
-
-							// &.large {
-							// 	width: 100%;
-							// }
-						}
-
-						select {
-							@include border-radius(0);
-							-webkit-appearance: none;
-							display: inline-block;
-							background: #FFF;
-							border: 1px solid #b0b0b0;
-							@include box-shadow(0px 4px 2px -1px rgba(0, 0, 0, 0.3));
-							padding: 0.6em;
-							@include font-size(12);
-							background: #FFF;
-							position: relative;
-
-							@media screen and (-webkit-min-device-pixel-ratio:0) {
-								padding-right: 40px;
-								background: #FFF url(../images/misc/dropdown.jpg) no-repeat center right;
-								background-size: contain;
-							}
-
-							&.medium {
-								width: 45%;
-							}
-						}
-
-						textarea {
-							width: 100%;
-						}
-	 				}	
-
-	 				.gfield_description {
-	 					&.validation_message {
-	 						padding: 6px 0 0 0 !important;
-	 					}
-	 				}	
-	 			}
-	 		}
-	 	}
-
-	 	.gform_footer,
-	 	.gform_page_footer {
-//	 		width: 99.2%;
-	 		text-align: right;
-	 		padding: 0;
-	 		margin: 1em 0;
-	 		.button,
-	 		input.button,
-	 		input[type=submit],
-	 		input.button.gform_button {
-	 			@include font-size(10);
-			}
-	 	}
+	.gform_footer {
+		position: absolute;
+		bottom: 1em;
+		right: 1em;
 	}
 }
 
 .search-form {
 	position: relative;
 
-	::-webkit-input-placeholder {
-	   text-transform: uppercase;
-	   text-align: right;
-	}
-
-	:-moz-placeholder { /* Firefox 18- */
-	   text-transform: uppercase;
-	   text-align: right;  
-	}
-
-	::-moz-placeholder {  /* Firefox 19+ */
-	   text-transform: uppercase;
-	   text-align: right;  
-	}
-
-	:-ms-input-placeholder {  
-	   text-transform: uppercase;
-	   text-align: right;  
-	}	
-
 	.input {
-		@include font-size(8);
-		border: none;
 		vertical-align: middle;
-		background: #FFF;
-		padding: 1.7em 1em 1.6em 1.6em;
-		text-align: right;  
-		color: #c0c0c0;
+		border-color: transparent;
 	}
 
 	.submit-btn {
@@ -374,10 +274,11 @@ fieldset {
 		color: #c0c0c0;
 		border: #FFF;
 		vertical-align: middle;
-		padding: 1em;
+		padding: 0.8em;
 		
 		&:before {
-			@include font-size(12);
+			@include font-size(13);
+			line-height: 0.9;
 		}
 
 		&:hover {
@@ -463,46 +364,3 @@ fieldset {
 }
 
 
-
-.newsletter_wrapper {
-	padding-right: 180px;
-	position: relative;
-
-	&:after {
-		display: block;
-		content: '';
-		background-image: url(../images/backgrounds/newsletter.jpg);
-		background-repeat: no-repeat;
-		height: 100%;
-		width: 180px;
-		background-size: cover;
-		position: absolute;
-		bottom: 0;
-		right: 0;
-	}
-
-	form {
-		position: relative;
-
-		.gform_body {
-
-			.gform_fields {
-				.gfield {
-					margin-bottom: 0;
-
-					input {
-						width: 100%;
-						padding-right: 140px;
-					}
-				}
-			}
-		}
-
-		.gform_footer {
-			position: absolute;
-			bottom: 0;
-			right: 1em;
-
-		}
-	}
-}

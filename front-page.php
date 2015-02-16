@@ -9,7 +9,8 @@
 		<?php include_module('categories'); ?>
 
 		<div class="sidebar-container">
-			<div class="sidebar-content">		
+			<div class="sidebar-content">
+				<h5 class="sidebar-content-title title"><?php _e("lastest Stories", THEME_NAME); ?></h5>
 				<div class="homepage-widgets-top">
 					<?php dynamic_sidebar('homepage_top'); ?>
 				</div>

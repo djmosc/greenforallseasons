@@ -1,50 +1,47 @@
 <?php get_header(); ?>
+<?php $category = get_top_level_category(get_query_var('cat')); ?>
 <section id="category" class="container">
 	<div class="sidebar-container">
-		<div class="sidebar-content">		
-		<?php if ( have_posts() ) : ?>
+		<div class="sidebar-content">
+			<header class="category-header">
+				<h5 class="category-title title green-label"><?php echo $category->name; ?></h5>
+				<nav class="category-navigation navigation">
+					<ul class="menu">
+						<?php wp_list_categories( array('title_li' => false, 'child_of' => $category->term_id, 'hide_empty' => false)); ?>
+					</ul>
+				</nav>
+			</header>
+			<?php if ( have_posts() ) : ?>
 
 			<ul class="posts">
 				<?php 
 				$i = 0;
 				while ( have_posts() ) : the_post(); ?>
-
 					<?php 
-						$title =  get_the_title();
-						if ($i == 0) {
-							$image_size = array('width' => 656, 'height' => 525);
-						} else {
-							$image_size = array('width' => 320, 'height' => 222);
-						}
-	                    $image = get_post_thumbnail_src($image_size);							
-						$excerpt = get_excerpt(150);
-						$url = get_permalink();	
-						$author_img_url = get_avatar_url ( get_the_author_meta('ID'), $size = '40' );
+						$image_size = ($i == 0) ?  array('width' => 656, 'height' => 525) : array('width' => 320, 'height' => 222);
 						$author_id = get_the_author_meta('ID');
-						$date = get_the_time('F d, Y');
 						$category = get_post_category();
 					?>
-
 		            <li>
 		                <?php include_module('post-item', array(
-							'title' => $title,
-							'excerpt' => $excerpt,
-							'url' => $url,
-							'image_url' => $image,
+							'title' => get_the_title(),
+							'excerpt' => get_excerpt(150),
+							'url' =>  get_permalink(),
+							'image_url' => get_post_thumbnail_src($image_size),
 							'author' => array(
 								'name' => 'Words by ' .get_the_author(),
-								'image_url' => $author_img_url,
+								'image_url' => get_avatar_url ( $author_id, 40 ),
 								'url' => get_author_posts_url($author_id),
 							),							
 		                    'category' => array(
 	                        	'name' => $category->name,
 	                        ),
-							'read_more' => $url,
-							'date' => $date,
+							'read_more' => true,
+							'date' => get_the_time('F d, Y'),
 						)); ?>
 		            </li>								
 				<?php 
-				$i++; 
+				$i++;
 				endwhile; // end of the loop. ?>
 			</ul>
 

@@ -1,22 +1,23 @@
 <?php get_header(); ?>
-<div class="sidebar-container">
-	<div class="sidebar-content">	
-		<section id="author-archive">
-				
-			<div class="contributor clearfix">
+
+<section id="author" class="container">
+	<div class="sidebar-container">
+		<div class="sidebar-content">	
+			<div class="contributor">
 				<?php 
-					$curauth = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
-					$author_id = $curauth->ID;
+					$author = (isset($_GET['author_name'])) ? get_user_by('slug', $author_name) : get_userdata(intval($author));
+					$author_id = $author->ID;
 					$author_image = get_field('image', 'user_'. $author_id);
 				?>
 		
 				<img class="featured-image" src="<?php echo bfi_thumb($author_image['url'], array('width' => 460, 'height' => 460)); ?>">
 				<h3 class="name"><?php the_author_meta( 'display_name', $author_id ); ?></h3>
-				<span class="title"><?php the_field('position', 'user_'. $author_id); ?></span>
-				<p>
-					<?php the_author_meta( 'description', $author_id ); ?>
-				</p>
-
+				<p class="position"><?php the_field('position', 'user_'. $author_id); ?></p>
+				<div class="description">
+					<p>
+						<?php the_author_meta( 'description', $author_id ); ?>
+					</p>
+				</div>
 				<ul class="socials">
 					<?php if(get_the_author_meta('twitter')): ?>
 						<li>
@@ -36,10 +37,9 @@
 				</ul>	
 			</div>
 
-		<?php if(have_posts()): ?>
-			<div class="more-from">
-			    <div class="inner">
-			        <header class="header lined-header">
+			<?php if( have_posts() ): ?>
+				<div class="more-from">
+			        <header class="more-from-header lined-header">
 			            <h3 class="title skew"><span><?php _e("More by", THEME_NAME); ?> <?php the_author_meta( 'display_name', $author_id ); ?></span></h3>
 			        </header>
 			        <ul class="posts clearfix">				
@@ -70,19 +70,18 @@
 				            </li>								
 						<?php endwhile; // end of the loop. ?>
 			        </ul>
-			    </div>
-			</div>							
-			<?php else: ?>
+				</div>							
+				<?php else: ?>
 				<div class="not-found">
 					<h3 class="title"><?php _e("No posts found", THEME_NAME); ?></h3>
 				</div>
-		<?php endif; ?>
-
-		</section><!-- #page -->
-
+			<?php endif; ?>
+		</div>
+		<?php get_sidebar(); ?>	
 	</div>
-	<?php get_sidebar(); ?>	
-</div>
+
+</section><!-- #page -->
+
 
 <?php include_module('related-posts'); ?>
 

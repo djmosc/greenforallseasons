@@ -42,8 +42,7 @@ add_filter( 'body_class', 'custom_body_classes', 10, 2 );
 
 add_filter( 'pre_get_posts', 'custom_pre_get_posts');
 
-
-
+add_filter('the_excerpt', 'custom_the_exceprt');
 
 //add_filter('parse_query', 'custom_parse_query');
 
@@ -135,8 +134,6 @@ function custom_widgets_init() {
 	require( $template_directory . '/inc/widgets/posts.php' );
 
 	require( $template_directory . '/inc/widgets/socials.php' );
-
-	require( $template_directory . '/inc/widgets/shop.php' );	
 
 	require( $template_directory . '/inc/widgets/editor.php' );	
 	
@@ -231,7 +228,9 @@ function custom_styles() {
 	global $wp_styles, $template_directory_uri;
 
 	wp_enqueue_style( 'style', $template_directory_uri . '/css/style.css' );	
-	wp_enqueue_style( 'fonts', '//fast.fonts.net/cssapi/50464cb2-8cdc-4173-9dd4-112199df03a0.css' );	
+	wp_enqueue_style( 'fonts', '//fast.fonts.net/cssapi/50464cb2-8cdc-4173-9dd4-112199df03a0.css' );
+
+	wp_dequeue_style('gforms_formsmain_css');
 
 }
 
@@ -332,26 +331,40 @@ function custom_gallery( $atts ) {
    	if( !empty($ids) ){
    		ob_start();
 	    ?>
-	    <div class="post-carousel owl-carousel" >
-			
+	    <div class="post-carousel owl-carousel">
+		<?php $i = 0; ?>
 		<?php foreach($ids as $id):
 			
-			$image = wp_get_attachment_image_src($id, array('height' => 500, 'bfi_thumb' => true));
-			$image_info = get_post($id);
+			$image_url = get_image($id, array('width' => 700));
+			$image = get_post($id);
 			?>
-			<div class="item">
-				<img src="<?php echo $image[0]; ?>" data-id="<?php echo $id; ?>" />
-				<?php if($image_info->post_title || $image_info->post_excerpt ): ?>
-				<div class="content">
-					<?php if( $image_info->post_title ): ?>
-					<h4 class="title"><?php echo $image_info->post_title; ?></h4>
+			<div class="item image-slide">
+				<figure class="image">
+					<img src="<?php echo $image_url; ?>" data-id="<?php echo $id; ?>" />
+				</figure>
+				<?php if($image->post_title || $image->post_excerpt ): ?>
+				<header class="header">
+					<figcaption class="caption" >Personal style and vice versa</figcaption>
+					<?php if( $image->post_title ): ?>
+					<h5 class="title"><?php echo $image->post_title; ?></h5>
 					<?php endif; ?>
-					<?php if( $image_info->post_excerpt ): ?>
-					<div class="description"><?php echo $image_info->post_excerpt; ?></div>
+					<?php if( $image->post_excerpt ): ?>
+					<div class="description"><?php echo $image->post_excerpt; ?></div>
 					<?php endif; ?>
-				</div>
+
+					<div class="info">
+						<?php include_module('share', array(
+							'title' => $image->post_title,
+							'url' => get_permalink($id),
+							'image_url' => $image_url,
+							'excerpt' => $image->post_excerpt
+						)); ?>
+						<div class="pages"><span class="page"><?php echo ($i + 1) . ' of '.count($ids);?></span></div>
+					</div>
+				</header>
 				<?php endif; ?>
 			</div>
+		<?php $i++; ?>
 		<?php endforeach; ?>
 	    </div>
 	    <?php
@@ -398,4 +411,8 @@ function custom_pre_get_posts( $query ) {
 	}
 
 	return $query;
+}
+
+function custom_the_exceprt($content) {
+	return strip_shortcodes( $content );//always return $content
 }
