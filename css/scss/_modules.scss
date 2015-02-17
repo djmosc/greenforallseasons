@@ -539,6 +539,7 @@ blockquote {
 
 				li {
 					margin: 0;
+					width: 100%;
 
 					a {
 						@include garamond-italic;
@@ -671,6 +672,10 @@ blockquote {
 
 		li {
 			margin-right: 8.3em;
+
+			a {
+				color: #FFF;
+			}
 
 			@include device-width(12) {
 				margin: 0 4em;

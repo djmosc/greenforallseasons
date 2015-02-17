@@ -10,19 +10,32 @@ class Editor extends WP_Widget {
 	function form($instance) {
 		$title = (isset($instance['title'])) ? esc_attr($instance['title']) : '';
 		$user_id = (isset($instance['user_id'])) ? esc_attr($instance['user_id']) : '';
-		$args = array(
-			'role' => 'Editor'
+		// get the featured editors
+		$editor_query = new WP_User_Query(
+			array(
+				'role'			    =>	'editor',
+			)
 		);
-		$user_query = new WP_User_Query( $args );
+		$editors = $editor_query->get_results();
 
+		// get the featured admins
+		$administrator_query = new WP_User_Query(
+			array(
+				'role'			    =>	'administrator',
+			)
+		);
+		$admins = $administrator_query->get_results();
+
+		// store them all as users
+		$user_query = array_merge( $admins, $editors );
 	?>
 		<p>
-		 <?php if ( ! empty( $user_query->results ) ) : ?>
+		 <?php if ( ! empty( $user_query ) ) : ?>
 			
 			<label>Choose Editor:
 				<select name="<?php echo $this->get_field_name('user_id'); ?>" style="width: 170px;">
 					<option value="">--None--</option>
-					<?php foreach ( $user_query->results as $user ): ?>
+					<?php foreach ( $user_query as $user ): ?>
 						<option value="<?php echo $user->ID; ?>" <?php if($user->ID == $user_id) echo 'selected'; ?>><?php echo $user->display_name; ?></option>
 					<?php endforeach; ?>
 				</select>
