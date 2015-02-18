@@ -18,7 +18,7 @@
 				<?php the_content(); ?>
 			</div>
 			<?php include_module('categories'); ?>
-			<?php gravity_form(1, true, true, true, '', true, 12); ?>
+			<?php include_module('contact'); ?>
 			<?php include_module('subscribe'); ?>
 		</article>
 	<?php endwhile; // end of the loop. ?>

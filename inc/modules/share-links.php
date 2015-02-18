@@ -8,4 +8,7 @@
 	<li>
 		<a class="pinterest-btn share-popup-btn" target="_blank" href="http://www.pinterest.com/pin/create/button/?url=<?php echo urlencode($url); ?>&media=<?php echo urlencode($image_url); ?>&description=<?php echo urlencode($excerpt); ?>" ></a>
 	</li>
+	<li>
+		<a class="email-btn" href="mailto:youremail@address.com" ></a>
+	</li>
 </ul>

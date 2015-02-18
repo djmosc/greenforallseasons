@@ -14,15 +14,15 @@ if (!empty($tags)) {
         $tag_ids[] = $individual_tag->term_id;
     }
 }
-if(isset($tag_ids)){
+//if(isset($tag_ids)){
     $args = array(  
         'post_type' => array('post'),
-        'tag__in' => $tag_ids,  
-        'post__not_in' => array($post->ID),  
-        'showposts' => 4,  // Number of related posts that will be shown.
+        // 'tag__in' => $tag_ids,  
+        // 'post__not_in' => array($post->ID),  
+        'showposts' => 3,  // Number of related posts that will be shown.
         'ignore_sticky_posts'=>1  
     );
-}
+//}
 
 $custom_query = new WP_Query($args);
 if ( $custom_query->have_posts() ) : ?>

@@ -35,13 +35,27 @@ body {
 		}
 	}
 
+	.header-compact & {
+
+		> .inner {
+			padding: 2.5em 0 2em;
+		}
+
+		.logo-container {
+			.logo {
+				@include font-size(150);
+			}
+		}
+	}
+
 	> .inner {
 		position: relative;
 		z-index: 100;
 		padding: 4.5em 0 3em;
+		@include transition(padding 0.3s ease);
 
 		@include device-width(9) {
-			padding: .5em 0 1em;
+			padding: 0.5em 0 1em;
 		}
 	}
 
@@ -80,11 +94,11 @@ body {
 			}
 
 			@include device-width(6) {
-				opacity: 0;
+				display: none;
 			}			
 		}
 		
-		.icon-logo {
+		.logo {
 			@include font-size(270);
 
 			&:hover {
@@ -114,7 +128,11 @@ body {
 			right: 1em;
 			top: 6em;
 		}
-	}	
+	}
+
+	.primary-navigation {
+		padding: 0 10px;
+	}
 
 	.info {
 		float: right;
@@ -224,7 +242,7 @@ body {
 			}
 		}
 
-		.icon-logo {
+		.logo {
 			@include font-size(155);
 			color: #bebebe;
 

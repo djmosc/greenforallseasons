@@ -53,7 +53,7 @@ blockquote {
 	padding: 0 15%;
 	position: relative;
 	margin: 1em 0;
-	@include miller-italic;
+	@include garamond-italic;
 	text-align: center;
 	color: $black;
 	margin: 1.5em;
@@ -290,15 +290,32 @@ blockquote {
 
 .page-content,
 .post-content {
-	padding: 0 8%;
-	margin-bottom: 35px;
 	clear: both;	
 	text-align: left;
-	margin-top: 3em;
 
 	h1,h2,h3,h4,h5,h6 {
 		@include futura-heavy;
 		letter-spacing: 1px;
+	}
+
+
+	ol {
+		counter-reset: counter;
+
+		li {
+			padding: 0 0 0 2em;
+			position: relative;
+			line-height: 1.4;
+			margin: 1.5em 0;
+			&:before {
+				position: absolute;
+				left: 0;
+				font-size: 0.9em;
+				@include futura-heavy;
+				content: counter(counter);
+				counter-increment: counter;
+			}
+		}
 	}
 
 	h6 {
@@ -307,8 +324,9 @@ blockquote {
 
 	p {
 		margin: 1.5em 0;
-		font-size: 1.6rem;
-		line-height: 1.7;					
+		@include font-size(17);
+		line-height: 1.7;
+		text-align: justify;				
 	}
 
 	.post-title {
@@ -325,7 +343,7 @@ blockquote {
 		margin-right: 1em;
 	}
 
-	.alignright{
+	.alignright {
 		margin-right: -15%;
 		margin-left: 1em;
 
@@ -348,6 +366,7 @@ blockquote {
 	position: relative;
 
 	.more-from-header {
+		padding-top: 4px;
 
 		&:before {
 			content:' ';
@@ -1232,10 +1251,9 @@ blockquote {
 		position: relative;
 
 		img {
-			display: block;
+			display: inline-block;
+			vertical-align: top;
 		}
-
-		
 	}
 
 	.caption {
@@ -1505,7 +1523,7 @@ blockquote {
 	}
 	.footer {
 		border-top: 1px solid #ececec;
-		padding: 1em;
+		padding: 0.6em 2em;
 		@extend .clearfix;
 
 		.share {
@@ -1533,6 +1551,8 @@ blockquote {
 		left: 50%;
 		@include translateX(-50%);
 		margin-bottom: -0.5em;
+		min-width: 160px;
+		text-align: center;
 	}
 
 	.tips {

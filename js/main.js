@@ -41,6 +41,18 @@
 					e.preventDefault();
 					header.toggleClass('navigation-open');
 				});
+				
+				main.w.on('scroll', this.scroll).trigger('scroll');
+			},
+			scroll: function(){
+				var scrollTop = main.w.scrollTop(),
+					body = main.body.element;
+
+				if(scrollTop > 10 && !body.hasClass('header-compact')) {
+					body.addClass('header-compact');
+				} else if(scrollTop < 10 && body.hasClass('header-compact')) {
+					body.removeClass('header-compact');
+				}
 			}
 		},
 

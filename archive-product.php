@@ -2,7 +2,7 @@
 <section id="archive-product">
 	<div class="container inner">
 		<header class="products-header">
-			<?php $page = get_queried_page(); ?>
+			<?php $page = get_queried_page(1); ?>
 			<figure class="products-image image">
 				<img src="<?php echo get_image(get_post_thumbnail_id($page->ID), array(1100, 300)); ?>" />
 			</figure>
@@ -30,7 +30,7 @@
 						'designer' => get_field('designer'),
 						'price' => get_field('price'),
 						'url' => get_field('external_url'),
-						'image_url' => get_post_thumbnail_src(array('width' => 210, 'height' => 300))
+						'image_url' => get_post_thumbnail_src(array('height' => 300))
 					)); 
 
 					?>

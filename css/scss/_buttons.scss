@@ -464,7 +464,10 @@ button {
 
 	&:before {
 		@include icon(printer);
+		font-size: 2em;
+		line-height: 0;
 		margin-right: 0.5em;
-		vertical-align: middle;
+		vertical-align: -0.2em;
+		line-height: 1.2;
 	}
 }

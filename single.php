@@ -3,6 +3,7 @@
 <div id="single" class="container">
 	<?php while ( have_posts() ) : the_post(); ?>
 		<?php 
+			$post_type = get_field('post_type');
 			$featured_image_position = get_field('featured_image_position');
 			$author_img_url = get_avatar_url ( get_the_author_meta('ID'), $size = '40' );
 			$author_id = get_the_author_meta('ID');
@@ -36,13 +37,25 @@
 						'class' => implode( ' ', $class)
 					)); ?>
 
+					<?php if( $post_type == 'recipe') :  ?>
+
+					<div class="post-recipe">
+						<?php include_module('post-ingredients'); ?>
+
+						<?php include_module('post-tips'); ?>
+					</div>
+
+					<?php endif; ?>
 
 					<div class="post-content">
 						<?php the_content(); ?>
 						<div class="written-by">
 							<?php _e('Written by '); ?><?php the_author_posts_link(); ?>
 						</div>
-					</div>						
+					</div>
+
+					<?php //include_module('post-products'); ?>				
+
 				</article>
 
 				<?php include_module('post-social', array(

@@ -166,6 +166,7 @@
 
 	.homepage-widgets-top {
 		@extend .clearfix;
+		//@include display(flex);
 		//border-right: 1px solid #e3e3e3;
 		.widget {
 			width: 50%;
@@ -308,6 +309,7 @@
 }
 
 
+#page,
 #page-about {
 
 	.single-post-header  {
@@ -377,6 +379,15 @@
 }
 
 #single {
+
+	.sidebar-container {
+		margin: 0 10px;
+	}
+
+	.sidebar-content {
+		padding: 0 20px;
+	}
+
 	.single-post-header {
 
 		&.layout-left {
@@ -412,6 +423,40 @@
 						position: static;
 					}
 				}
+			}
+		}
+	}
+
+	.post-recipe,
+	.post-content {
+		margin: 2em 7em;
+
+		@include device-width(12) {
+			margin-left: 0;
+			margin-right: 0;
+		}
+
+		.post-carousel {
+			width: 800px;
+			width: calc(100% + 14em);
+			margin: 2em -7em;
+		}
+	}
+
+	.post-recipe {
+		@extend .clearfix;
+	}
+
+	.post-tips {
+		width: 60%;
+		float: right;
+	}
+
+	.post-ingredients {
+		.ingredient-list {
+			@include device-width(5) {
+				width: 100%;
+				text-align: center;
 			}
 		}
 	}
