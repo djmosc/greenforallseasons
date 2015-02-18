@@ -92,11 +92,10 @@ if(!function_exists('get_attachment_id_from_url')) {
 
 if(!function_exists('get_excerpt')) {
 	function get_excerpt($count = 100, $post_id = null){
+		global $post;
 		
 		if($post_id) {
 			$post = get_post($post_id);
-		} else {
-			global $post;
 		}
 		
 		$excerpt = ( !empty($post->post_excerpt) ) ? $post->post_excerpt : get_the_content();

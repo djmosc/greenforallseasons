@@ -14,7 +14,7 @@ select {
 	color: #a0a0a0;
 	border: none;
 	letter-spacing: 1px;
-	@include font-size(8);
+	@include font-size(9);
 	@include futura;
 	border: 1px solid #e3e3e3;
 	padding: 1em;
@@ -79,7 +79,7 @@ button[type=submit] {
 	text-align: center;
 	letter-spacing: 3px;
 	@include font-size(10);
-	@include futura-heavy;
+	@include futura-bold;
 	border: 0;
 
 	&:hover {
@@ -106,8 +106,8 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
 }
 
 label {
-	@include font-size(8);
-	@include futura-heavy;
+	@include font-size(9);
+	@include futura-bold;
 	text-transform: uppercase;
 	letter-spacing: 2px;
 }
@@ -234,7 +234,7 @@ fieldset {
 	.gform_description {
 		display: block;
 		line-height: 1.4;
-		@include futura-heavy;
+		@include futura-bold;
 		letter-spacing: 2px;
 		@include font-size(10);
 		margin: 0;

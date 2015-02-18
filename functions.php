@@ -335,7 +335,7 @@ function custom_gallery( $atts ) {
 		<?php $i = 0; ?>
 		<?php foreach($ids as $id):
 			
-			$image_url = get_image($id, array('width' => 700));
+			$image_url = get_image($id, array('height' => 500));
 			$image = get_post($id);
 			?>
 			<div class="item image-slide">

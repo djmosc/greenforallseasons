@@ -73,7 +73,7 @@ blockquote {
 	text-align: center;
 	text-transform: uppercase;
 	@include font-size(10);
-	@include futura-heavy;
+	@include futura-bold;
 	letter-spacing: 2px;
 
 	.page-numbers {
@@ -294,7 +294,7 @@ blockquote {
 	text-align: left;
 
 	h1,h2,h3,h4,h5,h6 {
-		@include futura-heavy;
+		@include futura-bold;
 		letter-spacing: 1px;
 	}
 
@@ -311,7 +311,7 @@ blockquote {
 				position: absolute;
 				left: 0;
 				font-size: 0.9em;
-				@include futura-heavy;
+				@include futura-bold;
 				content: counter(counter);
 				counter-increment: counter;
 			}
@@ -466,7 +466,7 @@ blockquote {
 		cursor: pointer;
 
 		a {
-			@include futura-heavy;
+			@include futura-bold;
 			@include font-size(10);
 			letter-spacing: 1px;
 
@@ -766,7 +766,7 @@ blockquote {
 	a {
 		color: #FFF;
 		padding: 0.5em 2em;
-		@include futura-heavy;
+		@include futura-bold;
 		@include font-size(9);
 		letter-spacing: 2px;
 		line-height: 1.4;
@@ -916,7 +916,7 @@ blockquote {
 
 	.direction {
 		@include font-size(10);
-		@include futura-heavy;
+		@include futura-bold;
 		text-transform: uppercase;
 		letter-spacing: 1px;
 	}
@@ -1075,8 +1075,8 @@ blockquote {
 	display: inline-block;
 	background: #FFF;
 	padding: 0.3em 1em;
-	@include futura-heavy;
-	@include font-size(8);
+	@include futura-bold;
+	@include font-size(9);
 	letter-spacing: 1px;
 	vertical-align: top;
 	
@@ -1094,8 +1094,8 @@ blockquote {
 	}
 
 	.name {
-		@include futura-heavy;
-		@include font-size(8);
+		@include futura-bold;
+		@include font-size(9);
 		letter-spacing: 1px;
 		display: block;
 	}
@@ -1111,7 +1111,7 @@ blockquote {
 		
 		span {
 			@include font-size(18);
-			@include futura-heavy;
+			@include futura-bold;
 			background: none;
 
 			&:before {
@@ -1249,7 +1249,8 @@ blockquote {
 
 	.image {
 		position: relative;
-
+		text-align: center;
+		
 		img {
 			display: inline-block;
 			vertical-align: top;
@@ -1264,7 +1265,7 @@ blockquote {
 		margin: 1em 0;
 	}
 	.title {
-		@include futura-heavy;
+		@include futura-bold;
 		@include font-size(12);
 		letter-spacing: 2px;
 		margin: 1.5em 0;
@@ -1321,7 +1322,7 @@ blockquote {
 	.label {
 		vertical-align: middle;
 		display: inline-block;
-		@include futura-heavy;
+		@include futura-bold;
 		@include font-size(9);
 		letter-spacing: 2px;
 		color: #000;
@@ -1422,7 +1423,7 @@ blockquote {
 		}
 
 		.name {
-			@include futura-heavy;
+			@include futura-bold;
 			@include font-size(9);
 			@include inline-block;
 			width: 50%;
@@ -1456,7 +1457,7 @@ blockquote {
 		padding: 2em 10px;
 
 		a {
-			@include futura-heavy;
+			@include futura-bold;
 			text-transform: uppercase;
 			@include font-size(10);
 			display: block;
@@ -1500,7 +1501,7 @@ blockquote {
 		padding: 1em;
 
 		.title {
-			@include futura-heavy;
+			@include futura-bold;
 			text-align: center;
 			@include font-size(10);
 			letter-spacing: 2px;
@@ -1589,11 +1590,11 @@ blockquote {
 
 	.viewing {
 		@include futura;
-		@include font-size(8);
+		@include font-size(9);
 		letter-spacing: 2px;
 
 		.value {
-			@include futura-heavy;
+			@include futura-bold;
 		}
 	}
 }
@@ -1629,8 +1630,8 @@ blockquote {
 	text-align: center;
 
 	.designer {
-		@include futura-heavy;
-		@include font-size(8);
+		@include futura-bold;
+		@include font-size(9);
 		letter-spacing: 2px;
 	}
 
@@ -1868,7 +1869,7 @@ blockquote {
 	text-align: center;
 
 	.title {
-		@include futura-heavy;
+		@include futura-bold;
 		color: #8a967c;
 		letter-spacing: 2px;
 
@@ -1895,7 +1896,7 @@ blockquote {
 		&.current-cat {
 			a {
 				color: #8A967C;
-				@include futura-heavy;
+				@include futura-bold;
 			}
 		}
 		a {

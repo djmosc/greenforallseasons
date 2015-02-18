@@ -4,10 +4,10 @@
 
 .widget-title {
 	text-transform: uppercase;
-	border-top: 2px solid $black;
-	border-bottom: 2px solid $black;
+	border-top: 2px solid #333;
+	border-bottom: 2px solid #333;
 	padding: 0.1em 0;
-	//@include font-size(37);
+	color: #333;
 	margin-top: 0;
 }
 
@@ -173,7 +173,7 @@
 		}
 
 		.name {
-			@include futura-heavy;
+			@include futura-bold;
 			@include font-size(10);
 			@include inline-block;
 		}
@@ -194,7 +194,7 @@
 		padding: 0 10%;		
 
 		.read-more {
-			@include futura-heavy;
+			@include futura-bold;
 			@include font-size(10);
 			margin-left: .5em;
 		}

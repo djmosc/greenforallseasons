@@ -375,9 +375,9 @@ table {
   font-style: normal;
   text-transform: uppercase; }
 
-.futura-heavy {
+.futura-bold {
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase; }
 
@@ -1109,8 +1109,8 @@ select {
   color: #a0a0a0;
   border: none;
   letter-spacing: 1px;
-  font-size: 8px;
-  font-size: 0.8rem;
+  font-size: 9px;
+  font-size: 0.9rem;
   font-family: 'L Futura W01';
   font-weight: 400;
   font-style: normal;
@@ -1184,7 +1184,7 @@ button[type=submit] {
   font-size: 10px;
   font-size: 1rem;
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
   border: 0; }
@@ -1210,10 +1210,10 @@ input[type="file"] > input[type="button"]::-moz-focus-inner {
   outline: none !important; }
 
 label {
-  font-size: 8px;
-  font-size: 0.8rem;
+  font-size: 9px;
+  font-size: 0.9rem;
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
   text-transform: uppercase;
@@ -1310,7 +1310,7 @@ fieldset {
     display: block;
     line-height: 1.4;
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -1417,10 +1417,10 @@ button:active, button:focus {
   text-align: center;
   border: 2px solid #000;
   letter-spacing: 2px;
-  font-size: 8px;
-  font-size: 0.8rem;
+  font-size: 9px;
+  font-size: 0.9rem;
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase; }
   .primary-btn:hover, .comment-form .form-submit input[type=submit]:hover, button:hover {
@@ -1436,10 +1436,10 @@ button:active, button:focus {
   padding: 0.8em 2em;
   color: #8a967c;
   letter-spacing: 2px;
-  font-size: 8px;
-  font-size: 0.8rem;
+  font-size: 9px;
+  font-size: 0.9rem;
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase; }
   .secondary-btn:after {
@@ -1738,7 +1738,7 @@ button:active, button:focus {
   vertical-align: middle;
   display: inline-block;
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
   font-size: 9px;
@@ -1914,7 +1914,7 @@ button:active, button:focus {
     font-size: 1rem;
     letter-spacing: 2px;
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     vertical-align: middle; }
@@ -1978,9 +1978,10 @@ button:active, button:focus {
    ========================================================================== */
 .widget-title {
   text-transform: uppercase;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+  border-top: 2px solid #333;
+  border-bottom: 2px solid #333;
   padding: 0.1em 0;
+  color: #333;
   margin-top: 0; }
 
 .widget {
@@ -2091,7 +2092,7 @@ button:active, button:focus {
       margin-right: 0.3em; }
     .widget_editor .author .name {
       font-family: 'L Futura W01';
-      font-weight: 600;
+      font-weight: 700;
       font-style: normal;
       text-transform: uppercase;
       font-size: 10px;
@@ -2121,7 +2122,7 @@ button:active, button:focus {
     padding: 0 10%; }
     .widget_editor p .read-more {
       font-family: 'L Futura W01';
-      font-weight: 600;
+      font-weight: 700;
       font-style: normal;
       text-transform: uppercase;
       font-size: 10px;
@@ -2260,7 +2261,7 @@ blockquote {
   font-size: 10px;
   font-size: 1rem;
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
   letter-spacing: 2px; }
@@ -2431,7 +2432,7 @@ blockquote {
   .post-content h5,
   .post-content h6 {
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     letter-spacing: 1px; }
@@ -2450,7 +2451,7 @@ blockquote {
         left: 0;
         font-size: 0.9em;
         font-family: 'L Futura W01';
-        font-weight: 600;
+        font-weight: 700;
         font-style: normal;
         text-transform: uppercase;
         content: counter(counter);
@@ -2567,7 +2568,7 @@ blockquote {
   cursor: pointer; }
   .navigation li a {
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     font-size: 10px;
@@ -2790,7 +2791,7 @@ blockquote {
     color: #FFF;
     padding: 0.5em 2em;
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     font-size: 9px;
@@ -2889,7 +2890,7 @@ blockquote {
     font-size: 10px;
     font-size: 1rem;
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     text-transform: uppercase;
@@ -3008,11 +3009,11 @@ blockquote {
   background: #FFF;
   padding: 0.3em 1em;
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
-  font-size: 8px;
-  font-size: 0.8rem;
+  font-size: 9px;
+  font-size: 0.9rem;
   letter-spacing: 1px;
   vertical-align: top; }
   .category-name:before {
@@ -3024,11 +3025,11 @@ blockquote {
   display: inline-block; }
 .author .name {
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
-  font-size: 8px;
-  font-size: 0.8rem;
+  font-size: 9px;
+  font-size: 0.9rem;
   letter-spacing: 1px;
   display: block; }
 
@@ -3040,7 +3041,7 @@ blockquote {
       font-size: 18px;
       font-size: 1.8rem;
       font-family: 'L Futura W01';
-      font-weight: 600;
+      font-weight: 700;
       font-style: normal;
       text-transform: uppercase;
       background: none; }
@@ -3138,7 +3139,8 @@ blockquote {
   font-size: 1.4rem; }
 
 .image-slide .image {
-  position: relative; }
+  position: relative;
+  text-align: center; }
   .image-slide .image img {
     display: inline-block;
     vertical-align: top; }
@@ -3154,7 +3156,7 @@ blockquote {
   margin: 1em 0; }
 .image-slide .title {
   font-family: 'L Futura W01';
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   text-transform: uppercase;
   font-size: 12px;
@@ -3201,7 +3203,7 @@ blockquote {
     vertical-align: middle;
     display: inline-block;
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     font-size: 9px;
@@ -3290,7 +3292,7 @@ blockquote {
     margin-right: 0.3em; }
   .post-slide .author .name {
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     font-size: 9px;
@@ -3318,7 +3320,7 @@ blockquote {
   padding: 2em 10px; }
   .related-posts .widget-header a {
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     text-transform: uppercase;
@@ -3359,7 +3361,7 @@ blockquote {
     padding: 1em; }
     .post-ingredients .header .title {
       font-family: 'L Futura W01';
-      font-weight: 600;
+      font-weight: 700;
       font-style: normal;
       text-transform: uppercase;
       text-align: center;
@@ -3437,12 +3439,12 @@ blockquote {
     font-weight: 400;
     font-style: normal;
     text-transform: uppercase;
-    font-size: 8px;
-    font-size: 0.8rem;
+    font-size: 9px;
+    font-size: 0.9rem;
     letter-spacing: 2px; }
     .product-filters .viewing .value {
       font-family: 'L Futura W01';
-      font-weight: 600;
+      font-weight: 700;
       font-style: normal;
       text-transform: uppercase; }
 
@@ -3464,11 +3466,11 @@ blockquote {
   text-align: center; }
   .product-header .designer {
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
-    font-size: 8px;
-    font-size: 0.8rem;
+    font-size: 9px;
+    font-size: 0.9rem;
     letter-spacing: 2px; }
   .product-header .title {
     font-family: 'Adobe Garamond W01';
@@ -3642,7 +3644,7 @@ blockquote {
   text-align: center; }
   .category-header .title {
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase;
     color: #8a967c;
@@ -3663,7 +3665,7 @@ blockquote {
   .category-navigation li.current-cat a {
     color: #8A967C;
     font-family: 'L Futura W01';
-    font-weight: 600;
+    font-weight: 700;
     font-style: normal;
     text-transform: uppercase; }
   .category-navigation li a {
@@ -4227,7 +4229,8 @@ body {
   #page .single-post-header .header .title,
   #page-about .single-post-header .header .title {
     font-size: 50px;
-    font-size: 5rem; }
+    font-size: 5rem;
+    letter-spacing: -1px; }
     @media only screen and (max-width: 1200px) {
       #page .single-post-header .header .title,
       #page-about .single-post-header .header .title {
@@ -4248,10 +4251,12 @@ body {
       #page-about .single-post-header .header .title {
         font-size: 35px;
         font-size: 3.5rem; } }
-#page .single-post-header .header,
-#page .single-post-header .excerpt,
 #page .page-content,
-#page .contact_wrapper,
+#page-about .page-content {
+  max-width: 960px;
+  padding: 0 10px;
+  margin: 2.4em auto; }
+
 #page-about .single-post-header .header,
 #page-about .single-post-header .excerpt,
 #page-about .page-content,
@@ -4259,20 +4264,16 @@ body {
   max-width: 600px;
   padding: 0 10px;
   margin: 2.4em auto; }
-#page .page-content,
 #page-about .page-content {
   text-align: justify; }
-#page .subscribe,
 #page-about .subscribe {
   max-width: 800px;
   padding: 0 10px;
   margin: 5em auto; }
   @media only screen and (max-width: 600px) {
-    #page .subscribe .newsletter_wrapper,
     #page-about .subscribe .newsletter_wrapper {
       padding-right: 0; } }
   @media only screen and (max-width: 600px) {
-    #page .subscribe .newsletter_wrapper:after,
     #page-about .subscribe .newsletter_wrapper:after {
       display: none; } }
 
@@ -4311,6 +4312,24 @@ body {
     width: 800px;
     width: calc(100% + 14em);
     margin: 2em -7em; }
+    @media only screen and (max-width: 1200px) {
+      #single .post-recipe .post-carousel,
+      #single .post-content .post-carousel {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0; } }
+    @media only screen and (max-width: 600px) {
+      #single .post-recipe .post-carousel .image-slide .image img,
+      #single .post-content .post-carousel .image-slide .image img {
+        height: 300px; } }
+    @media only screen and (max-width: 600px) {
+      #single .post-recipe .post-carousel .image-slide .info,
+      #single .post-content .post-carousel .image-slide .info {
+        display: none; } }
+    @media only screen and (max-width: 600px) {
+      #single .post-recipe .post-carousel .image-slide .header,
+      #single .post-content .post-carousel .image-slide .header {
+        padding-right: 1em; } }
 #single .post-tips {
   width: 60%;
   float: right; }
@@ -4335,7 +4354,7 @@ body {
       letter-spacing: 2px; }
       #index .index-header .index-name span {
         font-family: 'L Futura W01';
-        font-weight: 600;
+        font-weight: 700;
         font-style: normal;
         text-transform: uppercase; }
     #index .index-header .filters {

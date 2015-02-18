@@ -25,8 +25,8 @@ button {
 	text-align: center;
 	border: 2px solid #000;
 	letter-spacing: 2px;
-	@include font-size(8);
-	@include futura-heavy;
+	@include font-size(9);
+	@include futura-bold;
 
 	&:hover {
 		background: #000;
@@ -40,8 +40,8 @@ button {
 	padding: 0.8em 2em;
 	color: $olive;
 	letter-spacing: 2px;
-	@include font-size(8);
-	@include futura-heavy;
+	@include font-size(9);
+	@include futura-bold;
 
 	&:after {
 		content: '\00bb';
@@ -457,7 +457,7 @@ button {
 .print-btn {
 	vertical-align: middle;
 	display: inline-block;
-	@include futura-heavy;
+	@include futura-bold;
 	@include font-size(9);
 	letter-spacing: 2px;
 	color: #000;
