@@ -1,51 +1,51 @@
 <?php   
-    global $post;
-    $categories = get_the_category( $post->ID );
-    $first_cat = $categories[0]->cat_ID;
-    $first_cat_name = $categories[0]->name;
-    $args = array(
-        'category__in' => array( $first_cat ),
-        'post__not_in' => array( $post->ID ),
-        'posts_per_page' => 4
-    );
+global $post;
+$category = get_post_category();
+$args = array(
+    'category__in' => array( $category->term_id ),
+    'post__not_in' => array( $post->ID ),
+    'posts_per_page' => 4
+);
 
-    $category = get_post_category();
+$query = new WP_Query($args);
 
-
-    $custom_query = new WP_Query($args);
-if ( $custom_query->have_posts() ) : ?>
+if ( $query->have_posts() ) : ?>
 <div class="more-from">
     <header class="more-from-header header">
-        <h3 class="title"><span><?php _e("More in", THEME_NAME); ?> <?php echo $first_cat_name; ?></span></h3>
+        <h3 class="title"><span><?php _e("More in", THEME_NAME); ?> <?php echo $category->name; ?></span></h3>
     </header>
-    <ul class="posts clearfix">
-        <?php
-        $i = 0;
-        while ( $custom_query->have_posts() ) : $custom_query->the_post(); 
-        ?>
-        <li class="span one-fourth">
-            <?php 
-                $image_size = array('width' => 190, 'height' => 190);
-                $image = get_post_thumbnail_src($image_size);
-             ?>
-
-            <?php include_module('post-item', array(
-                'title' => get_the_title(),
-                'image_url' => $image,
-                'excerpt' => get_excerpt(100),
-                'category' => array(
+    <div class="posts">
+        <ul class="post-list">
+            <?php
+            $i = 0;
+            while ( $query->have_posts() ) : $query->the_post();
+                $sub_category = get_post_sub_category();
+                $class = array();
+                if( $sub_category ) {
+                    $category = $sub_category;
+                    $class[] = 'has-sub-category';
+                }
+            ?>
+            <li class="post">
+                <?php include_module('post-item', array(
+                    'title' => get_the_title(),
+                    'image_url' => get_post_thumbnail_src(array('width' => 190, 'height' => 190)),
+                    'excerpt' => get_excerpt(50),
+                    'category' => array(
                         'name' => $category->name,
                     ),
-                'url' => get_permalink(),
-                'read_more' => true,
-            )); ?>
-        </li>
-        <?php
-        $i++;
-        endwhile;
-    wp_reset_query();
-    wp_reset_postdata();
-    ?>
-    </ul>
+                    'url' => get_permalink(),
+                    'read_more' => true,
+                    'class' => implode(' ', $class)
+                )); ?>
+            </li>
+            <?php
+            $i++;
+            endwhile;
+        wp_reset_query();
+        wp_reset_postdata();
+        ?>
+        </ul>
+    </div>
 </div>
 <?php endif; ?>

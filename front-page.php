@@ -2,8 +2,11 @@
 <section id="front-page">
 	<div class="inner container">
 
-		<div class="owl-carousel featured-carousel">
-			<?php dynamic_sidebar('homepage_carousel'); ?>
+		<div class="featured">
+			<span class="label"><?php _e('Top Stories', 'greenforallseasons' );  ?></span>
+			<div class="owl-carousel featured-carousel">
+				<?php dynamic_sidebar('homepage_carousel'); ?>
+			</div>
 		</div>
 		
 		<?php include_module('categories'); ?>

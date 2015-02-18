@@ -60,20 +60,23 @@ class Posts extends WP_Widget {
 					switch ($size) {
 						case 'small':
 							$image_size = array('width' => 100, 'height' => 100);
+							$title = get_the_title();
 						break;
 						case 'medium':
 							$image_size = array('width' => 65, 'height' => 65);
+							$title = (strlen(get_the_title()) > 25) ? substr(get_the_title(),0,25).' ...' : get_the_title();
 						break;
 						case 'large':
 						default:
 							$image_size = array('width' => 200, 'height' => 200);
+							$title = get_the_title();
 						break;
 					}
 				?>
 				<li <?php post_class(); ?>>
 					
 					<?php include_module('post-item', array(
-						'title' => get_the_title(),
+						'title' => $title,
 						'excerpt' => get_excerpt(50),
 						'url' => get_permalink(),
 						'image_url' => get_post_thumbnail_src($image_size),

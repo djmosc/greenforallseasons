@@ -54,7 +54,7 @@
 						</div>
 					</div>
 
-					<?php //include_module('post-products'); ?>				
+					<?php include_module('post-products'); ?>				
 
 				</article>
 

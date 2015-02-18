@@ -37,7 +37,7 @@
 	                        	'name' => $category->name,
 	                        ),
 							'read_more' => true,
-							'date' => get_the_time('F d, Y'),
+							'date' => get_the_date(),
 						)); ?>
 		            </li>								
 				<?php 

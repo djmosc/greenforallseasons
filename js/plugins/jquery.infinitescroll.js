@@ -67,11 +67,12 @@
             var instance = this;
 
             instance.load();
-            
-            instance.options.scroll.element.scroll(function(){
-                instance.scroll();
-            });
 
+            if( instance.options.scroll ) {
+                instance.options.scroll.element.on('scroll', function(){
+                    instance.scroll();
+                });
+            }
             instance.options.start();
         
         },
@@ -127,20 +128,22 @@
                             delay++;
                         });
                     });
-
-                    // if(items.length <= instance.options.total) {
-                    //     instance.complete();
-                    // }
-
                 }
 
-                instance.element.imagesLoaded(function(){
-                    if(  instance.options.scroll.element.height() > instance.element.height() ) {
-                        instance.load();
-                    }
-                });
+                if( instance.options.scroll ) {
+                    instance.element.imagesLoaded(function(){
+                        if(  instance.options.scroll.element.height() > instance.element.height() ) {
+                            instance.load();
+                        }
+                    });
+                }
 
                 instance.options.loaded();
+
+                if(items.length <= instance.options.total) {
+                    instance.complete();
+                }
+                
                 instance.page++;
             } else {
                 instance.complete();

@@ -36,11 +36,15 @@ class Products extends WP_Widget {
 			echo $args['before_widget'];
 
 			if( !empty($instance['title'])) : 
-				echo $args['before_title'].$instance['title'].$args['after_title']; ?>
-				<?php if( !empty($instance['description'])) : ?>
-				<div class="widget-description"><?php echo $instance['description']; ?></div>
-				<?php endif; ?>
-			<?php endif; ?>
+				if( !empty($instance['description'])) {
+					echo '<div class="widget-header">';
+					echo $args['before_title'].$instance['title'].$args['after_title'];
+					echo '<div class="widget-description">' . $instance['description'] . '</div>';
+					echo '</div>';
+				} else {
+					echo $args['before_title'].$instance['title'].$args['after_title'];
+				}				
+			endif; ?>
 
 			<ul class="products">
 			<?php foreach($posts as $post) : ?>
@@ -56,7 +60,7 @@ class Products extends WP_Widget {
 						'designer' => get_field('designer'),
 						'price' => get_field('price'),
 						'url' => get_field('external_url'),
-						'image_url' => get_post_thumbnail_src(array('width' => 210, 'height' => 300))
+						'image_url' => get_post_thumbnail_src(array('width' => 210))
 					)); ?>
 				</li>
 				<?php endforeach;	?>

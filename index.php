@@ -23,14 +23,15 @@
 		$i = 0;
 		while ( have_posts() ) : the_post(); ?>
 			<?php 
-			$image_size =  ($i == 0) ? array('width' => 515, 'height' => 345) : array('width' => 250, 'height' => 250);
+			$image_size =  ($i == 0) ? array('width' => 500, 'height' => 300) : array('width' => 240, 'height' => 300);
+			$excerpt_length =  ($i == 0) ? 150 : 50;
 			$author_id = get_the_author_meta('ID');
 			$category = get_post_category();
 			?>
             <li>
                 <?php include_module('post-item', array(
 					'title' => get_the_title(),
-					'excerpt' => get_excerpt(150),
+					'excerpt' => get_excerpt($excerpt_length),
 					'url' =>  get_permalink(),
 					'image_url' => get_post_thumbnail_src($image_size),
 					'author' => array(
@@ -42,7 +43,7 @@
                     	'name' => $category->name,
                     ),
 					'read_more' => true,
-					'date' => get_the_time('F d, Y'),
+					'date' => get_the_date(),
 				)); ?>
             </li>								
 		<?php 

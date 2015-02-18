@@ -1,5 +1,4 @@
 <div class="post-slide" style="">
-	<span class="label"><?php _e('Top Stories', 'greenforallseasons' );  ?></span>
 	
 	<div class="post-item">
 		<?php if( !empty( $category) ): ?>

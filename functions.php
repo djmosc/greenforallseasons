@@ -30,6 +30,10 @@ add_action( 'wp_ajax_post_carousel', 'custom_ajax_post_carousel' );
 
 add_action( 'wp_ajax_nopriv_post_carousel', 'custom_ajax_post_carousel' );
 
+add_action( 'wp_ajax_get_products', 'custom_wp_ajax_get_products' );
+
+add_action( 'wp_ajax_nopriv_get_products', 'custom_wp_ajax_get_products' );
+
 // Custom Filters
 
 add_filter( 'the_content_feed', 'custom_the_content_feed', 10, 2);
@@ -42,7 +46,9 @@ add_filter( 'body_class', 'custom_body_classes', 10, 2 );
 
 add_filter( 'pre_get_posts', 'custom_pre_get_posts');
 
-add_filter('the_excerpt', 'custom_the_exceprt');
+add_filter( 'the_excerpt', 'custom_the_exceprt');
+
+add_filter( 'get_the_date', 'custom_get_the_date', 10, 2);
 
 //add_filter('parse_query', 'custom_parse_query');
 
@@ -105,7 +111,8 @@ function custom_init(){
 
 		$products->register_taxonomy("Product Category",
 			array(
-				'name' => 'product_cat'
+				'name' => 'product_cat',
+				'rewrite' => array( 'slug' => 'product-category' ),
 			),
 			array(
 				'plural' => "Product Categories"
@@ -219,8 +226,7 @@ function custom_scripts() {
 		));
 	}
 
-	wp_register_script('ajaxposts', $template_directory_uri.'/js/plugins/min/jquery.ajaxposts.js', array('jquery'), '', true);
-	wp_register_script('expander', $template_directory_uri.'/js/plugins/jquery.expander.js', array('jquery'), '', true);
+	wp_register_script('infinitescroll', $template_directory_uri.'/js/plugins/jquery.infinitescroll.js', array('jquery'), '', true);
 }
 
 
@@ -390,6 +396,15 @@ function get_post_category($id = '') {
 	return null;
 }
 
+function custom_get_the_date($date, $format) {
+
+	if( date('Ymd') == date('Ymd', strtotime($date)) ) {
+		$date = __("Today", THEME_NAME);
+	}
+
+	return $date;
+}
+
 function get_avatar_url($author_id, $size){
     $get_avatar = get_avatar( $author_id, $size );
     preg_match("/src='(.*?)'/i", $get_avatar, $matches);
@@ -406,7 +421,7 @@ function custom_body_classes( $wp_classes, $extra_classes )
 }
 
 function custom_pre_get_posts( $query ) {
-	if(is_category()){
+	if($query->is_main_query() && is_category()){
 		$query->set('posts_per_page', 5);
 	}
 
@@ -414,5 +429,70 @@ function custom_pre_get_posts( $query ) {
 }
 
 function custom_the_exceprt($content) {
-	return strip_shortcodes( $content );//always return $content
+	return strip_shortcodes( $content );
+}
+
+function custom_wp_ajax_get_products() {
+	$args = array('post_type' => 'product', 'posts_per_page' => $_GET['posts_per_page'], 'paged' => $_GET['page'], 'post_status' => 'publish' );
+
+	if( !empty($_GET['category']) ) {
+		$args['tax_query'] = array(
+			array(
+				'taxonomy' => 'product_cat',
+				'field'    => 'slug',
+				'terms'    => $_GET['category'],
+			),
+		);
+	}
+	$query = new WP_Query($args);
+	
+	$posts = array();
+	if( $query->have_posts() ) {
+		while( $query->have_posts()) {
+			$query->the_post();
+
+			if( has_post_thumbnail() ) {
+				$posts[] = array(
+					'id' => get_the_ID(),
+					'title' => get_the_title(),
+					'url' => get_field('external_link'),
+					'designer' => get_field('designer'),
+					'price' => get_field('price'),
+					'image_url' => get_post_thumbnail_src(array('height' => 300 )),
+				);
+			}
+		}
+	}
+	echo json_encode($posts);
+	exit;
+}
+
+function get_post_sub_category($id = '') {
+	global $post;
+
+	$id = ( $id ) ? $id : $post->ID;
+	
+	$terms = get_the_terms($id, 'category');
+	
+	if( !empty($terms) ) {
+		$top_term = null;
+		$sub_term = null;
+		foreach( $terms as $term ) {
+			if( $term->parent == 0) { 
+				$top_term = $term; 
+				continue;
+			}
+		}
+
+		foreach( $terms as $term ) {
+			if( $term->parent == $top_term->term_id ) {
+				$sub_term = $term;
+				continue;	
+			}
+		}
+
+		return $sub_term;
+	}
+
+	return null;
 }
