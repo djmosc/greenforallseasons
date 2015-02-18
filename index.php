@@ -26,11 +26,12 @@
 			$image_size =  ($i == 0) ? array('width' => 515, 'height' => 345) : array('width' => 250, 'height' => 250);
 			$author_id = get_the_author_meta('ID');
 			$category = get_post_category();
+			$excerpt = ($i == 0) ? get_excerpt(200) : get_excerpt(110);
 			?>
             <li>
                 <?php include_module('post-item', array(
 					'title' => get_the_title(),
-					'excerpt' => get_excerpt(150),
+					'excerpt' => $excerpt,
 					'url' =>  get_permalink(),
 					'image_url' => get_post_thumbnail_src($image_size),
 					'author' => array(
