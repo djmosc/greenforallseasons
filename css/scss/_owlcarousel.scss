@@ -124,21 +124,55 @@
 		z-index: 1;
 	}
 	.fadeOut {
-		-webkit-animation-name: fade-out;
-		animation-name: fade-out;
+	  -webkit-animation-name: fadeOut;
+	          animation-name: fadeOut;
+	}
+
+	.fadeIn {
+	  -webkit-animation-name: fadeIn;
+	          animation-name: fadeIn;
+	}	
+}
+
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;}
+}
+
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.owl-item {
+	overflow: hidden;
+
+	&.active {
+		.post-item {
+			-webkit-transition: -webkit-transform .5s linear;
+		     -moz-transition: -webkit-transform .5s linear;
+		 	-o-transition: -webkit-transform .5s linear;
+		 	transition: -webkit-transform .5s linear;	
+			@include translateX ( 0 ) ;
+		}
+	}
+	.post-item {
+		//-webkit-transition: -webkit-transform 1s linear;
+		@include translateX(100%);
 	}
 }
 
 
-@include keyframes( fade-out ) {
-	0% {
-		opacity: 1;
-	}
-
-	100% {
-		opacity: 0;
-	}
-}
 
 /* 
  *  Owl Carousel - Auto Height Plugin
@@ -211,7 +245,7 @@
 		}
 
 		&:hover {
-			background: #000;
+			background: #DBDBDB;
 			color: #FFF;
 		}
 	}

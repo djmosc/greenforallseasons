@@ -143,6 +143,7 @@ body {
 		.search-form {
 			float: left;
 			margin-right: 0.5em;
+			width: auto;
 		}
 
 		.follow-us {
@@ -277,9 +278,10 @@ body {
 	}
 
 	.copyright {
-		color: $white;
+		color: #636363;
 		@include font-size(14);
 		@include garamond-italic;
+		padding-top: 2em;
 
 		@include device-width(7) {
 			position: absolute;
@@ -439,7 +441,7 @@ body {
 	}
 }
 
-#index, #category {
+#index, #category .sidebar-content {
 	ul.posts {
 		li {
 			margin-bottom: 3em;

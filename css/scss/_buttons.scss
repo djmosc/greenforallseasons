@@ -27,6 +27,7 @@ button {
 	letter-spacing: 2px;
 	@include font-size(8);
 	@include futura-heavy;
+	font-weight: 700;
 
 	&:hover {
 		background: #000;
@@ -40,7 +41,7 @@ button {
 	padding: 0.8em 2em;
 	color: $olive;
 	letter-spacing: 2px;
-	@include font-size(8);
+	@include font-size(9);
 	@include futura-heavy;
 
 	&:after {
@@ -449,8 +450,9 @@ button {
 	}
 
 	.sub-name {
-		@include garamond-italic;
+		@include miller-italic;
 		margin: 0 0 0.5em 0;
+		@include font-size(30);
 	}
 }
 

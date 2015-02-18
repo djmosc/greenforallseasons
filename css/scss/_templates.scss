@@ -130,7 +130,7 @@
 
 	.sidebar-container {
 		border: 1px solid #e3e3e3;
-		border-top: 3px solid #8a967c;
+		border-top: 4px solid #8a967c;
 		margin: 0 10px;
 	}
 
@@ -429,7 +429,7 @@
 
 	.post-recipe,
 	.post-content {
-		margin: 2em 7em;
+		margin: 2em 7em 5em;
 
 		@include device-width(12) {
 			margin-left: 0;
@@ -595,6 +595,10 @@
 
 				&:first-child {
 					width: 100%;
+
+					.post-header {
+						padding: 0 15%;
+					}
 				}
 
 				&:nth-child(2n+2) {
@@ -707,6 +711,16 @@
 			}
 		}		
 
+	}
+
+	.more-from {
+		ul.posts {
+			li {
+				&:nth-child(3n+1) {
+					clear: left;
+				}
+			}
+		}
 	}
 }
 

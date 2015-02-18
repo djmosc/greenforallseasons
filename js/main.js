@@ -23,6 +23,13 @@
 
 		global: {
 			init: function(){
+				var searchinput = $('.search-form input');
+
+			    searchinput.on('focus', function() {
+			    	$(this).animate({width:'200px'}, 500);
+			    }).blur(function() {
+    				$(this).animate({width:'105px'}, 500);
+				});			
 				
 			}
 		},
@@ -111,7 +118,9 @@
 					loop:true,
 				    dots:true,
 				    nav:true,
-				    items: 1
+				    items: 1,
+					animateOut: 'fadeOut',
+					animateIn: 'fadeIn'				    
 				});
 			}
 		},

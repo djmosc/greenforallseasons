@@ -49,7 +49,7 @@
 								$title =  get_the_title();
 			                    $image_size = array('width' => 190, 'height' => 190);
 			                    $image = get_post_thumbnail_src($image_size);							
-								$excerpt = get_excerpt(150);
+								$excerpt = get_excerpt(70);
 								$url = get_permalink();	
 								$category = get_post_category();				
 							?>

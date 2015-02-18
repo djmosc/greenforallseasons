@@ -14,7 +14,7 @@
 		<?php endif; ?>
 		<div  class="span eight content <?php if($image) echo 'has-thumbnail'; ?>">
 			<p class="direction"><?php _e("Previous", THEME_NAME); ?></p>
-			<h5 class="post-title no-margin"><?php echo get_the_title($prev_post->ID) ?></h5>
+			<h5 class="post-title no-margin"><?php echo $title = (strlen(get_the_title($prev_post->ID)) > 50) ? substr(get_the_title($prev_post->ID),0,50).' ...' : get_the_title($prev_post->ID); ?></h5>
 		</div>
 	</a>
 	<?php endif; ?>
@@ -33,7 +33,7 @@
 		<?php endif; ?>
 		<div class="span eight content text-right right <?php if($image) echo 'has-thumbnail'; ?>">
 			<p class="direction"><?php _e("Next", THEME_NAME); ?></p>
-			<h5 class="post-title no-margin"><?php echo get_the_title($next_post->ID) ?></h5>			
+			<h5 class="post-title no-margin"><?php echo $title = (strlen(get_the_title($next_post->ID)) > 50) ? substr(get_the_title($next_post->ID),0,50).' ...' : get_the_title($next_post->ID); ?></h5>			
 		</div>
 	</a>
 	<?php endif; ?>

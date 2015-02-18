@@ -32,7 +32,7 @@ if ( $custom_query->have_posts() ) : ?>
             <?php include_module('post-item', array(
                 'title' => get_the_title(),
                 'image_url' => $image,
-                'excerpt' => get_excerpt(100),
+                'excerpt' => get_excerpt(50),
                 'category' => array(
                         'name' => $category->name,
                     ),

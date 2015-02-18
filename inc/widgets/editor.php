@@ -8,39 +8,9 @@ class Editor extends WP_Widget {
 	}
 
 	function form($instance) {
-		$title = (isset($instance['title'])) ? esc_attr($instance['title']) : '';
-		$user_id = (isset($instance['user_id'])) ? esc_attr($instance['user_id']) : '';
-		// get the featured editors
-		$editor_query = new WP_User_Query(
-			array(
-				'role'			    =>	'editor',
-			)
-		);
-		$editors = $editor_query->get_results();
-
-		// get the featured admins
-		$administrator_query = new WP_User_Query(
-			array(
-				'role'			    =>	'administrator',
-			)
-		);
-		$admins = $administrator_query->get_results();
-
-		// store them all as users
-		$user_query = array_merge( $admins, $editors );
 	?>
 		<p>
-		 <?php if ( ! empty( $user_query ) ) : ?>
-			
-			<label>Choose Editor:
-				<select name="<?php echo $this->get_field_name('user_id'); ?>" style="width: 170px;">
-					<option value="">--None--</option>
-					<?php foreach ( $user_query as $user ): ?>
-						<option value="<?php echo $user->ID; ?>" <?php if($user->ID == $user_id) echo 'selected'; ?>><?php echo $user->display_name; ?></option>
-					<?php endforeach; ?>
-				</select>
-			</label>
-		<?php endif; ?>
+			<label>Choose the Editors Letter you want to show</label>
 		</p>
 	<?php 
 	}
@@ -51,37 +21,50 @@ class Editor extends WP_Widget {
 
 	function widget($args, $instance) {
 		global $post;
-		$args['size'] = (isset($instance['size'])) ? $instance['size'] : 'small';
-		$args['user_id'] = (isset($instance['user_id'])) ? $instance['user_id'] : null;
+		
+		$posts = get_field('post', 'widget_'.$args['widget_id']);
 
 
-		echo $args['before_widget']; 
-			$author_id = $args['user_id'];
-			$author_image = get_field('image', 'user_'. $author_id);
-			$author_img_url = get_avatar_url ( $author_id, $size = '40' );
-			$excerpt = get_the_author_meta( 'description', $author_id );
-			$excerpt = (strlen($excerpt) > 160) ? substr($excerpt,0,160).'...' : $excerpt;
-		?>
+		if( $posts ) :
+			echo $args['before_widget']; 
+			?>
 
-			<img class="image" src="<?php echo bfi_thumb($author_image['url'], array('width' => 180, 'height' => 180)); ?>">
-			<div class="script">
-				<img src="<?php bloginfo('template_directory'); ?>/images/misc/editors-letter.png" alt="">	
-			</div>
-			<div class="author">
-					<div class="image circle">
-							<img src="<?php echo $author_img_url; ?>" />
+				<?php foreach($posts as $post) : ?>
+				<?php setup_postdata($post); ?>
+				<?php 
+					$author_id = get_the_author_meta('ID');
+					$author_image = get_field('image', 'user_'. $author_id);
+					$author_img_url = get_avatar_url ( $author_id, $size = '40' );
+					$author_url = get_author_posts_url($author_id);
+					$excerpt = get_the_excerpt();
+					$excerpt = (strlen($excerpt) > 150) ? '"'.substr($excerpt,0,150).'" ...' : $excerpt;
+
+				 ?>
+
+					<img class="image" src="<?php echo get_image(get_post_thumbnail_id($post->ID), array(180, 180)); ?>">
+					<div class="script">
+						<img src="<?php bloginfo('template_directory'); ?>/images/misc/editors-letter.png" alt="">	
 					</div>
-					<span class="name"><?php echo the_author_meta( "display_name", $author_id ); ?></span>
-			</div>	
-			<div class="date">
-				february 01,2015
-			</div>
-			
-			<p>
-				<?php echo $excerpt; ?>	
-				<a class="read-more" href="<?php echo get_author_posts_url($author_id); ?>">Read Further &raquo;</a>	
-			</p>
-		<? echo $args['after_widget'];	
+					<a href="<?php echo $author_url; ?>">
+						<div class="author">
+								<div class="image circle">
+										<img src="<?php echo $author_img_url; ?>" />
+								</div>
+								<span class="name"><?php echo the_author_meta( "display_name", $author_id ); ?></span>
+						</div>	
+					</a>
+					<div class="date">
+						february 01,2015
+					</div>
+					
+					<div class="bio">
+						<?php echo $excerpt; ?>	
+						<a class="read-more" href="<?php the_permalink(); ?>">Read Further &raquo;</a>	
+					</div>
+				<?php endforeach;	?>
+			<? 
+			echo $args['after_widget'];	
+		endif;
 		
 		
 	}
