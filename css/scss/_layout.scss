@@ -384,7 +384,7 @@ body {
 		color: #636363;
 		@include font-size(14);
 		@include garamond-italic;
-		padding-top: 2em;
+		padding-top: 6em;
 
 		@include device-width(7) {
 			position: absolute;
@@ -427,11 +427,11 @@ body {
 		}
 	}
 
-	.mid, .last {
+	.middle, .last {
 		float: left;
 	}
 
-	.mid {
+	.middle {
 		width: 50%;		
 
 		.nav {
