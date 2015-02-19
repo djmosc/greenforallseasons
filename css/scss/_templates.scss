@@ -618,7 +618,7 @@
 
 				.input {
 					border: 0;
-					width: 175px !important;
+					width: 175px;
 					@include font-size(9);
 				}
 
@@ -626,13 +626,13 @@
 					width: 100%;
 
 					.input {
-						width: 90% !important;
+						width: 90%;
 					}			
 				}				
 			}
 
 			select {
-				padding-right: 4%;
+				padding-right: 4.4em;
 				@include font-size(9);
 
 				@include device-width(5) {

@@ -24,14 +24,7 @@
 
 		global: {
 			init: function(){
-				var searchinput = $('.search-form input');
-
-			    searchinput.on('focus', function() {
-			    	$(this).animate({width:'200px'}, 500);
-			    }).blur(function() {
-    				$(this).animate({width:'105px'}, 500);
-				});			
-				
+				var searchinput = $('.search-form input');				
 			}
 		},
 

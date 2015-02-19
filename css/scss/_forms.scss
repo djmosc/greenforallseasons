@@ -267,6 +267,12 @@ fieldset {
 	.input {
 		vertical-align: middle;
 		border-color: transparent;
+		@include transition(all 0.3s ease);
+		width: 105px;
+
+		&:focus {
+			width: 200px;
+		}
 	}
 
 	.submit-btn {
