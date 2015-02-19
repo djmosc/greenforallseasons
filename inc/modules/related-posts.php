@@ -36,8 +36,8 @@ if ( $query->have_posts() ) : ?>
         <ul class="posts clearfix">
             <?php  while ( $query->have_posts() ) : $query->the_post();  ?>
             <?php 
-            $author_id = get_the_author_meta('ID');
-            $category = get_post_category();     
+                $author_id = get_the_author_meta('ID');
+                $category = get_post_category();    
             ?>            
             <li>
                 <?php include_module('post-item', array(
@@ -54,6 +54,9 @@ if ( $query->have_posts() ) : ?>
                     'category' => array(
                         'name' => $category->name,
                     ),
+                    'top_category' => array(
+                        'name' => $category->name,
+                        ),
                     'read_more' => true,
                 )); ?>
             </li>

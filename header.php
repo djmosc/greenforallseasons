@@ -45,6 +45,7 @@
 		
 			<div class="info">
 				<?php get_search_form(); ?>
+				<a class="primary-btn shop-btn" href="/products/"><?php _e('Shop') ?></a>
 				<span class="follow-us"><?php _e('Follow us', 'greenforallseasons') ?></span>
 				<?php include_module('social-links'); ?>
 			</div>

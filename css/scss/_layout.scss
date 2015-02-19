@@ -27,24 +27,12 @@ body {
 	z-index: 200;
 	background: #FFF;
 	@include transition(all 0.3s ease);
+	z-index: 500;
 
 	&.navigation-open {
 		.primary-navigation {
 			height: auto;
 			max-height: 500px;
-		}
-	}
-
-	.header-compact & {
-
-		> .inner {
-			padding: 2.5em 0 2em;
-		}
-
-		.logo-container {
-			.logo {
-				@include font-size(150);
-			}
 		}
 	}
 
@@ -126,12 +114,12 @@ body {
 			display: block;
 			position: absolute;
 			right: 1em;
-			top: 6em;
+			top: 4.6em;
 		}
 	}
 
 	.primary-navigation {
-		padding: 0 10px;
+		//padding: 0 10px;
 	}
 
 	.info {
@@ -139,11 +127,17 @@ body {
 		position: relative;
 		padding: 0 10px;
 		margin-top: 3em;
+		@include transition(all 0.3s ease);
 
 		.search-form {
 			float: left;
 			margin-right: 0.5em;
 			width: auto;
+		}
+
+		.shop-btn {
+			float: right;
+			margin: -6px 0 0 10px;
 		}
 
 		.follow-us {
@@ -158,13 +152,17 @@ body {
 		.social-links {
 			float: right;
 			display: block;
+
+			@include device-width(4) {
+				display: none;
+			}
 		}
 
 		@include device-width(9) {
 			margin-top: 10px;
 			position: absolute;
-			right: 3em;
-			top: 5.2em;			
+			right: 3.3em;
+			top: 4em;			
 		}		
 
 		@include device-width(6) {
@@ -172,6 +170,73 @@ body {
 				display: none;
 			}			
 		}
+	}
+
+	// Fixed header
+
+	.header-fixed & {
+		border-top: 10px solid #8a967c;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		@include box-shadow(1px 1px 10px #ccc);
+
+		.inner {
+			padding: 1.5em 0;
+		}
+
+		.logo-container {
+			top: 4px;
+
+			.tagline {
+				display: none;
+			}
+
+			.logo {
+				@include font-size(60);
+			}	
+		} 
+
+		.info {
+			display: none;
+
+			@include device-width(9) {
+				display: block;
+			}
+		}	
+
+		@include device-width(9) {
+			.logo-container {
+				margin: 0;
+			}
+
+			.info {
+				top: 2.2em;
+			}
+
+			.menu-btn {
+				top: 2.5em;
+			}
+		}	
+
+		@include device-width(5) {
+			.inner {
+				padding: .5em 0;
+			}
+			.logo-container {
+				.logo {
+					@include font-size(50);
+				}
+			}
+
+			.info {
+				top: 1em;
+			}
+
+			.menu-btn {
+				top: 1.2em;
+			}
+		}			
 	}
 }
 
@@ -239,7 +304,7 @@ body {
 			margin: .5em 0;
 
 			@include device-width(4) {
-				display: none;
+				opacity: 0;
 			}
 		}
 

@@ -396,6 +396,18 @@ function get_post_category($id = '') {
 	return null;
 }
 
+
+function get_child_post_category($id = '') {
+	$post_child_cat = array();
+	foreach((get_the_category()) as $cats) {
+	    $args = array( 'child_of' => $cats->cat_ID );
+		$categories = get_categories( $args );
+		if( $categories ) foreach( $categories as $category ) {
+		echo $category->cat_name; }
+	}	
+}
+
+
 function custom_get_the_date($date, $format) {
 
 	if( date('Ymd') == date('Ymd', strtotime($date)) ) {

@@ -1,10 +1,15 @@
 <div class="post-item <?php echo ( !empty($class)) ? $class : ''; ?>">
-	<!-- <div class="top-category">
-		<span class="category-name green-label">Shape</span>
-	</div>	 -->
+	<?php 
+		$date = ( !empty($date) ) ? $date : null;
+		$title = ( !empty($title) ) ? $title : null;
+		$excerpt = ( !empty($excerpt) ) ? $excerpt : null; 
+		$top_category = ( !empty($top_category) ) ? $top_category : null; 
+	?>
+
 	<?php if( !empty( $category) ): ?>
 	<?php include_module('post-category', array(
-		'name' => $category['name']
+		'category_name' => $category['name'],
+		'top_category_name' => $top_category['name']
 	)); ?>
 	<?php endif; ?>
 	<div class="post-image image">
@@ -13,11 +18,7 @@
 		</a>
 	</div>
 
-	<?php 
-		$date = ( !empty($date) ) ? $date : null;
-		$title = ( !empty($title) ) ? $title : null;
-		$excerpt = ( !empty($excerpt) ) ? $excerpt : null; 
-	?>
+
 
 	<?php $data =  array(
 		'title' => $title,
