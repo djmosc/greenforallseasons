@@ -606,6 +606,26 @@
 
 				.input {
 					border: 0;
+					width: 175px !important;
+					@include font-size(9);
+				}
+
+				@include device-width(5) {
+					width: 100%;
+
+					.input {
+						width: 90% !important;
+					}			
+				}				
+			}
+
+			select {
+				padding-right: 7%;
+				@include font-size(9);
+
+				@include device-width(5) {
+					padding-right: 3em;	
+					width: 50%;				
 				}
 			}
 

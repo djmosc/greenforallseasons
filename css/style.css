@@ -2036,7 +2036,8 @@ button:active, button:focus {
     font-weight: 400;
     font-style: italic;
     font-size: 12px;
-    font-size: 1.2rem; }
+    font-size: 1.2rem;
+    line-height: 1.1; }
     .widget .widget-description a {
       margin-top: 1em; }
 
@@ -4545,7 +4546,23 @@ body {
         border: 1px solid #E3E3E3;
         margin: 0 1em 0 0; }
         #index .index-header .filters .search-form .input {
-          border: 0; }
+          border: 0;
+          width: 175px !important;
+          font-size: 9px;
+          font-size: 0.9rem; }
+        @media only screen and (max-width: 500px) {
+          #index .index-header .filters .search-form {
+            width: 100%; }
+            #index .index-header .filters .search-form .input {
+              width: 90% !important; } }
+      #index .index-header .filters select {
+        padding-right: 7%;
+        font-size: 9px;
+        font-size: 0.9rem; }
+        @media only screen and (max-width: 500px) {
+          #index .index-header .filters select {
+            padding-right: 3em;
+            width: 50%; } }
       #index .index-header .filters .date {
         border-right: 0; }
   #index .posts {
