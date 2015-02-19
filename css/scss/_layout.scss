@@ -80,21 +80,6 @@ body {
 		position: absolute;
 		z-index: 200;
 
-		// @include device-width(13) {
-		// 	width: 2.5em;
-		// }		
-
-		// @include device-width(9) {
-		// 	position: static;
-		// 	padding: 10px;
-		// }
-
-		// @include device-width(4) {
-		// 	width: auto;
-		// 	position: static;
-		// 	text-align: left;
-		// }			
-			
 		.tagline {
 			@include garamond-italic;
 			@include font-size(14);
@@ -485,65 +470,7 @@ body {
 
 }
 
-#lightbox {
-	position: fixed;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 1000;
-	display: none;
-
-	&.visible {
-		display: block;
-	}
-
-	> .close-btn {
-		position: absolute;
-		top: 0;
-		right: 2em;
-		background: #FFF;
-		color: #000;
-		padding: 1em;
-		z-index: 400;
-		@include font-size(20);
-	}
-
-	> .overlay {
-		background: rgba(#000, 0.5);
-		z-index: 100;		
-		opacity: 0;
-		visibility: hidden;
-		display: block;
-		@include translate(opacity 0.3s ease);
-
-		&.visible {
-			opacity: 1;
-			visibility: visible;
-		}
-	}
-
-	> .preloader {
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		z-index: 200;
-		margin: -20px 0 0 -20px;
-		width: 40px;
-		height: 40px;
-		background: url(../images/misc/preloader.gif) no-repeat;
-	}
-
-	> .content {
-		position: absolute;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		z-index: 300;
-	}
-}
-
+//what is this for?
 #index, #category .sidebar-content {
 	ul.posts {
 		li {
