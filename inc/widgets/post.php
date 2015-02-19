@@ -83,7 +83,7 @@ class Post extends WP_Widget {
 				$category = get_post_category();
 				$module = ($location == 'homepage_carousel') ? 'post-slide' : 'post-item';
 				$sub_category = get_post_sub_category();
-				if( !$sub_category) $sub_category = $category;
+				if( !$sub_category || $location == 'homepage_carousel') $sub_category = $category;
 
 				if( $location != 'homepage_carousel') {
 					include_module('post-top-category', array(

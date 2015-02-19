@@ -94,7 +94,7 @@ button {
 
 	&:before {
 		@include transition(all 0.3s ease);
-		font-size: 1.1em;
+		font-size: 1em;
 		vertical-align: middle;
 		display: inline-block;
 	}

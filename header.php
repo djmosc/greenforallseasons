@@ -38,16 +38,17 @@
 				<span class="tagline"><?php echo esc_attr( get_bloginfo( 'description', 'display' ) ); ?></span>
 				<a class="icon icon-logo logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>
 			</h1>
-			<div class="menu-btn-container">
-				<button class="menu-btn"></button>
-			</div>
+			<button class="menu-btn"></button>
 			<?php wp_nav_menu( array( 'depth' => 0, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu', 'container' => 'nav', 'container_class' => 'primary-navigation navigation' )); ?>
 		
 			<div class="info">
 				<?php get_search_form(); ?>
-				<a class="primary-btn shop-btn" href="/products/"><?php _e('Shop') ?></a>
-				<span class="follow-us"><?php _e('Follow us', 'greenforallseasons') ?></span>
-				<?php include_module('social-links'); ?>
+				
+				<div class="social">
+					<span class="label"><?php _e('Follow us', 'greenforallseasons') ?></span>
+					<?php include_module('social-links'); ?>
+				</div>
+				<a class="primary-btn shop-btn" href="<?php echo get_permalink(get_field('products_page', 'options')); ?>"><?php _e("Shop", 'greenforallseasons'); ?></a>
 			</div>
 		</div>
 	</header><!-- #header -->
