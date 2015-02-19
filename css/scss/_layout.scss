@@ -10,7 +10,6 @@ body {
 	@include font-size(15);
 	line-height: 1.5;
 	min-width: 250px;
-	border-top: 10px solid $olive;
 	@include garamond;
 }
 
@@ -28,6 +27,7 @@ body {
 	background: #FFF;
 	@include transition(all 0.3s ease);
 	z-index: 500;
+	border-top: 10px solid $olive;
 
 	&.navigation-open {
 		.primary-navigation {
@@ -165,23 +165,30 @@ body {
 			top: 4em;			
 		}		
 
-		@include device-width(6) {
-			.search-form, .follow-us {
+		
+		.search-form, .follow-us {
+			@include device-width(6) {
 				display: none;
 			}			
 		}
 	}
 
-	// Fixed header
+	.admin-bar.header-fixed & {
+		top: 32px;
+
+		@include device-width(8) {
+			top: 46px;
+		}
+	}
 
 	.header-fixed & {
-		border-top: 10px solid #8a967c;
 		position: fixed;
 		top: 0;
 		width: 100%;
 		@include box-shadow(1px 1px 10px #ccc);
 
-		.inner {
+
+		> .inner {
 			padding: 1.5em 0;
 		}
 
@@ -193,7 +200,7 @@ body {
 			}
 
 			.logo {
-				@include font-size(60);
+				@include font-size(100);
 			}	
 		} 
 

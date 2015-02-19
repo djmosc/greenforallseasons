@@ -82,6 +82,14 @@ class Post extends WP_Widget {
 				$author_id = get_the_author_meta('ID');
 				$category = get_post_category();
 				$module = ($location == 'homepage_carousel') ? 'post-slide' : 'post-item';
+				$sub_category = get_post_sub_category();
+				if( !$sub_category) $sub_category = $category;
+
+				if( $location != 'homepage_carousel') {
+					include_module('post-top-category', array(
+						'name' => $category->name
+					));
+				}
 
 				$data = array(
 					'title' => get_the_title(),
@@ -90,15 +98,18 @@ class Post extends WP_Widget {
 					'image_url' => get_post_thumbnail_src($image_size),
 					'author' => array(
 						'name' => get_the_author(),
-						'image_url' => get_avatar_url ( get_the_author_meta('ID'), $size = '40' ),
+						'image_url' => get_avatar_url ( get_the_author_meta('ID'), 40 ),
 						'url' => get_author_posts_url($author_id),
-					),							
+					),
 				    'category' => array(
-				    	'name' => $category->name,
+				    	'name' => $sub_category->name,
 				    ),
 					'read_more' => true,
-					'date' => get_the_time('F d, Y'),
+					'date' => get_the_date(),
+					'class' => 'has-sub-category'
 				);
+
+
 
 				include_module($module, $data);
 

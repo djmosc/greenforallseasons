@@ -15,7 +15,7 @@ if (!empty($tags)) {
     }
 }
 
-if(isset($tag_ids)){
+//if(isset($tag_ids)){
     $args = array(  
         'post_type' => array('post'),
         'tag__in' => $tag_ids,  
@@ -23,7 +23,7 @@ if(isset($tag_ids)){
         'showposts' => 3,  // Number of related posts that will be shown.
         'ignore_sticky_posts'=>1  
     );
-}
+//}
 
 $query = new WP_Query($args);
 if ( $query->have_posts() ) : ?>
@@ -38,10 +38,15 @@ if ( $query->have_posts() ) : ?>
             <?php 
                 $author_id = get_the_author_meta('ID');
                 $category = get_post_category();    
-
-                var_dump(get_post_sub_category());
-            ?>            
+                $sub_category = get_post_sub_category();
+                if( !$sub_category ) $sub_category = $category;
+            ?>      
             <li>
+                <?php
+                include_module('post-top-category', array(
+                    'name' => $category->name
+                ));
+                ?>
                 <?php include_module('post-item', array(
                     'title' => get_the_title(),
                     'excerpt' => get_excerpt(50),
@@ -50,16 +55,14 @@ if ( $query->have_posts() ) : ?>
                     'date' => get_the_date(),
                     'author' => array(
                         'name' => 'Words by ' .get_the_author(),
-                        'image_url' => get_avatar_url ( $author_id, 40 ),
+                        'image_url' => get_avatar_url ($author_id, 40 ),
                         'url' => get_author_posts_url($author_id),
                     ),                          
                     'category' => array(
-                        'name' => $category->name,
+                        'name' => $sub_category->name,
                     ),
-                    'top_category' => array(
-                        'name' => $category->name,
-                        ),
                     'read_more' => true,
+                    'class' => 'has-sub-category'
                 )); ?>
             </li>
             <?php endwhile; ?>

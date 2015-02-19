@@ -24,7 +24,7 @@
 
 		global: {
 			init: function(){
-				var searchinput = $('.search-form input');				
+							
 			}
 		},
 
