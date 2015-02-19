@@ -1120,24 +1120,24 @@ blockquote {
 	}
 }
 
+.post-top-category {
+	text-align: center;
+	
+	.category-name {
+		@include font-size(14);
+		@include futura-bold;
+		background: none;
+		padding-top: 0;
+
+		&:before {
+			@include futura;
+		}
+	}
+}
 
 .post-item {
 	position: relative;
 	@extend .clearfix;
-
-	.top-category {
-		text-align: center;
-		
-		span {
-			@include font-size(18);
-			@include futura-bold;
-			background: none;
-
-			&:before {
-				@include futura;
-			}
-		}
-	}
 
 	&.has-sub-category {
 		.category-name {
@@ -1998,7 +1998,7 @@ blockquote {
 .products-navigation {
 	background: #eeeeee;
 	text-align: center;
-	padding: 1em;
+	padding: 0.6em;
 
 	a {
 		@include futura-bold;
