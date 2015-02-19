@@ -26,12 +26,7 @@
 </head>
 <body <?php body_class(); ?>>
 <div id="tortilla">
-	<div id="lightbox" class="lightbox">
-		<button class="close-btn"></button>
-		<div class="preloader"></div>
-		<div class="content"></div>
-		<div class="overlay"></div>
-	</div>
+	
 	<header id="header" role="banner">
 		<div class="inner container">
 			<h1 class="logo-container">
