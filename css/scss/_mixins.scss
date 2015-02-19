@@ -413,3 +413,31 @@
 	align-content: $value;
 }
 
+
+//          Automatically add vendor prefixes in one hit         //
+@mixin animate-prefixer($property, $value...) {
+    -webkit-#{$property}: unquote($value);
+    -moz-#{$property}: unquote($value);
+    -o-#{$property}: unquote($value);
+    #{$property}: unquote($value);
+}
+
+// Generate keyframes animations with vendor prefixes in one hit //
+
+@mixin animate-keyframe($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}

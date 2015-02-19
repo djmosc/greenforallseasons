@@ -38,6 +38,8 @@ if ( $query->have_posts() ) : ?>
             <?php 
                 $author_id = get_the_author_meta('ID');
                 $category = get_post_category();    
+
+                var_dump(get_post_sub_category());
             ?>            
             <li>
                 <?php include_module('post-item', array(
