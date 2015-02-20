@@ -668,14 +668,24 @@ blockquote {
 
 .footer-primary-navigation {
 	@include inline-block;
+	margin-left: 30%;
+
+	@include device-width(12) {
+		margin-left: 0;	
+	}
 
 	@include device-width(10) {
 		display: block;
 		width: 100%;
+		
 	}	
 
 	li {
-		margin-right: 8.3em;
+		margin-right: 8em;
+
+		&:last-child {
+			margin-right: 0;
+		}
 
 		a {
 			color: #FFF;
