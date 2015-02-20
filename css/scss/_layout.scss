@@ -327,7 +327,7 @@ body {
 			margin: .5em 0;
 
 			@include device-width(4) {
-				opacity: 0;
+				display: none;
 			}
 		}
 
@@ -349,19 +349,36 @@ body {
 		}
 	}
 
+	.secondary-navigation {
+		float: left;
+
+		@include device-width(7) {
+			width: 50%;
+		}
+	}
+
 	.social-links {
 		float: right;
 		display: block;
 		margin-bottom: 4em;
-
-		@include device-width(7) {
-			@include inline-block;
-			float: none;
-			margin-bottom: 1em;
-		}
+		@include inline-block;
+		z-index: 1;
+		position: relative;		
 
 		a {
 			color: $white;
+		}		
+
+		@include device-width(7) {
+			width:100%;
+			float: none;
+			margin-bottom: 1em;
+			text-align: center;
+
+			li {
+				float: none;
+				@include inline-block;
+			}
 		}
 	}
 
@@ -369,24 +386,32 @@ body {
 		color: #636363;
 		@include font-size(14);
 		@include garamond-italic;
-		padding-top: 6em;
+		position: absolute;
+		left: 30%;
+		top: 8em;		
+
+		@include device-width(9) {
+			top: 9.5em;
+		}
 
 		@include device-width(7) {
-			position: absolute;
 			bottom: 1em;
 			width: 100%;
 			text-align: center;
 			left: 0;
+			top: auto;
 		}
 	}	
 
-	.by {
+	.created-by {
 		display: block;
 		@include font-size(10);
 		color: $gray;
 		@include futura;
 		text-transform: none;	
-		clear: both;	
+		clear: right;	
+		z-index: 1;
+		position: relative;
 
 		@include device-width(7) {
 			margin-bottom: 5em;
@@ -436,27 +461,13 @@ body {
 		}		
 	}
 
-	.last {
-		width: 20%;
-
-		@include device-width(9) {
-			width: 30%;
-		}
-
-		@include device-width(7) {
-			width: 100%;
-			text-align: center;
-		}		
-	}
-
-	.details-bottom {
-		@extend .clearfix;
-		padding: 75px 0 25px;
-	}
-
-	.bottom {
+	.bottom-nav {
 		padding: 24px 0;
 		background: $dark-green;
+
+		.inner {
+			text-align: right;
+		}
 	}	
 }
 

@@ -559,23 +559,10 @@ blockquote {
 				@include transition(all 0.3s ease);		
 
 				@include device-width(9) {
-					//display: block;
-				}
-
-				@include device-width(9) {
 					width: 100%;
 					padding: 0;
 					display: none;
 				}
-
-				// a {
-				// 	display: block;
-				// 	padding: .3em .5em;
-
-				// 	&:hover {
-				// 		color: $black;
-				// 	}
-				// }
 		
 				@include device-width(9) {
 					// display: none;
@@ -587,8 +574,7 @@ blockquote {
 					width: 100%;
 
 					a {
-						@include futura;
-						
+						@include futura;		
 						text-transform: none;
 						background: #FFF;
 						padding: 1em .5em;
@@ -615,7 +601,6 @@ blockquote {
 					@include device-width(9) {
 						opacity: 0;
 					}
-
 				}				
 			}
 
@@ -626,7 +611,6 @@ blockquote {
 					@include device-width(9) {
 						opacity: 0;
 					}
-
 				}
 
 				.sub-menu {
@@ -648,8 +632,6 @@ blockquote {
 		}
 	}
 }
-
-
 
 .secondary-navigation {
 	@include device-width(9) {
@@ -685,37 +667,33 @@ blockquote {
 }
 
 .footer-primary-navigation {
-	text-align: right;
+	@include inline-block;
 
-	ul {
-		@include inline-block;
+	@include device-width(10) {
+		display: block;
+		width: 100%;
+	}	
+
+	li {
+		margin-right: 8.3em;
+
+		a {
+			color: #FFF;
+		}
+
+		@include device-width(12) {
+			margin: 0 4em;
+		} 
 
 		@include device-width(10) {
-			display: block;
-			width: 100%;
-		}
-
-		li {
-			margin-right: 8.3em;
+			margin: .5em 0;
+			width: 33%;
 
 			a {
-				color: #FFF;
+				display: block;
+				text-align: center;
 			}
-
-			@include device-width(12) {
-				margin: 0 4em;
-			} 
-
-			@include device-width(10) {
-				margin: .5em 0;
-				width: 33%;
-
-				a {
-					display: block;
-					text-align: center;
-				}
-			} 
-		}
+		} 
 	}
 }
 
