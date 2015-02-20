@@ -18,9 +18,6 @@
 					<a class="icon icon-logo logo" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php //bloginfo( 'name' ); ?></a>				
 				</h1>		
 					<?php wp_nav_menu( array( 'depth' => 1, 'theme_location' => 'secondary', 'menu_class' => 'clearfix menu secondary-navigation navigation', 'container' => '', )); ?>
-					<div class="copyright">
-						<?php _e("All rights reserved.", THEME_NAME); ?> &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
-					</div>	
 					<?php include_module('social-links'); ?>	
 					<div class="created-by">
 						<span>
@@ -29,6 +26,9 @@
 							<?php _e("Site by ", THEME_NAME); ?> <a href="http://www.mindblownmedia.com" target="_blank"><?php _e('Mind Blown Media', THEME_NAME) ?></a>
 						</span>
 					</div>
+					<div class="copyright">
+						<?php _e("All rights reserved.", THEME_NAME); ?> &copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>
+					</div>						
 			</div>
 		</div>		
 		<div class="bottom-nav">

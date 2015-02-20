@@ -317,6 +317,7 @@ body {
 
 		@include device-width(7) {
 			width: 50%;
+			margin-bottom: 3em;
 		}		
 
 		.tagline {
@@ -350,20 +351,24 @@ body {
 	}
 
 	.secondary-navigation {
-		float: left;
+		position: absolute;
+		margin-left: 30%;
 
 		@include device-width(7) {
-			width: 50%;
+			width: 45%;
+			margin-left: 50%;
+
+			li {
+				text-align: right;
+			}
 		}
 	}
 
 	.social-links {
-		float: right;
-		display: block;
-		margin-bottom: 4em;
 		@include inline-block;
 		z-index: 1;
-		position: relative;		
+		position: absolute;
+		right: 10px;		
 
 		a {
 			color: $white;
@@ -371,9 +376,8 @@ body {
 
 		@include device-width(7) {
 			width:100%;
-			float: none;
-			margin-bottom: 1em;
 			text-align: center;
+			bottom: 6em;
 
 			li {
 				float: none;
@@ -381,27 +385,6 @@ body {
 			}
 		}
 	}
-
-	.copyright {
-		color: #636363;
-		@include font-size(14);
-		@include garamond-italic;
-		position: absolute;
-		left: 30%;
-		top: 8em;		
-
-		@include device-width(9) {
-			top: 9.5em;
-		}
-
-		@include device-width(7) {
-			bottom: 1em;
-			width: 100%;
-			text-align: center;
-			left: 0;
-			top: auto;
-		}
-	}	
 
 	.created-by {
 		display: block;
@@ -411,10 +394,13 @@ body {
 		text-transform: none;	
 		clear: right;	
 		z-index: 1;
-		position: relative;
+		position: absolute;
+		right: 10px;
+		bottom: 2em;
 
 		@include device-width(7) {
-			margin-bottom: 5em;
+			width: 100%;
+			bottom: 5em;
 		}
 
 
@@ -437,28 +423,25 @@ body {
 		}
 	}
 
-	.middle, .last {
-		float: left;
-	}
-
-	.middle {
-		width: 50%;		
-
-		.nav {
-			margin-bottom: 4.5em;
-		}
+	.copyright {
+		color: #636363;
+		@include font-size(14);
+		@include garamond-italic;
+		position: absolute;
+		left: 30%;
+		bottom: 1.5em;
 
 		@include device-width(9) {
-			width: 40%;
-
-			.nav {
-				margin-bottom: 1em;	
-			}
+			top: 9.5em;
 		}
 
 		@include device-width(7) {
-			width: 50%;
-		}		
+			bottom: 1em;
+			width: 100%;
+			text-align: center;
+			left: 0;
+			top: auto;
+		}
 	}
 
 	.bottom-nav {
