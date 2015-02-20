@@ -1259,9 +1259,9 @@ blockquote {
 .post-header {
 	text-align: center;
 
-	.title {
-		margin: 1em auto;
-	}
+	// .title {
+	// 	margin: 1em auto;
+	// }
 
 	.excerpt {
 		text-align: center;
@@ -1382,8 +1382,11 @@ blockquote {
 	}
 
 	.post-header {
+		margin-top: 0;
+
 		.category {
 			margin-top: -0.75em;
+			margin-bottom: 0;
 		}	
 
 		.post-excerpt {
