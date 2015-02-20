@@ -77,8 +77,20 @@ class Post extends WP_Widget {
 			echo $args['before_widget'];
 			$i = 0;
 			while ( $custom_query->have_posts() ) : $custom_query->the_post();
+				switch($args['size']) {
+					case 'large':
+						$image_size = array('width' => 320, 'height' => 222);
+					break;
+					case 'medium':
+						$image_size = array('width' => 320, 'height' => 294);
+					break;
+					case 'small':
+					default:
+						$image_size = array('width' => 320, 'height' => 222);
+					break;						
+				}
 						
-				$image_size = ($location == 'homepage_carousel') ? array('width' => 840, 'height' => 480) : array('width' => 320, 'height' => 222);
+				if($location == 'homepage_carousel') $image_size = array('width' => 840, 'height' => 480);
 				$author_id = get_the_author_meta('ID');
 				$category = get_post_category();
 				$module = ($location == 'homepage_carousel') ? 'post-slide' : 'post-item';

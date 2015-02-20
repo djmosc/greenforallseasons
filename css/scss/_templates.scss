@@ -204,6 +204,7 @@
 			&:nth-child(2n - 1) {
 				border-right: 1px solid #e3e3e3;
 				width: 40%;
+				clear: left;
 
 				@include device-width(12) {
 					width: 50%;
