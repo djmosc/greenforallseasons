@@ -35,24 +35,40 @@
 		header: {
 			element: $('#header'),
 			init: function(){
-				var header = main.header.element,
-					menuBtn = $('.menu-btn', header);
+				var element = this.element,
+					menubtn = $('.menu-btn', element);
 
-				menuBtn.on('click', function(e){
+				menubtn.on('click', function(e){
 					e.preventDefault();
-					header.toggleClass('navigation-open');
+					element.toggleClass('navigation-open');
 				});
 				
 				main.w.on('scroll', this.scroll).trigger('scroll');
+
+				this.search.init();
 			},
 			scroll: function(){
 				var scrollTop = main.w.scrollTop(),
 					body = main.body.element;
 
-				if(scrollTop > 10 && !body.hasClass('header-fixed')) {
+				if(scrollTop > 1) {
 					body.addClass('header-fixed');
-				} else if(scrollTop < 10 && body.hasClass('header-fixed')) {
+				} else {
 					body.removeClass('header-fixed');
+				}
+			},
+			search: {
+				element: $('#header .search-form'),
+				init: function(){
+					var element = this.element,
+						input = element.find('.input');
+
+					input.on('focus', function(){
+						main.header.element.addClass('search-focus')
+					}).on('blur', function(){
+						main.header.element.removeClass('search-focus')
+					});
+
 				}
 			}
 		},

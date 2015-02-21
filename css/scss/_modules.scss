@@ -459,7 +459,7 @@ blockquote {
 		float: left;
 		position: relative;
 		@include transition(all 0.3s ease);
-		margin-right: 5em;
+		margin-right: 4em;
 		cursor: pointer;
 
 		a {
@@ -947,10 +947,26 @@ blockquote {
 .comment-respond {
 
 	.comment-reply-title {
+		position: relative;
+		border-top: 4px solid #000;
+		text-transform: uppercase;
 		text-align: center;
-		color: #666666;
-		letter-spacing: 2px;
-		@include font-size(18);
+		padding: 1em 0;
+		@include garamond-italic;
+		@include font-size(25);
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 4px;
+			left: 50%;
+			margin-left: -5px;
+			width: 0; 
+			height: 0; 
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			border-top: 10px solid #000;
+		}
 	}
 
 }
@@ -1142,9 +1158,11 @@ blockquote {
 
 	.category {
 		text-align: center;
-		margin-bottom: -1em;
 		z-index: 110;
-		position: relative;
+		position: absolute;
+		left: 0;
+		top: -0.6em;
+		right: 0;
 	}
 
 	.image {
@@ -1172,6 +1190,8 @@ blockquote {
 	}
 
 	.title {
+		margin: 0.5em 0;
+
 		&.long {
 			@include font-size(30);
 
@@ -1859,8 +1879,11 @@ blockquote {
 
 	.category {
 		text-align: center;
-		position: relative;
-		margin-bottom: -.8em;				
+		z-index: 110;
+		position: absolute;
+		left: 0;
+		top: -0.6em;
+		right: 0;				
 	}		
 
 
@@ -1869,6 +1892,7 @@ blockquote {
 	}
 
 	.post-title {
+		margin: 1em auto;
 		width: 70%;
 	}
 
@@ -1986,6 +2010,11 @@ blockquote {
 				@include futura-bold;
 			}
 		}
+
+		&.cat-item-none {
+			display: none;
+		}
+
 		a {
 			@include futura;
 		}

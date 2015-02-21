@@ -26,10 +26,6 @@ add_action( 'wp_enqueue_scripts', 'custom_scripts', 30);
 
 add_action( 'wp_print_styles', 'custom_styles', 30);
 
-add_action( 'wp_ajax_post_carousel', 'custom_ajax_post_carousel' );
-
-add_action( 'wp_ajax_nopriv_post_carousel', 'custom_ajax_post_carousel' );
-
 add_action( 'wp_ajax_get_products', 'custom_wp_ajax_get_products' );
 
 add_action( 'wp_ajax_nopriv_get_products', 'custom_wp_ajax_get_products' );
@@ -307,23 +303,6 @@ function custom_comment_form_defaults($args){
 	return $args;
 }
 
-function custom_ajax_post_carousel(){
-	global $wp_query, $post;
-
-	$post_id = (isset($_POST['post_id'])) ? $_POST['post_id'] : null;
-
-	if($post_id) {
-		query_posts(array('p' => $post_id));
-		if(have_posts()) {
-			while(have_posts()) {
-				the_post();
-				get_template_part('inc/post-carousel');
-			}
-		}
-	}
-	exit;
-}
-
 function custom_gallery( $atts ) {
 
 	$output = '';
@@ -395,18 +374,6 @@ function get_post_category($id = '') {
 
 	return null;
 }
-
-
-function get_child_post_category($id = '') {
-	$post_child_cat = array();
-	foreach((get_the_category()) as $cats) {
-	    $args = array( 'child_of' => $cats->cat_ID );
-		$categories = get_categories( $args );
-		if( $categories ) foreach( $categories as $category ) {
-		echo $category->cat_name; }
-	}	
-}
-
 
 function custom_get_the_date($date, $format) {
 
