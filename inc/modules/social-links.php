@@ -16,7 +16,7 @@
 	</li>
 	<?php endif; ?>
 	
-	<?php if($tumblr_url = 'http://www.tumblr.com/G4ASeasons'): ?>
+	<?php if($tumblr_url = false): ?>
 	<li>
 		<a class="tumblr-btn" href="<?php echo $tumblr_url;?>" target="_blank"></a>
 	</li>

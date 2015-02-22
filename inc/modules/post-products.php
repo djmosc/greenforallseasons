@@ -2,7 +2,7 @@
 <?php if($products = get_field('products')): ?>
 <div class="post-products">
 	<header class="post-products-header">
-		<h3 class="title"><?php _e('Shop the Post', THEME_NAME) ?></h3>
+		<h3 class="title"><?php _e('Shop the Story', THEME_NAME) ?></h3>
 		<p class="description">
 			<?php _e("Lorem ipsum dolor sit amet, consectetur adipisici.", THEME_NAME) ?>
 		</p>

@@ -116,6 +116,24 @@ function custom_init(){
 		);
 
 		$products->register_post_type();
+
+		$letters_uri = get_page_uri(get_field('letters_page', 'options'));
+
+		$letters = new Custom_Post_Type( 'Letter', 
+			array(
+				'rewrite' => array('with_front' => false, 'slug' => $letters_uri),
+				'capability_type' => 'post',
+				'publicly_queryable' => true,
+				'has_archive' => false, 
+				'hierarchical' => false,
+				'menu_position' => null,
+				'menu_icon' => 'dashicons-format-aside',
+				'supports' => array('title', 'excerpt', 'editor', 'thumbnail'),
+				'plural' => "Editor Letters",		
+			)
+		);
+
+		$letters->register_post_type();
 	}
 }
 
@@ -138,7 +156,7 @@ function custom_widgets_init() {
 
 	require( $template_directory . '/inc/widgets/socials.php' );
 
-	require( $template_directory . '/inc/widgets/editor.php' );	
+	require( $template_directory . '/inc/widgets/letter.php' );	
 	
 	register_sidebar( array(
 		'name' => __( 'Default', THEME_NAME ),
