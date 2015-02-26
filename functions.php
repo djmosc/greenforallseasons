@@ -26,10 +26,6 @@ add_action( 'wp_enqueue_scripts', 'custom_scripts', 30);
 
 add_action( 'wp_print_styles', 'custom_styles', 30);
 
-add_action( 'wp_ajax_post_carousel', 'custom_ajax_post_carousel' );
-
-add_action( 'wp_ajax_nopriv_post_carousel', 'custom_ajax_post_carousel' );
-
 add_action( 'wp_ajax_get_products', 'custom_wp_ajax_get_products' );
 
 add_action( 'wp_ajax_nopriv_get_products', 'custom_wp_ajax_get_products' );
@@ -120,6 +116,24 @@ function custom_init(){
 		);
 
 		$products->register_post_type();
+
+		$letters_uri = get_page_uri(get_field('letters_page', 'options'));
+
+		$letters = new Custom_Post_Type( 'Letter', 
+			array(
+				'rewrite' => array('with_front' => false, 'slug' => $letters_uri),
+				'capability_type' => 'post',
+				'publicly_queryable' => true,
+				'has_archive' => false, 
+				'hierarchical' => false,
+				'menu_position' => null,
+				'menu_icon' => 'dashicons-format-aside',
+				'supports' => array('title', 'excerpt', 'editor', 'thumbnail'),
+				'plural' => "Editor Letters",		
+			)
+		);
+
+		$letters->register_post_type();
 	}
 }
 
@@ -142,7 +156,7 @@ function custom_widgets_init() {
 
 	require( $template_directory . '/inc/widgets/socials.php' );
 
-	require( $template_directory . '/inc/widgets/editor.php' );	
+	require( $template_directory . '/inc/widgets/letter.php' );	
 	
 	register_sidebar( array(
 		'name' => __( 'Default', THEME_NAME ),
@@ -227,6 +241,7 @@ function custom_scripts() {
 	}
 
 	wp_register_script('infinitescroll', $template_directory_uri.'/js/plugins/jquery.infinitescroll.js', array('jquery'), '', true);
+	wp_register_script('hammer', $template_directory_uri.'/js/plugins/hammer.js', array(), '', true);
 }
 
 
@@ -307,23 +322,6 @@ function custom_comment_form_defaults($args){
 	return $args;
 }
 
-function custom_ajax_post_carousel(){
-	global $wp_query, $post;
-
-	$post_id = (isset($_POST['post_id'])) ? $_POST['post_id'] : null;
-
-	if($post_id) {
-		query_posts(array('p' => $post_id));
-		if(have_posts()) {
-			while(have_posts()) {
-				the_post();
-				get_template_part('inc/post-carousel');
-			}
-		}
-	}
-	exit;
-}
-
 function custom_gallery( $atts ) {
 
 	$output = '';
@@ -363,7 +361,8 @@ function custom_gallery( $atts ) {
 							'title' => $image->post_title,
 							'url' => get_permalink($id),
 							'image_url' => $image_url,
-							'excerpt' => $image->post_excerpt
+							'excerpt' => $image->post_excerpt,
+							'email' => true
 						)); ?>
 						<div class="pages"><span class="page"><?php echo ($i + 1) . ' of '.count($ids);?></span></div>
 					</div>
@@ -395,18 +394,6 @@ function get_post_category($id = '') {
 
 	return null;
 }
-
-
-function get_child_post_category($id = '') {
-	$post_child_cat = array();
-	foreach((get_the_category()) as $cats) {
-	    $args = array( 'child_of' => $cats->cat_ID );
-		$categories = get_categories( $args );
-		if( $categories ) foreach( $categories as $category ) {
-		echo $category->cat_name; }
-	}	
-}
-
 
 function custom_get_the_date($date, $format) {
 

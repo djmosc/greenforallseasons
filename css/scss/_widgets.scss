@@ -91,6 +91,8 @@
 
 .widget_post {
 	.post-item {
+		margin-top: 0.5em;
+		
 		.image {
 			.btn {
 				display: block;
@@ -175,47 +177,64 @@
 }
 
 
-.widget_editor {
+.widget_letter {
 	text-align: center;
-	padding: 2.5em 13% 3.5em;
+
 
 	.image {
-		@include border-radius(50%);
+		img {
+			width: 150px;
+		}
 	}
 
-	.script {
-		margin-top: -1.5em;
+	.letter-btn {
+		position: relative;
+		display: inline-block;
+		padding-bottom: 70px;
+
+		&:after {
+			content: '';
+			background: url(../images/misc/editors-letter.png);
+			width: 125px;
+			height: 84px;
+			display: block;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
 	}
 
 	.author {
-		margin-top: -1em;
+		vertical-align: middle;
+		text-align: center;
 
 		.image {
-			@include border-radius(50%);
 			vertical-align: middle;
 			margin-right: 0.3em;
 		}
 
 		.name {
-			@include futura-bold;
-			@include font-size(10);
-			@include inline-block;
+			display: inline-block;
+			vertical-align: middle;
+			text-align: left;
 		}
 	}
 
 	.date {
+		display: block;
 		@include futura;
 		color: #5b5b5b;
 		@include font-size(11);
-		margin: 1.5em 0;
+		margin: 1em 0;
 	}
 
-	.bio {
+	.excerpt {
 		@include font-size(15);
 		@include garamond-italic;
 		color: #3b3b3b;
 		text-align: left;
-		padding: 0 10%;	
+		padding: 0 2em;
+		margin-bottom: 2em;	
 		line-height: 1.4;	
 
 		.read-more {
@@ -324,12 +343,14 @@
 		}
 
 		.header {
+			padding: 1em;
 			position: absolute;
 			top: 50%;
 			background: #FFF;
 			left: 0;
 			right: 0;
 			@include translateY(-50%);
+			z-index: 300;
 			opacity: 0;
 			visibility: hidden;
 			@include transition(all 0.3s ease);

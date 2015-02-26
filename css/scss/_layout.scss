@@ -11,6 +11,28 @@ body {
 	line-height: 1.5;
 	min-width: 250px;
 	@include garamond;
+	@include transition(all 0.3s ease);
+	padding-top: 220px;
+
+	@include device-width(12) {
+		padding-top: 174px;
+	}
+
+	@include device-width(10) {
+		padding-top: 144px;
+	}
+
+	@include device-width(9) {
+		padding-top: 70px;
+	}
+
+	@include device-width(6) {
+		padding-top: 0;
+	}
+
+	&.header-fixed {
+		padding-top: 77px;
+	}
 }
 
 #tortilla {
@@ -18,15 +40,35 @@ body {
 }
 
 /* =============================================================================
-   Header Layouts
+   Header Layout
    ========================================================================== */
 
 #header {
-	position: relative;
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
 	background: #FFF;
 	@include transition(all 0.3s ease);
 	z-index: 200;
 	border-top: 10px solid $olive;
+	padding: 4.5em 0 3em;
+
+	@include device-width(12) {
+		padding: 2.5em 0 2em;
+	}
+
+	@include device-width(10) {
+		padding: 1.5em 0 1em;
+	}
+
+	@include device-width(9) {
+		padding: 10px 0;
+	}
+
+	@include device-width(6) {
+		position: relative;
+	}
 
 	&.navigation-open {
 		.primary-navigation {
@@ -51,45 +93,49 @@ body {
 
 	&.search-focus {
 		.logo-container {
-			display: none;
+			@include device-width(4) {
+				display: none;
+			}
 		}
 	}
 
 	> .inner {
 		position: relative;
-		z-index: 100;
-		padding: 4.5em 0 3em;
+		padding-bottom: 30px;
 		@include transition(padding 0.3s ease);
 
-		@include device-width(12) {
-			padding: 2.5em 0 2em;
-		}
-
-		@include device-width(10) {
-			padding: 1.5em 0 1em;
-		}
-
 		@include device-width(9) {
-			padding: 10px 0;
-			height: 80px;
+			padding-bottom: 0;
+			height: 40px;
 		}
 	}
 
 	.logo-container {
-		padding: 0 10px;
+		padding: 20px 10px 0 10px;
 		position: absolute;
 		z-index: 200;
+		@include transition(all 0.3s ease);
+
+		@include device-width(10) {
+			padding-top: 14px;
+		}
+
+		@include device-width(6) {
+			padding-top: 0;
+		}
 
 		.tagline {
+			position: absolute;
+			top: 0;
+			left: 10px;
+			right: 10px;
 			@include garamond-italic;
 			@include font-size(14);
 			display: block;
-			margin: 0.5em 0;
-
-			@include device-width(12) {
-				margin: 0.3em 0;
-			}
-
+			@include transition(all 0.3s ease);
+			opacity: 1;
+			visibility: visible;
+			
 			@include device-width(10) {
 				@include font-size(10);
 			}
@@ -101,22 +147,23 @@ body {
 		
 		.logo {
 			@include font-size(270);
+			@include transition(font-size 0.3s ease);
 
 			&:hover {
 				color: $dark-green;
 			}
 
 			@include device-width(12) {
-				@include font-size(170);
-			}			
+				@include font-size(240);
+			}
+
+			@include device-width(11) {
+				@include font-size(220);
+			}	
 
 			@include device-width(10) {
-				@include font-size(100);
+				@include font-size(110);
 			}			
-
-			@include device-width(9) {
-				@include font-size(100);
-			}
 
 			@include device-width(4) {
 				@include font-size(80);
@@ -128,8 +175,8 @@ body {
 		display: none;
 
 		@include device-width(9) {
-			display: block;
 			position: absolute;
+			display: inline-block;
 			right: 1em;
 			top: 50%;
 			@include translateY(-50%);
@@ -138,27 +185,35 @@ body {
 
 	.primary-navigation {
 		padding: 0 10px;
+		margin-bottom: 3em;
+		@include transition(all 0.3s ease);
 
 		@include device-width(9) {
 			padding: 0;
 			position: absolute;
 			top: 100%;
 			width: 100%;
+			margin-top: 10px;
 			z-index: 100;
+			margin-bottom: 0;
 		}
 	}
 
 	.info {
-		float: right;
-		position: relative;
+		//float: right;
+		opacity: 1;
+		visibility: visible;
 		padding: 0 10px;
-		margin-top: 3em;
-		@include transition(all 0.3s ease);
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		@include transition(all 0.1s ease);
 
 		@include device-width(9) {
 			position: absolute;
 			right: 5em;
 			top: 50%;
+			bottom: auto;
 			@include translateY(-50%);
 			margin: 0;		
 			padding: 0;
@@ -234,29 +289,37 @@ body {
 	}
 
 	.header-fixed & {
-		position: fixed;
-		top: 0;
-		width: 100%;
 		@include box-shadow(1px 1px 10px #ccc);
-
+		padding: 1.5em 0;
+		
+		@include device-width(9) {
+			padding: 10px 0;
+		}
 		@include device-width(6) {
 			position: relative;
 			@include box-shadow(none);
 		}
 
 		> .inner {
-			padding: 1.5em 0;
+			padding-bottom: 0;
+		}
+
+		.primary-navigation {
+			margin-bottom: 0;
 		}
 
 		.info {
-			display: none;
+			opacity: 0;
+			visibility: hidden;
 		}
 
 		.logo-container {
 			margin-top: -6px;
+			padding-top: 0;
 
 			.tagline {
-				display: none;
+				opacity: 0;
+				visibility: hidden;
 			}
 
 			.logo {

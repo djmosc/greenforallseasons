@@ -107,11 +107,6 @@ hr {
 	width: 50px;
 }
 
-.circle {
-	@include border-radius(999px);
-	overflow: hidden;
-}
-
 .break-on-tablet {
 	@include device-width(8) {
 		width: 100% !important;

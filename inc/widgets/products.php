@@ -54,14 +54,18 @@ class Products extends WP_Widget {
 					$class[] = (has_post_thumbnail()) ? 'has-thumbnail' : '';
 				?>
 				<li <?php post_class(); ?>>
-					
-					<?php include_module('product-item', array(
-						'title' => get_the_title(),
-						'designer' => get_field('designer'),
-						'price' => get_field('price'),
-						'url' => get_field('external_url'),
-						'image_url' => get_post_thumbnail_src(array('width' => 210))
-					)); ?>
+
+					<div class="product-item">
+						<a href="<?php the_field('external_url'); ?>" class="btn product-btn overlay-btn">
+							<div class="product-image image">
+								<img src="<?php echo get_post_thumbnail_src(array('width' => 210)); ?>" />
+							</div>
+							<header class="header product-header">
+								<span class="primary-btn shop-btn"><?php _e("Shop All", 'greenforallseasons'); ?></span>
+							</header>
+						</a>
+					</div>
+				
 				</li>
 				<?php endforeach;	?>
 			</ul>

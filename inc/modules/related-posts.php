@@ -15,22 +15,22 @@ if (!empty($tags)) {
     }
 }
 
-if(isset($tag_ids)){
+//if(isset($tag_ids)){
     $args = array(  
         'post_type' => array('post'),
-        'tag__in' => $tag_ids,  
+//        'tag__in' => $tag_ids,  
         'post__not_in' => array($post->ID),  
         'showposts' => 3,  // Number of related posts that will be shown.
         'ignore_sticky_posts'=>1  
     );
-}
+//}
 
 $query = new WP_Query($args);
 if ( $query->have_posts() ) : ?>
 <div id="related-posts" class="related-posts">
     <div class="container inner">
         <div class="widget-header">
-            <h4 class="widget-title"><?php _e("You Might Also Like", THEME_NAME); ?></h4>
+            <h4 class="widget-title"><?php _e("Also on G4AS", THEME_NAME); ?></h4>
             <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e("See all archive &raquo;", THEME_NAME) ?></a>
         </div>
         <ul class="posts clearfix">

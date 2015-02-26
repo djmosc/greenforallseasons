@@ -8,7 +8,9 @@
 	<li>
 		<a class="pinterest-btn share-popup-btn" target="_blank" href="http://www.pinterest.com/pin/create/button/?url=<?php echo urlencode($url); ?>&media=<?php echo urlencode($image_url); ?>&description=<?php echo urlencode($excerpt); ?>" ></a>
 	</li>
+	<?php if( !empty($email)): ?>
 	<li>
-		<a class="email-btn" target="_blank" href="mailto:youremail@address.com" ></a>
+		<a class="email-btn" target="_blank" href="mailto:?subject=<?php echo urlencode($title); ?>&amp;body=Check out this site: <?php echo urlencode($url); ?>" ></a>
 	</li>
+	<?php endif; ?>
 </ul>

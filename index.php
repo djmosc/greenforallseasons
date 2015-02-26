@@ -40,7 +40,7 @@
 						'url' => get_author_posts_url($author_id),
 					),							
                     'category' => array(
-                    	'name' => $category->name,
+                    	'name' => ( !empty($category)) ? $category->name : null,
                     ),
 					'read_more' => true,
 					'date' => get_the_date(),
