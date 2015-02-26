@@ -93,7 +93,9 @@ body {
 
 	&.search-focus {
 		.logo-container {
-			display: none;
+			@include device-width(4) {
+				display: none;
+			}
 		}
 	}
 
@@ -152,8 +154,12 @@ body {
 			}
 
 			@include device-width(12) {
-				@include font-size(170);
-			}			
+				@include font-size(240);
+			}
+
+			@include device-width(11) {
+				@include font-size(220);
+			}	
 
 			@include device-width(10) {
 				@include font-size(110);

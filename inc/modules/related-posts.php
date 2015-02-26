@@ -30,7 +30,7 @@ if ( $query->have_posts() ) : ?>
 <div id="related-posts" class="related-posts">
     <div class="container inner">
         <div class="widget-header">
-            <h4 class="widget-title"><?php _e("You Might Also Like", THEME_NAME); ?></h4>
+            <h4 class="widget-title"><?php _e("Also on G4AS", THEME_NAME); ?></h4>
             <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>"><?php _e("See all archive &raquo;", THEME_NAME) ?></a>
         </div>
         <ul class="posts clearfix">

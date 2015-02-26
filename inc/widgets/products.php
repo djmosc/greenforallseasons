@@ -61,7 +61,7 @@ class Products extends WP_Widget {
 								<img src="<?php echo get_post_thumbnail_src(array('width' => 210)); ?>" />
 							</div>
 							<header class="header product-header">
-								<span class="primary-btn shop-btn"><?php _e("Shop Now", 'greenforallseasons'); ?></span>
+								<span class="primary-btn shop-btn"><?php _e("Shop All", 'greenforallseasons'); ?></span>
 							</header>
 						</a>
 					</div>

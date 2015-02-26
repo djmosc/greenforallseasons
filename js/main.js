@@ -64,9 +64,9 @@
 						input = element.find('.input');
 
 					input.on('focus', function(){
-						main.header.element.addClass('search-focus')
+						main.header.element.addClass('search-focus');
 					}).on('blur', function(){
-						main.header.element.removeClass('search-focus')
+						main.header.element.removeClass('search-focus');
 					});
 
 				}
@@ -87,7 +87,21 @@
 					body.toggleClass('sidebar-open');
 				});
 
-				main.sidebar.products.init();
+				var hammertime = new Hammer($('.sidebar-container').get(0));
+				hammertime.on('swipeleft swiperight', function(e) {
+					if( main.w.width() < 900 ) {
+						switch(e.type) {
+							case 'swipeleft':
+								body.addClass('sidebar-open');
+							break;
+							case 'swiperight':
+								body.removeClass('sidebar-open');
+							break;
+						}
+					}
+				});
+				
+				//main.sidebar.products.init();
 				//main.sidebar.instagram.init();
 
 

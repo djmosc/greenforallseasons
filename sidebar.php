@@ -10,6 +10,7 @@
  * @package greenforallseasons
  * @since greenforallseasons 1.0
  */
+wp_enqueue_script('hammer');
 ?>
 
 <div id="sidebar" class="sidebar" >

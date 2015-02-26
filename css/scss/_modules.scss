@@ -724,10 +724,6 @@ blockquote {
 	text-align: right;
 	padding: 0.5em 0;
 
-	@include device-width(12) {
-		text-align: center;
-	}	
-
 	.comments {
 		@include inline-block;
 
@@ -741,8 +737,7 @@ blockquote {
 			letter-spacing: 0;
 
 			@include device-width(12) {
-				display: block;
-				text-align: center;
+				display: none;
 			}
 
 			i {
@@ -941,12 +936,7 @@ blockquote {
 .post-comments {
 	display: none;
 	margin: 0;
-	padding: 1em 0;
-	border-top: 10px solid #fbfbfb;
-
-	@include device-width(6) {
-		padding: 1em 10px;
-	}
+	padding: 0 0 2em 0;
 
 	.comment-list {
 		margin: 2em 0 0 0;
@@ -954,27 +944,28 @@ blockquote {
 }
 
 .comment-respond {
+	border-top: 4px solid #8A967C;
 
 	.comment-reply-title {
 		position: relative;
-		border-top: 4px solid #000;
+		border-top: 10px solid #000;
 		text-transform: uppercase;
 		text-align: center;
 		padding: 1em 0;
 		@include garamond-italic;
-		@include font-size(25);
+		@include font-size(18);
 
 		&:before {
 			content: '';
 			position: absolute;
-			top: 4px;
+			top: 0;
 			left: 50%;
 			margin-left: -5px;
 			width: 0; 
 			height: 0; 
-			border-left: 10px solid transparent;
-			border-right: 10px solid transparent;
-			border-top: 10px solid #000;
+			border-left: 8px solid transparent;
+			border-right: 8px solid transparent;
+			border-top: 8px solid #000;
 		}
 	}
 
@@ -1539,6 +1530,10 @@ blockquote {
 			border-right: 1px solid $white;
 			padding: 2em 10px;	
 		}
+
+		.post-top-category {
+			margin-bottom: 0.5em;
+		}
 	} 
 }
 
@@ -1887,6 +1882,7 @@ blockquote {
 }
 
 .single-post-header {
+	position: relative;
 
 	.category {
 		text-align: center;
@@ -1914,6 +1910,10 @@ blockquote {
 		margin: 1.5em 0;
 		padding: 0 8%;
 
+		@include device-width(6) {
+			@include font-size(14);
+		}
+
 		&:before, &:after {
 			content: '';
 			display: block;
@@ -1937,11 +1937,17 @@ blockquote {
 			width: 50%;
 			right: 0;
 			text-align: center;
+			left: auto;
 
 			// .category-name {
 			// 	width: 50%;
 			// 	float: right;						
-			// }					
+			// }
+
+			@include device-width(6) {
+				width: auto;
+				left: 0;
+			}					
 		}
 
 		.header-container {
@@ -1949,9 +1955,23 @@ blockquote {
 			position: relative;
 			margin-bottom: 4em;
 
+			@include device-width(6) {
+				margin-bottom: 0;
+			}
+
 			.post-image {
 				float: left;
 				width: 50%;
+
+				@include device-width(6) {
+					width: auto;
+					float: none;
+				}
+
+				img {
+					width: 100%;
+					display: block;
+				}
 			}
 
 			.header {
@@ -1961,6 +1981,11 @@ blockquote {
 				text-align: center;
 				height: 100%;
 				margin-top: 0;
+
+				@include device-width(6) {
+					width: auto;
+					position: relative;
+				}
 			}
 
 			.post-title {
@@ -1975,6 +2000,12 @@ blockquote {
 				@include device-width(7) {
 					@include font-size(30);
 				}
+
+				@include device-width(6) {
+					top: 0;
+					transform: translateY(0);
+					margin: 1em 0 0.5em 0;
+				}
 			}
 
 			.author {
@@ -1982,6 +2013,12 @@ blockquote {
 				width: 100%;
 				bottom: 0;
 				left: 0;
+
+				@include device-width(6) {
+					position: relative;
+					width: auto;
+					margin-top: -1.5em;
+				}
 			}
 		}
 	}

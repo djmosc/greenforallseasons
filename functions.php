@@ -241,6 +241,7 @@ function custom_scripts() {
 	}
 
 	wp_register_script('infinitescroll', $template_directory_uri.'/js/plugins/jquery.infinitescroll.js', array('jquery'), '', true);
+	wp_register_script('hammer', $template_directory_uri.'/js/plugins/hammer.js', array(), '', true);
 }
 
 
@@ -360,7 +361,8 @@ function custom_gallery( $atts ) {
 							'title' => $image->post_title,
 							'url' => get_permalink($id),
 							'image_url' => $image_url,
-							'excerpt' => $image->post_excerpt
+							'excerpt' => $image->post_excerpt,
+							'email' => true
 						)); ?>
 						<div class="pages"><span class="page"><?php echo ($i + 1) . ' of '.count($ids);?></span></div>
 					</div>
