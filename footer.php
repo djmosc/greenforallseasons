@@ -31,7 +31,7 @@
 					</div>						
 			</div>
 		</div>		
-		<div class="bottom-nav">
+		<div class="bottom">
 			<div class="container inner">
 				<?php wp_nav_menu( array( 'depth' => 1, 'theme_location' => 'primary', 'menu_class' => 'clearfix menu footer-primary-navigation navigation', 'container' => '')); ?>
 			</div>

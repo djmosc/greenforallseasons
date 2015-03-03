@@ -32,6 +32,11 @@ body {
 
 	&.header-fixed {
 		padding-top: 77px;
+
+		@include device-width(6) {
+			padding-top: 0;
+		}
+
 	}
 }
 
@@ -276,7 +281,7 @@ body {
 		}
 	}
 
-	.admin-bar.header-fixed & {
+	.admin-bar & {
 		top: 32px;
 
 		@include device-width(8) {
@@ -359,14 +364,19 @@ body {
 	color: #666;
 	z-index: 100;
 
-	.container {
-		@include device-width(12) {
-			padding: 0 10px;
+	.top {
+		> .inner {
+			padding: 3em 10px 0 10px;
 		}
 	}
 
-	.top {
-		padding-top: 3em;
+
+	.bottom {
+		background: $dark-green;
+
+		> .inner {
+			padding: 24px 10px;		
+		}
 	}
 	
 	.logo-container {
@@ -502,16 +512,20 @@ body {
 			position: static;
 			margin-bottom: 1em;
 		}
-	}
-
-	.bottom-nav {
-		padding: 24px 0;
-		background: $dark-green;
 	}	
 }
 
 #related-posts {
 	background: #ebebeb;
+	overflow: auto;
+
+	> .inner {
+		min-width: 1000px;
+	}
+
+}
+
+#featured-products {
 	overflow: auto;
 
 	> .inner {

@@ -1,5 +1,5 @@
 <div class="product-item <?php echo ( !empty($class)) ? $class : ''; ?>">
-	<a href="<?php echo $url; ?>" class="btn product-btn">
+	<a href="<?php echo $url; ?>" class="btn product-btn overlay-btn">
 		<div class="product-image image">
 			<img src="<?php echo $image_url; ?>" />
 		</div>

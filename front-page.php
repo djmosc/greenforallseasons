@@ -24,6 +24,8 @@
 			</div>
 			<?php get_sidebar(); ?>	
 		</div>
+
+		<?php include_module('featured-products'); ?>
 	</div>
 </section>
 <?php get_footer(); ?>

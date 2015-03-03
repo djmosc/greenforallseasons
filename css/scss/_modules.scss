@@ -471,6 +471,10 @@ blockquote {
 		margin-right: 4em;
 		cursor: pointer;
 
+		&.hide-on-desktop {
+			display: none;
+		}
+
 		a {
 			@include futura-bold;
 			@include font-size(10);
@@ -613,6 +617,13 @@ blockquote {
 				}				
 			}
 
+			&.hide-on-desktop {
+				@include device-width(9) {
+					display: block;
+				}
+			}
+
+
 			&:hover, {
 				&:before {
 					opacity: 1;
@@ -690,10 +701,10 @@ blockquote {
 	}	
 
 	li {
-		margin-right: 8em;
+		margin: 0 0 0 7.85em;
 
-		&:last-child {
-			margin-right: 0;
+		&:first-child {
+			margin-left: 0;
 		}
 
 		a {
@@ -705,7 +716,7 @@ blockquote {
 		} 
 
 		@include device-width(10) {
-			margin: .5em 0;
+			margin: 0.5em 0;
 			width: 33%;
 
 			a {
@@ -1537,6 +1548,48 @@ blockquote {
 	} 
 }
 
+
+.featured-products {
+	@extend .clearfix;
+
+	.widget-header {
+		float: left;
+		width: 175px;
+		padding: 0 10px;
+
+		.description {
+			@include garamond-italic;
+			list-style: 1;
+			margin: 0.5em 0;
+			@include font-size(14);
+		}
+
+		a {
+			@include futura-bold;
+			text-transform: uppercase;
+			@include font-size(9);
+			display: block;
+			margin-top: 1em;
+			letter-spacing: 2px;
+			
+		}
+	}
+
+	.products {
+		float: left;
+		width: 1005px;
+		width: calc(100% - 175px);
+		@include display(flex);
+
+		.product {
+			float: left;
+			width: 25%;
+			padding: 0 10px;	
+		}
+	} 
+}
+
+
 .written-by {
 	@include miller-italic;
 	color: #5b5b5b;
@@ -1804,9 +1857,9 @@ blockquote {
 	position: relative;
 	border-right: 1px solid #e3e3e3;
 	
-	@include device-width(9) {
-		overflow: hidden;
-	}
+	// @include device-width(9) {
+	// 	overflow: hidden;
+	// }
 
 	.sidebar-content {
 		float: left;
@@ -1821,7 +1874,8 @@ blockquote {
 		@include device-width(9) {
 			width: auto;
 			float: none;
-			margin-right: 40px;
+			border-right: 0;
+			//margin-right: 40px;
 
 			// .sidebar-open & {
 			// 	margin-left: -340px;
@@ -1838,6 +1892,7 @@ blockquote {
 		position: relative;
 
 		@include device-width(9) {
+			display: none;
 			position: absolute;
 			top: 0;
 			width: 300px;
