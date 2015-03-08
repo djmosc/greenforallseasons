@@ -30,6 +30,8 @@ add_action( 'wp_ajax_get_products', 'custom_wp_ajax_get_products' );
 
 add_action( 'wp_ajax_nopriv_get_products', 'custom_wp_ajax_get_products' );
 
+add_action('pre_user_query','custom_pre_user_query');
+
 // Custom Filters
 
 add_filter( 'the_content_feed', 'custom_the_content_feed', 10, 2);
@@ -45,6 +47,8 @@ add_filter( 'pre_get_posts', 'custom_pre_get_posts');
 add_filter( 'the_excerpt', 'custom_the_exceprt');
 
 add_filter( 'get_the_date', 'custom_get_the_date', 10, 2);
+
+add_filter( 'acf/settings/show_admin', 'custom_acf_settings_show_admin');
 
 //add_filter('parse_query', 'custom_parse_query');
 
@@ -135,9 +139,17 @@ function custom_init(){
 
 		$letters->register_post_type();
 	}
+
+	$edit_editor = get_role('editor'); // Get the user role
+    $edit_editor->add_cap('edit_users');
+    $edit_editor->add_cap('list_users');
+    $edit_editor->add_cap('promote_users');
+    $edit_editor->add_cap('create_users');
+    $edit_editor->add_cap('add_users');
+    $edit_editor->add_cap('delete_users');
 }
 
-if( function_exists('acf_add_options_page') ) acf_add_options_page();
+//if( function_exists('acf_add_options_page') ) acf_add_options_page();
 
 function custom_wp(){
 	
@@ -241,7 +253,6 @@ function custom_scripts() {
 	}
 
 	wp_register_script('infinitescroll', $template_directory_uri.'/js/plugins/jquery.infinitescroll.js', array('jquery'), '', true);
-	wp_register_script('hammer', $template_directory_uri.'/js/plugins/hammer.js', array(), '', true);
 }
 
 
@@ -348,12 +359,14 @@ function custom_gallery( $atts ) {
 				</figure>
 				<?php if($image->post_title || $image->post_excerpt ): ?>
 				<header class="header">
-					<figcaption class="caption" >Personal style and vice versa</figcaption>
+					<?php if( $image->post_excerpt ): ?>
+					<figcaption class="caption" ><?php echo $image->post_excerpt; ?></figcaption>
+					<?php endif; ?>
 					<?php if( $image->post_title ): ?>
 					<h5 class="title"><?php echo $image->post_title; ?></h5>
 					<?php endif; ?>
-					<?php if( $image->post_excerpt ): ?>
-					<div class="description"><?php echo $image->post_excerpt; ?></div>
+					<?php if( $image->post_content ): ?>
+					<div class="description"><?php echo $image->post_content; ?></div>
 					<?php endif; ?>
 
 					<div class="info">
@@ -494,4 +507,18 @@ function get_post_sub_category($id = '') {
 	}
 
 	return null;
+}
+
+
+function custom_acf_settings_show_admin( $show ) {
+    return current_user_can('manage_options');   
+}
+
+
+function custom_pre_user_query($user_search) {
+	$user = wp_get_current_user();
+	if( $user->ID != 1 ) {
+		global $wpdb;
+		$user_search->query_where = str_replace('WHERE 1=1', "WHERE 1=1 AND {$wpdb->users}.ID<>1", $user_search->query_where);
+	}
 }

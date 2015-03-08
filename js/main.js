@@ -24,7 +24,17 @@
 
 		global: {
 			init: function(){
-							
+				$('.share-popup-btn').on('click', function(e){
+					e.preventDefault();
+					
+					var url = $(this).attr('href'),
+						width = 640,
+						height = 305,
+						left = ($(window).width() - width) / 2,
+						top = ($(window).height() - height) / 2;
+					window.open(url, 'sharer', 'toolbar=0,status=0,width='+width+',height='+height+',left='+left+', top='+top);
+					return false;
+				});
 			}
 		},
 
@@ -174,6 +184,7 @@
 				if(!element.length) return false;
 
 				this.comments.init();
+				this.carousel.init();
 
 			},
 
@@ -191,6 +202,23 @@
 					});
 
 				}				
+			},
+
+			carousel: {
+				element: $('.post-carousel'),
+				init: function(){
+
+					var element = this.element;
+
+					if(!element.length) return false;
+
+					element.owlCarousel({
+						loop: true,
+						dots: false,
+					    nav: true,
+					    items: 1			    
+					});
+				}
 			}
 
 		},

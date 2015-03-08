@@ -71,8 +71,17 @@ p {
 }
 
 
+.alignleft {
+	margin-right: 1em;
+	&.wp-caption {
+		.wp-caption-text {
+			text-align: right;
+		}
+	}					
+}
+
 .alignright {
-	
+	margin-left: 1em;
 	&.wp-caption {
 		.wp-caption-text {
 			text-align: left;

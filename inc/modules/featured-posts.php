@@ -27,7 +27,7 @@ if (!empty($tags)) {
 
 $query = new WP_Query($args);
 if ( $query->have_posts() ) : ?>
-<div id="related-posts" class="related-posts">
+<div id="featured-posts" class="featured-posts">
     <div class="container inner">
         <div class="widget-header">
             <h4 class="widget-title"><?php _e("Also on G4AS", THEME_NAME); ?></h4>

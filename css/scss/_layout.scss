@@ -515,7 +515,7 @@ body {
 	}	
 }
 
-#related-posts {
+#featured-posts {
 	background: #ebebeb;
 	overflow: auto;
 
@@ -526,12 +526,35 @@ body {
 }
 
 #featured-products {
-	overflow: auto;
-
-	> .inner {
-		min-width: 1000px;
+	.widget-header {
+		@include device-width(6) {
+			float: none;
+			width: auto;
+		}
 	}
+	.products {
+		@include device-width(6) {
+			float: none;
+			width: auto;
+		}
+		.product {
+			@include device-width(9) {
+				width: 50%;
+			}
 
+			&:nth-child(2n + 1) {
+				@include device-width(9) {
+					clear: left;
+				}	
+			}
+
+			.header {
+				@include device-width(6) {
+					padding: 1em;
+				}
+			}
+		}
+	}
 }
 
 //what is this for?

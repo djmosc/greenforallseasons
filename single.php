@@ -17,14 +17,14 @@
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<?php 
 					$image_size = ($featured_image_position == 'top') ? array('width' => 800, 'height' => 530) : array('width' => 400, 'height' => 530);
-					$image = get_post_thumbnail_src($image_size);
+					$image_url = get_post_thumbnail_src($image_size);
 					$class = array( $featured_image_position . '-layout' ); 
 					$class[] = (has_post_thumbnail()) ? 'has-featured-image' : 'no-featured-image'; 
 					?>
 				
 					<?php include_module('single-post-header', array(
 						'title' => get_the_title(),
-						'image_url' => $image,
+						'image_url' => $image_url,
 						'author' => array(
 							'name' => 'Words by ' .get_the_author(),
 							'image_url' => $author_img_url,
@@ -60,9 +60,9 @@
 
 				<?php include_module('post-social', array(
 					'title' => get_the_title(),
-					'url' => '',
-					'image_url' => '',
-					'excerpt' => ''
+					'url' => get_permalink(),
+					'image_url' => $image_url,
+					'excerpt' => get_the_excerpt()
 				)); ?>
 	
 				<?php include_module('post-navigation'); ?>
@@ -77,8 +77,8 @@
 			<?php get_sidebar(); ?>
 		</div>
 	<?php endwhile; // end of the loop. ?>
-	<?php //include_module('related-posts'); ?>
+	<?php //include_module('featured-posts'); ?>
 </div><!-- #single -->
-<?php include_module('related-posts'); ?>
+<?php include_module('featured-posts'); ?>
 
 <?php get_footer(); ?>

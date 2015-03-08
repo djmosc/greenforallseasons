@@ -57,5 +57,5 @@
 		<?php get_sidebar(); ?>	
 	</div>
 </section>
-<?php include_module('related-posts'); ?>
+<?php include_module('featured-posts'); ?>
 <?php get_footer(); ?>

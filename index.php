@@ -23,7 +23,7 @@
 		$i = 0;
 		while ( have_posts() ) : the_post(); ?>
 			<?php 
-			$image_size =  ($i == 0) ? array('width' => 500, 'height' => 300) : array('width' => 240, 'height' => 300);
+			$image_size =  ($i == 0) ? array('width' => 500, 'height' => 300) : array('width' => 300, 'height' => 300);
 			$excerpt_length = ($i == 0) ? 200 : 110;
 			$author_id = get_the_author_meta('ID');
 			$category = get_post_category();

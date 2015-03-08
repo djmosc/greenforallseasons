@@ -36,7 +36,7 @@ class Post extends WP_Widget {
 		<?php endif; ?>
 		</p>
 		<hr />
-		<p>
+		<!--p>
 			<label>Size: 
 				<select name="<?php echo $this->get_field_name('size'); ?>" >
 					<option value="small" <?php if($size == 'small') echo 'selected'; ?>>Small</option>
@@ -44,7 +44,7 @@ class Post extends WP_Widget {
 					<option value="large" <?php if($size == 'large') echo 'selected'; ?>>Large</option>
 				</select>
 			</label>
-		</p>
+		</p-->
 	<?php 
 	}
 
@@ -58,7 +58,7 @@ class Post extends WP_Widget {
 		$location = $args['id'];
 		$args['offset'] = ($instance['offset']) ? intval($instance['offset']) - 1 : 0;
 		$args['category_id'] = (isset($instance['category_id']) && $instance['category_id'] != 0) ? $instance['category_id'] : '';		
-		$args['size'] = (isset($instance['size'])) ? $instance['size'] : 'small';
+		//$args['size'] = (isset($instance['size'])) ? $instance['size'] : 'small';
 		$args['post_id'] = (isset($instance['post_id'])) ? $instance['post_id'] : null;
 
 		$options = array('posts_per_page' => 1, 'post_type' => array('post'), 'orderby' => 'date', 'order' => 'DESC', 'post_status' => 'publish');
@@ -77,24 +77,20 @@ class Post extends WP_Widget {
 			echo $args['before_widget'];
 			$i = 0;
 			while ( $custom_query->have_posts() ) : $custom_query->the_post();
-				// switch($args['size']) {
-				// 	case 'large':
-				// 		$image_size = array('width' => 320, 'height' => 222);
-				// 	break;
-				// 	case 'medium':
-				// 		$image_size = array('width' => 320, 'height' => 294);
-				// 	break;
-				// 	case 'small':
-				// 	default:
-				// 		$image_size = array('width' => 320, 'height' => 222);
-				// 	break;						
-				// }
 						
 				$image_size = ($location == 'homepage_carousel') ? array('width' => 840, 'height' => 480) : array('width' => 450); 
 				$author_id = get_the_author_meta('ID');
 				$category = get_post_category();
 				$module = ($location == 'homepage_carousel') ? 'post-slide' : 'post-item';
 				$sub_category = get_post_sub_category();
+				$image_url = get_post_thumbnail_src($image_size);
+
+				if( $location == 'homepage_carousel' && $slide_image = get_field('slide_image') ) {
+					$image_url = get_image( $slide_image, $image_size);
+				} elseif( $widget_image = get_field('widget_image')) {
+					$image_url = get_image( $widget_image, $image_size);
+				}
+
 				if( !$sub_category || $location == 'homepage_carousel') $sub_category = $category;
 
 				if( $location != 'homepage_carousel') {
@@ -107,7 +103,7 @@ class Post extends WP_Widget {
 					'title' => get_the_title(),
 					'excerpt' => get_excerpt(150),
 					'url' => get_permalink(),
-					'image_url' => get_post_thumbnail_src($image_size),
+					'image_url' => $image_url,
 					'author' => array(
 						'name' => get_the_author(),
 						'image_url' => get_avatar_url ( get_the_author_meta('ID'), 40 ),

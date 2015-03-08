@@ -10,7 +10,7 @@
 					$author_image = get_field('image', 'user_'. $author_id);
 				?>
 		
-				<img class="featured-image" src="<?php echo bfi_thumb($author_image['url'], array('width' => 460, 'height' => 460)); ?>">
+				<img class="featured-image" src="<?php echo bfi_thumb($author_image['url'], array('width' => 280, 'height' => 280)); ?>">
 				<h3 class="name"><?php the_author_meta( 'display_name', $author_id ); ?></h3>
 				<p class="position"><?php the_field('position', 'user_'. $author_id); ?></p>
 				<div class="description">
@@ -44,7 +44,6 @@
 			        </header>
 			        <ul class="posts clearfix">				
 						<?php while ( have_posts() ) : the_post(); ?>
-
 							<?php 
 								$title =  get_the_title();
 			                    $image_size = array('width' => 190, 'height' => 190);
@@ -55,7 +54,7 @@
 							?>
 
 
-				            <li class="span one-third">
+				            <li class="span one-third post">
 				                <?php include_module('post-item', array(
 									'title' => $title,
 									'excerpt' => $excerpt,
@@ -83,6 +82,6 @@
 </section><!-- #page -->
 
 
-<?php include_module('related-posts'); ?>
+<?php include_module('featured-posts'); ?>
 
 <?php get_footer(); ?>

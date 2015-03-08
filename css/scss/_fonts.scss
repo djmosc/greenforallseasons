@@ -59,6 +59,16 @@
 	@include garamond-italic;
 }
 
+@mixin garamond-bold {
+	font-family:'Adobe Garamond W01';
+	font-weight: 700;
+	font-style: normal;
+}
+
+.garamond-bold {
+	@include garamond-bold;
+}
+
 @mixin futura {
 	font-family:'L Futura W01';
 	font-weight: 400;
