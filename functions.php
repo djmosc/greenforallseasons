@@ -147,6 +147,9 @@ function custom_init(){
     $edit_editor->add_cap('create_users');
     $edit_editor->add_cap('add_users');
     $edit_editor->add_cap('delete_users');
+    $edit_editor->add_cap('manage_nav_menus');
+    $edit_editor->add_cap('manage_widgets');
+    $edit_editor->add_cap('edit_theme_options');
 }
 
 //if( function_exists('acf_add_options_page') ) acf_add_options_page();
